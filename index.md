@@ -23,14 +23,14 @@ Our group members are working on a range of projects.
 ### Postgrads
  * Michele Filannino (http://www.michelefilannino.com)
    is a post-doctoral fellow at SUNY at Albany and Visiting Researcher with the group. His research interests include named entity recognition, temporal information extraction and clinical decision support.
- * Ziyu Wang ()
+ * Ziyu Wang is a research associate with the group. His research interests include predictive modeling, decision support system, and machine learning applications. Current works include clinical lab test predictions and tensor completion algorithms.
  * Arthur Shr ()
  * Marzyeh Ghassemi (http://mghassem.mit.edu) 
    is a post-doctoral fellow with the group, and a Google/Verily Visiting Researcher. Her research interests include 
  * Tom Yan ()
  
 ## Reading Group
-We host a reading group every Friday at 1:30 pm in 32-252. You can find a schedule here:
+We host a reading group every Friday at 1:30 pm in 32-262. You can find a schedule here:
  
 ## Papers 
  Below is a list of papers written by group members, in reverse chronological ordering. 
