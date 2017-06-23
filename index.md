@@ -21,7 +21,8 @@ Our group members are working on a range of projects.
 * Dustin Doss
 
 ### Postgrads
- * Michele Filannino ()
+ * Michele Filannino (http://www.michelefilannino.com)
+   is a post-doctoral fellow at SUNY at Albany and Visiting Researcher with the group. His research interests include named entity recognition, temporal information extraction and clinical decision support.
  * Ziyu Wang ()
  * Arthur Shr ()
  * Marzyeh Ghassemi (http://mghassem.mit.edu) 
@@ -32,12 +33,16 @@ Our group members are working on a range of projects.
 We host a reading group every Friday at 1:30 pm in 32-252. You can find a schedule here:
  
 ## Papers 
- Below is a list of papers written by group members, in reverse chronilogical ordering. 
+ Below is a list of papers written by group members, in reverse chronological ordering. 
 
 ### 2017
+* Automatic prediction of coronary artery disease from clinical narratives. Kevin Buchan, Michele Filannino, Özlem Uzuner. Journal of Biomedical Informatics (JBI), 2017. (in print)
 * Clinical Intervention Prediction and Understanding using Deep Networks. Harini Suresh, Nathan Hunt, Alistair Johnson, Leo Anthony Celi, Peter Szolovits, Marzyeh Ghassemi. MLHC 2017, Boston, MA. Proceedings of the 2nd Machine Learning for Healthcare Conference, 2017. JMLR Workshop and Conference Track. (https://arxiv.org/pdf/1705.08498.pdf)
 * Continuous State-Space Models for Optimal Sepsis Treatment-a Deep Reinforcement Learning Approach. Aniruddh Raghu, Matthieu Komorowski, Leo Anthony Celi, Peter Szolovits, Marzyeh Ghassemi. MLHC 2017, Boston, MA. Proceedings of the 2nd Machine Learning for Healthcare Conference, 2017. JMLR Workshop and Conference Track. (https://arxiv.org/pdf/1705.08422.pdf)
+* De-identification of psychiatric intake records: Overview of 2016 CEGS N-GRID Shared Tasks Track 1. Amber Stubbs, Michele Filannino, Ozlem Uzuner. Journal of Biomedical Informatics (JBI), 2017. (http://www.sciencedirect.com/science/article/pii/S153204641730134X)
 * Predicting Intervention Onset in the ICU with Switching State Space Models. Marzyeh Ghassemi*, Mike Wu*, Michael C. Hughes*, Peter Szolovits, and Finale Doshi-Velez. Proceedings of the AMIA Summit on Clinical Research Informatics (CRI), 2017. (http://mghassem.mit.edu/wp-content/uploads/2017/01/Ghassemi_AMIACRI2017_Predicting_Intervention_Onset.pdf)
+* Symptom severity prediction from neuropsychiatric clinical records: Overview of 2016 CEGS N-GRID Shared Tasks Track 2. Michele Filannino, Amber Stubbs, Özlem Uzuner. Journal of Biomedical Informatics (JBI), 2017. (http://www.sciencedirect.com/science/article/pii/S1532046417300874)
+
 
 ### 2016
 * Uncovering Voice Misuse Using Symbolic Mismatch. Marzyeh Ghassemi, Zeeshan Syed, Daryush D. Mehta, Jarrad H. Van Stan, Robert E. Hillman, and John V. Guttag. MLHC 2016, Los Angeles, CA. Proceedings of the 1st Machine Learning for Healthcare Conference, pp. 239–252, 2016. JMLR Workshop and Conference Track Volume 56. (http://mghassem.mit.edu/wp-content/uploads/2016/11/Uncovering_Voice_Misuse_Ghassemi_Marzyeh_2016_MLHC.pdf)
