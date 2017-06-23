@@ -7,8 +7,8 @@ Our group members are working on a range of projects.
 
 ### Ph.D.
 * Tristan Josef Naumann ()
-* William George Boag ()
-* Matthew McDermott ()
+* Willie Boag (http://willieboag.com) 
+   is a second year PhD student. His background is in Natural Language Processing, and he currently works on projects involving doctors notes, such as: de-identification, mortality prediction, information retrieval, and concept extraction. * Matthew McDermott ()
 * Di Jin ()
 
 * Elena Sergeeva ()
