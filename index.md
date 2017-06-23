@@ -3,39 +3,54 @@ The Medical Decision Making Group (MEDG) at the MIT Laboratory for Computer Scie
 
 ## People
 
-Our group members are working on a range of projects. 
+Our group members are working on a range of projects.
 
 ### Ph.D.
-* Tristan Josef Naumann ()
-* Willie Boag (http://willieboag.com) 
-   is a second year PhD student. His background is in Natural Language Processing, and he currently works on projects involving doctors notes, such as: de-identification, mortality prediction, information retrieval, and concept extraction.
-* Matthew McDermott
-   is a first year PhD student. His background is in Mathematics, Statistics, and Software Engineering. He currently works on projects involving representation learning for gene expression data and using adversarial networks to aid predictive tasks in semi-supervised settings.
-* Di Jin ()
+  * Tristan Josef Naumann ()
+  * Willie Boag (http://willieboag.com)
+    is a second year PhD student. His background is in Natural Language Processing, and he currently works on projects involving doctors notes, such as: de-identification, mortality prediction, information retrieval, and concept extraction.
+  * Matthew McDermott
+    is a first year PhD student. His background is in Mathematics, Statistics, and Software Engineering. He currently works on projects involving representation learning for gene expression data and using adversarial networks to aid predictive tasks in semi-supervised settings.
+  * Di Jin ()
 
-* Elena Sergeeva ()
-* Ying Zhang ()
-* Wei-hung Weng ()
+  * Elena Sergeeva ()
+  * Ying Zhang ()
+  * Wei-hung Weng ()
 
 ### M.Eng and UROPs
-* Anuhya Vajapeyajula
-* Anna Bair
-* Dustin Doss
+  * Anuhya Vajapeyajula
+  * Anna Bair
+  * Dustin Doss
 
 ### Postgrads
- * Michele Filannino (http://www.michelefilannino.com)
-   is a post-doctoral fellow at SUNY at Albany and Visiting Researcher with the group. His research interests include named entity recognition, temporal information extraction and clinical decision support.
- * Ziyu Wang is a research associate with the group. His research interests include predictive modeling, decision support system, and machine learning applications. Current works include clinical lab test predictions and tensor completion algorithms.
- * Arthur Shr ()
- * Marzyeh Ghassemi (http://mghassem.mit.edu) 
-   is a post-doctoral fellow with the group, and a Google/Verily Visiting Researcher. Her research interests include 
- * Tom Yan ()
- 
+  * Michele Filannino (http://www.michelefilannino.com)
+    is a post-doctoral fellow at SUNY at Albany and Visiting Researcher with the group. His research interests include named entity recognition, temporal information extraction and clinical decision support.
+  * Ziyu Wang is a research associate with the group. His research interests include predictive modeling, decision support system, and machine learning applications. Current works include clinical lab test predictions and tensor completion algorithms.
+  * Arthur Shr ()
+  * Marzyeh Ghassemi (http://mghassem.mit.edu)
+    is a post-doctoral fellow with the group, and a Google/Verily Visiting Researcher. Her research interests include
+  * Tom Yan ()
+
 ## Reading Group
-We host a reading group every Friday at 1:30 pm in 32-262. You can find a schedule here:
- 
-## Papers 
- Below is a list of papers written by group members, in reverse chronological ordering. 
+We host a reading group every Friday at 1:30 pm in 32-262. You can find a schedule (subject to change) below.
+
+Presenter                          | Date       | Paper
+---------------------------------- | ---------- | -------------------------------------------------------------------
+Professor Byron Wallace (visiting) | 06/02/2017 | [Aggregating and Predicting Sequence Labels from Crowd Annotations]
+CANCELLED                          | 06/09/2017 | CANCELLED
+CANCELLED                          | 06/16/2017 | CANCELLED
+Ziyu Wang                          | 06/23/2017 | [SPARTan: Scalable PARAFAC2 for Large & Sparse Data]
+Matthew McDermott                  | 06/30/2017 | TBD
+Di Jin                             | 07/07/2017 | TBD
+Dustin Doss                        | 07/14/2017 | TBD
+Willie Boag                        | 07/21/2017 | TBD
+Michele Filannino                  | 07/28/2017 | TBD
+Tristan Naumann                    | 08/04/2017 | TBD
+
+[Aggregating and Predicting Sequence Labels from Crowd Annotations]: https://www.ischool.utexas.edu/~ml/papers/nguyen-acl17.pdf
+[SPARTan: Scalable PARAFAC2 for Large & Sparse Data]: https://arxiv.org/pdf/1703.04219.pdf
+## Papers
+ Below is a list of papers written by group members, in reverse chronological ordering.
 
 ### 2017
 * Automatic prediction of coronary artery disease from clinical narratives. Kevin Buchan, Michele Filannino, Özlem Uzuner. Journal of Biomedical Informatics (JBI), 2017. (in print)
