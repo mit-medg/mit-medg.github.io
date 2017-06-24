@@ -14,7 +14,7 @@ Our group members are working on a range of projects.
   * Di Jin is a first year PhD student. His research interest includes supervised deep learning, natural language processing and semantic segmentation and classification. Current work focuses on precision medicine information retrieval, temporal chronic disease prediction and diagnosis and social media medical concept normalisation.
   * Elena Sergeeva ()
   * Ying Zhang ()
-  * Wei-hung Weng ()
+  * Wei-Hung Weng (http://ckbjimmy.github.io/) is an incoming PhD student. His background is in Medicine and Biomedical Informatics, and his research interest is medical knowledge representation for machine learning. 
 
 ### M.Eng and UROPs
   * Anuhya Vajapeyajula
