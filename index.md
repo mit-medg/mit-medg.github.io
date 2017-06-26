@@ -7,14 +7,14 @@ Our group members are working on a range of projects.
 
 ### Ph.D.
   * Tristan Josef Naumann ()
-  * Willie Boag (http://willieboag.com)
+  * [Willie Boag](http://willieboag.com)
     is a second year PhD student. His background is in Natural Language Processing, and he currently works on projects involving doctors notes, such as: de-identification, mortality prediction, information retrieval, and concept extraction.
   * Matthew McDermott
     is a first year PhD student. His background is in Mathematics, Statistics, and Software Engineering. He currently works on projects involving representation learning for gene expression data and using adversarial networks to aid predictive tasks in semi-supervised settings.
   * Di Jin is a first year PhD student. His research interest includes supervised deep learning, natural language processing and semantic segmentation and classification. Current work focuses on precision medicine information retrieval, temporal chronic disease prediction and diagnosis and social media medical concept normalisation.
   * Elena Sergeeva ()
   * Ying Zhang ()
-  * Wei-Hung Weng (http://ckbjimmy.github.io/) is an incoming PhD student. His background is in Medicine and Biomedical Informatics, and his research interest is medical knowledge representation for machine learning. 
+  * [Wei-Hung Weng](http://ckbjimmy.github.io/) is an incoming PhD student. His background is in Medicine and Biomedical Informatics, and his research interest is medical knowledge representation for machine learning. 
 
 ### M.Eng and UROPs
   * Anuhya Vajapeyajula
@@ -22,11 +22,11 @@ Our group members are working on a range of projects.
   * Dustin Doss
 
 ### Postgrads
-  * Michele Filannino (http://www.michelefilannino.com)
+  * [Michele Filannino](http://www.michelefilannino.com)
     is a post-doctoral fellow at SUNY at Albany and Visiting Researcher with the group. His research interests include named entity recognition, temporal information extraction and clinical decision support.
   * Ziyu Wang is a research associate with the group. His research interests include predictive modeling, decision support system, and machine learning applications. Current works include clinical lab test predictions and tensor completion algorithms.
   * Arthur Shr ()
-  * Marzyeh Ghassemi (http://mghassem.mit.edu)
+  * [Marzyeh Ghassemi](http://mghassem.mit.edu)
     is a post-doctoral fellow with the group, and a Google/Verily Visiting Researcher. Her research interests include
   * Tom Yan ()
 
