@@ -19,7 +19,7 @@ Our group members are working on a range of projects.
 ### M.Eng and UROPs
   * Anuhya Vajapeyajula
   * Anna Bair
-  * Dustin Doss
+  * Dustin Doss is a MEng student. His background is in supervised deep learning and natural language processing. He is currently working on proposing and beginning his MEng thesis, which is tentatively focused on the use of sequence-to-sequence methods to translate between patient data modalities.
 
 ### Postgrads
   * [Michele Filannino](http://www.michelefilannino.com)
