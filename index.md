@@ -9,8 +9,9 @@ Our group members are working on a range of projects.
   * Tristan Josef Naumann ()
   * [Willie Boag](http://willieboag.com)
     is a second year PhD student. His background is in Natural Language Processing, and he currently works on projects involving doctors notes, such as: de-identification, mortality prediction, information retrieval, and concept extraction.
-  * Matthew McDermott
-    is a first year PhD student. His background is in Mathematics, Statistics, and Software Engineering. He currently works on projects involving representation learning for gene expression data and using adversarial networks to aid predictive tasks in semi-supervised settings.
+  * Matthew McDermott is a first year PhD student. His background is in Mathematics, Statistics, and Software
+    Engineering. He currently works on projects involving representation learning for gene expression data and
+    using adversarial networks to aid predictive tasks in semi-supervised settings.
   * Di Jin is a first year PhD student. His research interest includes supervised deep learning, natural language processing and semantic segmentation and classification. Current work focuses on precision medicine information retrieval, temporal chronic disease prediction and diagnosis and social media medical concept normalisation.
   * Elena Sergeeva ()
   * Ying Zhang ()
