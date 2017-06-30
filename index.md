@@ -14,7 +14,7 @@ Our group members are working on a range of projects.
   * Di Jin is a first year PhD student. His research interest includes supervised deep learning, natural language processing and semantic segmentation and classification. Current work focuses on precision medicine information retrieval, temporal chronic disease prediction and diagnosis and social media medical concept normalisation.
   * Elena Sergeeva ()
   * Ying Zhang ()
-  * [Wei-Hung Weng](http://ckbjimmy.github.io/) is an incoming PhD student. His background is in Medicine and Biomedical Informatics, and his research interest is medical knowledge representation for machine learning. 
+  * [Wei-Hung Weng](http://ckbjimmy.github.io/) is an incoming PhD student. His background is in Medicine and Biomedical Informatics, and his research interest is medical knowledge representation for machine learning.
 
 ### M.Eng and UROPs
   * Anuhya Vajapeyajula
@@ -39,17 +39,18 @@ Professor Byron Wallace            | 06/02/2017 | [Aggregating and Predicting Se
 CANCELLED                          | 06/09/2017 | CANCELLED
 CANCELLED                          | 06/16/2017 | CANCELLED
 Ziyu Wang [(slides)][1]            | 06/23/2017 | [SPARTan: Scalable PARAFAC2 for Large & Sparse Data]
-Matthew McDermott                  | 06/30/2017 | [Representing high throughput expression profiles via perturbation barcodes reveals compound targets]
+Matthew McDermott [(slides)][2]    | 06/30/2017 | [Representing high throughput expression profiles via perturbation barcodes reveals compound targets]
 Di Jin                             | 07/07/2017 | TBD
 Dustin Doss                        | 07/14/2017 | TBD
 Willie Boag                        | 07/21/2017 | TBD
 Michele Filannino                  | 07/28/2017 | TBD
 Tristan Naumann                    | 08/04/2017 | TBD
 
-[1]: ./reading_group_presentations/Ziyu_Wang_SPARTan_06-23-2017.pdf
 [Aggregating and Predicting Sequence Labels from Crowd Annotations]: https://www.ischool.utexas.edu/~ml/papers/nguyen-acl17.pdf
 [SPARTan: Scalable PARAFAC2 for Large & Sparse Data]: https://arxiv.org/pdf/1703.04219.pdf
 [Representing high throughput expression profiles via perturbation barcodes reveals compound targets]: http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005335
+[1]: ./reading_group_presentations/Ziyu_Wang_SPARTan_06-23-2017.pdf
+[2]: ./reading_group_presentations/Matthew_McDermott_Perturbation_Barcodes_06-30-2017.pdf
 ## Papers
  Below is a list of papers written by group members, in reverse chronological ordering.
 
