@@ -41,15 +41,16 @@ CANCELLED                          | 06/09/2017 | CANCELLED
 CANCELLED                          | 06/16/2017 | CANCELLED
 Ziyu Wang [(slides)][1]            | 06/23/2017 | [SPARTan: Scalable PARAFAC2 for Large & Sparse Data]
 Matthew McDermott [(slides)][2]    | 06/30/2017 | [Representing high throughput expression profiles via perturbation barcodes reveals compound targets]
-Di Jin                             | 07/07/2017 | TBD
+Di Jin                             | 07/07/2017 | [DeepCare: A Deep Dynamic Memory Model for Predictive Medicine]
 Dustin Doss                        | 07/14/2017 | TBD
-Willie Boag                        | 07/21/2017 | TBD
+Tristan Naumann                    | 07/21/2017 | TBD
 Michele Filannino                  | 07/28/2017 | TBD
-Tristan Naumann                    | 08/04/2017 | TBD
+Willie Boag                        | 08/04/2017 | TBD
 
 [Aggregating and Predicting Sequence Labels from Crowd Annotations]: https://www.ischool.utexas.edu/~ml/papers/nguyen-acl17.pdf
 [SPARTan: Scalable PARAFAC2 for Large & Sparse Data]: https://arxiv.org/pdf/1703.04219.pdf
 [Representing high throughput expression profiles via perturbation barcodes reveals compound targets]: http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005335
+[DeepCare: A Deep Dynamic Memory Model for Predictive Medicine]: https://arxiv.org/abs/1602.00357
 [1]: ./reading_group_presentations/Ziyu_Wang_SPARTan_06-23-2017.pdf
 [2]: ./reading_group_presentations/Matthew_McDermott_Perturbation_Barcodes_06-30-2017.pdf
 ## Papers
