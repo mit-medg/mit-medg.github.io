@@ -43,7 +43,7 @@ Ziyu Wang [(slides)][1]            | 06/23/2017 | [SPARTan: Scalable PARAFAC2 fo
 Matthew McDermott [(slides)][2]    | 06/30/2017 | [Representing high throughput expression profiles via perturbation barcodes reveals compound targets]
 Di Jin [(slides)][3]               | 07/07/2017 | [DeepCare: A Deep Dynamic Memory Model for Predictive Medicine]
 CANCELLED                          | 07/14/2017 | CANCELLED
-Dustin Doss                        | 07/21/2017 | [Deep Multimodal Learning from Temporal Data]
+Dustin Doss [(slides)][4]          | 07/21/2017 | [Deep Multimodal Learning from Temporal Data]
 Michele Filannino                  | 07/28/2017 | TBD
 Willie Boag                        | 08/04/2017 | TBD
 Tristan Naumann                    | 08/11/2017 | TBD
@@ -56,6 +56,7 @@ Tristan Naumann                    | 08/11/2017 | TBD
 [1]: ./reading_group_presentations/Ziyu_Wang_SPARTan_06-23-2017.pdf
 [2]: ./reading_group_presentations/Matthew_McDermott_Perturbation_Barcodes_06-30-2017.pdf
 [3]: ./reading_group_presentations/Di_Jin_DeepCare_07-07-2017.pdf
+[4]: ./reading_group_presentations/Dustin_Doss_CorrRNN_07-21-2017.pdf
 ## Papers
  Below is a list of papers written by group members, in reverse chronological ordering.
 
