@@ -44,9 +44,11 @@ Matthew McDermott [(slides)][2]    | 06/30/2017 | [Representing high throughput 
 Di Jin [(slides)][3]               | 07/07/2017 | [DeepCare: A Deep Dynamic Memory Model for Predictive Medicine]
 CANCELLED                          | 07/14/2017 | CANCELLED
 Dustin Doss [(slides)][4]          | 07/21/2017 | [Deep Multimodal Learning from Temporal Data]
-Michele Filannino                  | 07/28/2017 | TBD
-Willie Boag                        | 08/04/2017 | TBD
-Tristan Naumann                    | 08/11/2017 | TBD
+Willie Boag                        | 07/28/2017 | TBD
+Tristan Naumann                    | 08/04/2017 | TBD
+TBD                                | 08/11/2017 | TBD
+CANCELLED for MLHC                 | 08/18/2017 | CANCELLED
+TBD                                | 08/25/2017 | TBD
 
 [Aggregating and Predicting Sequence Labels from Crowd Annotations]: https://www.ischool.utexas.edu/~ml/papers/nguyen-acl17.pdf
 [SPARTan: Scalable PARAFAC2 for Large & Sparse Data]: https://arxiv.org/pdf/1703.04219.pdf
