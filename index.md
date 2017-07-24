@@ -44,7 +44,7 @@ Matthew McDermott [(slides)][2]    | 06/30/2017 | [Representing high throughput 
 Di Jin [(slides)][3]               | 07/07/2017 | [DeepCare: A Deep Dynamic Memory Model for Predictive Medicine]
 CANCELLED                          | 07/14/2017 | CANCELLED
 Dustin Doss [(slides)][4]          | 07/21/2017 | [Deep Multimodal Learning from Temporal Data]
-Willie Boag                        | 07/28/2017 | TBD
+Willie Boag                        | 07/28/2017 | [Discrete-Event Continuous-Time Recurrent Nets]
 Tristan Naumann                    | 08/04/2017 | TBD
 TBD                                | 08/11/2017 | TBD
 CANCELLED for MLHC                 | 08/18/2017 | CANCELLED
@@ -55,6 +55,7 @@ TBD                                | 08/25/2017 | TBD
 [Representing high throughput expression profiles via perturbation barcodes reveals compound targets]: http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005335
 [DeepCare: A Deep Dynamic Memory Model for Predictive Medicine]: https://arxiv.org/abs/1602.00357
 [Deep Multimodal Learning from Temporal Data]: https://arxiv.org/pdf/1704.03152.pdf
+[Discrete-Event Continuous-Time Recurrent Nets]: http://www.cs.colorado.edu/~mozer/Research/Selected%20Publications/reprints/MozerKazakovLindsey2017.pdf
 [1]: ./reading_group_presentations/Ziyu_Wang_SPARTan_06-23-2017.pdf
 [2]: ./reading_group_presentations/Matthew_McDermott_Perturbation_Barcodes_06-30-2017.pdf
 [3]: ./reading_group_presentations/Di_Jin_DeepCare_07-07-2017.pdf
