@@ -46,7 +46,7 @@ CANCELLED                          | 07/14/2017             | CANCELLED
 Dustin Doss [(slides)][4]          | 07/21/2017             | [Deep Multimodal Learning from Temporal Data]
 Willie Boag                        | 07/28/2017             | [Discrete-Event Continuous-Time Recurrent Nets]
 Tristan Naumann                    | 08/04/2017<sup>\*</sup>| [Predicting Clinical Outcomes Across Changing Electronic Health Record Systems]
-Matthew Mcdermott                  | 08/11/2017             | [Multitask Learning and Benchmarking with Clinical Time Series Data]
+Matthew McDermott                  | 08/11/2017             | [Multitask Learning and Benchmarking with Clinical Time Series Data]
 CANCELLED for MLHC                 | 08/18/2017             | CANCELLED
 TBD                                | 08/25/2017             | TBD
 
