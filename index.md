@@ -44,7 +44,7 @@ Matthew McDermott [(slides)][2]    | 06/30/2017             | [Representing high
 Di Jin [(slides)][3]               | 07/07/2017             | [DeepCare: A Deep Dynamic Memory Model for Predictive Medicine]
 CANCELLED                          | 07/14/2017             | CANCELLED
 Dustin Doss [(slides)][4]          | 07/21/2017             | [Deep Multimodal Learning from Temporal Data]
-Willie Boag                        | 07/28/2017             | [Discrete-Event Continuous-Time Recurrent Nets]
+Willie Boag [(slides)][5]          | 07/28/2017             | [Discrete-Event Continuous-Time Recurrent Nets]
 Tristan Naumann                    | 08/04/2017<sup>\*</sup>| [Predicting Clinical Outcomes Across Changing Electronic Health Record Systems]
 Matthew McDermott                  | 08/11/2017             | [Multitask Learning and Benchmarking with Clinical Time Series Data]
 CANCELLED for MLHC                 | 08/18/2017             | CANCELLED
@@ -64,6 +64,7 @@ TBD                                | 08/25/2017             | TBD
 [2]: ./reading_group_presentations/Matthew_McDermott_Perturbation_Barcodes_06-30-2017.pdf
 [3]: ./reading_group_presentations/Di_Jin_DeepCare_07-07-2017.pdf
 [4]: ./reading_group_presentations/Dustin_Doss_CorrRNN_07-21-2017.pdf
+[5]: ./reading_group_presentations/Willie_Boag_Continuous_Time_RNNs_07-28-2017.pdf
 ## Papers
  Below is a list of papers written by group members, in reverse chronological ordering.
 
