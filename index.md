@@ -33,6 +33,8 @@ Our group members are working on a range of projects.
 
 ## Reading Group
 We host a reading group every Friday at 1:30 pm in 32-262. You can find a schedule (subject to change) below.
+Reading group has finished for the summer; we will resume during the fall semester on
+Friday, September 15th (potentially at a different time).
 
 Presenter                          | Date                   | Paper
 ---------------------------------- | ----------             | -------------------------------------------------------------------
@@ -48,7 +50,6 @@ Willie Boag [(slides)][5]          | 07/28/2017             | [Discrete-Event Co
 Tristan Naumann                    | 08/04/2017<sup>\*</sup>| [Predicting Clinical Outcomes Across Changing Electronic Health Record Systems]
 Matthew McDermott                  | 08/11/2017             | [Multitask Learning and Benchmarking with Clinical Time Series Data]
 CANCELLED for MLHC                 | 08/18/2017             | CANCELLED
-TBD                                | 08/25/2017             | TBD
 
 \* Shortened Meeting; No Reading Required.
 
