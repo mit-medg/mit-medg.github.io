@@ -35,10 +35,10 @@ Our group members are working on a range of projects.
 We host a reading group every Friday at 1:30 pm in 32-262. You can find a schedule (subject to change) below.
 
 Presenter                          | Date                   | Paper/Topic
----------------------------------- | ----------             | -------------------------------------------------------------------
-Alistair Johnson                   | 09/22/2017<sup>\*</sup>| Philips eICU dataset.
+---------------------------------- | ---------------------- | ------------------------------------------------
+CANCELLED                          | 09/22/2017             | CANCELLED
 CANCELLED (AMIA Deadline)          | 09/29/2017             | CANCELLED
-Di Jin                             | 10/06/2017             | TBD
+Alistair Johnson                   | 10/06/2017<sup>\*</sup>| Philips eICU dataset.
 Ziyu Wang                          | 10/13/2017             | TBD
 Willie Boag                        | 10/20/2017             | TBD
 CANCELLED (ICLR Deadline)          | 10/27/2017             | CANCELLED
@@ -47,8 +47,9 @@ Matthew McDermott                  | 11/10/2017             | TBD
 Tristan Naumann                    | 11/17/2017             | TBD
 CANCELLED (Thanksgiving)           | 11/24/2017             | CANCELLED
 Elena Sergeeva                     | 12/01/2017             | TBD
-Erika Lage                         | 12/08/2017             | TBD
+Di Jin                             | 12/08/2017             | TBD
 Wei-Hung Weng                      | 12/15/2017             | TBD
+
 \* No Reading Required.
 
 ## Papers
