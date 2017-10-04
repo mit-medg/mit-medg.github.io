@@ -38,7 +38,7 @@ Presenter                          | Date                   | Paper/Topic
 ---------------------------------- | ---------------------- | ------------------------------------------------
 CANCELLED                          | 09/22/2017             | CANCELLED
 CANCELLED (AMIA Deadline)          | 09/29/2017             | CANCELLED
-Alistair Johnson                   | 10/06/2017<sup>\*</sup>| Philips eICU dataset.
+CANCELLED                          | 10/06/2017             | CANCELLED
 Ziyu Wang                          | 10/13/2017             | TBD
 Willie Boag                        | 10/20/2017             | TBD
 CANCELLED (ICLR Deadline)          | 10/27/2017             | CANCELLED
