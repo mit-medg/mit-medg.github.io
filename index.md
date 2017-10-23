@@ -40,7 +40,7 @@ CANCELLED                          | 09/22/2017             | CANCELLED
 CANCELLED (AMIA Deadline)          | 09/29/2017             | CANCELLED
 CANCELLED                          | 10/06/2017             | CANCELLED
 Alistair Johnson ([slides][1])     | 10/13/2017<sup>*</sup> | Philip's eICU Dataset
-Matthew McDermott                  | 10/20/2017             | [Predicting Brain age with Deep Learning]
+Matthew McDermott ([slides][2])    | 10/20/2017             | [Predicting Brain age with Deep Learning]
 CANCELLED (ICLR Deadline)          | 10/27/2017             | CANCELLED
 Rahul Krishnan                     | 11/03/2017             | TBD
 Willie Boag                        | 11/10/2017             | TBD
@@ -53,6 +53,7 @@ Wei-Hung Weng                      | 12/15/2017             | TBD
 \* No Reading Required.
 
 [1]: ./reading_group_presentations/Alistair_Johnson_eICU_10_13_2017.pdf
+[2]: ./reading_group_presentations/Matthew_McDermott_Predicting_Brain_Age_10-20-2017.pdf
 [Predicting Brain age with Deep Learning]: https://arxiv.org/pdf/1612.02572.pdf
 
 ## Papers
