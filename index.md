@@ -46,7 +46,7 @@ Rahul Krishnan ([slides][3])         | 11/03/2017             | [Patient Similar
 CANCELLED (Veteran's Day)            | 11/10/2017             | CANCELLED
 CANCELLED (MEDG Infra Hacking)       | 11/17/2017             | CANCELLED
 CANCELLED (Thanksgiving)             | 11/24/2017             | CANCELLED
-Willie Boag                          | 12/01/2017             | [Word Translation Without Parallel Data]
+Willie Boag ([slides][4])            | 12/01/2017             | [Word Translation Without Parallel Data]
 CANCELLED (NIPS)                     | 12/08/2017             | CANCELLED
 CANCELLED (Chest X-Ray Dataset Talk) | 12/15/2017             | CANCELLED
 
@@ -55,6 +55,7 @@ CANCELLED (Chest X-Ray Dataset Talk) | 12/15/2017             | CANCELLED
 [1]: ./reading_group_presentations/Alistair_Johnson_eICU_10_13_2017.pdf
 [2]: ./reading_group_presentations/Matthew_McDermott_Predicting_Brain_Age_10-20-2017.pdf
 [3]: ./reading_group_presentations/Rahul_Krishnan_Patient_Similarity_with_Multiple_Kernel_Learning_11-03-2017.pdf
+[4]: ./reading_group_presentations/Willie_Boag_Unsupervised_Word_Translation_12-01-2017.pdf
 [Predicting Brain age with Deep Learning]: https://arxiv.org/pdf/1612.02572.pdf
 [Patient Similarity Using Population Statistics and Multiple Kernel Learning]: http://mucmd.org/CameraReadySubmissions/40%5CCameraReadySubmission%5Cpatient_similarity.pdf
 [Word Translation Without Parallel Data]: https://arxiv.org/pdf/1710.04087.pdf
