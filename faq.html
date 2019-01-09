@@ -1,0 +1,86 @@
+<!DOCTYPE HTML>
+<!--
+	Spatial by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+	<head>
+		<link href="//fonts.googleapis.com/css?family=Crimson+Text:300italic,400italic|Roboto:300,400,300italic,400italic" rel="stylesheet">
+		<title>MEDG - FAQs</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/skel.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+		<script src="assets/js/showdown.min.js"></script>
+		<link rel="stylesheet" href="assets/css/main.css" />
+		</head>
+	<body>
+		<!-- Header -->
+			<header id="header">
+				<h1><strong><a href="index.html"><font color="navy">MIT CSAIL MEDG</font></a></strong></h1>
+				<nav id="nav">
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="people.html">People</a></li>
+						<li><a href="projects.html">Projects</a></li>
+						<li><a href="publications.html">Publications</a></li>
+						<li><a href="seminars.html">Seminars</a></li>
+						<li><a href="faq.html">FAQs</a></li>
+					</ul>
+				</nav>
+			</header>
+
+			<a href="#menu" class="navPanelToggle"><span class="fa fa-bars"></span></a>
+
+		<!-- Main -->
+
+			<section id="main" class="wrapper">
+				<div class="container">
+					<header class="major special">
+						<h2>Frequently Asked Questions (FAQs)</h2>
+					</header>
+				</div>
+
+				<div class="container">
+					<section>
+						<div id="md_content"></div>
+						<script>  
+					        var body_location = './docs/faq.md';
+							var conv = new showdown.Converter({tables: true});
+					        function getText(myUrl){
+					            var result = null;
+					            $.ajax( { url: myUrl, 
+					                      type: 'get', 
+					                      dataType: 'html',
+					                      async: false,
+					                      success: function(data) { result = data; } 
+					                    }
+					            );
+					            FileReady = true;
+					            return result;
+					        }
+					        var markdown_source = getText(body_location);
+					        var output = conv.makeHtml( markdown_source );
+					        document.getElementById('md_content').innerHTML = output;
+					      </script>
+					</section>
+				</div>
+
+
+			</section>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="container">
+					<ul class="copyright">
+						<li>&copy; MIT CSAIL Medical Decision Making Group</li>
+						<li><a href="http://templated.co">templated.co</a></li>
+					</ul>
+				</div>
+			</footer>
+
+	</body>
+</html>

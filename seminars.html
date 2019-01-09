@@ -1,0 +1,87 @@
+<!DOCTYPE HTML>
+<!--
+	Spatial by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+	<head>
+		<link href="//fonts.googleapis.com/css?family=Crimson+Text:300italic,400italic|Roboto:300,400,300italic,400italic" rel="stylesheet">
+		<title>MEDG - Reading Group</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/skel.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+		<script src="assets/js/showdown.min.js"></script>
+		<link rel="stylesheet" href="assets/css/main.css" />
+		</head>
+	<body>
+		<!-- Header -->
+			<header id="header">
+				<h1><strong><a href="index.html"><font color="navy">MIT CSAIL MEDG</font></a></strong></h1>
+				<nav id="nav">
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="people.html">People</a></li>
+						<li><a href="projects.html">Projects</a></li>
+						<li><a href="publications.html">Publications</a></li>
+						<li><a href="seminars.html">Seminars</a></li>
+						<li><a href="faq.html">FAQs</a></li>
+					</ul>
+				</nav>
+			</header>
+
+			<a href="#menu" class="navPanelToggle"><span class="fa fa-bars"></span></a>
+
+		<!-- Main -->
+
+			<section id="main" class="wrapper">
+				<div class="container">
+					<header class="major special">
+						<h2>MEDG Seminars / Reading Group</h2>
+					</header>					
+					<p>Seminar talks given by a broad variety of guest speakers (Research Staff, Faculty, Students, etc) on topics that pertain to the research done by the Clinical Decision Making team. All from MIT, CSAIL as well as non-affiliates are welcome! If you have questions, comments or requests regarding the seminars, or would like to be a guest speaker please contact <a href="mailto:fern@csail.mit.edu">Fern DeOliveira</a>.</p>
+					<p>In Fall 2018, we host a reading seminar every Monday at 4:30 pm. The seminars take place in the second-floor conference room of MIT's Computer Science and Artificial Intelligence Lab in the Stata Center (MIT address 32-262), located on the intersection of Vassar and Main streets in Cambridge; the physical address is 32 Vassar St. See a campus map of the building <a href="http://whereis.mit.edu/map-jpg?mapterms=32-262" target="_blank">here</a>; a map of where the conference room is located within the building is <a href="https://www.csail.mit.edu/sites/default/files/resources/maps/2/262.gif" target="_blank">here</a>. You can find a schedule (subject to change) below.</p>
+
+					<section>
+						<div id="md_content"></div>
+						<script>  
+					        var body_location = './docs/seminars.md';
+							var conv = new showdown.Converter({tables: true});
+					        function getText(myUrl){
+					            var result = null;
+					            $.ajax( { url: myUrl, 
+					                      type: 'get', 
+					                      dataType: 'html',
+					                      async: false,
+					                      success: function(data) { result = data; } 
+					                    }
+					            );
+					            FileReady = true;
+					            return result;
+					        }
+					        var markdown_source = getText(body_location);
+					        var output = conv.makeHtml( markdown_source );
+					        document.getElementById('md_content').innerHTML = output;
+					      </script>
+					</section>
+
+					<p>Abstracts of past seminars (before 2006) can be found in our <a href="http://groups.csail.mit.edu/medg/seminar%20series.html" target="_blank">abstract archive page</a>.</p>
+				</div>
+			</section>
+
+		<!-- Footer -->
+			<footer id="footer">
+			<footer id="footer">
+				<div class="container">
+					<ul class="copyright">
+						<li>&copy; MIT CSAIL Medical Decision Making Group</li>
+						<li><a href="http://templated.co">templated.co</a></li>
+					</ul>
+				</div>
+			</footer>
+
+	</body>
+</html>
