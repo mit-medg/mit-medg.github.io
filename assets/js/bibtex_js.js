@@ -484,14 +484,22 @@ function BibtexDisplay() {
                 }
             }
         } else {
-            newString = "<a onclick=\"(new BibTeXSearcher()).searcher('" + arrayString[0] + "', 'true')\">" + arrayString[0] + "</a>";
-            for (i = 1; i < searchLength; i++) {
+            var newString = arrayString[0];
+            for (i = 1; i < arrayString.length; i++) {
                 if (i + 1 >= arrayString.length) {
-                    newString += ", and " + "<a onclick=\"(new BibTeXSearcher()).searcher('" + arrayString[i] + "', 'true')\">" + arrayString[i] + "</a>";
+                    newString += ", and " + arrayString[i];
                 } else {
-                    newString += ", " + "<a onclick=\"(new BibTeXSearcher()).searcher('" + arrayString[i] + "', 'true')\">" + arrayString[i] + "</a>";
+                    newString += ", " + arrayString[i];
                 }
             }
+            // newString = "<a onclick=\"(new BibTeXSearcher()).searcher('" + arrayString[0] + "', 'true')\">" + arrayString[0] + "</a>";
+            // for (i = 1; i < searchLength; i++) {
+            //     if (i + 1 >= arrayString.length) {
+            //         newString += ", and " + "<a onclick=\"(new BibTeXSearcher()).searcher('" + arrayString[i] + "', 'true')\">" + arrayString[i] + "</a>";
+            //     } else {
+            //         newString += ", " + "<a onclick=\"(new BibTeXSearcher()).searcher('" + arrayString[i] + "', 'true')\">" + arrayString[i] + "</a>";
+            //     }
+            // }
         // Checking if et al. must be added
         if (searchLength != arrayString.length) {
             if (searchLength > 1) {
@@ -585,8 +593,8 @@ function BibtexDisplay() {
 
             if (key == "AUTHOR") {
                 var format = tpl.find("span:not(a)." + key.toLowerCase());
-                // value = this.displayAuthor(value, format);
-                format.html(this.displayAuthor(this.fixValue(value), format));
+                value = this.displayAuthor(value, format);
+                // format.html(this.displayAuthor(this.fixValue(value), format));
             } else if (key == "PAGES") {
                 value = value.replace("--", "-");
             } else if (key == "DATE") {
