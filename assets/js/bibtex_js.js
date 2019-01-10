@@ -483,11 +483,11 @@ function BibtexDisplay() {
                 //     newString += ", " + author[0].outerHTML;
                 // }
                 if (i == 0) {
-                    newString += ("<a onclick=\"(new BibTeXSearcher()).searcher('" + author[0] + "', 'true')\">" + author[0] + "</a>").outerHTML;
+                    newString += "<a onclick=\"(new BibTeXSearcher()).searcher('" + author[0] + "', 'true')\">" + author[0].outerHTML + "</a>";
                 } else if (i + 1 >= arrayString.length) {
-                    newString += (", and " + "<a onclick=\"(new BibTeXSearcher()).searcher('" + author[0] + "', 'true')\">" + author[0] + "</a>").outerHTML;
+                    newString += ", and " + "<a onclick=\"(new BibTeXSearcher()).searcher('" + author[0] + "', 'true')\">" + author[0].outerHTML + "</a>";
                 } else {
-                    newString += (", " + "<a onclick=\"(new BibTeXSearcher()).searcher('" + author[0] + "', 'true')\">" + author[0] + "</a>").outerHTML;
+                    newString += ", " + "<a onclick=\"(new BibTeXSearcher()).searcher('" + author[0] + "', 'true')\">" + author[0].outerHTML + "</a>";
                 }
             }
         } else {
