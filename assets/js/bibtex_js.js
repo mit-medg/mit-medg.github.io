@@ -483,11 +483,11 @@ function BibtexDisplay() {
                 //     newString += ", " + author[0].outerHTML;
                 // }
                 if (i == 0) {
-                    newString += "<a onclick=\"(new BibTeXSearcher()).searcher('" + author[0] + "', 'true')\">" + author[0].outerHTML + "</a>";
+                    newString += ("<a onclick=\"(new BibTeXSearcher()).searcher('" + author[0] + "', 'true')\">" + author[0] + "</a>").outerHTML;
                 } else if (i + 1 >= arrayString.length) {
-                    newString += ", and " + "<a onclick=\"(new BibTeXSearcher()).searcher('" + author[0] + "', 'true')\">" + author[0].outerHTML + "</a>";
+                    newString += (", and " + "<a onclick=\"(new BibTeXSearcher()).searcher('" + author[0] + "', 'true')\">" + author[0] + "</a>").outerHTML;
                 } else {
-                    newString += ", " + "<a onclick=\"(new BibTeXSearcher()).searcher('" + author[0] + "', 'true')\">" + author[0].outerHTML + "</a>";
+                    newString += (", " + "<a onclick=\"(new BibTeXSearcher()).searcher('" + author[0] + "', 'true')\">" + author[0] + "</a>").outerHTML;
                 }
             }
         } else {
@@ -600,8 +600,7 @@ function BibtexDisplay() {
 
             if (key == "AUTHOR") {
                 var format = tpl.find("span:not(a)." + key.toLowerCase());
-                // value = this.displayAuthor(value, format);
-                format.html(this.displayAuthor(this.fixValue(value), format));
+                value = this.displayAuthor(value, format);
             } else if (key == "PAGES") {
                 value = value.replace("--", "-");
             } else if (key == "DATE") {
