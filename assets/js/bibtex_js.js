@@ -483,11 +483,11 @@ function BibtexDisplay() {
                 //     newString += ", " + author[0].outerHTML;
                 // }
                 if (i == 0) {
-                    newString += "<a onclick=\"(new BibTeXSearcher()).searcher('" + author[0] + "', 'true')\">" + author[0].outerHTML + "</a>";
+                    newString += "<a onclick=\"reset(); (new BibTeXSearcher()).searcher('" + author[0] + "', 'true')\">" + author[0].outerHTML + "</a>";
                 } else if (i + 1 >= arrayString.length) {
-                    newString += ", and " + "<a onclick=\"(new BibTeXSearcher()).searcher('" + author[0] + "', 'true')\">" + author[0].outerHTML + "</a>";
+                    newString += ", and " + "<a onclick=\"reset(); (new BibTeXSearcher()).searcher('" + author[0] + "', 'true')\">" + author[0].outerHTML + "</a>";
                 } else {
-                    newString += ", " + "<a onclick=\"(new BibTeXSearcher()).searcher('" + author[0] + "', 'true')\">" + author[0].outerHTML + "</a>";
+                    newString += ", " + "<a onclick=\"reset(); (new BibTeXSearcher()).searcher('" + author[0] + "', 'true')\">" + author[0].outerHTML + "</a>";
                 }
             }
         } else {
@@ -498,12 +498,12 @@ function BibtexDisplay() {
             //     } else {
             //         newString += ", " + arrayString[i];
             //     }
-            var newString = "<a onclick=\"(new BibTeXSearcher()).searcher('" + arrayString[0] + "', 'true')\">" + arrayString[0] + "</a>";
+            var newString = "<a onclick=\"reset(); (new BibTeXSearcher()).searcher('" + arrayString[0] + "', 'true')\">" + arrayString[0] + "</a>";
             for (i = 1; i < searchLength; i++) {
                 if (i + 1 >= arrayString.length) {
-                    newString += ", and " + "<a onclick=\"(new BibTeXSearcher()).searcher('" + arrayString[i] + "', 'true')\">" + arrayString[i] + "</a>";
+                    newString += ", and " + "<a onclick=\"reset(); (new BibTeXSearcher()).searcher('" + arrayString[i] + "', 'true')\">" + arrayString[i] + "</a>";
                 } else {
-                    newString += ", " + "<a onclick=\"(new BibTeXSearcher()).searcher('" + arrayString[i] + "', 'true')\">" + arrayString[i] + "</a>";
+                    newString += ", " + "<a onclick=\"reset(); (new BibTeXSearcher()).searcher('" + arrayString[i] + "', 'true')\">" + arrayString[i] + "</a>";
                 }
             }
         }
