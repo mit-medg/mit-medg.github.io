@@ -484,8 +484,8 @@ function BibtexDisplay() {
                 }
             }
         } else {
-            var newString = arrayString[0];
-            for (i = 1; i < arrayString.length; i++) {
+            newString = arrayString[0];
+            for (i = 1; i < searchLength.length; i++) {
                 if (i + 1 >= arrayString.length) {
                     newString += ", and " + arrayString[i];
                 } else {
