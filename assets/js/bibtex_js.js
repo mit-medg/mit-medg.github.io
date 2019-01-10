@@ -434,7 +434,7 @@ function BibtexDisplay() {
                 return name;
         }
         if (name[0] != "") {
-            name[4] = name[0].split(" ").map((s) => s.substring(0, 1).toUpperCase()).join(". ") + ".";
+            name[4] = name[0].split(" ").map((s) => s.substring(0, 1).toUpperCase())[0]; // .join(". ") + ".";
         }
         return name;
     }
