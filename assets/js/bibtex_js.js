@@ -475,12 +475,19 @@ function BibtexDisplay() {
                         $(this).remove();
                     }
                 });
+                // if (i == 0) {
+                //     newString += author[0].outerHTML;
+                // } else if (i + 1 >= arrayString.length) {
+                //     newString += ", and " + author[0].outerHTML;
+                // } else {
+                //     newString += ", " + author[0].outerHTML;
+                // }
                 if (i == 0) {
-                    newString += author[0].outerHTML;
+                    newString += "<a onclick=\"(new BibTeXSearcher()).searcher('" + author[0].outerHTML + "', 'true')\">" + author[0].outerHTML + "</a>";
                 } else if (i + 1 >= arrayString.length) {
-                    newString += ", and " + author[0].outerHTML;
+                    newString += ", and " + "<a onclick=\"(new BibTeXSearcher()).searcher('" + author[0].outerHTML + "', 'true')\">" + author[0].outerHTML + "</a>";
                 } else {
-                    newString += ", " + author[0].outerHTML;
+                    newString += ", " + "<a onclick=\"(new BibTeXSearcher()).searcher('" + author[0].outerHTML + "', 'true')\">" + author[0].outerHTML + "</a>";
                 }
             }
         } else {
