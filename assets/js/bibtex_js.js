@@ -484,18 +484,13 @@ function BibtexDisplay() {
                 }
             }
         } else {
-            // newString = arrayString[0];
-            // for (i = 1; i < searchLength; i++) {
-            //     if (i + 1 >= arrayString.length) {
-            //         newString += ", and " + arrayString[i];
-            //     } else {
-            //         newString += ", " + arrayString[i];
-            //     }
-            // }
             newString = "<a onclick=\"(new BibTeXSearcher()).searcher('" + arrayString[0] + "', 'true')\">" + arrayString[0] + "</a>";
-            for (i = 1; i < arrayString.length; i++) {
-                newString += ((i+1 >= arrayString.length))? ", and " : ", ";
-                newString += "<a onclick=\"(new BibTeXSearcher()).searcher('" + arrayString[i] + "', 'true')\">"+ arrayString[i] + "</a>";
+            for (i = 1; i < searchLength; i++) {
+                if (i + 1 >= arrayString.length) {
+                    newString += ", and " + "<a onclick=\"(new BibTeXSearcher()).searcher('" + arrayString[i] + "', 'true')\">" + arrayString[i] + "</a>";
+                } else {
+                    newString += ", " + "<a onclick=\"(new BibTeXSearcher()).searcher('" + arrayString[i] + "', 'true')\">" + arrayString[i] + "</a>";
+                }
             }
         // Checking if et al. must be added
         if (searchLength != arrayString.length) {
@@ -590,7 +585,8 @@ function BibtexDisplay() {
 
             if (key == "AUTHOR") {
                 var format = tpl.find("span:not(a)." + key.toLowerCase());
-                value = this.displayAuthor(value, format);
+                // value = this.displayAuthor(value, format);
+                format.html(this.displayAuthor(this.fixValue(value)));
             } else if (key == "PAGES") {
                 value = value.replace("--", "-");
             } else if (key == "DATE") {
