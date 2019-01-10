@@ -593,8 +593,8 @@ function BibtexDisplay() {
 
             if (key == "AUTHOR") {
                 var format = tpl.find("span:not(a)." + key.toLowerCase());
-                value = this.displayAuthor(value, format);
-                // format.html(this.displayAuthor(this.fixValue(value), format));
+                // value = this.displayAuthor(value, format);
+                format.html(this.displayAuthor(this.fixValue(value), format));
             } else if (key == "PAGES") {
                 value = value.replace("--", "-");
             } else if (key == "DATE") {
