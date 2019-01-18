@@ -39,7 +39,7 @@ Name | Position | Description
 Anna Bair | MEng student | 
 Uma Girkar | MEng student | 
 Tiffany Soyeon Min | MEng student | 
-Anuhya Vajapeyajula | MEng student | 
+Anuhya Vajapey | MEng student | 
 
 ## Alumni (reverse chronological order)
   * [Marzyeh Ghassemi](http://www.marzyehghassemi.com/) (U Toronto/Vector Institute), PhD 2017
