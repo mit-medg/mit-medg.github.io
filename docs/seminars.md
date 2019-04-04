@@ -1,6 +1,27 @@
 ## Spring 2019
 
-TBD
+Presenter                            | Date                   | Paper/Topic
+------------------------------------ | ---------------------- | ------------------------------------------------
+Alistair Johnson                     | 01/25/2019             | [MIMIC-CXR Update]
+Elena Sergeeva                       | 01/31/2019             | Naural Language Models
+Di Jin                               | 02/20/2019             | [Multi-Task Deep Neural Networks for Natural Language Understanding]
+Anna Bair                            | 02/25/2019             | [Semi-Supervised Classification with Graph Convolutional Networks]
+Willie Boag                          | 03/11/2019             | [An Improved Multi-Output Gaussian Process RNN with Real-Time Validation for Early Sepsis Detection]
+Harry Hsu                            | 03/18/2019             | [How to Work with Computers] 
+Tiffany Min                          | 04/01/2019             | [Convolutional Neural Network Architectures for Matching Natural Language Sentences]
+Wei-Hung Weng                        | 04/08/2019             | [Language Model Pretraining for Hierarchical Document Representations]
+Geeticka Chauhan                     | 04/22/2019             | 
+Jack Murphy                          | 04/29/2019             |
+Emily Alsentzer                      | 05/06/2019             | 
+Heather Berlin                       | 05/13/2019             | 
+Anu Vajapey                          | 05/20/2019             |
+
+[MIMIC-CXR Update]: https://www.dropbox.com/s/wvtck1ygz2bsdlf/2019-01-25%20-%20MIMIC-CXR%20MEDG.pdf?dl=0
+[Multi-Task Deep Neural Networks for Natural Language Understanding]: https://arxiv.org/abs/1901.11504
+[Semi-Supervised Classification with Graph Convolutional Networks]: https://arxiv.org/pdf/1609.02907.pdf
+[An Improved Multi-Output Gaussian Process RNN with Real-Time Validation for Early Sepsis Detection]: http://mucmd.org/CameraReadySubmissions/53%5CCameraReadySubmission%5CCR.pdf
+[Convolutional Neural Network Architectures for Matching Natural Language Sentences]: https://papers.nips.cc/paper/5550-convolutional-neural-network-architectures-for-matching-natural-language-sentences
+[Language Model Pretraining for Hierarchical Document Representations]: https://openreview.net/pdf?id=rygnfn0qF7
 
 ## Fall 2018
 

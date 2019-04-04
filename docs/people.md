@@ -9,13 +9,11 @@ Amar Gupta | Research Staff | (617) 253-0418
 William J. Long | Research Staff | wjl@mit.edu (retired)
 Fern Keniston | Administrative Support | fernd@mit.edu, (617) 253-5869
 
-### Postdoctoral Researchers
+### Postdoctoral Researchers / Visiting Scientist
 
 Name | Position | Description
 -----|----------|------------
-[Michele Filannino](http://www.michelefilannino.com) | Postdoc | Michele is a post-doctoral fellow at SUNY at Albany and Visiting Researcher with the group. His research interests include named entity recognition, temporal information extraction and clinical decision support.
-Arthur Shr | Postdoc |
-Tom Yan | Postdoc | 
+Miranda Liu | Visiting Scientist | Wistron
 
 ### PhD
 
@@ -37,14 +35,17 @@ Ying Zhang | PhD student | Ying is a PhD student in MIT EECS program.
 Name | Position | Description
 -----|----------|------------
 Anna Bair | MEng student | 
-Uma Girkar | MEng student | 
 Tiffany Soyeon Min | MEng student | 
 Anuhya Vajapey | MEng student | 
 
 ## Alumni (reverse chronological order)
+  * Uma Girkar (Google), MEng 2019
+  * Terrence Huang (Wistron), Visiting Scientist 2018
   * [Marzyeh Ghassemi](http://www.marzyehghassemi.com/) (U Toronto/Vector Institute), PhD 2017
   * [Tristan Josef Naumann](http://tjn.mit.edu/) (Microsoft Research), PhD 2017
   * [Ziyu Wang](https://www.linkedin.com/in/ziyu-wang-5900735b/) (Trexquant), Research Associate 2017
+  * Arthur Shr (Wistron), Visiting Scientist 2017
+  * [Michele Filannino](http://www.michelefilannino.com), Postdoc 2017
   * [Dustin Doss](https://www.csail.mit.edu/person/dustin-doss), MEng
   * [Frank Dernoncourt](https://research.adobe.com/person/franck-dernoncourt/) (Adobe Research), PhD 2016
   * [Jenny (Ji Young) Lee](https://www.linkedin.com/in/jenny-lee-3100a320/) (Google), PhD 2016
@@ -152,20 +153,28 @@ Anuhya Vajapey | MEng student |
   * Latanya Sweeney, latanya@cs.cmu.edu
 
 ### Collaborating Investigators
+  * Leo Celi, MD, MPH, MIT / Harvard Medical School / Beth Israel Deaconess Hospital
   * Philip Chan, PhD, Florida Institute of Technology
-  * Meghan Dierks, MD, Beth Israel Deaconess Hospital, Harvard Medical School
+  * Meghan Dierks, MD, Beth Israel Deaconess Hospital / Harvard Medical School
   * Jon Doyle PhD, North Carolina State University Faculty
-  * Hamish S. F. Fraser, MD, MSc, Partners in Health, Harvard School of Public Health
+  * Hamish S. F. Fraser, MD, MSc, Partners in Health / Harvard School of Public Health
+  * Marzyeh Ghassemi, PhD, U Toronto
+  * Alexander Goehler, MD, PhD, Brigham and Women's Hospital
   * Ephraim P. Hochberg, MD, Massachusetts General Hospital
-  * Isaac Kohane, MD, PhD, Children's Hospital Informatics Program (CHIP), Countway Library
+  * Juri Kivelev, MD, Helsinki University Central Hospital
+  * Isaac Kohane, MD, PhD, Children's Hospital Informatics Program (CHIP) / Harvard Medical School
   * Ronilda Lacson, MD, PhD, Brigham and Women's Hospital
-  * Kenneth Mandl, MD, MPH, Children's Hospital, Harvard Medical School
+  * Kenneth Mandl, MD, MPH, Children's Hospital / Harvard Medical School
   * Mojdeh Mohtashemi, MITRE Corp.
   * Shapur Naimi, MD, Tufts-New England Medical Center
-  * Steven Pauker, MD, Tufts-New England Medical Center
-  * Stanley Shaw, MD, PhD, Massachusetts General Hospital
+  * Tristan Naumann, PhD, Microsoft Research
+  * Steven Pauker, MD, Tufts-New England
+  * Preethi Raghavan, PhD, IBM Research
+  * Ilkka Saarenpää, Turku University Hospital
+  * Stanley Shaw, MD, PhD, Brigham and Women's Hospital
   * Howard E. Shrobe, PhD, MIT CSAIL
+  * Özlem Uzuner, PhD, University at Albany-SUNY
   * John Wong, MD, Tufts-New England Medical Center Clinical Decision Making Division
   * Alan D Woolf, MD, PhD, Director - Environmental Medicine Program, Children's Hospital
 
-Last Modified Nov 20, 2018
+Last Modified Apr 2, 2019
