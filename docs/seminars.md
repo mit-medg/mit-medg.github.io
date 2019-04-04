@@ -3,7 +3,7 @@
 Presenter                            | Date                   | Paper/Topic
 ------------------------------------ | ---------------------- | ------------------------------------------------
 Alistair Johnson                     | 01/25/2019             | [MIMIC-CXR Update]
-Elena Sergeeva                       | 01/31/2019             | Naural Language Models
+Elena Sergeeva                       | 01/31/2019             | [Naural Language Models]
 Di Jin                               | 02/20/2019             | [Multi-Task Deep Neural Networks for Natural Language Understanding]
 Anna Bair                            | 02/25/2019             | [Semi-Supervised Classification with Graph Convolutional Networks]
 Willie Boag                          | 03/11/2019             | [An Improved Multi-Output Gaussian Process RNN with Real-Time Validation for Early Sepsis Detection]
