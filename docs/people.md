@@ -57,6 +57,5 @@ Miranda Liu | Visiting Scientist | Wistron
   * Harry P Selker, MD, MSPH, Tufts Medical Center
   * Özlem Uzuner, PhD, University at Albany - SUNY
 
-## [Alumni](../alumni.html)
 
 Last Modified Apr 2, 2019

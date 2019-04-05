@@ -222,4 +222,3 @@
   * John Wong, MD, Tufts-New England Medical Center Clinical Decision Making Division
   * Alan D Woolf, MD, PhD, Director - Environmental Medicine Program, Children's Hospital
 
-## [Current Members](../people.html)
