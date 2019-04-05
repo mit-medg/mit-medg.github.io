@@ -1,5 +1,6 @@
 ## Current Members
 
+
 ### Academic / Research / Administrative Staff
 
 Name | Position | Description
@@ -9,11 +10,6 @@ Amar Gupta | Research Staff | (617) 253-0418
 William J. Long | Research Staff | wjl@mit.edu (retired)
 Fern Keniston | Administrative Support | fernd@mit.edu, (617) 253-5869
 
-### Postdoctoral Researchers / Visiting Scientist
-
-Name | Position | Description
------|----------|------------
-Miranda Liu | Visiting Scientist | Wistron
 
 ### PhD
 
@@ -30,6 +26,7 @@ Name | Position | Description
 [Wei-Hung Weng](http://ckbjimmy.github.io/) | PhD student | Wei-Hung is a second year PhD student in MIT EECS program. His background is in Medicine and Biomedical Informatics, and his research interest is multimodal representation learning for clinical data, and learning sequential clinical decision making.
 Ying Zhang | PhD student | Ying is a PhD student in MIT EECS program. (On leave)
 
+
 ### MEng and UROPs
 
 Name | Position | Description
@@ -37,6 +34,13 @@ Name | Position | Description
 Anna Bair | MEng student | 
 Tiffany Soyeon Min | MEng student | 
 Anuhya Vajapey | MEng student | 
+
+
+### Post-doctoral Fellows / Visiting Scientists
+
+Name | Position | Description
+-----|----------|------------
+Miranda Liu | Visiting Scientist | Wistron
 
 
 ### Collaborating Investigators
