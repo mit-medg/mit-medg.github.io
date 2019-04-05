@@ -40,7 +40,7 @@ Anuhya Vajapey | MEng student |
 
 
 ### Collaborating Investigators
-  * Leo Celi, MD, MPH, MIT / Harvard Medical School / Beth Israel Deaconess Hospital
+  * Leo AG Celi, MD, MPH, MIT / Harvard Medical School / Beth Israel Deaconess Hospital
   * Marzyeh Ghassemi, PhD, U Toronto
   * Alexander Goehler, MD, PhD, Brigham and Women's Hospital
   * Juri Kivelev, MD, Helsinki University Central Hospital
@@ -50,7 +50,7 @@ Anuhya Vajapey | MEng student |
   * Preethi Raghavan, PhD, IBM Research
   * Anna Rumshisky, PhD, UMass Lowell
   * Ilkka Saarenpää, Turku University Hospital
-  * Harry P. Selker, MD, MSPH, Tufts Medical Center
+  * Harry P Selker, MD, MSPH, Tufts Medical Center
   * Özlem Uzuner, PhD, University at Albany - SUNY
 
 
