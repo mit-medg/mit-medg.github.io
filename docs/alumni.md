@@ -1,7 +1,7 @@
 ## Alumni (reverse chronological order)
 
 ### PhD
-  * [Tristan Josef Naumann](http://tjn.mit.edu/) (Microsoft Research), PhD 2017
+  * [Tristan Naumann](https://www.microsoft.com/en-us/research/people/tristan/) (Microsoft Research), PhD 2017
   * [Marzyeh Ghassemi](http://www.marzyehghassemi.com/) (U Toronto/Vector Institute), PhD 2017
   * [Frank Dernoncourt](https://research.adobe.com/person/franck-dernoncourt/) (Adobe Research), PhD 2016
   * [Jenny (Ji Young) Lee](https://www.linkedin.com/in/jenny-lee-3100a320/) (Google), PhD 2016
