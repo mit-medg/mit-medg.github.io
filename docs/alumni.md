@@ -38,7 +38,9 @@
 
 
 ### Master (MEng / SM)
+  * Anna Bair, MEng 2019
   * Uma Girkar (Google), MEng 2019
+  * Anuhya Vajapey, MEng 2019
   * [Dustin Doss](https://www.csail.mit.edu/person/dustin-doss), MEng
   * Tejas Sundaresan, 2017
   * Harini Suresh (MIT), MEng 2017

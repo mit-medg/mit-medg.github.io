@@ -1,3 +1,23 @@
+## Fall 2019
+
+Presenter                            | Date                   | Paper/Topic
+------------------------------------ | ---------------------- | ------------------------------------------------
+Wei-Hung Weng                        | 09/24/2019             | [Unsupervised Controllable Text Formalization]
+Elena Sergeeva                       | 10/09/2019             | [Transfer Learning Between Related Tasks Using Expected Label Proportions]
+Heather Berlin                       | 10/16/2019             | []
+Sam Finlayson                        | 10/23/2019             | []
+Di Jin                               | 10/30/2019             | []
+Tiffany Min                          | 11/06/2019             | [] 
+Matthew McDermott                    | 11/12/2019             | []
+Emily Alsentzer                      | 11/19/2019             | []
+Geeticka Chauhan                     | 11/26/2019             | []
+Willie Boag                          | 12/03/2019             | []
+Harry Hsu                            | 12/10/2019             | []
+
+[Unsupervised Controllable Text Formalization]: https://arxiv.org/pdf/1809.04556.pdf
+[Transfer Learning Between Related Tasks Using Expected Label Proportions]: https://arxiv.org/pdf/1909.00430.pdf
+
+
 ## Spring 2019
 
 Presenter                            | Date                   | Paper/Topic
