@@ -12,21 +12,21 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 	    <meta http-equiv="Content-type" content="text/html;charset=UTF-8" /> 
 	    <meta http-equiv="cache-control" content="no-cache" /> 
-		<script src="new_assets/js/jquery.min.js"></script>
-		<script src="new_assets/js/skel.min.js"></script>
-		<script src="new_assets/js/util.js"></script>
-		<script src="new_assets/js/main.js"></script>
+		<script src="2019_assets/js/jquery.min.js"></script>
+		<script src="2019_assets/js/skel.min.js"></script>
+		<script src="2019_assets/js/util.js"></script>
+		<script src="2019_assets/js/main.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-		<script src="new_assets/js/bibtex_js.js" type="text/javascript" charset="utf-8"></script>
-		<!-- <bibtex src="new_bib/psz.bib"></bibtex> -->
-		<bibtex src="new_bib/mmd.bib"></bibtex>
-		<bibtex src="new_bib/ckbjimmy.bib"></bibtex>
-		<bibtex src="new_bib/emily.bib"></bibtex>
-		<!-- <bibtex src="new_bib/wboag.bib"></bibtex> -->
-		<bibtex src="new_bib/jindi.bib"></bibtex>
-		<!-- <bibtex src="new_bib/stmharry.bib"></bibtex> -->
-		<!-- <bibtex src="new_bib/geeticka.bib"></bibtex> -->
-		<!-- <bibtex src="new_bib/elenaser.bib"></bibtex> -->
+		<script src="2019_assets/js/bibtex_js.js" type="text/javascript" charset="utf-8"></script>
+		<!-- <bibtex src="2019_bib/psz.bib"></bibtex> -->
+		<bibtex src="2019_bib/mmd.bib"></bibtex>
+		<bibtex src="2019_bib/ckbjimmy.bib"></bibtex>
+		<bibtex src="2019_bib/emily.bib"></bibtex>
+		<!-- <bibtex src="2019_bib/wboag.bib"></bibtex> -->
+		<bibtex src="2019_bib/jindi.bib"></bibtex>
+		<!-- <bibtex src="2019_bib/stmharry.bib"></bibtex> -->
+		<!-- <bibtex src="2019_bib/geeticka.bib"></bibtex> -->
+		<!-- <bibtex src="2019_bib/elenaser.bib"></bibtex> -->
 		<script>
 			$(function() {
 			  $("#Fontselector").on("change",function() {
@@ -73,7 +73,7 @@
 			}
 	    </style>
     	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-		<link rel="stylesheet" href="new_assets/css/main.css" />
+		<link rel="stylesheet" href="2019_assets/css/main.css" />
 		</head>
 
 	<body>
@@ -83,11 +83,11 @@
 				<nav id="nav">
 					<ul>
 						<li><a href="index.html">Home</a></li>
-						<li><a href="new_people.html">People</a></li>
+						<li><a href="2019_people.html">People</a></li>
 						<li><a href="https://www.csail.mit.edu/research/clinical-decision-making-group#projects" target="_blank">Projects</a></li>
-						<li><a href="new_publications.html">Publications</a></li>
-						<li><a href="new_seminars.html">Seminars</a></li>
-						<li><a href="new_faq.html">FAQs</a></li>
+						<li><a href="2019_publications.html">Publications</a></li>
+						<li><a href="2019_seminars.html">Seminars</a></li>
+						<li><a href="2019_faq.html">FAQs</a></li>
 						<li><a href="index_archive.html" target="_blank">Archive</a></li>
 					</ul>
 				</nav>
@@ -101,7 +101,7 @@
 
 					<header class="major special">
 						<h2>Publications</h2>
-						<p>Below is a list of papers published by group members, in reverse chronological ordering. <a href="new_theses.html">For theses, please visit this page.</a></p>
+						<p>Below is a list of papers published by group members, in reverse chronological ordering. <a href="2019_theses.html">For theses, please visit this page.</a></p>
 					</header>
 
 					<div class="container-fluid">
@@ -154,8 +154,14 @@
 					            <span style="text-decoration: none;" class="title"></span>,
 					        <!-- </a> -->
 					      <!-- </span> -->
-					      <span class="if title nolink">
+<!-- 					      <span class="if title nolink">
 					            <span class="title"></span>,
+					      </span> -->
+					      <span class="if title">
+					      	<span class="if pmc"><a class="bibtexVar" href="https://www.ncbi.nlm.nih.gov/pmc/articles/+PMC+" extra="pmc" target="_blank"><span class="title"></span></a>,</span>
+					      	<span class="if !pmc"><span class="if pmcid"><a class="bibtexVar" href="https://www.ncbi.nlm.nih.gov/pmc/articles/+PMCID+" extra="pmcid" target="_blank"><span class="title"></span></a>,</span>
+					      	<span class="if !pmcid"><span class="if url"><a class="bibtexVar" href="+URL+" extra="url" target="_blank"><span class="title"></span></a>,</span>
+					      	<span class="if !url"><span class="title"></span>,</span>
 					      </span>
 					      <div class="if author">
 					        <span class="author"><span class="first_initial"></span> <span class="last"></span></span>
@@ -177,7 +183,7 @@
 					        <span class="if pmid"><a class="bibtexVar" href="https://www.ncbi.nlm.nih.gov/pubmed/+PMID+" extra="pmid" target="_blank">PMID: <span class="pmid"></span></a>.</span>
 					        <span class="if pmc"><a class="bibtexVar" href="https://www.ncbi.nlm.nih.gov/pmc/articles/+PMC+" extra="pmc" target="_blank">PMCID: <span class="pmc"></span></a>.</span>
 					        <span class="if pmcid"><a class="bibtexVar" href="https://www.ncbi.nlm.nih.gov/pmc/articles/+PMCID+" extra="pmcid" target="_blank">PMCID: <span class="pmcid"></span></a>.</span>
-					        <span class="if url"><a class="bibtexVar" href="+URL+" extra="url" target="_blank">URL: <span class="url"></span></a>.</span>
+					        <span class="if url"><a class="bibtexVar" href="+URL+" extra="url" target="_blank">[URL]</span>
 					        <a class="bibtexVar" role="button" data-toggle="collapse" href="#bib+BIBTEXKEY+" aria-expanded="false" aria-controls="bib+BIBTEXKEY+" extra="BIBTEXKEY">
 							  [bib]
 							</a>
