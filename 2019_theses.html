@@ -136,11 +136,15 @@
 					    <ul> <li>
 					      <!-- <span class="if journal !nolink"> -->
 					        <!-- <a class="bibtexVar" href="http://groups.csail.mit.edu/medg/ftp/papers/+BIBTEXKEY+.pdf" extra="BIBTEXKEY" target="_blank"> -->
-					            <span style="text-decoration: none;" class="title"></span>
+					            <!-- <span style="text-decoration: none;" class="title"></span> -->
 					        <!-- </a> -->
 					      <!-- </span> -->
-					      <span class="if title nolink">
+					      <!-- <span class="if title nolink">
 					            <span class="title"></span>
+					      </span> -->
+					      <span class="if title">
+					      	<span class="if url"><b><a class="bibtexVar" href="+URL+" extra="url" target="_blank"><span class="title"></span></a></b></span>
+					      	<span class="if !url"><b><span class="title"></span></b></span>
 					      </span>
 					      <div class="if author">
 					        <span class="author"><span class="first"></span> <span class="last"></span></span>
@@ -158,7 +162,7 @@
 					        <span class="if address"><span class="address"></span>,</span>
 					        <span class="if month"><span class="month"></span>,</span>
 					        <span class="if year"><span class="year"></span>.</span>
-					        <span class="if url"><a class="bibtexVar" href="+URL+" extra="url" target="_blank">URL: <span class="url"></span></a>.</span>
+					        <span class="if url"><a class="bibtexVar" href="+URL+" extra="url" target="_blank">[URL]</a></span>
 					        <a class="bibtexVar" role="button" data-toggle="collapse" href="#bib+BIBTEXKEY+" aria-expanded="false" aria-controls="bib+BIBTEXKEY+" extra="BIBTEXKEY">
 							  [bib]
 							</a>
