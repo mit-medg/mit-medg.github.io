@@ -82,10 +82,10 @@ Willie Boag ([slides][4])            | 12/01/2017             | [Word Translatio
 
 \* No Reading Required.
 
-[1]: ./_docs/reading_slides/Alistair_Johnson_eICU_10_13_2017.pdf
-[2]: ./_docs/reading_slides/Matthew_McDermott_Predicting_Brain_Age_10-20-2017.pdf
-[3]: ./_docs/reading_slides/Rahul_Krishnan_Patient_Similarity_with_Multiple_Kernel_Learning_11-03-2017.pdf
-[4]: ./_docs/reading_slides/Willie_Boag_Unsupervised_Word_Translation_12-01-2017.pdf
+[1]: ./new_docs/reading_slides/Alistair_Johnson_eICU_10_13_2017.pdf
+[2]: ./new_docs/reading_slides/Matthew_McDermott_Predicting_Brain_Age_10-20-2017.pdf
+[3]: ./new_docs/reading_slides/Rahul_Krishnan_Patient_Similarity_with_Multiple_Kernel_Learning_11-03-2017.pdf
+[4]: ./new_docs/reading_slides/Willie_Boag_Unsupervised_Word_Translation_12-01-2017.pdf
 [Predicting Brain age with Deep Learning]: https://arxiv.org/pdf/1612.02572.pdf
 [Patient Similarity Using Population Statistics and Multiple Kernel Learning]: http://mucmd.org/CameraReadySubmissions/40%5CCameraReadySubmission%5Cpatient_similarity.pdf
 [Word Translation Without Parallel Data]: https://arxiv.org/pdf/1710.04087.pdf
@@ -114,8 +114,8 @@ Matthew McDermott                  | 08/11/2017             | [Multitask Learnin
 [Discrete-Event Continuous-Time Recurrent Nets]: http://www.cs.colorado.edu/~mozer/Research/Selected%20Publications/reprints/MozerKazakovLindsey2017.pdf
 [Predicting Clinical Outcomes Across Changing Electronic Health Record Systems]: http://www.kdd.org/kdd2017/papers/view/predicting-clinical-outcomes-across-changing-electronic-health-record-syste
 [Multitask Learning and Benchmarking with Clinical Time Series Data]: https://arxiv.org/abs/1703.07771
-[1]: ./_docs/reading_slides/Ziyu_Wang_SPARTan_06-23-2017.pdf
-[2]: ./_docs/reading_slides/Matthew_McDermott_Perturbation_Barcodes_06-30-2017.pdf
-[3]: ./_docs/reading_slides/Di_Jin_DeepCare_07-07-2017.pdf
-[4]: ./_docs/reading_slides/Dustin_Doss_CorrRNN_07-21-2017.pdf
-[5]: ./_docs/reading_slides/Willie_Boag_Continuous_Time_RNNs_07-28-2017.pdf
+[1]: ./new_docs/reading_slides/Ziyu_Wang_SPARTan_06-23-2017.pdf
+[2]: ./new_docs/reading_slides/Matthew_McDermott_Perturbation_Barcodes_06-30-2017.pdf
+[3]: ./new_docs/reading_slides/Di_Jin_DeepCare_07-07-2017.pdf
+[4]: ./new_docs/reading_slides/Dustin_Doss_CorrRNN_07-21-2017.pdf
+[5]: ./new_docs/reading_slides/Willie_Boag_Continuous_Time_RNNs_07-28-2017.pdf
