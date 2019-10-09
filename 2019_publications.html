@@ -151,17 +151,17 @@
 					    <ul> <li>
 					      <!-- <span class="if journal !nolink"> -->
 					        <!-- <a class="bibtexVar" href="http://groups.csail.mit.edu/medg/ftp/papers/+BIBTEXKEY+.pdf" extra="BIBTEXKEY" target="_blank"> -->
-					            <span style="text-decoration: none;" class="title"></span>,
+					            <!-- <span style="text-decoration: none;" class="title"></span>, -->
 					        <!-- </a> -->
 					      <!-- </span> -->
 <!-- 					      <span class="if title nolink">
 					            <span class="title"></span>,
 					      </span> -->
 					      <span class="if title">
-					      	<span class="if url"><em><a class="bibtexVar" href="+URL+" extra="url" target="_blank"><span class="title"></span></a></em>,</span>
-					      	<span class="if !url"><span class="if pmcid"><em><a class="bibtexVar" href="https://www.ncbi.nlm.nih.gov/pmc/articles/+PMCID+" extra="pmcid" target="_blank"><span class="title"></span></a></em></span>,</span>
-					      	<span class="if !url !pmcid"><span class="if pmid"><em><a class="bibtexVar" href="https://www.ncbi.nlm.nih.gov/pmc/articles/+PMID+" extra="pmid" target="_blank"><span class="title"></span></a></em></span>,</span>
-					      	<span class="if !url !pmcid !pmid"><em><span class="title"></span></em>,</span>
+					      	<span class="if url"><b><a class="bibtexVar" href="+URL+" extra="url" target="_blank"><span class="title"></span></a></b></span>
+					      	<span class="if !url pmcid"><b><a class="bibtexVar" href="https://www.ncbi.nlm.nih.gov/pmc/articles/+PMCID+" extra="pmcid" target="_blank"><span class="title"></span></a></b></span></span>
+					      	<span class="if !url !pmcid pmid"><b><a class="bibtexVar" href="https://www.ncbi.nlm.nih.gov/pmc/articles/+PMID+" extra="pmid" target="_blank"><span class="title"></span></a></b></span></span>
+					      	<span class="if !url !pmcid !pmid"><b><span class="title"></span></b></span>
 					      </span>
 					      <div class="if author">
 					        <span class="author"><span class="first_initial"></span> <span class="last"></span></span>
@@ -181,7 +181,6 @@
 					        <span class="if year"><span class="year"></span>.</span>
 					        <span class="if note"><span class="note"></span>.</span>
 					        <span class="if pmid"><a class="bibtexVar" href="https://www.ncbi.nlm.nih.gov/pubmed/+PMID+" extra="pmid" target="_blank">PMID: <span class="pmid"></span></a>.</span>
-					        <span class="if pmid"><a class="bibtexVar" href="https://www.ncbi.nlm.nih.gov/pmc/articles/+PMID+" extra="pmid" target="_blank">PMID: <span class="pmid"></span></a>.</span>
 					        <span class="if pmcid"><a class="bibtexVar" href="https://www.ncbi.nlm.nih.gov/pmc/articles/+PMCID+" extra="pmcid" target="_blank">PMCID: <span class="pmcid"></span></a>.</span>
 					        <span class="if url"><a class="bibtexVar" href="+URL+" extra="url" target="_blank">[URL]</span>
 					        <a class="bibtexVar" role="button" data-toggle="collapse" href="#bib+BIBTEXKEY+" aria-expanded="false" aria-controls="bib+BIBTEXKEY+" extra="BIBTEXKEY">
