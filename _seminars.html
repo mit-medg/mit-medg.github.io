@@ -7,15 +7,15 @@
 <html>
 	<head>
 		<link href="//fonts.googleapis.com/css?family=Crimson+Text:300italic,400italic|Roboto:300,400,300italic,400italic" rel="stylesheet">
-		<title>MEDG - FAQs</title>
+		<title>MEDG - Reading Group</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<script src="assets/js/jquery.min.js"></script>
-		<script src="assets/js/skel.min.js"></script>
-		<script src="assets/js/util.js"></script>
-		<script src="assets/js/main.js"></script>
-		<script src="assets/js/showdown.min.js"></script>
-		<link rel="stylesheet" href="assets/css/main.css" />
+		<script src="_assets/js/jquery.min.js"></script>
+		<script src="_assets/js/skel.min.js"></script>
+		<script src="_assets/js/util.js"></script>
+		<script src="_assets/js/main.js"></script>
+		<script src="_assets/js/showdown.min.js"></script>
+		<link rel="stylesheet" href="_assets/css/main.css" />
 		</head>
 	<body>
 		<!-- Header -->
@@ -24,13 +24,13 @@
 				<nav id="nav">
 					<ul>
 						<li><a href="index.html">Home</a></li>
-						<li><a href="people.html">People</a></li>
+						<li><a href="_people.html">People</a></li>
 						<!-- <li><a href="projects.html">Projects</a></li> -->
 						<li><a href="https://www.csail.mit.edu/research/clinical-decision-making-group#projects" target="_blank">Projects</a></li>
-						<li><a href="publications.html">Publications</a></li>
-						<li><a href="seminars.html">Seminars</a></li>
-						<li><a href="faq.html">FAQs</a></li>
-						<li><a href="http://groups.csail.mit.edu/medg/archive/" target="_blank">Archive</a></li>
+						<li><a href="_publications.html">Publications</a></li>
+						<li><a href="_seminars.html">Seminars</a></li>
+						<li><a href="_faq.html">FAQs</a></li>
+						<li><a href="index_archive.html" target="_blank">Archive</a></li>
 					</ul>
 				</nav>
 			</header>
@@ -42,15 +42,15 @@
 			<section id="main" class="wrapper">
 				<div class="container">
 					<header class="major special">
-						<h2>Frequently Asked Questions (FAQs)</h2>
-					</header>
-				</div>
+						<h2>MEDG Seminars / Reading Group</h2>
+					</header>					
+					<p>Seminar talks given by a broad variety of guest speakers (Research Staff, Faculty, Students, etc) on topics that pertain to the research done by the Clinical Decision Making team. All from MIT, CSAIL as well as non-affiliates are welcome! If you have questions, comments or requests regarding the seminars, or would like to be a guest speaker please contact <a href="mailto:fern@csail.mit.edu">Fern DeOliveira</a>.</p>
+					<p>In Fall 2019, we host a reading seminar every Tuesday at 4-5pm. The seminars take place in the second-floor conference room of MIT's Computer Science and Artificial Intelligence Lab in the Stata Center (MIT address 32-261), located on the intersection of Vassar and Main streets in Cambridge; the physical address is 32 Vassar St. See a campus map of the building <a href="http://whereis.mit.edu/map-jpg?mapterms=32-261" target="_blank">here</a>; a map of where the conference room is located within the building is <a href="https://www.csail.mit.edu/sites/default/files/resources/maps/2/262.gif" target="_blank">here</a>. You can find a schedule (subject to change) below.</p>
 
-				<div class="container">
 					<section>
 						<div id="md_content"></div>
 						<script>  
-					        var body_location = './docs/faq.md';
+					        var body_location = '_docs/seminars.md';
 							var conv = new showdown.Converter({tables: true});
 					        function getText(myUrl){
 					            var result = null;
@@ -69,12 +69,13 @@
 					        document.getElementById('md_content').innerHTML = output;
 					      </script>
 					</section>
+
+					<p>Abstracts of past seminars (before 2006) can be found in our <a href="http://groups.csail.mit.edu/medg/archive/seminar%20series.html" target="_blank">abstract archive page</a>.</p>
 				</div>
-
-
 			</section>
 
 		<!-- Footer -->
+			<footer id="footer">
 			<footer id="footer">
 				<div class="container">
 					<ul class="copyright">
