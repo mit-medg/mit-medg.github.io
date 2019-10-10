@@ -20,6 +20,16 @@
 		<script src="2019_assets/js/bibtex_js.js" type="text/javascript" charset="utf-8"></script>
 		<bibtex src="2019_bib/MEDG-theses.bib"></bibtex>
 		<script>
+			function urlsearch() {
+				var urlParams = new URLSearchParams(window.location.search);
+				var q = urlParams.get("search");
+	            $("#searchbar").val(q);
+				$("#searchbar").trigger('change');
+			}
+			window.onload = function() {
+				urlsearch();
+			};
+
 			$(function() {
 			  $("#Fontselector").on("change",function() {
 			    var font = $("#Fontselector option:selected").text();

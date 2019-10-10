@@ -28,6 +28,16 @@
 		<!-- <bibtex src="2019_bib/geeticka.bib"></bibtex> -->
 		<!-- <bibtex src="2019_bib/elenaser.bib"></bibtex> -->
 		<script>
+			function urlsearch() {
+				var urlParams = new URLSearchParams(window.location.search);
+				var q = urlParams.get("search");
+	            $("#searchbar").val(q);
+				$("#searchbar").trigger('change');
+			}
+			window.onload = function() {
+				urlsearch();
+			};
+
 			$(function() {
 			  $("#Fontselector").on("change",function() {
 			    var font = $("#Fontselector option:selected").text();
