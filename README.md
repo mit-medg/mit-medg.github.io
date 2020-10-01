@@ -1,7 +1,7 @@
 # MEDG website (version 2019)
 
 * For any questions, please contact Wei-Hung Weng (ckbjimmy {AT} mit {DOT} edu)
-* Latest update: Oct 10, 2019
+* Latest update: Oct 01, 2020
 
 ## Insturctions of update the content
 

@@ -1,6 +1,8 @@
 ## Alumni (reverse chronological order)
 
 ### PhD
+  * [Di Jin](https://scholar.google.com/citations?user=x5QTK9YAAAAJ&hl=en) (Amazon Alexa AI), PhD 2020
+  * [Sam Finlayson](https://sgfin.github.io/) (Harvard Medical School), PhD 2020
   * [Tristan Naumann](https://www.microsoft.com/en-us/research/people/tristan/) (Microsoft Research), PhD 2017
   * [Marzyeh Ghassemi](http://www.marzyehghassemi.com/) (U Toronto/Vector Institute), PhD 2017
   * [Frank Dernoncourt](https://research.adobe.com/person/franck-dernoncourt/) (Adobe Research), PhD 2016
@@ -38,6 +40,9 @@
 
 
 ### Master (MEng / SM)
+  * [Tiffany So Yeon Min](https://www.linkedin.com/in/so-yeon-tiffany-min-70332aa5/) (Carnegie Mellon University), MEng 2020
+  * Phuong Pham, MEng 2020
+  * Justin K Yu, MEng 2020
   * Anna Bair, MEng 2019
   * Uma Girkar (Google), MEng 2019
   * Anuhya Vajapey, MEng 2019
@@ -150,6 +155,7 @@
 
 
 ### Post-doctoral Fellows / Visitors / Research Affiliates
+  * Miranda Liu (Wistron), Visiting Scientist 2020
   * Terrence Huang (Wistron), Visiting Scientist 2018
   * Arthur Shr (Wistron), Visiting Scientist 2017
   * [Ziyu Wang](https://www.linkedin.com/in/ziyu-wang-5900735b/) (Trexquant), Research Assistant 2017
@@ -224,3 +230,5 @@
   * John Wong, MD, Tufts-New England Medical Center Clinical Decision Making Division
   * Alan D Woolf, MD, PhD, Director - Environmental Medicine Program, Children's Hospital
 
+
+Last Modified 10/01/2020

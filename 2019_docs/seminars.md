@@ -1,3 +1,24 @@
+## Fall 2020
+
+Presenter                            | Date                   | Paper/Topic
+------------------------------------ | ---------------------- | ------------------------------------------------
+Willie Boag                          | 09/14/2020             | Overview of MLHC videos
+Monica Agrawal                       | 09/28/2020             | [Deployed Autocomplete + HCI]
+Abubakar Abid                        | 10/05/2020             | [ML visualization]
+Willie Boag                          | 10/19/2019             | Walkthrough: MIMIC weirdness
+Eric Lehman                          | 10/26/2019             | [TBD]
+Heather Berlin                       | 11/02/2019             | [TBD] 
+Emily Alsentzer                      | 11/09/2019             | [TBD]
+Wei-Hung Weng                        | 11/16/2019             | [TBD]
+Matthew McDermott                    | 11/23/2019             | [TBD]
+Geeticka Chauhan                     | 11/30/2019             | [TBD]
+Julie Vaughn                         | 12/07/2019             | [TBD]
+Julia Gong                           | 12/07/2019             | [TBD]
+
+[Deployed Autocomplete + HCI]: https://www.mlforhc.org/s/139_CameraReadySubmission_contextualautocomplete_paper.pdf
+[ML visualization]: https://gradio.app
+
+
 ## Fall 2019
 
 Presenter                            | Date                   | Paper/Topic
