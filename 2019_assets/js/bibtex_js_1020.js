@@ -349,89 +349,92 @@ function BibtexDisplay() {
         return value;
     }
 
+
     this.getName = function(array) {
         // First, Junior, Von, Last, First Initals
         var name = ["", "", "", "", ""];
         // check how many elements in array 1, 2, or 3
         switch (array.length) {
-            case 1: {
-                // Split by spaces keeping {names names} together
-                var words = array[0].split(/\ \s?(?![^\{]*\})/);
-                // Get first name
-                var index = 0;
-                for (; index < words.length - 1; index++) {
-                    var space = (index > 0) ? " " : "";
-                    if (words[index][0] == '{') {
-                        if (words[index][1] == '\\') {
-                            words[index] = this.fixValue(words[index]);
-                            // Test below
-                        } else {
+            case 1:
+                {
+                    // Split by spaces keeping {names names} together
+                    var words = array[0].split(/\ \s?(?![^\{]*\})/);
+                    // Get first name
+                    var index = 0;
+                    for (; index < words.length - 1; index++) {
+                        var space = (index > 0) ? " " : "";
+                        if (words[index][0] == '{') {
+                            if (words[index][1] == '\\') {
+                                words[index] = this.fixValue(words[index]);
+                                // Test below
+                            } else {
+                                name[0] += space + this.fixValue(words[index]);
+                                continue;
+                            }
+                        }
+                        if (words[index][0] == words[index][0].toUpperCase()) {
                             name[0] += space + this.fixValue(words[index]);
-                            continue;
+                        } else {
+                            break; //von part
                         }
                     }
-                    if (words[index][0] == words[index][0].toUpperCase()) {
-                        name[0] += space + this.fixValue(words[index]);
-                    } else {
-                        break; //von part
+                    // Get von part forward look for last non uppercase
+                    var lastVon = index;
+                    for (var temp = index; temp < words.length - 1; temp++) {
+                        if (words[temp][0] == words[temp][0].toLowerCase()) {
+                            lastVon = temp;
+                        }
+                    }
+                    for (; index <= lastVon && index < words.length - 1; index++) {
+                        var space = (name[2] != "") ? " " : "";
+                        name[2] += space + this.fixValue(words[index]);
+                    }
+                    // Get last name
+                    for (; index < words.length; index++) {
+                        var space = (name[3] != "") ? " " : "";
+                        name[3] += space + this.fixValue(words[index]);
                     }
                 }
-                // Get von part forward look for last non uppercase
-                var lastVon = index;
-                for (var temp = index; temp < words.length - 1; temp++) {
-                    if (words[temp][0] == words[temp][0].toLowerCase()) {
-                        lastVon = temp;
+                break;
+            case 2:
+            case 3:
+                {
+                    var arrayIndex = 0;
+                    // Split by spaces keeping {names names} together
+                    var words = array[arrayIndex].split(/\ \s?(?![^\{]*\})/);
+                    var index = 0;
+                    // Get von part forward look for last non uppercase
+                    var lastVon = -1;
+                    for (var temp = index; temp < words.length - 1; temp++) {
+                        if (words[temp][0] == words[temp][0].toLowerCase()) {
+                            lastVon = temp;
+                        }
                     }
+                    for (; index <= lastVon && index < words.length - 1; index++) {
+                        var space = (name[2] != "") ? " " : "";
+                        name[2] += space + this.fixValue(words[index]);
+                    }
+                    // Get last name
+                    for (; index < words.length; index++) {
+                        var space = (name[3] != "") ? " " : "";
+                        name[3] += space + this.fixValue(words[index]);
+                    }
+                    arrayIndex++;
+                    // Check if there is a Jr. part
+                    if (array.length == 3) {
+                        name[1] = this.fixValue(array[arrayIndex]);
+                        arrayIndex++;
+                    }
+                    // Get first name
+                    name[0] = this.fixValue(array[arrayIndex]);
                 }
-                for (; index <= lastVon && index < words.length - 1; index++) {
-                    var space = (name[2] != "") ? " " : "";
-                    name[2] += space + this.fixValue(words[index]);
-                }
-                // Get last name
-                for (; index < words.length; index++) {
-                    var space = (name[3] != "") ? " " : "";
-                    name[3] += space + this.fixValue(words[index]);
-                }
-            }
-            break;
-        case 2:
-        case 3: {
-            var arrayIndex = 0;
-            // Split by spaces keeping {names names} together
-            var words = array[arrayIndex].split(/\ \s?(?![^\{]*\})/);
-            var index = 0;
-            // Get von part forward look for last non uppercase
-            var lastVon = -1;
-            for (var temp = index; temp < words.length - 1; temp++) {
-                if (words[temp][0] == words[temp][0].toLowerCase()) {
-                    lastVon = temp;
-                }
-            }
-            for (; index <= lastVon && index < words.length - 1; index++) {
-                var space = (name[2] != "") ? " " : "";
-                name[2] += space + this.fixValue(words[index]);
-            }
-            // Get last name
-            for (; index < words.length; index++) {
-                var space = (name[3] != "") ? " " : "";
-                name[3] += space + this.fixValue(words[index]);
-            }
-            arrayIndex++;
-            // Check if there is a Jr. part
-            if (array.length == 3) {
-                name[1] = this.fixValue(array[arrayIndex]);
-                arrayIndex++;
-            }
-            // Get first name
-            name[0] = this.fixValue(array[arrayIndex]);
-        }
-        break;
-        default:
-            console.log("Processed author incorrectly!");
-            return name;
+                break;
+            default:
+                console.log("Processed author incorrectly!");
+                return name;
         }
         if (name[0] != "") {
-            name[4] = name[0].split(" ").map((s) => s.substring(0, 1).toUpperCase()).join(". ") + ".";
+            name[4] = name[0].split(" ").map((s) => s.substring(0, 1).toUpperCase())[0]; // .join(". ") + ".";
         }
         return name;
     }
@@ -454,40 +457,54 @@ function BibtexDisplay() {
         if (format.attr("max")) {
             searchLength = Math.min(format.attr("max"), searchLength);
         }
-
-        // Get conjunction if set in author
-        conjunction = format.attr('conjunction') ? format.attr('conjunction') : ', and';
-        conjunction = "<span class='bibtex_js_conjunction'>" + conjunction + "</span>";
-
+        // Check if authors are formatted
         var newString = "";
-        for (i = 0; i < searchLength; i++) {
-            // Split string by ',' keeping {words, and words} together
-            var name = this.getName(arrayString[i].split(/\,\s?(?![^\{]*\})/));
-            var author = format.clone();
-            var fullName = $.grep(name.slice(0, 4), Boolean).join(" ");
-            author.attr('class', fullName);
-            var textBefore = false;
-            for (j = 0, ele = author.find("span:not(a)"), len = ele.length; j < len; ++j) {
-                var index = Format[ele[j].getAttribute("class").toUpperCase()];
-                // Check if value is empty
-                if (name[index] != "") {
-                    if (ele[j].hasAttribute("bibtex-js-rif") && !textBefore) {
-                        ele[j].textContent = name[index];
+        if (format.find("span:not(a)").length) {
+            for (i = 0; i < searchLength; i++) {
+                // Split string by ',' keeping {words, and words} together
+                var name = this.getName(arrayString[i].split(/\,\s?(?![^\{]*\})/));
+                var author = format.clone();
+                var fullName = $.grep(name.slice(0, 4), Boolean).join(" ");
+                author.attr('class', fullName);
+                author.find("span:not(a)").each(function() {
+                    var index = Format[$(this).attr('class').toUpperCase()];
+                    // Check if value is empty
+                    if (name[index] != "") {
+                        $(this).html($(this).html() + name[index]);
                     } else {
-                        ele[j].textContent = ele[j].textContent + name[index];
+                        $(this).remove();
                     }
-                    textBefore = true;
+                });
+                if (i == 0) {
+                    newString += author[0].outerHTML;
+                } else if (i + 1 >= arrayString.length) {
+                    newString += ", and " + author[0].outerHTML;
                 } else {
-                    ele[j].remove();
+                    newString += ", " + author[0].outerHTML;
                 }
-
+                // if (i == 0) {
+                //     newString += "<a onclick=\"reset(); (new BibTeXSearcher()).searcher('" + author[0] + "', 'true')\">" + author[0].outerHTML + "</a>";
+                // } else if (i + 1 >= arrayString.length) {
+                //     newString += ", and " + "<a onclick=\"reset(); (new BibTeXSearcher()).searcher('" + author[0] + "', 'true')\">" + author[0].outerHTML + "</a>";
+                // } else {
+                //     newString += ", " + "<a onclick=\"reset(); (new BibTeXSearcher()).searcher('" + author[0] + "', 'true')\">" + author[0].outerHTML + "</a>";
+                // }
             }
-            if (i == 0) {
-                newString += author[0].outerHTML;
-            } else if (i + 1 >= arrayString.length) {
-                newString += conjunction + " " + author[0].outerHTML;
-            } else {
-                newString += ", " + author[0].outerHTML;
+        } else {
+            // var newString = arrayString[0];
+            // for (i = 1; i < searchLength; i++) {
+            //     if (i + 1 >= arrayString.length) {
+            //         newString += ", and " + arrayString[i];
+            //     } else {
+            //         newString += ", " + arrayString[i];
+            //     }
+            var newString = "<a onclick=\"reset(); (new BibTeXSearcher()).searcher('" + arrayString[0] + "', 'true')\">" + arrayString[0] + "</a>";
+            for (i = 1; i < searchLength; i++) {
+                if (i + 1 >= arrayString.length) {
+                    newString += ", and " + "<a onclick=\"reset(); (new BibTeXSearcher()).searcher('" + arrayString[i] + "', 'true')\">" + arrayString[i] + "</a>";
+                } else {
+                    newString += ", " + "<a onclick=\"reset(); (new BibTeXSearcher()).searcher('" + arrayString[i] + "', 'true')\">" + arrayString[i] + "</a>";
+                }
             }
         }
         // Checking if et al. must be added
@@ -3673,15 +3690,3 @@ var latex_to_unicode = {
     "{\AA}": "\u212B",
     "\\relax ": ""
 };
-© 2020 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
-Help
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
