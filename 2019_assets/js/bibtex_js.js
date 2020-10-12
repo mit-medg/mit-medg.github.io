@@ -876,51 +876,99 @@ function BibtexDisplay() {
 
 }
 
+// function bibtex_js_draw() {
+//     $(".bibtex_template").hide();
+//     if ($("#bibtex_input").length) {
+//         (new BibtexDisplay()).displayBibtex($("#bibtex_input").val(), $("#bibtex_display"));
+//     } else {
+//         //Gets the BibTex files and adds them together
+//         var bibstring = "";
+//         var requests = [];
+//         // Create request for bibtex files
+//         $('bibtex').each(function(index, value) {
+//             var request = $.ajax({
+//                     url: $(this).attr('src'),
+//                     dataType: "text"
+//                 })
+//                 .done((data) => bibstring += data)
+//                 .fail((request, status, error) => console.error(error))
+//             requests.push(request);
+//         });
+
+//         // Executed on completion of last outstanding ajax call
+//         $.when.apply($, requests).then(function() {
+//             // Check if we have a bibtex_display id or classes
+//             if ($("#bibtex_display").length) {
+//                 (new BibtexDisplay()).displayBibtex(bibstring, $("#bibtex_display"));
+//             } else if ($(".bibtex_display").length) {
+//                 // Loop through all bibtex_displays on the page
+//                 $(".bibtex_display").each(function(index) {
+//                     // ($this) is the class node output for the bitex entries
+//                     (new BibtexDisplay()).displayBibtex(bibstring, $(this));
+//                 });
+//             }
+//             loadExtras();
+//             // Remove elements from html that are not needed to display
+//             $(".bibtex_structure").remove();
+//         });
+
+
+//     }
+// }
+
 function bibtex_js_draw() {
     $(".bibtex_template").hide();
+    //Gets the BibTex files and adds them together
+    var bibstring = "";
+    var requests = [];
     if ($("#bibtex_input").length) {
-        (new BibtexDisplay()).displayBibtex($("#bibtex_input").val(), $("#bibtex_display"));
-    } else {
-        //Gets the BibTex files and adds them together
-        var bibstring = "";
-        var requests = [];
-        // Create request for bibtex files
-        $('bibtex').each(function(index, value) {
-            var request = $.ajax({
-                    url: $(this).attr('src'),
-                    dataType: "text"
-                })
-                .done((data) => bibstring += data)
-                .fail((request, status, error) => console.error(error))
-            requests.push(request);
-        });
-
-        // Executed on completion of last outstanding ajax call
-        $.when.apply($, requests).then(function() {
-            // Check if we have a bibtex_display id or classes
-            if ($("#bibtex_display").length) {
-                var bibtex_display = $("#bibtex_display");
-                (new BibtexDisplay()).displayBibtex(bibstring, bibtex_display);
-                if (bibtex_display.attr("callback")) {
-                    var callback = new Function('bibtex_display', bibtex_display.attr("callback"));
-                    callback(bibtex_display[0]);
-                }
-            } else if ($(".bibtex_display").length) {
-                // Loop through all bibtex_displays on the page
-                $(".bibtex_display").each(function(index) {
-                    // ($this) is the class node output for the bitex entries
-                    (new BibtexDisplay()).displayBibtex(bibstring, $(this));
-                    if ($(this).attr("callback")) {
-                        var callback = new Function('bibtex_display', $(this).attr("callback"));
-                        callback($(this)[0]);
-                    }
-                });
-            }
-            // Remove elements from html that are not needed to display
-            $(".bibtex_structure").remove();
-            loadExtras();
-        });
+        bibstring += $("#bibtex_input").val();
     }
+    // Create request for bibtex files
+    $('bibtex').each(function(index, value) {
+        var request = $.ajax({
+                url: $(this).attr('src'),
+                dataType: "text"
+            })
+            .done((data) => bibstring += data)
+            .fail((request, status, error) => console.error(error))
+        requests.push(request);
+    });
+    // Add default author format if it doesn't exist
+    var authorFormat = $(".bibtex_template").find("span:not(a).author");
+    if (authorFormat.length && !authorFormat.find("span:not(a)").length) {
+        authorFormat.append($("<span></span>").attr("class", "first"));
+        authorFormat.append($("<span></span>").attr("class", "von")
+            .attr("bibtex-js-rif", "").text(" "));
+        authorFormat.append($("<span></span>").attr("class", "last")
+            .attr("bibtex-js-rif", "").text(" "));
+        authorFormat.append($("<span></span>").attr("class", "junior").text(", "));
+    }
+    // Executed on completion of last outstanding ajax call
+    $.when.apply($, requests).then(function() {
+        // Check if we have a bibtex_display id or classes
+        if ($("#bibtex_display").length) {
+            var bibtex_display = $("#bibtex_display");
+            (new BibtexDisplay()).displayBibtex(bibstring, bibtex_display);
+            if (bibtex_display.attr("callback")) {
+                var callback = new Function('bibtex_display', bibtex_display.attr("callback"));
+                callback(bibtex_display[0]);
+            }
+        } else if ($(".bibtex_display").length) {
+            // Loop through all bibtex_displays on the page
+            $(".bibtex_display").each(function(index) {
+                // ($this) is the class node output for the bitex entries
+                (new BibtexDisplay()).displayBibtex(bibstring, $(this));
+                if ($(this).attr("callback")) {
+                    var callback = new Function('bibtex_display', $(this).attr("callback"));
+                    callback($(this)[0]);
+                }
+            });
+        }
+        // Remove elements from html that are not needed to display
+        $(".bibtex_structure").remove();
+        loadExtras();
+    });
 }
 
 /** 
