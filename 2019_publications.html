@@ -10,8 +10,8 @@
 		<title>MEDG - Publications</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-	    <meta http-equiv="Content-type" content="text/html;charset=UTF-8" /> 
-	    <meta http-equiv="cache-control" content="no-cache" /> 
+	    <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+	    <meta http-equiv="cache-control" content="no-cache" />
 		<script src="2019_assets/js/jquery.min.js"></script>
 		<script src="2019_assets/js/skel.min.js"></script>
 		<script src="2019_assets/js/util.js"></script>
@@ -45,17 +45,17 @@
 			  $("#Fontselector").on("change",function() {
 			    var font = $("#Fontselector option:selected").text();
 			    console.log(font);
-			
+
 			    $('.title.fonters').each(function() {
 			    	$(this).css("font-family",font);
 			    });
-			  }); 
-			});   
+			  });
+			});
 			function reset() {
 				$("select").each(function () {
 				  localStorage.setItem($(this).attr("id"),"");
 				  $(this).val("");
-				}); 
+				});
 				$("#searchbar").val("");
 				$("#searchbar").trigger('change');
 			}
@@ -91,8 +91,8 @@
 		    div, span {
 		    	line-height: 1.2;
 		    }
-		    ul { 
-		    	margin: 0.5em; 
+		    ul {
+		    	margin: 0.5em;
 		    }
 		</style>
 		</head>
@@ -107,6 +107,7 @@
 						<li><a href="2019_people.html">People</a></li>
 						<li><a href="https://www.csail.mit.edu/research/clinical-decision-making-group#projects" target="_blank">Projects</a></li>
 						<li><a href="2019_publications.html">Publications</a></li>
+						<li><a href="2020_blogs.html">Blogs</a></li>
 						<li><a href="2019_seminars.html">Seminars</a></li>
 						<li><a href="2019_faq.html">FAQs</a></li>
 						<li><a href="index_archive.html" target="_blank">Archive</a></li>
@@ -183,7 +184,7 @@
 					      <span class="if title">
 					      	<span class="if url"><b><a class="bibtexVar" href="+URL+" extra="url" target="_blank"><span class="title"></span></a></b></span>
 					      	<span class="if !url"><span class="if pmc"><b><a class="bibtexVar" href="https://www.ncbi.nlm.nih.gov/pmc/articles/+PMC+" extra="pmc" target="_blank"><span class="title"></span></a></b></span></span>
-					      	<span class="if !url"><span class="if !pmc"><span class="if pmid"><b><a class="bibtexVar" href="https://www.ncbi.nlm.nih.gov/pmc/articles/+PMID+" extra="pmid" target="_blank"><span class="title"></span></a></b></span></span></span> 
+					      	<span class="if !url"><span class="if !pmc"><span class="if pmid"><b><a class="bibtexVar" href="https://www.ncbi.nlm.nih.gov/pmc/articles/+PMID+" extra="pmid" target="_blank"><span class="title"></span></a></b></span></span></span>
 					      	<span class="if !url"><span class="if !pmc"><span class="if !pmid"><span class="if doi"><b><a class="bibtexVar" href="+DOI+" extra="doi" target="_blank"><span class="title"></span></a></b></span></span></span></span>
 					      	<span class="if !url"><span class="if !pmc"><span class="if !pmid"><span class="if !doi"><span class="if eprint"><b><a class="bibtexVar" href="https://arxiv.org/pdf/+EPRINT+.pdf" extra="eprint" target="_blank"><span class="title"></span></a></b></span></span></span></span></span>
 					      	<span class="if !url"><span class="if !pmc"><span class="if !pmid"><span class="if !doi"><span class="if !eprint"><b><span class="title"></span></b></span></span></span></span>
@@ -227,7 +228,7 @@
 
 				</div>
 			</section>
-			
+
 		<!-- Footer -->
 			<footer id="footer">
 				<div class="container">
