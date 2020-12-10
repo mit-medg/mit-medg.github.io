@@ -1,0 +1,167 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<link href="//fonts.googleapis.com/css?family=Crimson+Text:300italic,400italic|Roboto:300,400,300italic,400italic" rel="stylesheet">
+		<title>MEDG - Blogs</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+	    <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+	    <meta http-equiv="cache-control" content="no-cache" />
+	    <script src="2019_assets/js/jquery.min.js"></script>
+      <script src="2019_assets/js/showdown.min.js"></script>
+	    <style>
+		    html, body, span, h1 {
+		    	/*font-family: "Times New Roman", Times, serif;*/
+		    	font-size: 17px;
+		    }
+		    .bibtexraw {
+		    	font-family: "Courier New";
+		    	font-size: 14px;
+		    }
+		    bibtex { display: none; }
+		    .searchbar { margin-left:0px;}
+		    #bibtex_errors { margin-top:10px; color: red;}
+		    h1.header {margin-left:8px;}
+		    h1.YEAR { font-size: 17px; font-weight: bold; display: inline; margin-left:8px;}
+
+		    #form-control {
+			  height: 50px;
+			  font-size: 16px;
+			}
+
+			#form-btn {
+			 line-height: 50px;
+			 font-size: 16px;
+			}
+	    </style>
+    	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		<link rel="stylesheet" href="2019_assets/css/main.css" />
+	    <style>
+		    div, span {
+		    	line-height: 1.2;
+		    }
+		    ul {
+		    	margin: 0.5em;
+		    }
+		</style>
+		</head>
+
+	<body>
+		<!-- Header -->
+			<header id="header">
+				<h1><strong><a href="index.html"><font color="navy">MIT CSAIL MEDG</font></a></strong></h1>
+				<nav id="nav">
+					<ul>
+            <li><a href="index.html">Home</a></li>
+						<li><a href="2019_people.html">People</a></li>
+						<li><a href="https://www.csail.mit.edu/research/clinical-decision-making-group#projects" target="_blank">Projects</a></li>
+						<li><a href="2019_publications.html">Publications</a></li>
+						<li><a href="2020_blogs.html">Blogs</a></li>
+						<li><a href="2019_seminars.html">Seminars</a></li>
+						<li><a href="2019_faq.html">FAQs</a></li>
+						<li><a href="index_archive.html" target="_blank">Archive</a></li>
+					</ul>
+				</nav>
+			</header>
+
+			<a href="#menu" class="navPanelToggle"><span class="fa fa-bars"></span></a>
+
+		<!-- Main -->
+			<section id="main" class="wrapper">
+				<div class="container">
+
+					<header class="major special">
+						<h2>Blogs</h2>
+						<p>Papers published by group members.</p>
+					</header>
+
+          <section>
+            <div id="md_content"></div>
+            <script>
+                  var body_location = '2019_docs/blogs.md';
+              var conv = new showdown.Converter({tables: true});
+                  function getText(myUrl){
+                      var result = null;
+                      $.ajax( { url: myUrl,
+                                type: 'get',
+                                dataType: 'html',
+                                async: false,
+                                success: function(data) { result = data; }
+                              }
+                      );
+                      FileReady = true;
+                      return result;
+                  }
+                  var markdown_source = getText(body_location);
+                  var output = conv.makeHtml( markdown_source );
+                  document.getElementById('md_content').innerHTML = output;
+                </script>
+          </section>
+
+
+
+					<div id="bibtex_display">
+					  <div class="if bibtex_template" style="display: none;">
+					    <ul> <li>
+
+					      <span class="if title">
+					      	<span class="if url"><b><a class="bibtexVar" href="+URL+" extra="url" target="_blank"><span class="title"></span></a></b></span>
+					      	<span class="if !url"><span class="if pmc"><b><a class="bibtexVar" href="https://www.ncbi.nlm.nih.gov/pmc/articles/+PMC+" extra="pmc" target="_blank"><span class="title"></span></a></b></span></span>
+					      	<span class="if !url"><span class="if !pmc"><span class="if pmid"><b><a class="bibtexVar" href="https://www.ncbi.nlm.nih.gov/pmc/articles/+PMID+" extra="pmid" target="_blank"><span class="title"></span></a></b></span></span></span>
+					      	<span class="if !url"><span class="if !pmc"><span class="if !pmid"><span class="if doi"><b><a class="bibtexVar" href="+DOI+" extra="doi" target="_blank"><span class="title"></span></a></b></span></span></span></span>
+					      	<span class="if !url"><span class="if !pmc"><span class="if !pmid"><span class="if !doi"><span class="if eprint"><b><a class="bibtexVar" href="https://arxiv.org/pdf/+EPRINT+.pdf" extra="eprint" target="_blank"><span class="title"></span></a></b></span></span></span></span></span>
+					      	<span class="if !url"><span class="if !pmc"><span class="if !pmid"><span class="if !doi"><span class="if !eprint"><b><span class="title"></span></b></span></span></span></span>
+					      </span>
+					      <div class="if author">
+					        <span class="author"><span class="first_initial"></span> <span class="last"></span></span>
+					      </div>
+					      <div>
+					        <span class="if journal"><em><span class="journal"></span></em>,</span>
+					        <!-- <span class="if !journal">Technical report <span class="number"></span>,</span> -->
+					        <span class="if booktitle">In <em><span class="booktitle"></span></em>,</span>
+					        <span class="if editor"><span class="editor"></span> (editors),</span>
+					        <span class="if publisher"><em><span class="publisher"></span></em>,</span>
+					        <span class="if institution"><span class="institution"></span>,</span>
+					        <span class="if address"><span class="address"></span>,</span>
+					        <span class="if volume"><span class="volume"></span>,</span>
+					        <span class="if journal number">(<span class="number"></span>),</span>
+					        <span class="if pages"> pages <span class="pages"></span>,</span>
+					        <span class="if month"><span class="month"></span>,</span>
+					        <span class="if year"><span class="year"></span>.</span>
+					        <span class="if note"><span class="note"></span>.</span>
+					        <span class="if pmid"><a class="bibtexVar" href="https://www.ncbi.nlm.nih.gov/pubmed/+PMID+" extra="pmid" target="_blank">PMID: <span class="pmid"></span></a>.</span>
+					        <span class="if pmc"><a class="bibtexVar" href="https://www.ncbi.nlm.nih.gov/pmc/articles/+PMC+" extra="pmc" target="_blank">PMCID: <span class="pmc"></span></a>.</span>
+					        <!-- <span class="if url"><a class="bibtexVar" href="+URL+" extra="url" target="_blank">[URL]</a></span> -->
+					        <a class="bibtexVar" role="button" data-toggle="collapse" href="#bib+BIBTEXKEY+" aria-expanded="false" aria-controls="bib+BIBTEXKEY+" extra="BIBTEXKEY">
+							  [bib]
+							</a>
+							<br />
+							<span class="if tags">[TAGS] <span class="tags"></span></span>
+					      </div>
+					      <div class="bibtexVar collapse" id="bib+BIBTEXKEY+" extra="BIBTEXKEY">
+							  <div class="well">
+							    <pre><span class="bibtexraw noread"></span></pre>
+							  </div>
+						  </div>
+					      <div style="display:none"><span class="bibtextype"></span></div>
+					      <div style="display:none"><span class="if topic"><span class="topic"></span></span></div>
+					    </li></ul>
+					  </div>
+					</div>
+
+				</div>
+			</section>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="container">
+					<ul class="copyright">
+						<li>&copy; MIT CSAIL Medical Decision Making Group</li>
+						<li><a href="https://accessibility.mit.edu/">Accessibility</a></li>
+						<li><a href="http://templated.co">templated.co</a></li>
+					</ul>
+				</div>
+			</footer>
+
+	</body>
+</html>
