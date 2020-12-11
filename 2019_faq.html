@@ -25,9 +25,9 @@
 					<ul>
 						<li><a href="index.html">Home</a></li>
 						<li><a href="2019_people.html">People</a></li>
-						<!-- <li><a href="projects.html">Projects</a></li> -->
 						<li><a href="https://www.csail.mit.edu/research/clinical-decision-making-group#projects" target="_blank">Projects</a></li>
 						<li><a href="2019_publications.html">Publications</a></li>
+						<li><a href="2020_blogs.html">Blogs</a></li>
 						<li><a href="2019_seminars.html">Seminars</a></li>
 						<li><a href="2019_faq.html">FAQs</a></li>
 						<li><a href="index_archive.html" target="_blank">Archive</a></li>
@@ -49,16 +49,16 @@
 				<div class="container">
 					<section>
 						<div id="md_content"></div>
-						<script>  
+						<script>
 					        var body_location = '2019_docs/faq.md';
 							var conv = new showdown.Converter({tables: true});
 					        function getText(myUrl){
 					            var result = null;
-					            $.ajax( { url: myUrl, 
-					                      type: 'get', 
+					            $.ajax( { url: myUrl,
+					                      type: 'get',
 					                      dataType: 'html',
 					                      async: false,
-					                      success: function(data) { result = data; } 
+					                      success: function(data) { result = data; }
 					                    }
 					            );
 					            FileReady = true;
