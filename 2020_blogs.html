@@ -79,7 +79,7 @@
             <div id="md_content"></div>
             <script>
                   var body_location = '2019_docs/blogs.md';
-              var conv = new showdown.Converter({tables: true});
+              		var conv = new showdown.Converter({tables: true});
                   function getText(myUrl){
                       var result = null;
                       $.ajax( { url: myUrl,
@@ -92,9 +92,20 @@
                       FileReady = true;
                       return result;
                   }
+
                   var markdown_source = getText(body_location);
                   var output = conv.makeHtml( markdown_source );
                   document.getElementById('md_content').innerHTML = output;
+
+									var table_entries = document.getElementById('md_content').children[1].children[1].children;
+									var descriptions = getText('2019_docs/blogs/project_descriptions.txt');
+									var dlist = descriptions.split('\n');
+									for (var i = 0; i < table_entries.length; i++) {
+										//debugger;
+										table_entries[i].children[2].innerText = dlist[i];
+										table_entries[i].children[2].width = '35%';
+									}
+
                 </script>
           </section>
 

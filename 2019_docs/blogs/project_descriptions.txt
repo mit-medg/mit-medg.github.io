@@ -1,0 +1,3 @@
+The authors develop a neural network model that utilizes chest radiographs images and free-text to assess the severity of pulmonary edema.
+The authors presents TEXTFOOLER, a strong baseline to generate adversarial text. They are able to successfully attack three different model architectures and are successful in tricking each of these models.
+In this blog, Willie discusses possible reasons behind racial disparities in end-of-life (EOL) care. He attempts to model and quantify the mistrust between patients and doctors.
