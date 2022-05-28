@@ -1,16 +1,17 @@
-# MEDG website (version 2019)
+# MEDG website (version 2022)
 
 * For any questions, please contact Wei-Hung Weng (ckbjimmy {AT} mit {DOT} edu)
-* Latest update: Oct 01, 2020
+* Latest update: May 28, 2022
 
 ## Insturctions of update the content
 
-* Most content can be updated via the `.md` files in the `2019_docs` folder except for the `news` in the `index.html`.
-* Please copy the files into `/afs/csail.mit.edu/group/medg/www/data` to display the website under the CSAIL domain.
+* Most content can be updated via the `.md` files in the `docs` folder except for the `news` in the `index.html`.
+* Please update via the files in this github repo
+<!-- * Please copy the files into `/afs/csail.mit.edu/group/medg/www/data` to display the website under the CSAIL domain. -->
 
 ## Some instructions of updating the bib file
 
-* Create your own `.bib` file in the folder `2019_bib`, then add `<bibtex src="2019_bib/[YOUR_BIB_NAME].bib"></bibtex>` in the `<head>` of `2019_publications.html`. Just need to do this once.
+* Create your own `.bib` file in the folder `bib`, then add `<bibtex src="bib/[YOUR_BIB_NAME].bib"></bibtex>` in the `<head>` of `publications.html`. Just need to do this once.
 * The easiest way to get your full bib data is [exporting them from Google Scholar](https://www.ndsu.edu/fileadmin/digitalmeasures/DM_Training_Materials/BibTex_Exports_from_Google_Scholar.pdf). However, you may want to reassure that Google Scholar includes the papers you want to display, and exclude those papers Google Scholar has errorneously included.
 * For the bib entry, please add `pmid`, `pmcid`, `url` if possible. The code will parse these attributes and display them on the website. 
 * If you wish, you may also add the `tags` attribute. The strings in the `tags` can be searched as a filter. 
