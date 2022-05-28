@@ -3,21 +3,35 @@
 * For any questions, please contact Wei-Hung Weng (ckbjimmy {AT} mit {DOT} edu)
 * Latest update: May 28, 2022
 
-## Insturctions of update the content
+## Instructions to update the content
 
 * Most content can be updated via the `.md` files in the `docs` folder except for the `news` in the `index.html`.
 * Please update via the files in this github repo
 <!-- * Please copy the files into `/afs/csail.mit.edu/group/medg/www/data` to display the website under the CSAIL domain. -->
 
-## Some instructions of updating the bib file
+## Some instructions for updating the group bibliography
 
 * Create your own `.bib` file in the folder `bib`, then add `<bibtex src="bib/[YOUR_BIB_NAME].bib"></bibtex>` in the `<head>` of `publications.html`. Just need to do this once.
-* The easiest way to get your full bib data is [exporting them from Google Scholar](https://www.ndsu.edu/fileadmin/digitalmeasures/DM_Training_Materials/BibTex_Exports_from_Google_Scholar.pdf). However, you may want to reassure that Google Scholar includes the papers you want to display, and exclude those papers Google Scholar has errorneously included.
-* For the bib entry, please add `pmid`, `pmcid`, `url` if possible. The code will parse these attributes and display them on the website. 
-* If you wish, you may also add the `tags` attribute. The strings in the `tags` can be searched as a filter. 
-* The easiest way to get all of your publications is to export the bibtex file from Google Scholar. However, please remember to exclude the publications not belong to you (GScholar sometimes did this incorrectly). You may manually add the `pmid`, `pmc`, `url`, `tags` after exporting the bibtex file.
-* Please do not include punctuations such as `:` or `=` or `+` or else in the bibentry. It will result in the problem of displaying the paper/bib.
-* An example of the above attrubites:
+* The easiest way to get your full bib data is [exporting them from
+  Google
+  Scholar](https://www.ndsu.edu/fileadmin/digitalmeasures/DM_Training_Materials/BibTex_Exports_from_Google_Scholar.pdf). However, 
+  you may want to assure that Google Scholar includes the papers you
+  want to display and then exclude those papers Google Scholar has
+  errorneously included. 
+* For the bib entry, please add `pmid`, `pmcid`, `url` if
+  possible. The code will parse these attributes and display them on
+  the website. 
+* If you wish, you may also add the `tags` attribute. The strings in
+  the `tags` can be searched as a filter. 
+* The easiest way to get all of your publications is to export the
+  bibtex file from Google Scholar. However, please remember to exclude
+  the publications not belonging to you (GScholar sometimes did this
+  incorrectly). You may manually add the `pmid`, `pmc`, `url`, `tags`
+  after exporting the bibtex file. 
+* Please do not include punctuations such as `:` or `=` or `+`  in the
+  bibentry key. It will result in problems displaying the  paper/bib
+  because of some vagery in the javascript bibtex parser. 
+* An example of the above attributes:
 
 ```
 @article{weng2017medical,
