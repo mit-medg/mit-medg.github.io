@@ -1,66 +1,14 @@
 <!DOCTYPE HTML>
-<!--
-	Spatial by TEMPLATED
-	templated.co @templatedco
-	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
--->
 <html>
 	<head>
 		<link href="//fonts.googleapis.com/css?family=Crimson+Text:300italic,400italic|Roboto:300,400,300italic,400italic" rel="stylesheet">
-		<title>MEDG - Publications</title>
+		<title>MEDG - Blogs</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 	    <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
 	    <meta http-equiv="cache-control" content="no-cache" />
-		<script src="2019_assets/js/jquery.min.js"></script>
-		<script src="2019_assets/js/skel.min.js"></script>
-		<script src="2019_assets/js/util.js"></script>
-		<script src="2019_assets/js/main.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-		<script src="2019_assets/js/bibtex_js.js" type="text/javascript" charset="utf-8"></script>
-		<bibtex src="2019_bib/psz.bib"></bibtex>
-		<bibtex src="2019_bib/emily.bib"></bibtex>
-		<bibtex src="2019_bib/jindi.bib"></bibtex>
-		<bibtex src="2019_bib/mmd.bib"></bibtex>
-		<bibtex src="2019_bib/ckbjimmy.bib"></bibtex>
-		<bibtex src="2019_bib/stmharry.bib"></bibtex>
-		<bibtex src="2019_bib/symin95.bib"></bibtex>
-		<bibtex src="2019_bib/gupta.bib"></bibtex>
-		<bibtex src="2019_bib/wjl.bib"></bibtex>
-		<!-- <bibtex src="2019_bib/wboag.bib"></bibtex> -->
-		<!-- <bibtex src="2019_bib/stmharry.bib"></bibtex> -->
-		<!-- <bibtex src="2019_bib/geeticka.bib"></bibtex> -->
-		<!-- <bibtex src="2019_bib/elenaser.bib"></bibtex> -->
-		<script>
-			function urlsearch() {
-				var urlParams = new URLSearchParams(window.location.search);
-				var q = urlParams.get("search");
-	            $("#searchbar").val(q);
-				$("#searchbar").trigger('change');
-			}
-			window.onload = function() {
-				urlsearch();
-			};
-
-			$(function() {
-			  $("#Fontselector").on("change",function() {
-			    var font = $("#Fontselector option:selected").text();
-			    console.log(font);
-
-			    $('.title.fonters').each(function() {
-			    	$(this).css("font-family",font);
-			    });
-			  });
-			});
-			function reset() {
-				$("select").each(function () {
-				  localStorage.setItem($(this).attr("id"),"");
-				  $(this).val("");
-				});
-				$("#searchbar").val("");
-				$("#searchbar").trigger('change');
-			}
-    	</script>
+	    <script src="assets/js/jquery.min.js"></script>
+      <script src="assets/js/showdown.min.js"></script>
 	    <style>
 		    html, body, span, h1 {
 		    	/*font-family: "Times New Roman", Times, serif;*/
@@ -87,7 +35,7 @@
 			}
 	    </style>
     	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-		<link rel="stylesheet" href="2019_assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/main.css" />
 	    <style>
 		    div, span {
 		    	line-height: 1.2;
@@ -104,14 +52,14 @@
 				<h1><strong><a href="index.html"><font color="navy">MIT CSAIL MEDG</font></a></strong></h1>
 				<nav id="nav">
 					<ul>
-						<li><a href="index.html">Home</a></li>
-						<li><a href="2019_people.html">People</a></li>
+            <li><a href="index.html">Home</a></li>
+						<li><a href="people.html">People</a></li>
 						<li><a href="https://www.csail.mit.edu/research/clinical-decision-making-group#projects" target="_blank">Projects</a></li>
-						<li><a href="2019_publications.html">Publications</a></li>
-						<li><a href="2020_blogs.html">Blogs</a></li>
-						<li><a href="2019_seminars.html">Seminars</a></li>
-						<li><a href="2019_faq.html">FAQs</a></li>
-						<li><a href="index_archive.html" target="_blank">Archive</a></li>
+						<li><a href="publications.html">Publications</a></li>
+						<li><a href="blogs.html">Blogs</a></li>
+						<li><a href="seminars.html">Seminars</a></li>
+						<li><a href="faq.html">FAQs</a></li>
+						<li><a href="https://groups.csail.mit.edu/medg/index_archive.html" target="_blank">Archive</a></li>
 					</ul>
 				</nav>
 			</header>
@@ -123,65 +71,50 @@
 				<div class="container">
 
 					<header class="major special">
-						<h2>Publications</h2>
+						<h2>Blogs</h2>
 						<p>Papers published by group members.</p>
-						<p><a href="2019_theses.html">For theses, please visit this page.</a></p>
 					</header>
 
-					<div class="container-fluid">
-						<div class="searchbar">
-							<div style="float:left;">
-								<button type="button" class="btn btn-secondary" onclick="reset()">Reset</button>
-							</div>
-							<div style="float:left;">
-								<select id="authorselectfirst" class="button alt btn bibtex_search bibtex_author" style="border: 1px solid lightgrey;" extra="first" search="author">
-								  <option value="">Search First Author</option>
-								</select>
-							</div>
-							<div style="float:left;">
-								<select id="authorselect" class="button alt btn bibtex_search bibtex_author" style="border: 1px solid lightgrey;" search="author">
-								  <option value="">Search Author</option>
-								</select>
-							</div>
-							<div style="float:left;">
-								<select id="topicselect" class="button alt btn bibtex_search" style="border: 1px solid lightgrey;" search="topic">
-								  <option value="">Search Topic</option>
-								  <option value="decision|support|making">Decision Support</option>
-								  <option value="learning|supervised|unsupervised|representation|embedding|classification|cluster">Machine Learning</option>
-								  <option value="NLP|language|translation">Natural Language Processing</option>
-								  <option value="vision|imag">Computer Vision</option>
-								  <option value="reinforcement|policy">Reinforcement Learning</option>
-								</select>
-							</div>
-							<div style="float:left;">
-								<input type="text" class="bibtex_search form-control" id="searchbar" placeholder="Search strings">
-								<span class="help-block">Example - 2018 embedding</span>
-							</div>
-						</div>
-					</div>
+          <section>
+            <div id="md_content"></div>
+            <script>
+                  var body_location = 'docs/blogs.md';
+              		var conv = new showdown.Converter({tables: true});
+                  function getText(myUrl){
+                      var result = null;
+                      $.ajax( { url: myUrl,
+                                type: 'get',
+                                dataType: 'html',
+                                async: false,
+                                success: function(data) { result = data; }
+                              }
+                      );
+                      FileReady = true;
+                      return result;
+                  }
 
-					<div class="bibtex_structure">
-					  <div style="padding-bottom:10px;"></div>
-					  <div class="group year" extra="DESC number">
-					  	  <a href="#top" style="display: inline"><em>(Top of the page)</em></a>
-					  	  <div style="padding-bottom:10px;"></div>
-					  	  <div class="sort journal" extra="DESC string">
-					      	<div class="templates"></div>
-					      </div>
-					  </div>
-					</div>
+                  var markdown_source = getText(body_location);
+                  var output = conv.makeHtml( markdown_source );
+                  document.getElementById('md_content').innerHTML = output;
+
+									var table_entries = document.getElementById('md_content').children[1].children[1].children;
+									var descriptions = getText('docs/blogs/project_descriptions.txt');
+									var dlist = descriptions.split('\n');
+									for (var i = 0; i < table_entries.length; i++) {
+										//debugger;
+										table_entries[i].children[2].innerText = dlist[i];
+										table_entries[i].children[2].width = '35%';
+									}
+
+                </script>
+          </section>
+
+
 
 					<div id="bibtex_display">
 					  <div class="if bibtex_template" style="display: none;">
 					    <ul> <li>
-					      <!-- <span class="if journal !nolink"> -->
-					        <!-- <a class="bibtexVar" href="http://groups.csail.mit.edu/medg/ftp/papers/+BIBTEXKEY+.pdf" extra="BIBTEXKEY" target="_blank"> -->
-					            <!-- <span style="text-decoration: none;" class="title"></span>, -->
-					        <!-- </a> -->
-					      <!-- </span> -->
-<!-- 					      <span class="if title nolink">
-					            <span class="title"></span>,
-					      </span> -->
+
 					      <span class="if title">
 					      	<span class="if url"><b><a class="bibtexVar" href="+URL+" extra="url" target="_blank"><span class="title"></span></a></b></span>
 					      	<span class="if !url"><span class="if pmc"><b><a class="bibtexVar" href="https://www.ncbi.nlm.nih.gov/pmc/articles/+PMC+" extra="pmc" target="_blank"><span class="title"></span></a></b></span></span>

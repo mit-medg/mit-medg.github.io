@@ -7,16 +7,16 @@
 <html>
 	<head>
 		<link href="//fonts.googleapis.com/css?family=Crimson+Text:300italic,400italic|Roboto:300,400,300italic,400italic" rel="stylesheet">
-		<title>MEDG - FAQs</title>
+		<title>MEDG - Alumni</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<script src="2019_assets/js/jquery.min.js"></script>
-		<script src="2019_assets/js/skel.min.js"></script>
-		<script src="2019_assets/js/util.js"></script>
-		<script src="2019_assets/js/main.js"></script>
-		<script src="2019_assets/js/showdown.min.js"></script>
-		<link rel="stylesheet" href="2019_assets/css/main.css" />
-		</head>
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/skel.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+		<script src="assets/js/showdown.min.js"></script>
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
 	<body>
 		<!-- Header -->
 			<header id="header">
@@ -24,13 +24,13 @@
 				<nav id="nav">
 					<ul>
 						<li><a href="index.html">Home</a></li>
-						<li><a href="2019_people.html">People</a></li>
+						<li><a href="people.html">People</a></li>
 						<li><a href="https://www.csail.mit.edu/research/clinical-decision-making-group#projects" target="_blank">Projects</a></li>
-						<li><a href="2019_publications.html">Publications</a></li>
-						<li><a href="2020_blogs.html">Blogs</a></li>
-						<li><a href="2019_seminars.html">Seminars</a></li>
-						<li><a href="2019_faq.html">FAQs</a></li>
-						<li><a href="index_archive.html" target="_blank">Archive</a></li>
+						<li><a href="publications.html">Publications</a></li>
+						<li><a href="blogs.html">Blogs</a></li>
+						<li><a href="seminars.html">Seminars</a></li>
+						<li><a href="faq.html">FAQs</a></li>
+						<li><a href="https://groups.csail.mit.edu/medg/index_archive.html" target="_blank">Archive</a></li>
 					</ul>
 				</nav>
 			</header>
@@ -42,15 +42,20 @@
 			<section id="main" class="wrapper">
 				<div class="container">
 					<header class="major special">
-						<h2>Frequently Asked Questions (FAQs)</h2>
+						<h2>People</h2>
+						<p>Our group members are working on a range of projects.</p>
 					</header>
+				</div>
+
+				<div class="container">
+					<h3><a href="people.html">Current Members</a></h3>
 				</div>
 
 				<div class="container">
 					<section>
 						<div id="md_content"></div>
 						<script>
-					        var body_location = '2019_docs/faq.md';
+					        var body_location = 'docs/alumni.md';
 							var conv = new showdown.Converter({tables: true});
 					        function getText(myUrl){
 					            var result = null;
@@ -70,7 +75,6 @@
 					      </script>
 					</section>
 				</div>
-
 
 			</section>
 

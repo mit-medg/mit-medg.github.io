@@ -10,23 +10,27 @@
 		<title>MEDG - Publications</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-	    <meta http-equiv="Content-type" content="text/html;charset=UTF-8" /> 
-	    <meta http-equiv="cache-control" content="no-cache" /> 
-		<script src="2019_assets/js/jquery.min.js"></script>
-		<script src="2019_assets/js/skel.min.js"></script>
-		<script src="2019_assets/js/util.js"></script>
-		<script src="2019_assets/js/main.js"></script>
+	    <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+	    <meta http-equiv="cache-control" content="no-cache" />
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/skel.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-		<script src="2019_assets/js/bibtex_js.js" type="text/javascript" charset="utf-8"></script>
-		<!-- <bibtex src="2019_bib/psz.bib"></bibtex> -->
-		<bibtex src="2019_bib/mmd.bib"></bibtex>
-		<bibtex src="2019_bib/ckbjimmy.bib"></bibtex>
-		<bibtex src="2019_bib/emily.bib"></bibtex>
-		<!-- <bibtex src="2019_bib/wboag.bib"></bibtex> -->
-		<bibtex src="2019_bib/jindi.bib"></bibtex>
-		<!-- <bibtex src="2019_bib/stmharry.bib"></bibtex> -->
-		<!-- <bibtex src="2019_bib/geeticka.bib"></bibtex> -->
-		<!-- <bibtex src="2019_bib/elenaser.bib"></bibtex> -->
+		<script src="assets/js/bibtex_js.js" type="text/javascript" charset="utf-8"></script>
+		<bibtex src="bib/psz.bib"></bibtex>
+		<bibtex src="bib/emily.bib"></bibtex>
+		<bibtex src="bib/jindi.bib"></bibtex>
+		<bibtex src="bib/mmd.bib"></bibtex>
+		<bibtex src="bib/ckbjimmy.bib"></bibtex>
+		<bibtex src="bib/stmharry.bib"></bibtex>
+		<bibtex src="bib/symin95.bib"></bibtex>
+		<bibtex src="bib/gupta.bib"></bibtex>
+		<bibtex src="bib/wjl.bib"></bibtex>
+		<!-- <bibtex src="bib/wboag.bib"></bibtex> -->
+		<!-- <bibtex src="bib/stmharry.bib"></bibtex> -->
+		<!-- <bibtex src="bib/geeticka.bib"></bibtex> -->
+		<!-- <bibtex src="bib/elenaser.bib"></bibtex> -->
 		<script>
 			function urlsearch() {
 				var urlParams = new URLSearchParams(window.location.search);
@@ -42,17 +46,17 @@
 			  $("#Fontselector").on("change",function() {
 			    var font = $("#Fontselector option:selected").text();
 			    console.log(font);
-			
+
 			    $('.title.fonters').each(function() {
 			    	$(this).css("font-family",font);
 			    });
-			  }); 
-			});   
+			  });
+			});
 			function reset() {
 				$("select").each(function () {
 				  localStorage.setItem($(this).attr("id"),"");
 				  $(this).val("");
-				}); 
+				});
 				$("#searchbar").val("");
 				$("#searchbar").trigger('change');
 			}
@@ -83,13 +87,13 @@
 			}
 	    </style>
     	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-		<link rel="stylesheet" href="2019_assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/main.css" />
 	    <style>
 		    div, span {
 		    	line-height: 1.2;
 		    }
-		    ul { 
-		    	margin: 0.5em; 
+		    ul {
+		    	margin: 0.5em;
 		    }
 		</style>
 		</head>
@@ -101,12 +105,13 @@
 				<nav id="nav">
 					<ul>
 						<li><a href="index.html">Home</a></li>
-						<li><a href="2019_people.html">People</a></li>
+						<li><a href="people.html">People</a></li>
 						<li><a href="https://www.csail.mit.edu/research/clinical-decision-making-group#projects" target="_blank">Projects</a></li>
-						<li><a href="2019_publications.html">Publications</a></li>
-						<li><a href="2019_seminars.html">Seminars</a></li>
-						<li><a href="2019_faq.html">FAQs</a></li>
-						<li><a href="index_archive.html" target="_blank">Archive</a></li>
+						<li><a href="publications.html">Publications</a></li>
+						<li><a href="blogs.html">Blogs</a></li>
+						<li><a href="seminars.html">Seminars</a></li>
+						<li><a href="faq.html">FAQs</a></li>
+						<li><a href="https://groups.csail.mit.edu/medg/index_archive.html" target="_blank">Archive</a></li>
 					</ul>
 				</nav>
 			</header>
@@ -120,7 +125,7 @@
 					<header class="major special">
 						<h2>Publications</h2>
 						<p>Papers published by group members.</p>
-						<p><a href="2019_theses.html">For theses, please visit this page.</a></p>
+						<p><a href="theses.html">For theses, please visit this page.</a></p>
 					</header>
 
 					<div class="container-fluid">
@@ -179,9 +184,11 @@
 					      </span> -->
 					      <span class="if title">
 					      	<span class="if url"><b><a class="bibtexVar" href="+URL+" extra="url" target="_blank"><span class="title"></span></a></b></span>
-					      	<span class="if !url"><span class="if pmcid"><b><a class="bibtexVar" href="https://www.ncbi.nlm.nih.gov/pmc/articles/+PMCID+" extra="pmcid" target="_blank"><span class="title"></span></a></b></span></span>
-					      	<span class="if !url"><span class="if !pmcid"><span class="if pmid"><b><a class="bibtexVar" href="https://www.ncbi.nlm.nih.gov/pmc/articles/+PMID+" extra="pmid" target="_blank"><span class="title"></span></a></b></span></span></span>
-					      	<span class="if !url"><span class="if !pmcid"><span class="if !pmid"><b><span class="title"></span></b></span></span></span>
+					      	<span class="if !url"><span class="if pmc"><b><a class="bibtexVar" href="https://www.ncbi.nlm.nih.gov/pmc/articles/+PMC+" extra="pmc" target="_blank"><span class="title"></span></a></b></span></span>
+					      	<span class="if !url"><span class="if !pmc"><span class="if pmid"><b><a class="bibtexVar" href="https://www.ncbi.nlm.nih.gov/pmc/articles/+PMID+" extra="pmid" target="_blank"><span class="title"></span></a></b></span></span></span>
+					      	<span class="if !url"><span class="if !pmc"><span class="if !pmid"><span class="if doi"><b><a class="bibtexVar" href="+DOI+" extra="doi" target="_blank"><span class="title"></span></a></b></span></span></span></span>
+					      	<span class="if !url"><span class="if !pmc"><span class="if !pmid"><span class="if !doi"><span class="if eprint"><b><a class="bibtexVar" href="https://arxiv.org/pdf/+EPRINT+.pdf" extra="eprint" target="_blank"><span class="title"></span></a></b></span></span></span></span></span>
+					      	<span class="if !url"><span class="if !pmc"><span class="if !pmid"><span class="if !doi"><span class="if !eprint"><b><span class="title"></span></b></span></span></span></span>
 					      </span>
 					      <div class="if author">
 					        <span class="author"><span class="first_initial"></span> <span class="last"></span></span>
@@ -201,7 +208,7 @@
 					        <span class="if year"><span class="year"></span>.</span>
 					        <span class="if note"><span class="note"></span>.</span>
 					        <span class="if pmid"><a class="bibtexVar" href="https://www.ncbi.nlm.nih.gov/pubmed/+PMID+" extra="pmid" target="_blank">PMID: <span class="pmid"></span></a>.</span>
-					        <span class="if pmcid"><a class="bibtexVar" href="https://www.ncbi.nlm.nih.gov/pmc/articles/+PMCID+" extra="pmcid" target="_blank">PMCID: <span class="pmcid"></span></a>.</span>
+					        <span class="if pmc"><a class="bibtexVar" href="https://www.ncbi.nlm.nih.gov/pmc/articles/+PMC+" extra="pmc" target="_blank">PMCID: <span class="pmc"></span></a>.</span>
 					        <!-- <span class="if url"><a class="bibtexVar" href="+URL+" extra="url" target="_blank">[URL]</a></span> -->
 					        <a class="bibtexVar" role="button" data-toggle="collapse" href="#bib+BIBTEXKEY+" aria-expanded="false" aria-controls="bib+BIBTEXKEY+" extra="BIBTEXKEY">
 							  [bib]
@@ -222,12 +229,13 @@
 
 				</div>
 			</section>
-			
+
 		<!-- Footer -->
 			<footer id="footer">
 				<div class="container">
 					<ul class="copyright">
 						<li>&copy; MIT CSAIL Medical Decision Making Group</li>
+						<li><a href="https://accessibility.mit.edu/">Accessibility</a></li>
 						<li><a href="http://templated.co">templated.co</a></li>
 					</ul>
 				</div>
