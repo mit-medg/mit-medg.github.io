@@ -18,16 +18,12 @@
   you may want to assure that Google Scholar includes the papers you
   want to display and then exclude those papers Google Scholar has
   errorneously included. 
-* For the bib entry, please add `pmid`, `pmcid`, `url` if
-  possible. The code will parse these attributes and display them on
-  the website. 
+* For the bib entry, please add `pmid`, `pmc`, `url` if  possible,
+  because Google Scholar typically omits these. If you get a  bib
+  entry from Pubmed, it will include `pmid` and `pmc`. The code will
+  parse these attributes and display them on  the website.
 * If you wish, you may also add the `tags` attribute. The strings in
   the `tags` can be searched as a filter. 
-* The easiest way to get all of your publications is to export the
-  bibtex file from Google Scholar. However, please remember to exclude
-  the publications not belonging to you (GScholar sometimes did this
-  incorrectly). You may manually add the `pmid`, `pmc`, `url`, `tags`
-  after exporting the bibtex file. 
 * Please do not include punctuations such as `:` or `=` or `+`  in the
   bibentry key. It will result in problems displaying the  paper/bib
   because of some vagery in the javascript bibtex parser. 
