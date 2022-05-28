@@ -35,8 +35,10 @@
 
 ```
 @article{weng2017medical,
-  title={Medical subdomain classification of clinical notes using a machine learning-based natural language processing approach},
-  author={Weng, Wei-Hung and Wagholikar, Kavishwar B and McCray, Alexa T and Szolovits, Peter and Chueh, Henry C},
+  title={Medical subdomain classification of clinical notes using a
+  machine learning-based natural language processing approach},
+  author={Weng, Wei-Hung and Wagholikar, Kavishwar B and
+  McCray, Alexa T and Szolovits, Peter and Chueh, Henry C},
   journal={BMC medical informatics and decision making},
   volume={17},
   number={1},
@@ -54,17 +56,17 @@
 
 ```
 @phdthesis{Ghassemi2017hq,
-	Address = {Cambridge, MA},
-	Author = {Ghassemi, Marzyeh},
-	Department = {EECS},
-	Month = {Jun},
-	Reader = {Guttag, John and Celi, Leo Anthony G},
-	School = {MIT},
-	Supervisor = {Szolovits, Peter},
-	Title = {Representation Learning in Multi-dimensional Clinical Timeseries for Risk and Event Prediction},
+	Author = {Ghassemi, Marzyeh}, 
+	Title = {Representation Learning in Multi-dimensional Clinical Timeseries for Risk and Event Prediction}, 
 	Type = {PhD Thesis},
-	Url = {https://dspace.mit.edu/handle/1721.1/112389},
-	Year = {2017}
+	Year = {2017},
+	Month = {Jun}, 
+	Supervisor = {Szolovits, Peter},
+	Reader = {Guttag, John and Celi, Leo Anthony G},
+	School = {MIT}, 
+	Department = {EECS}, 
+	Address = {Cambridge, MA},
+	Url = {https://dspace.mit.edu/handle/1721.1/112389}
 }
 ```
 
