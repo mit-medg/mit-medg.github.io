@@ -1,0 +1,130 @@
+<!DOCTYPE HTML>
+<!--
+	Spatial by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+	<head>
+		<link href="//fonts.googleapis.com/css?family=Crimson+Text:300italic,400italic|Roboto:300,400,300italic,400italic" rel="stylesheet">
+		<title>MEDG - Publications</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+	    <meta http-equiv="Content-type" content="text/html;charset=UTF-8" /> 
+	    <meta http-equiv="cache-control" content="no-cache" /> 
+		<script src="./js/jquery.min.js"></script>
+		<script src="./js/skel.min.js"></script>
+		<script src="./js/util.js"></script>
+		<script src="./js/main.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+		<script src="./js/bibtex_js_thesis.js" type="text/javascript" charset="utf-8"></script>
+		<bibtex src="./MEDG-theses.bib"></bibtex>
+		<script>
+			function urlsearch() {
+				var urlParams = new URLSearchParams(window.location.search);
+				var q = urlParams.get("search");
+	            $("#searchbar").val(q);
+				$("#searchbar").trigger('change');
+			}
+			window.onload = function() {
+				urlsearch();
+			};
+
+			$(function() {
+			  $("#Fontselector").on("change",function() {
+			    var font = $("#Fontselector option:selected").text();
+			    console.log(font);
+			
+			    $('.title.fonters').each(function() {
+			    	$(this).css("font-family",font);
+			    });
+			  }); 
+			});   
+			function reset() {
+				$("select").each(function () {
+				  localStorage.setItem($(this).attr("id"),"");
+				  $(this).val("");
+				}); 
+				$("#searchbar").val("");
+				$("#searchbar").trigger('change');
+			}
+    	</script>
+	    <style>
+		    html, body, span, h1 {
+		    	/*font-family: "Times New Roman", Times, serif;*/
+		    	font-size: 17px;
+		    }
+		    .bibtexraw {
+		    	font-family: "Courier New";
+		    	font-size: 14px;
+		    }
+		    bibtex { display: none; }
+		    .searchbar { margin-left:0px;}
+		    #bibtex_errors { margin-top:10px; color: red;}
+		    h1.header {margin-left:8px;}
+		    h1.YEAR { font-size: 17px; font-weight: bold; display: inline; margin-left:8px;}
+
+		    #form-control {
+			  height: 50px;
+			  font-size: 16px;
+			}
+
+			#form-btn {
+			 line-height: 50px;
+			 font-size: 16px;
+			}
+	    </style>
+    	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		<link rel="stylesheet" href="./main.css" />
+	    <style>
+		    div, span {
+		    	line-height: 1.2;
+		    }
+		    ul { 
+		    	margin: 0.5em; 
+		    }
+		</style>
+		</head>
+
+	<body>
+				<h2>MD Theses, Supervisor</h2>
+				<div class="bibtex_display" Type="MD Thesis">
+				  <div class="if bibtex_template" style="display: none;">
+				    <ul> <li>
+				      <span class="if title">
+				      	<span class="if url"><b><a class="bibtexVar" href="+URL+" extra="url" target="_blank"><span class="title"></span></a></b></span>
+				      	<span class="if !url"><b><span class="title"></span></b></span>
+				      </span>
+				      <div class="if author">
+				        <span class="author"><span class="first"></span> <span class="last"></span></span>
+				      </div>
+				      <div class="if supervisor">Supervisor: 
+				        <span class="supervisor"><span class="first"></span> <span class="last"></span></span>
+				      </div>
+				      <div class="if reader">Reader: 
+				        <span class="reader"><span class="first"></span> <span class="last"></span></span>
+				      </div>
+				      <div>
+				        <span class="if type"><span class="type"></span>,</span>
+				        <span class="if department"><span class="department"></span>,</span>
+				        <span class="if school"><span class="school"></span>,</span>
+				        <span class="if address"><span class="address"></span>,</span>
+				        <span class="if month"><span class="month"></span>,</span>
+				        <span class="if year"><span class="year"></span>.</span>
+				        <a class="bibtexVar" role="button" data-toggle="collapse" href="#bib+BIBTEXKEY+" aria-expanded="false" aria-controls="bib+BIBTEXKEY+" extra="BIBTEXKEY">
+						  [bib]
+						</a>
+						<br />
+				      </div>
+				      <div class="bibtexVar collapse" id="bib+BIBTEXKEY+" extra="BIBTEXKEY">
+						  <div class="well">
+						    <pre><span class="bibtexraw noread"></span></pre>
+						  </div>
+					  </div>
+				      <div style="display:none"><span class="bibtextype"></span></div>
+				      <div style="display:none"><span class="if topic"><span class="topic"></span></span></div>
+				    </li></ul>
+				  </div>
+				</div>
+	</body>
+</html>

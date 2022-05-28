@@ -48,19 +48,24 @@ Irene Lin | Visiting Engineer | Wistron
 
 
 ### Collaborating Investigators
+  * Jason Baron, MD, Massachusetts General Hospital
   * Leo AG Celi, MD, MPH, MIT / Harvard Medical School / Beth Israel Deaconess Hospital
+  * Anand Dighe, MD, Massachusetts General Hospital
   * Marzyeh Ghassemi, PhD, U Toronto
   * Alexander Goehler, MD, PhD, Brigham and Women's Hospital
-  * Juri Kivelev, MD, Helsinki University Central Hospital
+  * Juri Kivelev, MD, Turku University Central Hospital
   * Isaac Kohane, MD, PhD, Children's Hospital Informatics Program (CHIP) / Harvard Medical School
   * Ronilda Lacson, MD, PhD, Brigham and Women's Hospital
+  * Michelle Luo, PhD, Takeda
+  * Yuan Luo, PhD, Northwestern University
   * Paolo Piraino, Bayer
   * Tristan Naumann, PhD, Microsoft Research
   * Preethi Raghavan, PhD, IBM Research
   * Anna Rumshisky, PhD, UMass Lowell
-  * Ilkka Saarenpää, Turku University Hospital
+  * Ilkka Saarenpää, Turku University Central Hospital
   * Harry P Selker, MD, MSPH, Tufts Medical Center
-  * Özlem Uzuner, PhD, University at Albany - SUNY
+  * Jenifer Siegelman, MD, Takeda
+  * Özlem Uzuner, PhD, George Mason University
 
 
 Last Modified 10/01/2020
