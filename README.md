@@ -57,7 +57,8 @@
 ```
 @phdthesis{Ghassemi2017hq,
 	Author = {Ghassemi, Marzyeh}, 
-	Title = {Representation Learning in Multi-dimensional Clinical Timeseries for Risk and Event Prediction}, 
+	Title = {Representation Learning in Multi-dimensional Clinical
+	Timeseries for Risk and Event Prediction},
 	Type = {PhD Thesis},
 	Year = {2017},
 	Month = {Jun}, 
