@@ -55,4 +55,5 @@
 }
 ```
 
+* The files in `psz_split` directory were for splitting one bibtex into several thesis categories. However, it's not completed and hooked up to the public website.
 * The bibtex parser is inherited and modified from `https://github.com/pcooksey/bibtex-js`.
