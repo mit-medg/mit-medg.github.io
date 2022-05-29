@@ -4,6 +4,7 @@
   * [Willie Boag](http://willieboag.com), PhD 2022
   * [Matthew McDermott](https://scholar.google.com/citations?user=_V96PXoAAAAJ&hl=en) (Harvard Medical School), PhD 2022
   * [Wei-Hung Weng](http://ckbjimmy.github.io/) (Google Research), PhD 2022
+  * Saumya Rawat, UROP 2022
   * [Heather Berlin](https://www.linkedin.com/in/heatherberlin), SM 2021
   * [Di Jin](https://scholar.google.com/citations?user=x5QTK9YAAAAJ&hl=en) (Amazon Alexa AI), PhD 2020
   * [Sam Finlayson](https://sgfin.github.io/) (Harvard Medical School), PhD 2020

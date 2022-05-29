@@ -1,32 +1,20 @@
 # MEDG website (version 2022)
 
 * For any questions, please contact Wei-Hung Weng (ckbjimmy {AT} mit {DOT} edu)
-* Latest update: May 28, 2022
+* Latest update: May 29, 2022
 
 ## Instructions to update the content
 
-* Most content can be updated via the `.md` files in the `docs` folder except for the `news` in the `index.html`.
+* Most content such as people, alumni, projects, seminars, blogs can be updated via the `.md` files in the `docs` folder except for the `news` in the `index.html`. i.e. if you want to add news, please directly add them into `index.html`, and remove old ones if needed.
 * Please update via the files in this github repo
-<!-- * Please copy the files into `/afs/csail.mit.edu/group/medg/www/data` to display the website under the CSAIL domain. -->
 
 ## Some instructions for updating the group bibliography
 
 * Create your own `.bib` file in the folder `bib`, then add `<bibtex src="bib/[YOUR_BIB_NAME].bib"></bibtex>` in the `<head>` of `publications.html`. Just need to do this once.
-* The easiest way to get your full bib data is [exporting them from
-  Google
-  Scholar](https://www.ndsu.edu/fileadmin/digitalmeasures/DM_Training_Materials/BibTex_Exports_from_Google_Scholar.pdf). However, 
-  you may want to assure that Google Scholar includes the papers you
-  want to display and then exclude those papers Google Scholar has
-  errorneously included. 
-* For the bib entry, please add `pmid`, `pmc`, `url` if  possible,
-  because Google Scholar typically omits these. If you get a  bib
-  entry from Pubmed, it will include `pmid` and `pmc`. The code will
-  parse these attributes and display them on  the website.
-* If you wish, you may also add the `tags` attribute. The strings in
-  the `tags` can be searched as a filter. 
-* Please do not include punctuations such as `:` or `=` or `+`  in the
-  bibentry key. It will result in problems displaying the  paper/bib
-  because of some vagery in the javascript bibtex parser. 
+* The easiest way to get your full bib data is [exporting them from Google Scholar](https://www.ndsu.edu/fileadmin/digitalmeasures/DM_Training_Materials/BibTex_Exports_from_Google_Scholar.pdf). However, you may want to assure that Google Scholar includes the papers you want to display and then exclude those papers Google Scholar has errorneously included. 
+* For the bib entry, please add `pmid`, `pmc`, `url` if possible, because Google Scholar typically omits these. If you get a bib entry from Pubmed, it will include `pmid` and `pmc`. The code will parse these attributes and display them on the website.
+* If you wish, you may also add the `tags` attribute. The strings in the `tags` can be searched as a filter. 
+* Please do not include punctuations such as `:` or `=` or `+`  in the bibentry key. It will result in problems displaying the paper/bib because of some vagery in the javascript bibtex parser. 
 * An example of the above attributes:
 
 ```
