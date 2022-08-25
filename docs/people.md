@@ -16,10 +16,10 @@ Fern Keniston | Administrative Support | fernd@mit.edu, (617) 253-5869
 Name | Position | Description
 -----|----------|------------
 [Emily Alsentzer](https://www.csail.mit.edu/person/emily-alsentzer) | PhD student | Emily is a final year PhD student in MIT HST program. 
-[Geeticka Chauhan](http://people.csail.mit.edu/geeticka/) | PhD student | Geeticka is a 4th year PhD student in MIT EECS program. 
-[Harry Tzu-Ming Hsu](https://stmharry.github.io/) | PhD student | Harry is a 4th year PhD student in MIT EECS program. 
-[Eric Lehman](https://www.linkedin.com/in/eric-lehman-51b1419b/) | PhD student | Eric is a 1st year PhD student in MIT EECS program. 
-[Elena Sergeeva](https://www.csail.mit.edu/person/elena-sergeeva) | PhD student | Elena is a 5th year PhD student in MIT EECS program. 
+[Geeticka Chauhan](http://people.csail.mit.edu/geeticka/) | PhD student | Geeticka is a 5th year PhD student in MIT EECS program. 
+[Harry Tzu-Ming Hsu](https://stmharry.github.io/) | PhD student | Harry is a final year PhD student in MIT EECS program. 
+[Eric Lehman](https://www.linkedin.com/in/eric-lehman-51b1419b/) | PhD student | Eric is a 2nd year PhD student in MIT EECS program. 
+[Elena Sergeeva](https://www.csail.mit.edu/person/elena-sergeeva) | PhD student | Elena is a 6th year PhD student in MIT EECS program. 
 Ying Zhang | PhD student | Ying is a PhD student in MIT EECS program. (on leave)
 
 
@@ -29,7 +29,6 @@ Name | Position | Description
 -----|----------|------------
 Julie Vaughn | MEng student | 
 Shelley Choi | UROP | 
-Saumya Rawat | UROP | 
 Mercy Oladipo | UROP | 
 Evan Kim | UROP | 
 Brendan Yap | UROP | 
