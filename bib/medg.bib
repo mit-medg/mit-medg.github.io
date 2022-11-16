@@ -373,7 +373,7 @@ Conclusions: 3D-MICE offers a novel and practical approach to imputing clinical 
 @article{Uzuner2008xr,
   Abstract = {OBJECTIVE: Clinical records contain significant medical information that can be useful to researchers in various disciplines. However, these records also contain personal health information (PHI) whose presence limits the use of the records outside of hospitals. The goal of de-identification is to remove all PHI from clinical records. This is a challenging task because many records contain foreign and misspelled PHI; they also contain PHI that are ambiguous with non-PHI. These complications are compounded by the linguistic characteristics of clinical records. For example, medical discharge summaries, which are studied in this paper, are characterized by fragmented, incomplete utterances and domain-specific language; they cannot be fully processed by tools designed for lay language.
 METHODS AND RESULTS: In this paper, we show that we can de-identify medical discharge summaries using a de-identifier, Stat De-id, based on support vector machines and local context (F-measure=97\% on PHI). Our representation of local context aids de-identification even when PHI include out-of-vocabulary words and even when PHI are ambiguous with non-PHI within the same corpus. Comparison of Stat De-id with a rule-based approach shows that local context contributes more to de-identification than dictionaries combined with hand-tailored heuristics (F-measure=85\%). Comparison with two well-known named entity recognition (NER) systems, SNoW (F-measure=94\%) and IdentiFinder (F-measure=36\%), on five representative corpora show that when the language of documents is fragmented, a system with a relatively thorough representation of local context can be a more effective de-identifier than systems that combine (relatively simpler) local context with global context. Comparison with a Conditional Random Field De-identifier (CRFD), which utilizes global context in addition to the local context of Stat De-id, confirms this finding (F-measure=88\%) and establishes that strengthening the representation of local context may be more beneficial for de-identification than complementing local with global context.},
-  Author = {Uzuner, {\"O}zlem and Sibanda, Tawanda C and Luo, Yuan and Szolovits, Peter},
+  Author = {Uzuner, {\"{O}}zlem and Sibanda, Tawanda C and Luo, Yuan and Szolovits, Peter},
   Date-Added = {2018-11-19 17:11:02 -0500},
   Date-Modified = {2018-11-19 17:11:02 -0500},
   Doi = {10.1016/j.artmed.2007.10.001},
@@ -565,7 +565,7 @@ METHODS AND RESULTS: In this paper, we show that we can de-identify medical disc
 Materials and Methods: We introduce the first de-identification system based on artificial neural networks (ANNs), which requires no handcrafted features or rules, unlike existing systems. We compare the performance of the system with state-of-the-art systems on two datasets: the i2b2 2014 de-identification challenge dataset, which is the largest publicly available de-identification dataset, and the MIMIC de-identification dataset, which we assembled and is twice as large as the i2b2 2014 dataset.
 Results: Our ANN model outperforms the state-of-the-art systems. It yields an F1-score of 97.85 on the i2b2 2014 dataset, with a recall of 97.38 and a precision of 98.32, and an F1-score of 99.23 on the MIMIC de-identification dataset, with a recall of 99.25 and a precision of 99.21.
 Conclusion: Our findings support the use of ANNs for de-identification of patient notes, as they show better performance than previously published systems while requiring no manual feature engineering.},
-  Author = {Dernoncourt, Franck and Lee, Ji Young and Uzuner, {\"O}zlem and Szolovits, Peter},
+  Author = {Dernoncourt, Franck and Lee, Ji Young and Uzuner, {\"{O}}zlem and Szolovits, Peter},
   Date-Added = {2018-11-19 17:11:02 -0500},
   Date-Modified = {2018-11-19 17:11:02 -0500},
   Doi = {10.1093/jamia/ocw156},
@@ -605,7 +605,7 @@ Conclusion: The accuracy of the PheNorm algorithms is on par with algorithms tra
 
 @article{Uzuner2007dz,
   Abstract = {To facilitate and survey studies in automatic de-identification, as a part of the i2b2 (Informatics for Integrating Biology to the Bedside) project, authors organized a Natural Language Processing (NLP) challenge on automatically removing private health information (PHI) from medical discharge records. This manuscript provides an overview of this de-identification challenge, describes the data and the annotation process, explains the evaluation metrics, discusses the nature of the systems that addressed the challenge, analyzes the results of received system runs, and identifies directions for future research. The de-indentification challenge data consisted of discharge summaries drawn from the Partners Healthcare system. Authors prepared this data for the challenge by replacing authentic PHI with synthesized surrogates. To focus the challenge on non-dictionary-based de-identification methods, the data was enriched with out-of-vocabulary PHI surrogates, i.e., made up names. The data also included some PHI surrogates that were ambiguous with medical non-PHI terms. A total of seven teams participated in the challenge. Each team submitted up to three system runs, for a total of sixteen submissions. The authors used precision, recall, and F-measure to evaluate the submitted system runs based on their token-level and instance-level performance on the ground truth. The systems with the best performance scored above 98\% in F-measure for all categories of PHI. Most out-of-vocabulary PHI could be identified accurately. However, identifying ambiguous PHI proved challenging. The performance of systems on the test data set is encouraging. Future evaluations of these systems will involve larger data sets from more heterogeneous sources.},
-  Author = {Uzuner, {\"O}zlem and Luo, Yuan and Szolovits, Peter},
+  Author = {Uzuner, {\"{O}}zlem and Luo, Yuan and Szolovits, Peter},
   Date = {2007 Sep-Oct},
   Date-Added = {2018-11-19 17:11:02 -0500},
   Date-Modified = {2018-11-19 17:11:02 -0500},
@@ -624,7 +624,7 @@ Conclusion: The accuracy of the PheNorm algorithms is on par with algorithms tra
   Bdsk-Url-1 = {http://dx.doi.org/10.1197/jamia.M2444}}
 
 @inproceedings{Lee2016,
-  Author = {Ji Young Lee and Franck Dernoncourt and {\"O}zlem Uzuner and Peter Szolovits},
+  Author = {Ji Young Lee and Franck Dernoncourt and {\"{O}}zlem Uzuner and Peter Szolovits},
   Booktitle = {Proceedings of the Clinical Natural Language Processing Workshop},
   Date-Added = {2018-11-19 17:11:02 -0500},
   Date-Modified = {2018-11-19 17:11:02 -0500},
@@ -840,7 +840,7 @@ CONCLUSION: Our study shows that a supervised learning-based NLP approach is use
 
 @article{Sibanda2006cr,
   Abstract = {Semantic category recognition (SCR) contributes to document understanding. Most approaches to SCR fail to make use of syntax. We hypothesize that syntax, if represented appropriately, can improve SCR. We present a statistical semantic category (SC) recognizer trained with syntactic and lexical contextual clues, as well as ontological information from UMLS, to identify eight semantic categories in discharge summaries. Some of our categories, e.g., test results and findings, include complex entries that span multiple phrases. We achieve classification F-measures above 90\% for most categories and show that syntactic context is important for SCR.},
-  Author = {Sibanda, Tawanda and He, Tian and Szolovits, Peter and Uzuner, {\"O}zlem},
+  Author = {Sibanda, Tawanda and He, Tian and Szolovits, Peter and Uzuner, {\"{O}}zlem},
   Date-Added = {2018-11-19 17:11:02 -0500},
   Date-Modified = {2018-11-19 17:11:02 -0500},
   Journal = {AMIA Annu Symp Proc},
@@ -1143,7 +1143,7 @@ RESULTS AND CONCLUSIONS: We compare our system with three baseline classifiers u
 
 @article{Luo2016oq,
   Abstract = {Research on extracting biomedical relations has received growing attention recently, with numerous biological and clinical applications including those in pharmacogenomics, clinical trial screening and adverse drug reaction detection. The ability to accurately capture both semantic and syntactic structures in text expressing these relations becomes increasingly critical to enable deep understanding of scientific papers and clinical narratives. Shared task challenges have been organized by both bioinformatics and clinical informatics communities to assess and advance the state-of-the-art research. Significant progress has been made in algorithm development and resource construction. In particular, graph-based approaches bridge semantics and syntax, often achieving the best performance in shared tasks. However, a number of problems at the frontiers of biomedical relation extraction continue to pose interesting challenges and present opportunities for great improvement and fruitful research. In this article, we place biomedical relation extraction against the backdrop of its versatile applications, present a gentle introduction to its general pipeline and shared resources, review the current state-of-the-art in methodology advancement, discuss limitations and point out several promising future directions.},
-  Author = {Luo, Yuan and Uzuner, {{\"O}}zlem and Szolovits, Peter},
+  Author = {Luo, Yuan and Uzuner, {{\"{O}}}zlem and Szolovits, Peter},
   Date-Added = {2018-11-19 17:08:58 -0500},
   Date-Modified = {2018-11-19 17:08:58 -0500},
   Journal = {Brief Bioinform},
@@ -1436,7 +1436,7 @@ CONCLUSIONS: Inclusion of narrative concepts identified using natural language p
   Abstract = {OBJECTIVE: Narratives of electronic medical records contain information that can be useful for clinical practice and multi-purpose research. This information needs to be put into a structured form before it can be used by automated systems. Coreference resolution is a step in the transformation of narratives into a structured form.
 METHODS: This study presents a medical coreference resolution system (MCORES) for noun phrases in four frequently used clinical semantic categories: persons, problems, treatments, and tests. MCORES treats coreference resolution as a binary classification task. Given a pair of concepts from a semantic category, it determines coreferent pairs and clusters them into chains. MCORES uses an enhanced set of lexical, syntactic, and semantic features. Some MCORES features measure the distance between various representations of the concepts in a pair and can be asymmetric.
 RESULTS AND CONCLUSION: MCORES was compared with an in-house baseline that uses only single-perspective 'token overlap' and 'number agreement' features. MCORES was shown to outperform the baseline; its enhanced features contribute significantly to performance. In addition to the baseline, MCORES was compared against two available third-party, open-domain systems, RECONCILE(ACL09) and the Beautiful Anaphora Resolution Toolkit (BART). MCORES was shown to outperform both of these systems on clinical records.},
-  Author = {Bodnari, Andreea and Szolovits, Peter and Uzuner, {{\"O}}zlem},
+  Author = {Bodnari, Andreea and Szolovits, Peter and Uzuner, {{\"{O}}}zlem},
   Date = {2012 Sep-Oct},
   Date-Added = {2018-11-19 17:08:58 -0500},
   Date-Modified = {2018-11-19 17:08:58 -0500},
@@ -1696,7 +1696,7 @@ CONCLUSIONS: IBD-related surgery or hospitalization is associated with a signifi
   Abstract = {OBJECTIVE: Extracting medical knowledge from electronic medical records requires automated approaches to combat scalability limitations and selection biases. However, existing machine learning approaches are often regarded by clinicians as black boxes. Moreover, training data for these automated approaches at often sparsely annotated at best. The authors target unsupervised learning for modeling clinical narrative text, aiming at improving both accuracy and interpretability.
 METHODS: The authors introduce a novel framework named subgraph augmented non-negative tensor factorization (SANTF). In addition to relying on atomic features (e.g., words in clinical narrative text), SANTF automatically mines higher-order features (e.g., relations of lymphoid cells expressing antigens) from clinical narrative text by converting sentences into a graph representation and identifying important subgraphs. The authors compose a tensor using patients, higher-order features, and atomic features as its respective modes. We then apply non-negative tensor factorization to cluster patients, and simultaneously identify latent groups of higher-order features that link to patient clusters, as in clinical guidelines where a panel of immunophenotypic features and laboratory results are used to specify diagnostic criteria.
 RESULTS AND CONCLUSION: SANTF demonstrated over 10\% improvement in averaged F-measure on patient clustering compared to widely used non-negative matrix factorization (NMF) and k-means clustering methods. Multiple baselines were established by modeling patient data using patient-by-features matrices with different feature configurations and then performing NMF or k-means to cluster patients. Feature analysis identified latent groups of higher-order features that lead to medical insights. We also found that the latent groups of atomic features help to better correlate the latent groups of higher-order features.},
-  Author = {Luo, Yuan and Xin, Yu and Hochberg, Ephraim and Joshi, Rohit and Uzuner, {\"O}zlem and Szolovits, Peter},
+  Author = {Luo, Yuan and Xin, Yu and Hochberg, Ephraim and Joshi, Rohit and Uzuner, {\"{O}}zlem and Szolovits, Peter},
   Date-Added = {2018-11-19 17:08:58 -0500},
   Date-Modified = {2018-11-19 17:08:58 -0500},
   Journal = {J Am Med Inform Assoc},
@@ -1931,7 +1931,7 @@ MATERIALS AND METHODS: The graph-based methods use variations of PageRank and di
 RESULTS: The topic-modeling methods achieve 66.9\% accuracy on a subset of the Mayo Clinic's data, while the graph-based methods only reach the 40-50\% range, with a most-frequent-sense baseline of 56.5\%. Features derived from the UMLS semantic type and concept hierarchies do not produce a gain over bag-of-words features in the topic models, but identifying phrases from UMLS and using syntax does help.
 DISCUSSION: Although topic models outperform graph-based methods, semantic features derived from the UMLS prove too noisy to improve performance beyond bag-of-words.
 CONCLUSIONS: Topic modeling for WSD provides superior results in the clinical domain; however, integration of knowledge remains to be effectively exploited.},
-  Author = {Chasin, Rachel and Rumshisky, Anna and Uzuner, {\"O}zlem and Szolovits, Peter},
+  Author = {Chasin, Rachel and Rumshisky, Anna and Uzuner, {\"{O}}zlem and Szolovits, Peter},
   Date = {2014 Sep-Oct},
   Date-Added = {2018-11-19 17:08:58 -0500},
   Date-Modified = {2018-11-19 17:08:58 -0500},
