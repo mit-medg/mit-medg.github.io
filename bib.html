@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bibliography of MIT CSAIL Clinical Decision Making Group (MEDG) Papers</title>
+  <style>
+    :root { --fg: #0f172a; --muted:#475569; --bg:#f8fafc; --card:#ffffff; --accent:#0ea5e9; }
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif}
+    header{position:sticky;top:0;background:rgba(248,250,252,.85);backdrop-filter:saturate(180%) blur(6px);border-bottom:1px solid #e2e8f0}
+    .wrap{max-width:1000px;margin:0 auto;padding:18px}
+    h1{font-size:1.4rem;margin:0 0 6px 0}
+    .muted{color:var(--muted)}
+    main{max-width:1000px;margin:24px auto;padding:0 18px 48px}
+    .card{background:#fff;border:1px solid #e2e8f0;border-radius:16px;box-shadow:0 2px 10px rgba(2,6,23,.06);padding:18px}
+    ol{counter-reset:item;list-style:none;padding-left:0}
+    li{counter-increment:item;background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:16px;margin:12px 0}
+    li::before{content: counter(item) ". ";font-weight:600;margin-right:6px}
+    li.group{counter-increment:none;background:transparent;border:none;padding:0;margin:24px 0 8px;font-weight:700;font-size:1.05rem}
+    li.group::before{content:'';margin:0}
+    .small{font-size:.9rem}
+    .error{background:#fef2f2;border:1px solid #fecaca;color:#991b1b;padding:8px 12px;border-radius:10px;margin-top:10px}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <h1>Bibliography of MIT CSAIL Clinical Decision Making Group (MEDG) Papers</h1>
+    </div>
+  </header>
+
+  <main>
+    <div class="card">
+      <div id="status" class="small muted" style="margin-top:10px"></div>
+      <div id="err" class="error" style="display:none"></div>
+    </div>
+
+    <ol id="output"></ol>
+  </main>
+
+  <script>
+    // Elements
+    const statusEl = document.getElementById('status');
+    const errorEl = document.getElementById('err');
+    const outputEl = document.getElementById('output');
+
+    // Status & error
+    function status(html){ if(statusEl){ statusEl.innerHTML = html; } }
+    function showError(e){
+      if(!errorEl) return;
+      errorEl.style.display = 'block';
+      const msg = (e && e.message) ? e.message : String(e);
+      errorEl.innerHTML = `⚠️ ${escapeHtml(msg)}<div class="small">Tip: If this page is opened via <code>file:///</code>, browsers block <code>fetch</code>. Serve locally (e.g., <code>python3 -m http.server</code>).</div>`;
+      console.error(e);
+    }
+
+    // Files to load
+    const bibFiles = [
+      // Core sets
+      "bib/psz.bib",
+      "bib/medg.bib",
+      "bib/MEDG_theses.bib",
+      // Additional per-person sets (keep if present)
+      "bib/emily.bib","bib/jindi.bib","bib/mmd.bib","bib/ckbjimmy.bib",
+      "bib/stmharry.bib","bib/symin95.bib","bib/gupta.bib","bib/wjl.bib"
+    ];
+
+    // Filters from URL (?name=...&title=...&supervisor=...&reader=...)
+    function getFilters(){
+      try{
+        const params = new URLSearchParams(window.location.search);
+        const name = params.get('name');
+        const title = params.get('title');
+        const supervisor = params.get('supervisor');
+        const reader = params.get('reader');
+        return {
+          name: name && name.trim() ? name.trim() : '',
+          title: title && title.trim() ? title.trim() : '',
+          supervisor: supervisor && supervisor.trim() ? supervisor.trim() : '',
+          reader: reader && reader.trim() ? reader.trim() : ''
+        };
+      }catch{ return {name:'', title:'', supervisor:'', reader:''}; }
+    }
+
+    window.addEventListener('DOMContentLoaded', ()=>{
+      try{ status('Initializing…'); }catch(_){/* ignore */}
+      loadAll().catch(showError);
+    });
+
+    let currentEntries = [];
+
+    // Load and de-duplicate
+    async function loadAll(){
+      status('Fetching bib files…');
+      if(errorEl) errorEl.style.display = 'none';
+      let entries = [];
+      const perFile = [];
+      const failed = [];
+      for(const file of bibFiles){
+        try{
+          const res = await fetch(file, {cache:'no-store'});
+          if(!res.ok) throw new Error(`${file} (HTTP ${res.status})`);
+          const text = await res.text();
+          const got = parseBibtex(text);
+          perFile.push({file, count: got.length});
+          entries = entries.concat(got);
+        }catch(e){
+          failed.push({file, error: e.message||String(e)});
+          console.warn('Failed to load', file, e);
+        }
+      }
+      // De-duplicate by BibTeX key
+      const before = entries.length;
+      const map = new Map();
+      for(const e of entries){
+        const k = String(e.key||'').toLowerCase();
+        if(!k) continue;
+        if(!map.has(k)) map.set(k, e);
+      }
+      entries = Array.from(map.values());
+      const removed = before - entries.length;
+
+      // Apply optional filters
+      const {name, title, supervisor, reader} = getFilters();
+      let filtered = entries;
+      if(name || title || supervisor || reader){
+        const nameQ = (name||'').toLowerCase();
+        const titleQ = (title||'').toLowerCase();
+        const supQ = (supervisor||'').toLowerCase();
+        const rdrQ = (reader||'').toLowerCase();
+        filtered = entries.filter(e => {
+          const nameStr = (renderNamesForFilter(e) || '').toLowerCase();
+          const titleStr = ((e.fields && e.fields.title) ? e.fields.title : '').replace(/[{}]/g,'').toLowerCase();
+          const supStr = (renderSupervisorsForFilter(e) || '').toLowerCase();
+          const rdrStr = (renderReadersForFilter(e) || '').toLowerCase();
+          const okName = name ? nameStr.includes(nameQ) : true;
+          const okTitle = title ? titleStr.includes(titleQ) : true;
+          const okSup = supervisor ? supStr.includes(supQ) : true;
+          const okRdr = reader ? rdrStr.includes(rdrQ) : true;
+          return okName && okTitle && okSup && okRdr;
+        });
+      }
+
+      currentEntries = filtered;
+      let baseMsg = `<strong>${filtered.length}</strong> entries shown (from ${entries.length} unique; ${bibFiles.length} files`;
+      if(removed>0) baseMsg += `, <span title=\"duplicates removed\">-${removed} dup</span>`;
+      baseMsg += ')';
+      const esc = escapeHtml;
+      if(name) baseMsg += ` — name: <code>${esc(name)}</code>`;
+      if(title) baseMsg += ` — title: <code>${esc(title)}</code>`;
+      if(supervisor) baseMsg += ` — supervisor: <code>${esc(supervisor)}</code>`;
+      if(reader) baseMsg += ` — reader: <code>${esc(reader)}</code>`;
+      if(perFile.length){
+        const parts = perFile.map(p=>`${esc(p.file)}:${p.count}`).join(', ');
+        baseMsg += `<div class=\"small\">Loaded: ${parts}</div>`;
+      }
+      if(failed.length){
+        const parts = failed.map(f=>`${esc(f.file)} (${esc(f.error)})`).join('; ');
+        baseMsg += `<div class=\"small\" style=\"color:#991b1b\">Failed: ${parts}</div>`;
+      }
+      status(baseMsg);
+      render(filtered);
+    }
+
+    // Render with grouping
+    function render(entries){
+      const exploring = [];
+      const inProgress = [];
+      const dated = [];
+      const unknownYear = [];
+
+      for(const e of entries){
+        const r = groupRank(e);
+        if(r === 0){ exploring.push(e); continue; }
+        if(r === 1){ inProgress.push(e); continue; }
+        const y = parseInt(e.fields.year||'0',10)||0;
+        if(y>0) dated.push(e); else unknownYear.push(e);
+      }
+
+      const tiebreak = (a,b)=>{
+        const ak = firstAuthorKey(a).localeCompare(firstAuthorKey(b));
+        if(ak!==0) return ak;
+        const t = (a.fields.title||'').localeCompare(b.fields.title||'');
+        if(t!==0) return t;
+        return (a.key||'').localeCompare(b.key||'');
+      };
+
+      exploring.sort(tiebreak);
+      inProgress.sort(tiebreak);
+      dated.sort((a,b)=>{ const d = dateScore(b) - dateScore(a); if(d!==0) return d; return tiebreak(a,b); });
+
+      const byYear = new Map();
+      for(const e of dated){
+        const y = String(parseInt(e.fields.year||'0',10));
+        if(!byYear.has(y)) byYear.set(y, []);
+        byYear.get(y).push(e);
+      }
+      const years = Array.from(byYear.keys()).map(n=>parseInt(n,10)).filter(n=>!Number.isNaN(n) && n>0).sort((a,b)=>b-a);
+
+      outputEl.innerHTML = '';
+      const addHeader = (label)=>{ const h=document.createElement('li'); h.className='group'; h.textContent=label; outputEl.appendChild(h); };
+      const addItem = (e)=>{ const li=document.createElement('li'); li.innerHTML = formatVancouver(e); outputEl.appendChild(li); };
+
+      if(exploring.length){ addHeader('Exploring'); exploring.forEach(addItem); }
+      if(inProgress.length){ addHeader('In progress'); inProgress.forEach(addItem); }
+      for(const y of years){ addHeader(String(y)); byYear.get(String(y)).forEach(addItem); }
+      if(unknownYear.length){ addHeader('Unknown year'); unknownYear.sort(tiebreak).forEach(addItem); }
+    }
+
+    // --- BibTeX parsing ---
+    function parseBibtex(text){
+      text = text.replace(/^\s*%.*$/gm, '');
+      const entries = [];
+      const rx = /@([a-zA-Z]+)\s*\{\s*([^,]+)\s*,([\s\S]*?)\}\s*(?=@|$)/g;
+      let m;
+      while((m = rx.exec(text))){
+        const type = (m[1]||'').toLowerCase();
+        const key = (m[2]||'').trim();
+        const body = m[3]||'';
+        const fields = parseFields(body);
+        entries.push({type, key, fields});
+      }
+      return entries;
+    }
+
+    function parseFields(body){
+      const out = {};
+      let i=0, token='';
+      let depth=0; let inQuote=false; const parts=[];
+      while(i<body.length){
+        const c = body[i];
+        if(c==='"' && body[i-1] !== '\\'){ inQuote = !inQuote; token+=c; i++; continue; }
+        if(c==='{' && !inQuote){ depth++; token+=c; i++; continue; }
+        if(c==='}' && !inQuote && depth>0){ depth--; token+=c; i++; continue; }
+        if(c===',' && !inQuote && depth===0){ parts.push(token); token=''; i++; continue; }
+        token+=c; i++;
+      }
+      if(token.trim()) parts.push(token);
+      for(const p of parts){
+        const kv = p.split(/\s*=\s*/);
+        if(kv.length<2) continue;
+        const k = kv.shift().trim().toLowerCase();
+        const vraw = kv.join('=').trim();
+        out[k] = unbrace(unquote(vraw)).replace(/\s+/g,' ').trim();
+      }
+      return out;
+    }
+
+    function unquote(s){
+      if((s.startsWith('"') && s.endsWith('"')) || (s.startsWith("'") && s.endsWith("'"))) return s.slice(1,-1);
+      return s;
+    }
+    function unbrace(s){
+      let changed = true;
+      while(changed){
+        changed = false;
+        if(s.startsWith('{') && s.endsWith('}')){
+          let depth=0, ok=true;
+          for(let i=0;i<s.length;i++){
+            const c=s[i];
+            if(c==='{' ) depth++;
+            if(c==='}') depth--;
+            if(depth===0 && i<s.length-1){ ok=false; break; }
+          }
+          if(ok){ s=s.slice(1,-1); changed=true; }
+        }
+      }
+      return s;
+    }
+
+    // --- Formatting ---
+    function formatVancouver(entry){
+      const f = entry.fields || {};
+      const isThesis = /^(phdthesis|mastersthesis|thesis)$/i.test(entry.type);
+
+      // Authors or editors (fallback). Strip braces in names.
+      let people = '';
+      const stripNameBraces = s => (s||'').replace(/[{}]/g,'');
+      if (f.author && f.author.trim()){
+        people = isThesis
+          ? formatAuthors(stripNameBraces(f.author), {abbr:false, full:true})
+          : formatAuthors(stripNameBraces(f.author), {abbr:true});
+      } else if (f.editor && f.editor.trim()){
+        const rawEditors = stripNameBraces(f.editor);
+        const editorsRendered = (isThesis
+          ? formatAuthors(rawEditors, {abbr:false, full:true})
+          : formatAuthors(rawEditors, {abbr:true})
+        ).replace(/[.][ ]*$/, '');
+        const editorCount = (rawEditors||'').split(/\s+and\s+/i).map(s=>s.trim()).filter(Boolean).length;
+        const suffix = editorCount > 1 ? ' (editors).' : ' (editor).';
+        people = editorsRendered + suffix;
+      }
+
+      // Title and link
+      const rawTitle = (f.title||'').trim();
+      const cleanTitle = rawTitle.replace(/[{}]/g,'');
+      const title = ensurePeriod(cleanTitle).trim();
+      const doiClean = cleanDoi(f.doi || '');
+      if(doiClean) f.doi = doiClean;
+      const link = (f.url && f.url.trim()) ? f.url.trim() : (doiClean ? ('https://doi.org/' + doiClean) : '');
+
+      // Container base (techreport uses institution)
+      const baseContainerRaw = isThesis
+        ? (f.school||f.institution||'')
+        : (entry.type==='techreport' ? (f.institution||'') : (f.journal||f.booktitle||f.publisher||''));
+      const baseContainer = (baseContainerRaw||'').replace(/[{}]/g,'').trim();
+
+      const year = (f.year||'').trim();
+      const volume = (f.volume||'').trim();
+      const number = (f.number||f.issue||'').trim();
+      const pages = (f.pages||'').replace(/--/g,'-').trim();
+
+      let line = '';
+      if(people) line += people + ' ';
+      if(title){ line += link ? `<a href="${escapeAttr(link)}" target="_blank" rel="noopener noreferrer"><strong>${escapeHtml(title)}</strong></a> `
+                              : `<strong>${escapeHtml(title)}</strong> `; }
+
+      // Container / preface rules
+      {
+        let prefix = '';
+        let mid = '';
+        let containerDisplay = baseContainer;
+
+        // inbook: show bookauthor or editor before the book title
+        if (entry.type === 'inbook') {
+          const rawBookAuthor = stripNameBraces(f.bookauthor);
+          if (rawBookAuthor && rawBookAuthor.trim()) {
+            prefix = formatAuthors(rawBookAuthor, {abbr:true});
+            prefix = prefix.replace(/\.$/, '') + ', ';
+          } else if (f.editor && f.editor.trim()) {
+            const rawEditors = stripNameBraces(f.editor);
+            let editorsRendered = formatAuthors(rawEditors, {abbr:true});
+            editorsRendered = editorsRendered.replace(/\.$/, '');
+            const editorCount = (rawEditors||'').split(/\s+and\s+/i).map(s=>s.trim()).filter(Boolean).length;
+            const suffix = editorCount > 1 ? ' (editors),' : ' (editor),';
+            prefix = editorsRendered + suffix + ' ';
+          }
+        }
+
+        // techreport: include report type and number, and emphasize institution
+        if (entry.type === 'techreport') {
+          const repType = (f.type||'Technical Report').replace(/[{}]/g,'').trim();
+          const repNum = ((f.number||f.reportnumber||'') + '').trim();
+          if (repType || repNum) {
+            mid = `${escapeHtml(repType)}${repNum ? ' ' + escapeHtml(repNum) : ''}. `;
+          }
+          const inst = (f.institution||'').replace(/[{}]/g,'').trim();
+          if (inst) containerDisplay = inst;
+        }
+
+        const containerBit = containerDisplay ? `<em>${escapeHtml(containerDisplay)}</em> ` : '';
+        if (prefix || mid || containerBit){ line += `${prefix}${mid}${containerBit}`; }
+      }
+
+      // Tail (year;vol(issue):pages.)
+      const tailParts = [];
+      if(year) tailParts.push(year);
+      if(volume){ let vol = volume; if(number) vol += `(${number})`; tailParts.push(vol); }
+      if(pages) tailParts.push(pages.replace(/^p\.?\s*/i,''));
+      if(tailParts.length){ const y = tailParts.shift(); const rest = tailParts.join(':'); line += rest ? `${y};${rest}. ` : `${y}. `; }
+
+      // Theses: supervisors/readers with given-first format
+      if(isThesis){
+        // Show type field or fallback to BibTeX entry type
+        const thesisType = (f.type && f.type.trim()) ? f.type : (entry.type.toLowerCase()==='phdthesis' ? 'PhD Thesis' : entry.type.toLowerCase()==='mastersthesis' ? 'Master\'s Thesis' : 'Thesis');
+        line += ` ${escapeHtml(thesisType)}.`;
+        const sup = f.supervisor ? formatPersonListGivenFirst(stripNameBraces(f.supervisor)) : '';
+        const rdr = f.reader ? formatPersonListGivenFirst(stripNameBraces(f.reader)) : '';
+        if(sup){
+          const supCount = (f.supervisor||'').split(/\s+and\s+/i).filter(Boolean).length;
+          line += supCount>1 ? ` Supervisors: ${escapeHtml(sup)}.` : ` Supervisor: ${escapeHtml(sup)}.`;
+        }
+        if(rdr){
+          const rdrCount = (f.reader||'').split(/\s+and\s+/i).filter(Boolean).length;
+          line += rdrCount>1 ? ` Readers: ${escapeHtml(rdr)}.` : ` Reader: ${escapeHtml(rdr)}.`;
+        }
+      }
+
+      return line.trim();
+    }
+
+    // Strings used for filtering
+    function renderNamesForFilter(entry){
+      const f = entry.fields || {};
+      const isThesis = /^(phdthesis|mastersthesis|thesis)$/i.test(entry.type);
+      const strip = s => (s||'').replace(/[{}]/g,'');
+      if(f.author && f.author.trim()){
+        return (isThesis
+          ? formatAuthors(strip(f.author), {abbr:false, full:true})
+          : formatAuthors(strip(f.author), {abbr:true})
+        ).replace(/[.]\s*$/,'');
+      }
+      if(f.editor && f.editor.trim()){
+        return (isThesis
+          ? formatAuthors(strip(f.editor), {abbr:false, full:true})
+          : formatAuthors(strip(f.editor), {abbr:true})
+        ).replace(/[.]\s*$/,'');
+      }
+      return '';
+    }
+    function renderSupervisorsForFilter(entry){
+      const f = entry.fields || {};
+      const strip = s => (s||'').replace(/[{}]/g,'');
+      if(!f.supervisor) return '';
+      return formatPersonListGivenFirst(strip(f.supervisor));
+    }
+    function renderReadersForFilter(entry){
+      const f = entry.fields || {};
+      const strip = s => (s||'').replace(/[{}]/g,'');
+      if(!f.reader) return '';
+      return formatPersonListGivenFirst(strip(f.reader));
+    }
+
+    function ensurePeriod(s){ s=s.trim(); if(!s) return s; return /[.!?]\s*$/.test(s)? s : s + '.'; }
+
+    function formatAuthors(authorField, {abbr=true, full=false}={}){
+      if(!authorField) return '';
+      const parts = authorField.split(/\s+and\s+/i).map(s=>s.trim()).filter(Boolean);
+      const names = parts.map(formatOneName);
+      const list = names.join(', ');
+      return list ? list + '.' : '';
+      function formatOneName(name){
+        const clean = (name||'').replace(/[{}]/g,'').trim();
+        if(clean.includes(',')){
+          const [last, givenRaw] = clean.split(',').map(x=>x.trim());
+          const given = givenRaw || '';
+          if(full) return `${given} ${last}`.replace(/\s+/g,' ').trim();
+          const initials = givenToInitials(given, abbr);
+          return initials ? `${last} ${initials}` : last;
+        } else {
+          const bits = clean.split(/\s+/).filter(Boolean);
+          if(bits.length===1) return bits[0];
+          const last = bits.pop();
+          const given = bits.join(' ');
+          if(full) return `${given} ${last}`.replace(/\s+/g,' ').trim();
+          const initials = givenToInitials(given, abbr);
+          return initials ? `${last} ${initials}` : last;
+        }
+      }
+    }
+
+    function formatPersonListGivenFirst(field){
+      const parts = (field||'').split(/\s+and\s+/i).map(s=>s.trim()).filter(Boolean);
+      const rendered = parts.map(formatPersonGivenFirst);
+      return rendered.join('; ');
+    }
+    function formatPersonGivenFirst(name){
+      const clean = (name||'').replace(/[{}]/g,'');
+      if(clean.includes(',')){
+        const arr = clean.split(',');
+        const last = (arr[0]||'').trim();
+        const given = (arr[1]||'').trim();
+        if(!given) return clean.trim();
+        return `${given} ${last}`.replace(/\s+/g,' ').trim();
+      }
+      return clean.replace(/\s+/g,' ').trim();
+    }
+
+    function givenToInitials(given, abbr){
+      if(!given) return '';
+      const letters = given
+        .replace(/\([^)]*\)/g,'')
+        .replace(/\{[^}]*\}/g,'')
+        .split(/[-\s]+/)
+        .filter(Boolean)
+        .map(w=> w[0] ? w[0].toUpperCase() : '')
+        .join(abbr? '' : ' ');
+      return letters;
+    }
+
+    function escapeHtml(s){ return s.replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;'); }
+    function escapeAttr(s){ return s.replaceAll('"','&quot;'); }
+
+    function cleanDoi(s){
+      if(!s) return '';
+      let x = String(s).trim();
+      x = x.replace(/^doi:\s*/i,'');
+      x = x.replace(/^https?:\/\/(dx\.)?doi\.org\//i,'');
+      x = x.replace(/\s+/g,'');
+      x = x.replace(/[<>]/g,'');
+      x = x.replace(/\.$/, '');
+      return x;
+    }
+
+    // --- Sorting helpers ---
+    function firstAuthorKey(entry){
+      const base = (entry.fields.author && entry.fields.author.trim())
+        ? entry.fields.author
+        : (entry.fields.editor||'');
+      const a = (base||'').split(/\s+and\s+/i)[0]||'';
+      return a.replace(/[{}]/g,'').replace(/[^a-zA-Z,\s-]/g,'').toLowerCase();
+    }
+
+    function dateScore(e){
+      const y = parseInt(e.fields.year||'0',10)||0;
+      let m = e.fields.month||'0';
+      const monthMap = {jan:1,feb:2,mar:3,apr:4,may:5,jun:6,jul:7,aug:8,sep:9,oct:10,nov:11,dec:12};
+      m = (monthMap[String(m).slice(0,3).toLowerCase()] || parseInt(m,10) || 0);
+      const d = parseInt(e.fields.day||'0',10)||0;
+      return y*10000 + m*100 + d;
+    }
+
+    // Thesis buckets: 0 exploring → 1 in progress → otherwise dated/non-theses
+    function groupRank(e){
+      const isThesis = /^(phdthesis|mastersthesis)$/i.test(e.type);
+      if(!isThesis) return 3; // non-theses after thesis buckets
+      const f = e.fields || {};
+      const s = [f.status, f.note, f.keywords, f.annote, f.howpublished, f.remark]
+        .filter(Boolean).join(' ').toLowerCase();
+      if(/(^|\b)explor(ing|ation)\b/.test(s)) return 0; // exploring first
+      if(/\bin[-\s]*progress\b|\bongoing\b|\bwork\s*in\s*progress\b/.test(s)) return 1; // then in progress
+      const hasYear = !!parseInt(f.year||'0',10);
+      if(!hasYear) return 1; // undated theses treated like in-progress
+      return 2; // dated theses
+    }
+
+    // Global error visibility
+    window.addEventListener('error', ev => showError(ev.message||ev.error||'Unknown script error'));
+    window.addEventListener('unhandledrejection', ev => showError(ev.reason||'Unhandled promise rejection'));
+  </script>
+</body>
+</html>
