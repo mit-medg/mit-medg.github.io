@@ -110,7 +110,8 @@
 	author = {Weng, Wei-Hung and Chung, Yu-An},
 	booktitle = {NIPS Workshop on Machine Learning for Health (ML4H)},
 	title = {Learning Deep Representations of Medical Images using Siamese CNNs with Application to Content-Based Image Retrieval},
-	year = {2017}}
+	year = {2017},
+        url={https://arxiv.org/pdf/1711.08490}}
 
 @inproceedings{weng2017representation,
 	author = {Weng, Wei-Hung and Gao, Mingwu and He, Ze and Yan, Susu and Szolovits, Peter},
@@ -122,6 +123,7 @@
 	author = {Weng, Wei-Hung and Szolovits, Peter},
 	booktitle = {KDD Workshop on Machine Learning for Medicine and Healthcare},
 	title = {Mapping Unparalleled Clinical Professional and Consumer Languages with Embedding Alignment},
+	url = {https://arxiv.org/pdf/1806.09542.pdf},
 	year = {2018}}
 
 @inproceedings{chung2018unsupervised,
@@ -133,13 +135,28 @@
 
 @article{weng2017medical,
 	author = {Weng, Wei-Hung and Wagholikar, Kavishwar B and McCray, Alexa T and Szolovits, Peter and Chueh, Henry C},
-	journal = {BMC medical informatics and decision making},
+	date-added = {2019-10-12 10:00:28 -0400},
+	date-modified = {2019-10-14 14:26:25 -0400},
+	doi = {10.1186/s12911-017-0556-8},
+	journal = {BMC Med Inform Decis Mak},
+	journal-full = {BMC medical informatics and decision making},
+	keywords = {Deep Learning; Distributed Representation; Machine Learning; Medical Decision Making, Computer-assisted; Natural Language Processing; Unified Medical Language System},
+	mesh = {Clinical Decision-Making; Humans; Machine Learning; Medical Records; Natural Language Processing; Unified Medical Language System},
+	month = dec,
 	number = {1},
 	pages = {155},
-	publisher = {BioMed Central},
+	pmc = {PMC5709846},
+	pmid = {29191207},
+	pst = {epublish},
 	title = {Medical subdomain classification of clinical notes using a machine learning-based natural language processing approach},
+	url = {https://doi.org/10.1186/s12911-017-0556-8},
 	volume = {17},
-	year = {2017}}
+	year = {2017},
+	abstract = {BACKGROUND: The medical subdomain of a clinical note, such as cardiology or neurology, is useful content-derived metadata for developing machine learning downstream applications. To classify the medical subdomain of a note accurately, we have constructed a machine learning-based natural language processing (NLP) pipeline and developed medical subdomain classifiers based on the content of the note.
+METHODS: We constructed the pipeline using the clinical NLP system, clinical Text Analysis and Knowledge Extraction System (cTAKES), the Unified Medical Language System (UMLS) Metathesaurus, Semantic Network, and learning algorithms to extract features from two datasets - clinical notes from Integrating Data for Analysis, Anonymization, and Sharing (iDASH) data repository (n = 431) and Massachusetts General Hospital (MGH) (n = 91,237), and built medical subdomain classifiers with different combinations of data representation methods and supervised learning algorithms. We evaluated the performance of classifiers and their portability across the two datasets.
+RESULTS: The convolutional recurrent neural network with neural word embeddings trained-medical subdomain classifier yielded the best performance measurement on iDASH and MGH datasets with area under receiver operating characteristic curve (AUC) of 0.975 and 0.991, and F1 scores of 0.845 and 0.870, respectively. Considering better clinical interpretability, linear support vector machine-trained medical subdomain classifier using hybrid bag-of-words and clinically relevant UMLS concepts as the feature representation, with term frequency-inverse document frequency (tf-idf)-weighting, outperformed other shallow learning classifiers on iDASH and MGH datasets with AUC of 0.957 and 0.964, and F1 scores of 0.932 and 0.934 respectively. We trained classifiers on one dataset, applied to the other dataset and yielded the threshold of F1 score of 0.7 in classifiers for half of the medical subdomains we studied.
+CONCLUSION: Our study shows that a supervised learning-based NLP approach is useful to develop medical subdomain classifiers. The deep learning algorithm with distributed word representation yields better performance yet shallow learning algorithms with the word and concept representation achieves comparable performance with better clinical interpretability. Portable classifiers may also be used across datasets from different institutions.},
+	bdsk-url-1 = {https://doi.org/10.1186/s12911-017-0556-8}}
 
 @inproceedings{weng2014vivo,
 	author = {Weng, Wei-Hung and Liu, Wei-Min and Tsai, Ming-Rung and Liao, Yi-Hua and Sun, Chi-Kuang},
@@ -202,11 +219,13 @@
 	title = {Laser Recording of Subcellular Neuron Activities},
 	year = {2019}}
 
-@article{liu2019clinically,
-	author = {Liu, Guanxiong and Hsu, Tzu-Ming Harry and McDermott, Matthew and Boag, Willie and Weng, Wei-Hung and Szolovits, Peter and Ghassemi, Marzyeh},
-	journal = {arXiv preprint arXiv:1904.02633},
-	title = {Clinically Accurate Chest X-Ray Report Generation},
-	year = {2019}}
+@inproceedings{liu2019clinically,
+  title={Clinically accurate chest X-ray report generation},
+  author={Liu, Guanxiong and Hsu, Tzu-Ming Harry and McDermott, Matthew and Boag, Willie and Weng, Wei-Hung and Szolovits, Peter and Ghassemi, Marzyeh},
+  booktitle={Machine Learning for Healthcare},
+  year={2019},
+	url = {https://proceedings.mlr.press/v106/liu19a/liu19a.pdf}
+}
 
 @inproceedings{alsentzer2019publicly,
 	author = {Alsentzer, Emily and Murphy, John R and Boag, Willie and Weng, Wei-Hung and Jin, Di and Naumann, Tristan and Redmond, WA and McDermott, Matthew BA},
@@ -287,58 +306,6 @@
 	year = {2018},
 	abstract = {Electronic Health Records (EHRs) have seen a rapid increase in adoption during the last decade. The narrative prose contained in clinical notes is unstructured and unlocking its full potential has proved challenging. Many studies incorporating clinical notes have applied simple information extraction models to build representations that enhance a downstream clinical prediction task, such as mortality or readmission. Improved predictive performance suggests a "good" representation. However, these extrinsic evaluations are blind to most of the insight contained in the notes. In order to better understand the power of expressive clinical prose, we investigate both intrinsic and extrinsic methods for understanding several common note representations. To ensure replicability and to support the clinical modeling community, we run all experiments on publicly-available data and provide our code.}}
 
-@article{Luo2017fr,
-	author = {Luo, Yuan and Szolovits, Peter and Dighe, Anand S and Baron, Jason M},
-	date-added = {2018-11-19 17:11:02 -0500},
-	date-modified = {2018-11-19 17:11:02 -0500},
-	journal = {J Am Med Inform Assoc},
-	journal-full = {Journal of the American Medical Informatics Association : JAMIA},
-	keywords = {EHR; Gaussian process; computational pathology; data mining; electronic health record; imputation; machine learning; missing data; multiple imputation with chained equations},
-	month = {Nov},
-	pmid = {29202205},
-	pst = {aheadofprint},
-	title = {3D-MICE: integration of cross-sectional and longitudinal imputation for multi-analyte longitudinal clinical data},
-	year = {2017},
-	abstract = {Objective: A key challenge in clinical data mining is that most clinical datasets contain missing data. Since many commonly used machine learning algorithms require complete datasets (no missing data), clinical analytic approaches often entail an imputation procedure to "fill in" missing data. However, although most clinical datasets contain a temporal component, most commonly used imputation methods do not adequately accommodate longitudinal time-based data. We sought to develop a new imputation algorithm, 3-dimensional multiple imputation with chained equations (3D-MICE), that can perform accurate imputation of missing clinical time series data.
-Methods: We extracted clinical laboratory test results for 13 commonly measured analytes (clinical laboratory tests). We imputed missing test results for the 13 analytes using 3 imputation methods: multiple imputation with chained equations (MICE), Gaussian process (GP), and 3D-MICE. 3D-MICE utilizes both MICE and GP imputation to integrate cross-sectional and longitudinal information. To evaluate imputation method performance, we randomly masked selected test results and imputed these masked results alongside results missing from our original data. We compared predicted results to measured results for masked data points.
-Results: 3D-MICE performed significantly better than MICE and GP-based imputation in a composite of all 13 analytes, predicting missing results with a normalized root-mean-square error of 0.342, compared to 0.373 for MICE alone and 0.358 for GP alone.
-Conclusions: 3D-MICE offers a novel and practical approach to imputing clinical laboratory time series data. 3D-MICE may provide an additional tool for use as a foundation in clinical predictive analytics and intelligent clinical decision support.},
-	bdsk-url-1 = {https://dx.doi.org/10.1093/jamia/ocx133}}
-
-@article{Sebastiani2006qw,
-	author = {Sebastiani, Paola and Mandl, Kenneth D and Szolovits, Peter and Kohane, Isaac S and Ramoni, Marco F},
-	date-added = {2018-11-19 17:11:02 -0500},
-	date-modified = {2018-11-19 17:11:02 -0500},
-	doi = {10.1002/sim.2566},
-	journal = {Stat Med},
-	journal-full = {Statistics in medicine},
-	mesh = {Bayes Theorem; Child, Preschool; Disease Outbreaks; Humans; Infant; Influenza A Virus, H5N1 Subtype; Influenza, Human; Models, Biological; Models, Statistical; Population Surveillance; United States},
-	month = {Jun},
-	number = {11},
-	pages = {1803-16; discussion 1817-25},
-	pmc = {PMC4128871},
-	pmid = {16645996},
-	pst = {ppublish},
-	title = {A {B}ayesian dynamic model for influenza surveillance},
-	volume = {25},
-	year = {2006},
-	abstract = {The severe acute respiratory syndrome (SARS) epidemic, the growing fear of an influenza pandemic and the recent shortage of flu vaccine highlight the need for surveillance systems able to provide early, quantitative predictions of epidemic events. We use dynamic Bayesian networks to discover the interplay among four data sources that are monitored for influenza surveillance. By integrating these different data sources into a dynamic model, we identify in children and infants presenting to the pediatric emergency department with respiratory syndromes an early indicator of impending influenza morbidity and mortality. Our findings show the importance of modelling the complex dynamics of data collected for influenza surveillance, and suggest that dynamic Bayesian networks could be suitable modelling tools for developing epidemic surveillance systems.},
-	bdsk-url-1 = {http://dx.doi.org/10.1002/sim.2566}}
-
-@article{Szolovits1993cy,
-	author = {Szolovits, P and Pauker, S G},
-	date-added = {2018-11-19 17:11:02 -0500},
-	date-modified = {2018-11-19 17:11:02 -0500},
-	journal = {Methods Inf Med},
-	journal-full = {Methods of information in medicine},
-	number = {1},
-	pages = {16-7},
-	pmid = {21203680},
-	pst = {ppublish},
-	title = {A coherent philosophy for development or a straightjacket for research?},
-	volume = {32},
-	year = {1993}}
-
 @article{Uzuner2008,
 	author = {Uzuner, Özlem and Sibanda, Tawanda C and Luo, Yuan and Szolovits, Peter},
 	date-added = {2018-11-19 17:11:02 -0500},
@@ -360,7 +327,7 @@ Conclusions: 3D-MICE offers a novel and practical approach to imputing clinical 
 METHODS AND RESULTS: In this paper, we show that we can de-identify medical discharge summaries using a de-identifier, Stat De-id, based on support vector machines and local context (F-measure=97\% on PHI). Our representation of local context aids de-identification even when PHI include out-of-vocabulary words and even when PHI are ambiguous with non-PHI within the same corpus. Comparison of Stat De-id with a rule-based approach shows that local context contributes more to de-identification than dictionaries combined with hand-tailored heuristics (F-measure=85\%). Comparison with two well-known named entity recognition (NER) systems, SNoW (F-measure=94\%) and IdentiFinder (F-measure=36\%), on five representative corpora show that when the language of documents is fragmented, a system with a relatively thorough representation of local context can be a more effective de-identifier than systems that combine (relatively simpler) local context with global context. Comparison with a Conditional Random Field De-identifier (CRFD), which utilizes global context in addition to the local context of Stat De-id, confirms this finding (F-measure=88\%) and establishes that strengthening the representation of local context may be more beneficial for de-identification than complementing local with global context.},
 	bdsk-url-1 = {http://dx.doi.org/10.1016/j.artmed.2007.10.001}}
 
-@article{Wang1997tv,
+@article{Wang1997,
 	author = {Wang, K and van Wingerde, F J and Bradshaw, K and Szolovits, P and Kohane, I},
 	date-added = {2018-11-19 17:11:02 -0500},
 	date-modified = {2018-11-19 17:11:02 -0500},
@@ -373,9 +340,10 @@ METHODS AND RESULTS: In this paper, we show that we can de-identify medical disc
 	pst = {ppublish},
 	title = {A {J}ava-based multi-institutional medical information retrieval system},
 	year = {1997},
+	url = {https://pmc.ncbi.nlm.nih.gov/articles/PMC2233350/pdf/procamiaafs00001-0574.pdf},
 	abstract = {JAMI (Java-based Agglutination of Medical Information) is designed as a framework for integrating heterogeneous information systems used in healthcare related institutions. It is one of the implementations under the W3-EMRS project 1 aimed at using the World Wide Web (Web) to unify different hospital information systems. JAMI inherited several design decisions from the first W3-EMRS implementation described in, including using the Web as the communication infrastructure and HL7 as the communication protocol between the heterogeneous systems and the W3-EMRS systems. In addition, JAMI incorporates the growing Java technologies and has a more flexible and efficient architecture. This paper describes JAMI's architecture and implementation. It also present two instances of JAMI, one for the integration of different hospital information systems and another for the integration of two heterogeneous systems within a single hospital. Some important issues for the further development of JAMI, including security and confidentiality, data input and decision support are discussed.}}
 
-@article{Mohtashemi2006qe,
+@article{Mohtashemi2006,
 	author = {Mohtashemi, Mojdeh and Szolovits, Peter and Dunyak, James and Mandl, Kenneth D},
 	date-added = {2018-11-19 17:11:02 -0500},
 	date-modified = {2018-11-19 17:11:02 -0500},
@@ -395,7 +363,7 @@ METHODS AND RESULTS: In this paper, we show that we can de-identify medical disc
 	abstract = {The threat of biological warfare and the emergence of new infectious agents spreading at a global scale have highlighted the need for major enhancements to the public health infrastructure. Early detection of epidemics of infectious diseases requires both real-time data and real-time interpretation of data. Despite moderate advancements in data acquisition, the state of the practice for real-time analysis of data remains inadequate. We present a nonlinear mathematical framework for modeling the transient dynamics of influenza, applied to historical data sets of patients with influenza-like illness. We estimate the vital time-varying epidemiological parameters of infections from historical data, representing normal epidemiological trends. We then introduce simulated outbreaks of different shapes and magnitudes into the historical data, and estimate the parameters representing the infection rates of anomalous deviations from normal trends. Finally, a dynamic threshold-based detection algorithm is devised to assess the timeliness and sensitivity of detecting the irregularities in the data, under a fixed low false-positive rate. We find that the detection algorithm can identify such designated abnormalities in the data with high sensitivity with specificity held at 97\%, but more importantly, early during an outbreak. The proposed methodology can be applied to a broad range of influenza-like infectious diseases, whether naturally occurring or a result of bioterrorism, and thus can be an integral component of a real-time surveillance system.},
 	bdsk-url-1 = {http://dx.doi.org/10.1016/j.jtbi.2006.01.031}}
 
-@article{Halamka1997fq,
+@article{Halamka1997,
 	author = {Halamka, J D and Szolovits, P and Rind, D and Safran, C},
 	date = {1997 Nov-Dec},
 	date-added = {2018-11-19 17:11:02 -0500},
@@ -412,14 +380,15 @@ METHODS AND RESULTS: In this paper, we show that we can de-identify medical disc
 	title = {A {WWW} implementation of national recommendations for protecting electronic health information},
 	volume = {4},
 	year = {1997},
+	url = {https://doi.org/10.1136/jamia.1997.0040458},
 	abstract = {In March of 1997, the National Research Council (NRC) of the National Academy of Sciences issued the report, "For the Record: Protecting Electronic Health Information." Concluding that the current practices at the majority of health care facilities in the United States are insufficient, the Council delineated both technical and organizational approaches to protecting electronic health information. The Beth Israel Deaconess Medical Center recently implemented a proof-of-concept, Web-based, cross-institutional medical record, CareWeb, which incorporates the NRC security and confidentiality recommendations. We report on our WWW implementation of the NRC recommendations and an initial evaluation of the balance between ease of use and confidentiality.}}
 
-@article{Szolovits2003jy,
+@article{Szolovits2003,
 	author = {Szolovits, Peter},
 	date-added = {2018-11-19 17:11:02 -0500},
 	date-modified = {2018-11-19 17:11:02 -0500},
 	journal = {AMIA Annu Symp Proc},
-	journal-full = {AMIA ... Annual Symposium proceedings. AMIA Symposium},
+	journal-full = {AMIA Annual Symposium proceedings. AMIA Symposium},
 	mesh = {Terminology as Topic; Unified Medical Language System; Vocabulary, Controlled},
 	pages = {639-43},
 	pmc = {PMC1480111},
@@ -427,9 +396,10 @@ METHODS AND RESULTS: In this paper, we show that we can de-identify medical disc
 	pst = {ppublish},
 	title = {Adding a medical lexicon to an {E}nglish Parser},
 	year = {2003},
+	url = {https://pmc.ncbi.nlm.nih.gov/articles/PMC1480111/pdf/amia2003_0639.pdf},
 	abstract = {We present a heuristic method to map lexical (syntactic) information from one lexicon to another, and apply the technique to augment the lexicon of the Link Grammar Parser with an enormous medical vocabulary drawn from the Specialist lexicon developed by the National Library of Medicine. This paper presents and justifies the mapping method and addresses technical problems that have to be overcome. It illustrates the utility of the method with respect to a large corpus of emergency department notes.}}
 
-@article{Szolovits1994ph,
+@article{Szolovits1994,
 	author = {Szolovits, P and Kohane, I},
 	date = {1994 Jul-Aug},
 	date-added = {2018-11-19 17:11:02 -0500},
@@ -443,6 +413,7 @@ METHODS AND RESULTS: In this paper, we show that we can de-identify medical disc
 	pmid = {7719815},
 	pst = {ppublish},
 	title = {Against simple universal health-care identifiers},
+	url = {https://doi.org/10.1136/jamia.1994.95236164},
 	volume = {1},
 	year = {1994}}
 
@@ -459,6 +430,7 @@ METHODS AND RESULTS: In this paper, we show that we can de-identify medical disc
 	pmid = {3276267},
 	pst = {ppublish},
 	title = {Artificial intelligence in medical diagnosis},
+	url = {https://doi.org/10.7326/0003-4819-108-1-80},
 	volume = {108},
 	year = {1988},
 	abstract = {In an attempt to overcome limitations inherent in conventional computer-aided diagnosis, investigators have created programs that simulate expert human reasoning. Hopes that such a strategy would lead to clinically useful programs have not been fulfilled, but many of the problems impeding creation of effective artificial intelligence programs have been solved. Strategies have been developed to limit the number of hypotheses that a program must consider and to incorporate pathophysiologic reasoning. The latter innovation permits a program to analyze cases in which one disorder influences the presentation of another. Prototypes embodying such reasoning can explain their conclusions in medical terms that can be reviewed by the user. Despite these advances, further major research and developmental efforts will be necessary before expert performance by the computer becomes a reality.}}
@@ -479,9 +451,10 @@ METHODS AND RESULTS: In this paper, we show that we can de-identify medical disc
 	title = {Artificial intelligence in medicine. {W}here do we stand?},
 	volume = {316},
 	year = {1987},
+	url = {https://doi.org/10.1056/NEJM198703123161109},
 	bdsk-url-1 = {http://dx.doi.org/10.1056/NEJM198703123161109}}
 
-@article{Kohane1996zk,
+@article{Kohane1996,
 	author = {Kohane, I S and Greenspun, P and Fackler, J and Cimino, C and Szolovits, P},
 	date = {1996 May-Jun},
 	date-added = {2018-11-19 17:11:02 -0500},
@@ -497,15 +470,17 @@ METHODS AND RESULTS: In this paper, we show that we can de-identify medical disc
 	title = {Building national electronic medical record systems via the World Wide Web},
 	volume = {3},
 	year = {1996},
+	url = {https://doi.org/10.1136/jamia.1996.96310633},
 	abstract = {Electronic medical record systems (EMRSs) currently do not lend themselves easily to cross-institutional clinical care and research. Unique system designs coupled with a lack of standards have led to this difficulty. The authors have designed a preliminary EMRS architecture (W3-EMRS) that exploits the multiplatform, multiprotocol, client-server technology of the World Wide Web. The architecture abstracts the clinical information model and the visual presentation away from the underlying EMRS. As a result, computation upon data elements of the EMRS and their presentation are no longer tied to the underlying EMRS structures. The architecture is intended to enable implementation of programs that provide uniform access to multiple, heterogeneous legacy EMRSs. The authors have implemented an initial prototype of W3-EMRS that accesses the database of the Boston Children's Hospital Clinician's Workstation.}}
 
-@article{Szolovits1992uf,
+@article{Szolovits1992,
 	author = {Szolovits, P},
 	date-added = {2018-11-19 17:11:02 -0500},
 	date-modified = {2018-11-19 17:11:02 -0500},
 	journal = {Cytogenet Cell Genet},
 	journal-full = {Cytogenetics and cell genetics},
 	mesh = {Algorithms; Data Interpretation, Statistical; Female; Humans; Male; Mathematics; Pedigree; Software},
+	doi = {10.1159/000133226},
 	number = {2-3},
 	pages = {136-8},
 	pmid = {1737481},
@@ -527,7 +502,8 @@ METHODS AND RESULTS: In this paper, we show that we can de-identify medical disc
 	pst = {ppublish},
 	title = {Copy fees and patients' rights to obtain a copy of their medical records: from law to reality},
 	year = {2005},
-	abstract = {Patients have a legal right under HIPAA to a copy of their medical records. Personal life-long medical records rely on patients' ability to exercise this right inexpensively and in a timely manner. We surveyed 73 hospitals across the US, with a geographic concentration around Boston, to determine their policies about fees for copying medical records and the expected time it takes to fulfill such requests. Fees range very widely, from $2-55 for short records of 15 pages to $15-585 for long ones of 500 pages. Times also range widely, from 1-30 days (or longer for off-site records). A few institutions provide records for free and even fewer make them accessible on-line. We argue that electronic records will help solve the problem of giving patients access to their own records, will do so inexpensively and in a format more likely to be useful than paper.}}
+	url = {https://pmc.ncbi.nlm.nih.gov/articles/PMC1560890/pdf/amia2005_0251.pdf},
+	abstract = {Patients have a legal right under HIPAA to a copy of their medical records. Personal life-long medical records rely on patients' ability to exercise this right inexpensively and in a timely manner. We surveyed 73 hospitals across the US, with a geographic concentration around Boston, to determine their policies about fees for copying medical records and the expected time it takes to fulfill such requests. Fees range very widely, from \$2-55 for short records of 15 pages to \$15-585 for long ones of 500 pages. Times also range widely, from 1-30 days (or longer for off-site records). A few institutions provide records for free and even fewer make them accessible on-line. We argue that electronic records will help solve the problem of giving patients access to their own records, will do so inexpensively and in a format more likely to be useful than paper.}}
 
 @article{Dernoncourt2017,
 	author = {Dernoncourt, Franck and Lee, Ji Young and Uzuner, Özlem and Szolovits, Peter},
@@ -551,7 +527,7 @@ Results: Our ANN model outperforms the state-of-the-art systems. It yields an F1
 Conclusion: Our findings support the use of ANNs for de-identification of patient notes, as they show better performance than previously published systems while requiring no manual feature engineering.},
 	bdsk-url-1 = {http://dx.doi.org/10.1093/jamia/ocw156}}
 
-@article{Yu2018gf,
+@article{Yu2018,
 	author = {Yu, Sheng and Ma, Yumeng and Gronsbell, Jessica and Cai, Tianrun and Ananthakrishnan, Ashwin N and Gainer, Vivian S and Churchill, Susanne E and Szolovits, Peter and Murphy, Shawn N and Kohane, Isaac S and Liao, Katherine P and Cai, Tianxi},
 	date-added = {2018-11-19 17:11:02 -0500},
 	date-modified = {2018-11-19 17:11:02 -0500},
@@ -566,6 +542,7 @@ Conclusion: Our findings support the use of ANNs for de-identification of patien
 	title = {Enabling phenotypic big data with PheNorm},
 	volume = {25},
 	year = {2018},
+	url = {https://doi.org/10.1093/jamia/ocx111},
 	abstract = {Objective: Electronic health record (EHR)-based phenotyping infers whether a patient has a disease based on the information in his or her EHR. A human-annotated training set with gold-standard disease status labels is usually required to build an algorithm for phenotyping based on a set of predictive features. The time intensiveness of annotation and feature curation severely limits the ability to achieve high-throughput phenotyping. While previous studies have successfully automated feature curation, annotation remains a major bottleneck. In this paper, we present PheNorm, a phenotyping algorithm that does not require expert-labeled samples for training.
 Methods: The most predictive features, such as the number of International Classification of Diseases, Ninth Revision, Clinical Modification (ICD-9-CM) codes or mentions of the target phenotype, are normalized to resemble a normal mixture distribution with high area under the receiver operating curve (AUC) for prediction. The transformed features are then denoised and combined into a score for accurate disease classification.
 Results: We validated the accuracy of PheNorm with 4 phenotypes: coronary artery disease, rheumatoid arthritis, Crohn's disease, and ulcerative colitis. The AUCs of the PheNorm score reached 0.90, 0.94, 0.95, and 0.94 for the 4 phenotypes, respectively, which were comparable to the accuracy of supervised algorithms trained with sample sizes of 100-300, with no statistically significant difference.
@@ -593,14 +570,18 @@ Conclusion: The accuracy of the PheNorm algorithms is on par with algorithms tra
 	bdsk-url-1 = {http://dx.doi.org/10.1197/jamia.M2444}}
 
 @inproceedings{Lee2016,
+	address = {Osaka, Japan},
 	author = {Lee, Ji Young and Dernoncourt, Franck and Uzuner, Özlem and Szolovits, Peter},
-	booktitle = {Proceedings of the Clinical Natural Language Processing Workshop},
-	date-added = {2018-11-19 17:11:02 -0500},
-	date-modified = {2018-11-19 17:11:02 -0500},
+	booktitle = {Proceedings of the Clinical Natural Language Processing Workshop at COLING},
+	date-added = {2019-10-12 10:17:36 -0400},
+	date-modified = {2021-04-07 21:32:17 -0400},
+	month = dec,
 	title = {Feature-Augmented Neural Networks for Patient Note De-identification},
-	year = {2016}}
+	url = {https://www.aclweb.org/anthology/W16-4204.pdf},
+	year = {2016},
+	bdsk-url-1 = {https://www.aclweb.org/anthology/W16-4204.pdf}}
 
-@article{Kohane1998mj,
+@article{Kohane1998,
 	author = {Kohane, I S and Dong, H and Szolovits, P},
 	date-added = {2018-11-19 17:11:02 -0500},
 	date-modified = {2018-11-19 17:11:02 -0500},
@@ -612,7 +593,8 @@ Conclusion: The accuracy of the PheNorm algorithms is on par with algorithms tra
 	pmid = {9929241},
 	pst = {ppublish},
 	title = {Health information identification and de-identification toolkit},
-	year = {1998}}
+	year = {1998},
+	url = {https://pmc.ncbi.nlm.nih.gov/articles/PMC2232117/pdf/procamiasymp00005-0391.pdf}}
 
 @article{Fraser2005cy,
 	author = {Fraser, Hamish S F and Biondich, Paul and Moodley, Deshen and Choi, Sharon and Mamlin, Burke W and Szolovits, Peter},
@@ -628,9 +610,10 @@ Conclusion: The accuracy of the PheNorm algorithms is on par with algorithms tra
 	title = {Implementing electronic medical record systems in developing countries},
 	volume = {13},
 	year = {2005},
+	url = {https://access.portico.org/Portico/auView?auId=ark%253A%252F27927%252Fphw1p03hx2k&auViewType1=PDF},
 	abstract = {The developing world faces a series of health crises including HIV/AIDS and tuberculosis that threaten the lives of millions of people. Lack of infrastructure and trained, experienced staff are considered important barriers to scaling up treatment for these diseases. In this paper we explain why information systems are important in many healthcare projects in the developing world. We discuss pilot projects demonstrating that such systems are possible and can expand to manage hundreds of thousands of patients. We also pass on the most important practical lessons in design and implementation from our experience in doing this work. Finally, we discuss the importance of collaboration between projects in the development of electronic medical record systems rather than reinventing systems in isolation, and the use of open standards and open source software.}}
 
-@article{Heldt2006pd,
+@article{Heldt2006,
 	author = {Heldt, Thomas and Long, Bill and Verghese, George C and Szolovits, Peter and Mark, Roger G},
 	date-added = {2018-11-19 17:11:02 -0500},
 	date-modified = {2018-11-19 17:11:02 -0500},
@@ -647,7 +630,7 @@ Conclusion: The accuracy of the PheNorm algorithms is on par with algorithms tra
 	abstract = {Modern intensive care units (ICUs) employ an impressive array of technologically sophisticated instrumentation to provide detailed measurements of the pathophysiological state of each patient. Providing life support in the ICU is becoming an increasingly complex task, however, because of the growing volume of relevant data from clinical observations, bedside monitors, mechanical ventilators, and a wide variety of laboratory tests and imaging studies. The enormous amount of ICU data and its poor organization makes its integration and interpretation time-consuming and inefficient. There is a critical need to integrate the disparate clinical information into a single, rational framework and to provide the clinician with hypothesis-driven displays that succinctly summarize a patient's trajectory over time. In this paper, we present our recent efforts towards the development of such an advanced patient monitoring system that aims to improve the efficiency, accuracy, and timeliness of clinical decision making in intensive care.},
 	bdsk-url-1 = {http://dx.doi.org/10.1109/IEMBS.2006.259734}}
 
-@article{Ong2017fb,
+@article{Ong2017,
 	author = {Ong, Mei-Sing and Mullen, Mary P and Austin, Eric D and Szolovits, Peter and Natter, Marc and Geva, Alon and Cai, Tianxi and Kong, Sek Won and Mandl, Kenneth D},
 	date-added = {2018-11-19 17:11:02 -0500},
 	date-modified = {2018-11-19 17:11:02 -0500},
@@ -663,7 +646,7 @@ Conclusion: The accuracy of the PheNorm algorithms is on par with algorithms tra
 	abstract = {Rationale: Pediatric pulmonary hypertension (PH) is a heterogeneous condition with varying natural history and therapeutic response. Precise classification of PH subtypes is therefore crucial for individualizing care. However, gaps remain in our understanding of the spectrum of PH in children. Objective: We seek to study the manifestations of PH in children, and to assess the feasibility of applying a network-based approach to discern disease subtypes from comorbidity data recorded in longitudinal datasets. Methods and Results: A retrospective cohort study comprising 6,943,263 children (<18 years of age) enrolled in a commercial health insurance plan in the US, between January 2010 and May 2013. A total of 1,583 (0.02\%) children met the criteria for PH. We identified comorbidities significantly associated with PH compared with the general population of children without PH. A Bayesian comorbidity network was constructed to model the interdependencies of these comorbidities, and network clustering analysis was applied to derive disease subtypes comprising subgraphs of highly connected comorbid conditions. A total of 186 comorbidities were found to be significantly associated with PH. Network analysis of comorbidity patterns captured most of the major PH subtypes with known etiological basis defined by the World Health Organization and Panama classifications. The analysis further identified a number of subtypes documented in only a few case studies, including rare subtypes associated with several well-described genetic syndromes. Conclusions: Application of network science to model comorbidity patterns recorded in longitudinal datasets can facilitate the discovery of disease subtypes. Our analysis relearned established subtypes, thus validating the approach, and identified rare subtypes that are difficult to discern through clinical observations, providing impetus for deeper investigation of the disease subtypes that will enrich current disease classifications.},
 	bdsk-url-1 = {http://dx.doi.org/10.1161/CIRCRESAHA.117.310804}}
 
-@article{Rind1997wl,
+@article{Rind1997,
 	author = {Rind, D M and Kohane, I S and Szolovits, P and Safran, C and Chueh, H C and Barnett, G O},
 	date-added = {2018-11-19 17:11:02 -0500},
 	date-modified = {2018-11-19 17:11:02 -0500},
@@ -679,29 +662,8 @@ Conclusion: The accuracy of the PheNorm algorithms is on par with algorithms tra
 	title = {Maintaining the confidentiality of medical records shared over the Internet and the World Wide Web},
 	volume = {127},
 	year = {1997},
+	url = {https://doi.org/10.7326/0003-4819-127-2-199707150-00008},
 	abstract = {The Boston Electronic Medical Record Collaborative is working to develop a system that will use the World Wide Web to transfer computer-based patient information to clinicians in emergency departments. Maintaining adequate confidentiality of these records while still facilitating patient care is paramount to this effort. This paper describes an explicit protocol that would make it possible to electronically identify patients and providers, secure permission for release of records, and track information that is transmitted. It is hoped that other, similar efforts now underway will be able to use and build on this model. Comment on this proposal is invited from all parties with an interest in confidentiality. The system will be used only with "scrubbed" data-data from which all identifiers have been removed-until it is generally agreed that the confidentiality methods proposed here are appropriate and sufficient.}}
-
-@article{Weng2017mz,
-	author = {Weng, Wei-Hung and Wagholikar, Kavishwar B and McCray, Alexa T and Szolovits, Peter and Chueh, Henry C},
-	date-added = {2018-11-19 17:11:02 -0500},
-	date-modified = {2018-11-19 17:11:02 -0500},
-	journal = {BMC Med Inform Decis Mak},
-	journal-full = {BMC medical informatics and decision making},
-	keywords = {Deep Learning; Distributed Representation; Machine Learning; Medical Decision Making, Computer-assisted; Natural Language Processing; Unified Medical Language System},
-	month = {Dec},
-	number = {1},
-	pages = {155},
-	pmc = {PMC5709846},
-	pmid = {29191207},
-	pst = {epublish},
-	title = {Medical subdomain classification of clinical notes using a machine learning-based natural language processing approach},
-	volume = {17},
-	year = {2017},
-	abstract = {BACKGROUND: The medical subdomain of a clinical note, such as cardiology or neurology, is useful content-derived metadata for developing machine learning downstream applications. To classify the medical subdomain of a note accurately, we have constructed a machine learning-based natural language processing (NLP) pipeline and developed medical subdomain classifiers based on the content of the note.
-METHODS: We constructed the pipeline using the clinical NLP system, clinical Text Analysis and Knowledge Extraction System (cTAKES), the Unified Medical Language System (UMLS) Metathesaurus, Semantic Network, and learning algorithms to extract features from two datasets - clinical notes from Integrating Data for Analysis, Anonymization, and Sharing (iDASH) data repository (n = 431) and Massachusetts General Hospital (MGH) (n = 91,237), and built medical subdomain classifiers with different combinations of data representation methods and supervised learning algorithms. We evaluated the performance of classifiers and their portability across the two datasets.
-RESULTS: The convolutional recurrent neural network with neural word embeddings trained-medical subdomain classifier yielded the best performance measurement on iDASH and MGH datasets with area under receiver operating characteristic curve (AUC) of 0.975 and 0.991, and F1 scores of 0.845 and 0.870, respectively. Considering better clinical interpretability, linear support vector machine-trained medical subdomain classifier using hybrid bag-of-words and clinically relevant UMLS concepts as the feature representation, with term frequency-inverse document frequency (tf-idf)-weighting, outperformed other shallow learning classifiers on iDASH and MGH datasets with AUC of 0.957 and 0.964, and F1 scores of 0.932 and 0.934 respectively. We trained classifiers on one dataset, applied to the other dataset and yielded the threshold of F1 score of 0.7 in classifiers for half of the medical subdomains we studied.
-CONCLUSION: Our study shows that a supervised learning-based NLP approach is useful to develop medical subdomain classifiers. The deep learning algorithm with distributed word representation yields better performance yet shallow learning algorithms with the word and concept representation achieves comparable performance with better clinical interpretability. Portable classifiers may also be used across datasets from different institutions.},
-	bdsk-url-1 = {https://dx.doi.org/10.1186/s12911-017-0556-8}}
 
 @article{Zhang2008di,
 	author = {Zhang, Ying and Szolovits, Peter},
@@ -922,12 +884,12 @@ CONCLUSION: Our study shows that a supervised learning-based NLP approach is use
 	year = {2007},
 	bdsk-url-1 = {http://dx.doi.org/10.1197/jamia.M2351}}
 
-@article{Ghassemi2015qc,
+@article{Ghassemi2015,
 	author = {Ghassemi, Marzyeh and Pimentel, Marco A F and Naumann, Tristan and Brennan, Thomas and Clifton, David A and Szolovits, Peter and Feng, Mengling},
 	date-added = {2018-11-19 17:08:58 -0500},
 	date-modified = {2018-11-19 17:08:58 -0500},
 	journal = {Proc Conf AAAI Artif Intell},
-	journal-full = {Proceedings of the ... AAAI Conference on Artificial Intelligence. AAAI Conference on Artificial Intelligence},
+	journal-full = {Proceedings of the AAAI Conference on Artificial Intelligence},
 	month = {Jan},
 	pages = {446-453},
 	pmc = {PMC4864016},
@@ -936,9 +898,10 @@ CONCLUSION: Our study shows that a supervised learning-based NLP approach is use
 	title = {A Multivariate Timeseries Modeling Approach to Severity of Illness Assessment and Forecasting in ICU with Sparse, Heterogeneous Clinical Data},
 	volume = {2015},
 	year = {2015},
+	url = {https://pmc.ncbi.nlm.nih.gov/articles/PMC4864016/pdf/nihms761534.pdf},
 	abstract = {The ability to determine patient acuity (or severity of illness) has immediate practical use for clinicians. We evaluate the use of multivariate timeseries modeling with the multi-task Gaussian process (GP) models using noisy, incomplete, sparse, heterogeneous and unevenly-sampled clinical data, including both physiological signals and clinical notes. The learned multi-task GP (MTGP) hyperparameters are then used to assess and forecast patient acuity. Experiments were conducted with two real clinical data sets acquired from ICU patients: firstly, estimating cerebrovascular pressure reactivity, an important indicator of secondary damage for traumatic brain injury patients, by learning the interactions between intracranial pressure and mean arterial blood pressure signals, and secondly, mortality prediction using clinical progress notes. In both cases, MTGPs provided improved results: an MTGP model provided better results than single-task GP models for signal interpolation and forecasting (0.91 vs 0.69 RMSE), and the use of MTGP hyperparameters obtained improved results when used as additional classification features (0.812 vs 0.788 AUC).}}
 
-@article{Celi2008fr,
+@article{Celi2008,
 	author = {Celi, Leo Anthony and Hinske, L Christian and Alterovitz, Gil and Szolovits, Peter},
 	date-added = {2018-11-19 17:08:58 -0500},
 	date-modified = {2018-11-19 17:08:58 -0500},
@@ -951,6 +914,7 @@ CONCLUSION: Our study shows that a supervised learning-based NLP approach is use
 	pmid = {19046450},
 	pst = {ppublish},
 	title = {An artificial intelligence tool to predict fluid requirement in the intensive care unit: a proof-of-concept study},
+	url = {https://doi.org/10.1186/cc7140},
 	volume = {12},
 	year = {2008},
 	abstract = {INTRODUCTION: The goal of personalised medicine in the intensive care unit (ICU) is to predict which diagnostic tests, monitoring interventions and treatments translate to improved outcomes given the variation between patients. Unfortunately, processes such as gene transcription and drug metabolism are dynamic in the critically ill; that is, information obtained during static non-diseased conditions may have limited applicability. We propose an alternative way of personalising medicine in the ICU on a real-time basis using information derived from the application of artificial intelligence on a high-resolution database. Calculation of maintenance fluid requirement at the height of systemic inflammatory response was selected to investigate the feasibility of this approach.
@@ -959,7 +923,7 @@ RESULTS: We represented the variables by learning a Bayesian network from the un
 CONCLUSIONS: Based on the model, the probability that a patient would require a certain range of fluid on day two can be predicted. In the presence of a larger database, analysis may be limited to patients with identical clinical presentation, demographic factors, co-morbidities, current physiological data and those who did not develop complications as a result of fluid administration. By better predicting maintenance fluid requirements based on the previous day's physiological variables, one might be able to prevent hypotensive episodes requiring fluid boluses during the course of the following day.},
 	bdsk-url-1 = {http://dx.doi.org/10.1186/cc7140}}
 
-@article{Klann2009gf,
+@article{Klann2009,
 	author = {Klann, Jeffrey G and Szolovits, Peter},
 	date-added = {2018-11-19 17:08:58 -0500},
 	date-modified = {2018-11-19 17:08:58 -0500},
@@ -974,12 +938,13 @@ CONCLUSIONS: Based on the model, the probability that a patient would require a 
 	title = {An intelligent listening framework for capturing encounter notes from a doctor-patient dialog},
 	volume = {9 Suppl 1},
 	year = {2009},
+	url = {https://doi.org/10.1186/1472-6947-9-S1-S3},
 	abstract = {BACKGROUND: Capturing accurate and machine-interpretable primary data from clinical encounters is a challenging task, yet critical to the integrity of the practice of medicine. We explore the intriguing possibility that technology can help accurately capture structured data from the clinical encounter using a combination of automated speech recognition (ASR) systems and tools for extraction of clinical meaning from narrative medical text. Our goal is to produce a displayed evolving encounter note, visible and editable (using speech) during the encounter.
 RESULTS: This is very ambitious, and so far we have taken only the most preliminary steps. We report a simple proof-of-concept system and the design of the more comprehensive one we are building, discussing both the engineering design and challenges encountered. Without a formal evaluation, we were encouraged by our initial results. The proof-of-concept, despite a few false positives, correctly recognized the proper category of single-and multi-word phrases in uncorrected ASR output. The more comprehensive system captures and transcribes speech and stores alternative phrase interpretations in an XML-based format used by a text-engineering framework. It does not yet use the framework to perform the language processing present in the proof-of-concept.
 CONCLUSION: The work here encouraged us that the goal is reachable, so we conclude with proposed next steps.Some challenging steps include acquiring a corpus of doctor-patient conversations, exploring a workable microphone setup, performing user interface research, and developing a multi-speaker version of our tools.},
 	bdsk-url-1 = {http://dx.doi.org/10.1186/1472-6947-9-S1-S3}}
 
-@article{Brownstein2014wt,
+@article{Brownstein2014,
 	author = {Brownstein, Catherine A and Beggs, Alan H and Homer, Nils and Merriman, Barry and Yu, Timothy W and Flannery, Katherine C and DeChene, Elizabeth T and Towne, Meghan C and Savage, Sarah K and Price, Emily N and Holm, Ingrid A and Luquette, Lovelace J and Lyon, Elaine and Majzoub, Joseph and Neupert, Peter and McCallie, Jr, David and Szolovits, Peter and Willard, Huntington F and Mendelsohn, Nancy J and Temme, Renee and Finkel, Richard S and Yum, Sabrina W and Medne, Livija and Sunyaev, Shamil R and Adzhubey, Ivan and Cassa, Christopher A and de Bakker, Paul I W and Duzkale, Hatice and Dworzyński, Piotr and Fairbrother, William and Francioli, Laurent and Funke, Birgit H and Giovanni, Monica A and Handsaker, Robert E and Lage, Kasper and Lebo, Matthew S and Lek, Monkol and Leshchiner, Ignaty and MacArthur, Daniel G and McLaughlin, Heather M and Murray, Michael F and Pers, Tune H and Polak, Paz P and Raychaudhuri, Soumya and Rehm, Heidi L and Soemedi, Rachel and Stitziel, Nathan O and Vestecka, Sara and Supper, Jochen and Gugenmus, Claudia and Klocke, Bernward and Hahn, Alexander and Schubach, Max and Menzel, Mortiz and Biskup, Saskia and Freisinger, Peter and Deng, Mario and Braun, Martin and Perner, Sven and Smith, Richard J H and Andorf, Janeen L and Huang, Jian and Ryckman, Kelli and Sheffield, Val C and Stone, Edwin M and Bair, Thomas and Black-Ziegelbein, E Ann and Braun, Terry A and Darbro, Benjamin and DeLuca, Adam P and Kolbe, Diana L and Scheetz, Todd E and Shearer, Aiden E and Sompallae, Rama and Wang, Kai and Bassuk, Alexander G and Edens, Erik and Mathews, Katherine and Moore, Steven A and Shchelochkov, Oleg A and Trapane, Pamela and Bossler, Aaron and Campbell, Colleen A and Heusel, Jonathan W and Kwitek, Anne and Maga, Tara and Panzer, Karin and Wassink, Thomas and Van Daele, Douglas and Azaiez, Hela and Booth, Kevin and Meyer, Nic and Segal, Michael M and Williams, Marc S and Tromp, Gerard and White, Peter and Corsmeier, Donald and Fitzgerald-Butt, Sara and Herman, Gail and Lamb-Thrush, Devon and McBride, Kim L and Newsom, David and Pierson, Christopher R and Rakowsky, Alexander T and Maver, Aleš and Lovrečić, Luca and Palandačić, Anja and Peterlin, Borut and Torkamani, Ali and Wedell, Anna and Huss, Mikael and Alexeyenko, Andrey and Lindvall, Jessica M and Magnusson, Måns and Nilsson, Daniel and Stranneheim, Henrik and Taylan, Fulya and Gilissen, Christian and Hoischen, Alexander and van Bon, Bregje and Yntema, Helger and Nelen, Marcel and Zhang, Weidong and Sager, Jason and Zhang, Lu and Blair, Kathryn and Kural, Deniz and Cariaso, Michael and Lennon, Greg G and Javed, Asif and Agrawal, Saloni and Ng, Pauline C and Sandhu, Komal S and Krishna, Shuba and Veeramachaneni, Vamsi and Isakov, Ofer and Halperin, Eran and Friedman, Eitan and Shomron, Noam and Glusman, Gustavo and Roach, Jared C and Caballero, Juan and Cox, Hannah C and Mauldin, Denise and Ament, Seth A and Rowen, Lee and Richards, Daniel R and San Lucas, F Anthony and Gonzalez-Garay, Manuel L and Caskey, C Thomas and Bai, Yu and Huang, Ying and Fang, Fang and Zhang, Yan and Wang, Zhengyuan and Barrera, Jorge and Garcia-Lobo, Juan M and González-Lamuño, Domingo and Llorca, Javier and Rodriguez, Maria C and Varela, Ignacio and Reese, Martin G and De La Vega, Francisco M and Kiruluta, Edward and Cargill, Michele and Hart, Reece K and Sorenson, Jon M and Lyon, Gholson J and Stevenson, David A and Bray, Bruce E and Moore, Barry M and Eilbeck, Karen and Yandell, Mark and Zhao, Hongyu and Hou, Lin and Chen, Xiaowei and Yan, Xiting and Chen, Mengjie and Li, Cong and Yang, Can and Gunel, Murat and Li, Peining and Kong, Yong and Alexander, Austin C and Albertyn, Zayed I and Boycott, Kym M and Bulman, Dennis E and Gordon, Paul M K and Innes, A Micheil and Knoppers, Bartha M and Majewski, Jacek and Marshall, Christian R and Parboosingh, Jillian S and Sawyer, Sarah L and Samuels, Mark E and Schwartzentruber, Jeremy and Kohane, Isaac S and Margulies, David M},
 	date-added = {2018-11-19 17:08:58 -0500},
 	date-modified = {2018-11-19 17:08:58 -0500},
@@ -995,12 +960,13 @@ CONCLUSION: The work here encouraged us that the goal is reachable, so we conclu
 	title = {An international effort towards developing standards for best practices in analysis, interpretation and reporting of clinical genome sequencing results in the CLARITY Challenge},
 	volume = {15},
 	year = {2014},
+	url = {https://doi.org/10.1186/gb-2014-15-3-r53},
 	abstract = {BACKGROUND: There is tremendous potential for genome sequencing to improve clinical diagnosis and care once it becomes routinely accessible, but this will require formalizing research methods into clinical best practices in the areas of sequence data generation, analysis, interpretation and reporting. The CLARITY Challenge was designed to spur convergence in methods for diagnosing genetic disease starting from clinical case history and genome sequencing data. DNA samples were obtained from three families with heritable genetic disorders and genomic sequence data were donated by sequencing platform vendors. The challenge was to analyze and interpret these data with the goals of identifying disease-causing variants and reporting the findings in a clinically useful format. Participating contestant groups were solicited broadly, and an independent panel of judges evaluated their performance.
 RESULTS: A total of 30 international groups were engaged. The entries reveal a general convergence of practices on most elements of the analysis and interpretation process. However, even given this commonality of approach, only two groups identified the consensus candidate variants in all disease cases, demonstrating a need for consistent fine-tuning of the generally accepted methods. There was greater diversity of the final clinical report content and in the patient consenting process, demonstrating that these areas require additional exploration and standardization.
 CONCLUSIONS: The CLARITY Challenge provides a comprehensive assessment of current practices for using genome sequencing to diagnose and report genetic diseases. There is remarkable convergence in bioinformatic techniques, but medical interpretation and reporting are areas that require further development by many groups.},
 	bdsk-url-1 = {http://dx.doi.org/10.1186/gb-2014-15-3-r53}}
 
-@article{Liao2014yf,
+@article{Liao2014,
 	author = {Liao, Katherine P and Diogo, Dorothée and Cui, Jing and Cai, Tianxi and Okada, Yukinori and Gainer, Vivian S and Murphy, Shawn N and Gupta, Namrata and Mirel, Daniel and Ananthakrishnan, Ashwin N and Szolovits, Peter and Shaw, Stanley Y and Raychaudhuri, Soumya and Churchill, Susanne and Kohane, Isaac and Karlson, Elizabeth W and Plenge, Robert M},
 	date-added = {2018-11-19 17:08:58 -0500},
 	date-modified = {2018-11-19 17:08:58 -0500},
@@ -1015,6 +981,7 @@ CONCLUSIONS: The CLARITY Challenge provides a comprehensive assessment of curren
 	pmid = {23716066},
 	pst = {ppublish},
 	title = {Association between low density lipoprotein and rheumatoid arthritis genetic factors with low density lipoprotein levels in rheumatoid arthritis and non-rheumatoid arthritis controls},
+	url = {https://doi.org/10.1136/annrheumdis-2012-203202},
 	volume = {73},
 	year = {2014},
 	abstract = {OBJECTIVES: While genetic determinants of low density lipoprotein (LDL) cholesterol levels are well characterised in the general population, they are understudied in rheumatoid arthritis (RA). Our objective was to determine the association of established LDL and RA genetic alleles with LDL levels in RA cases compared with non-RA controls.
@@ -1023,7 +990,7 @@ RESULTS: Among 567 RA cases and 979 controls, 80\% were female and mean age at t
 CONCLUSIONS: LDL alleles were associated with higher LDL levels in RA. RA alleles were associated with lower LDL levels in both RA cases and controls. As RA cases carry more RA alleles, these findings suggest a genetic basis for epidemiological observations of lower LDL levels in RA.},
 	bdsk-url-1 = {http://dx.doi.org/10.1136/annrheumdis-2012-203202}}
 
-@article{Ananthakrishnan2014bf,
+@article{Ananthakrishnan2014d,
 	author = {Ananthakrishnan, Ashwin N and Cheng, Su-Chun and Cai, Tianxi and Cagan, Andrew and Gainer, Vivian S and Szolovits, Peter and Shaw, Stanley Y and Churchill, Susanne and Karlson, Elizabeth W and Murphy, Shawn N and Kohane, Isaac and Liao, Katherine P},
 	date-added = {2018-11-19 17:08:58 -0500},
 	date-modified = {2018-11-19 17:08:58 -0500},
@@ -1040,13 +1007,14 @@ CONCLUSIONS: LDL alleles were associated with higher LDL levels in RA. RA allele
 	title = {Association between reduced plasma 25-hydroxy vitamin D and increased risk of cancer in patients with inflammatory bowel diseases},
 	volume = {12},
 	year = {2014},
-	abstract = {BACKGROUND & AIMS: Vitamin D deficiency is common among patients with inflammatory bowel diseases (IBD) (Crohn's disease or ulcerative colitis). The effects of low plasma 25-hydroxy vitamin D (25[OH]D) on outcomes other than bone health are understudied in patients with IBD. We examined the association between plasma level of 25(OH)D and risk of cancers in patients with IBD.
+	url = {https://doi.org/10.1016/j.cgh.2013.10.011},
+	abstract = {BACKGROUND \& AIMS: Vitamin D deficiency is common among patients with inflammatory bowel diseases (IBD) (Crohn's disease or ulcerative colitis). The effects of low plasma 25-hydroxy vitamin D (25[OH]D) on outcomes other than bone health are understudied in patients with IBD. We examined the association between plasma level of 25(OH)D and risk of cancers in patients with IBD.
 METHODS: From a multi-institutional cohort of patients with IBD, we identified those with at least 1 measurement of plasma 25(OH)D. The primary outcome was development of any cancer. We examined the association between plasma 25(OH)D and risk of specific subtypes of cancer, adjusting for potential confounders in a multivariate regression model.
 RESULTS: We analyzed data from 2809 patients with IBD and a median plasma level of 25(OH)D of 26 ng/mL. Nearly one-third had deficient levels of vitamin D (<20 ng/mL). During a median follow-up period of 11 years, 196 patients (7\%) developed cancer, excluding nonmelanoma skin cancer (41 cases of colorectal cancer). Patients with vitamin D deficiency had an increased risk of cancer (adjusted odds ratio, 1.82; 95\% confidence interval, 1.25-2.65) compared with those with sufficient levels. Each 1-ng/mL increase in plasma 25(OH)D was associated with an 8\% reduction in risk of colorectal cancer (odds ratio, 0.92; 95\% confidence interval, 0.88-0.96). A weaker inverse association was also identified for lung cancer.
 CONCLUSIONS: In a large multi-institutional IBD cohort, a low plasma level of 25(OH)D was associated with an increased risk of cancer, especially colorectal cancer.},
 	bdsk-url-1 = {http://dx.doi.org/10.1016/j.cgh.2013.10.011}}
 
-@article{Liao2013ai,
+@article{Liao2013,
 	author = {Liao, Katherine P and Kurreeman, Fina and Li, Gang and Duclos, Grant and Murphy, Shawn and Guzman, Raul and Cai, Tianxi and Gupta, Namrata and Gainer, Vivian and Schur, Peter and Cui, Jing and Denny, Joshua C and Szolovits, Peter and Churchill, Susanne and Kohane, Isaac and Karlson, Elizabeth W and Plenge, Robert M},
 	date-added = {2018-11-19 17:08:58 -0500},
 	date-modified = {2018-11-19 17:08:58 -0500},
@@ -1062,13 +1030,14 @@ CONCLUSIONS: In a large multi-institutional IBD cohort, a low plasma level of 25
 	title = {Associations of autoantibodies, autoimmune risk alleles, and clinical diagnoses from the electronic medical records in rheumatoid arthritis cases and non-rheumatoid arthritis controls},
 	volume = {65},
 	year = {2013},
+	url = {https://doi.org/10.1002/art.37801},
 	abstract = {OBJECTIVE: The significance of non-rheumatoid arthritis (RA) autoantibodies in patients with RA is unclear. The aim of this study was to assess associations of autoantibodies with autoimmune risk alleles and with clinical diagnoses from the electronic medical records (EMRs) among RA cases and non-RA controls.
 METHODS: Data on 1,290 RA cases and 1,236 non-RA controls of European genetic ancestry were obtained from the EMRs of 2 large academic centers. The levels of anti-citrullinated protein antibodies (ACPAs), antinuclear antibodies (ANAs), anti-tissue transglutaminase antibodies (AGTAs), and anti-thyroid peroxidase (anti-TPO) antibodies were measured. All subjects were genotyped for autoimmune risk alleles, and the association between number of autoimmune risk alleles present and number of types of autoantibodies present was studied. A phenome-wide association study (PheWAS) was conducted to study potential associations between autoantibodies and clinical diagnoses among RA cases and non-RA controls.
 RESULTS: The mean ages were 60.7 years in RA cases and 64.6 years in non-RA controls. The proportion of female subjects was 79\% in each group. The prevalence of ACPAs and ANAs was higher in RA cases compared to controls (each P < 0.0001); there were no differences in the prevalence of anti-TPO antibodies and AGTAs. Carriage of higher numbers of autoimmune risk alleles was associated with increasing numbers of autoantibody types in RA cases (P = 2.1 × 10(-5)) and non-RA controls (P = 5.0 × 10(-3)). From the PheWAS, the presence of ANAs was significantly associated with a diagnosis of Sjögren's/sicca syndrome in RA cases.
 CONCLUSION: The increased frequency of autoantibodies in RA cases and non-RA controls was associated with the number of autoimmune risk alleles carried by an individual. PheWAS of EMR data, with linkage to laboratory data obtained from blood samples, provide a novel method to test for the clinical significance of biomarkers in disease.},
 	bdsk-url-1 = {http://dx.doi.org/10.1002/art.37801}}
 
-@article{Neamatullah2008fj,
+@article{Neamatullah2008,
 	author = {Neamatullah, Ishna and Douglass, Margaret M and Lehman, Li-wei H and Reisner, Andrew and Villarroel, Mauricio and Long, William J and Szolovits, Peter and Moody, George B and Mark, Roger G and Clifford, Gari D},
 	date-added = {2018-11-19 17:08:58 -0500},
 	date-modified = {2018-11-19 17:08:58 -0500},
@@ -1083,6 +1052,7 @@ CONCLUSION: The increased frequency of autoantibodies in RA cases and non-RA con
 	title = {Automated de-identification of free-text medical records},
 	volume = {8},
 	year = {2008},
+	url = {https://doi.org/10.1186/1472-6947-8-32},
 	abstract = {BACKGROUND: Text-based patient medical records are a vital resource in medical research. In order to preserve patient confidentiality, however, the U.S. Health Insurance Portability and Accountability Act (HIPAA) requires that protected health information (PHI) be removed from medical records before they can be disseminated. Manual de-identification of large medical record databases is prohibitively expensive, time-consuming and prone to error, necessitating automatic methods for large-scale, automated de-identification.
 METHODS: We describe an automated Perl-based de-identification software package that is generally usable on most free-text medical records, e.g., nursing notes, discharge summaries, X-ray reports, etc. The software uses lexical look-up tables, regular expressions, and simple heuristics to locate both HIPAA PHI, and an extended PHI set that includes doctors' names and years of dates. To develop the de-identification approach, we assembled a gold standard corpus of re-identified nursing notes with real PHI replaced by realistic surrogate information. This corpus consists of 2,434 nursing notes containing 334,000 words and a total of 1,779 instances of PHI taken from 163 randomly selected patient records. This gold standard corpus was used to refine the algorithm and measure its sensitivity. To test the algorithm on data not used in its development, we constructed a second test corpus of 1,836 nursing notes containing 296,400 words. The algorithm's false negative rate was evaluated using this test corpus.
 RESULTS: Performance evaluation of the de-identification software on the development corpus yielded an overall recall of 0.967, precision value of 0.749, and fallout value of approximately 0.002. On the test corpus, a total of 90 instances of false negatives were found, or 27 per 100,000 word count, with an estimated recall of 0.943. Only one full date and one age over 89 were missed. No patient names were missed in either corpus.
@@ -1106,6 +1076,7 @@ CONCLUSION: We have developed a pattern-matching de-identification system based 
 	title = {Automatic lymphoma classification with sentence subgraph mining from pathology reports},
 	volume = {21},
 	year = {2014},
+	url = {https://doi.org/10.1136/amiajnl-2013-002443},
 	abstract = {OBJECTIVE: Pathology reports are rich in narrative statements that encode a complex web of relations among medical concepts. These relations are routinely used by doctors to reason on diagnoses, but often require hand-crafted rules or supervised learning to extract into prespecified forms for computational disease modeling. We aim to automatically capture relations from narrative text without supervision.
 METHODS: We design a novel framework that translates sentences into graph representations, automatically mines sentence subgraphs, reduces redundancy in mined subgraphs, and automatically generates subgraph features for subsequent classification tasks. To ensure meaningful interpretations over the sentence graphs, we use the Unified Medical Language System Metathesaurus to map token subsequences to concepts, and in turn sentence graph nodes. We test our system with multiple lymphoma classification tasks that together mimic the differential diagnosis by a pathologist. To this end, we prevent our classifiers from looking at explicit mentions or synonyms of lymphomas in the text.
 RESULTS AND CONCLUSIONS: We compare our system with three baseline classifiers using standard n-grams, full MetaMap concepts, and filtered MetaMap concepts. Our system achieves high F-measures on multiple binary classifications of lymphoma (Burkitt lymphoma, 0.8; diffuse large B-cell lymphoma, 0.909; follicular lymphoma, 0.84; Hodgkin lymphoma, 0.912). Significance tests show that our system outperforms all three baselines. Moreover, feature analysis identifies subgraph features that contribute to improved performance; these features agree with the state-of-the-art knowledge about lymphoma classification. We also highlight how these unsupervised relation features may provide meaningful insights into lymphoma classification.},
@@ -1134,7 +1105,7 @@ RESULTS AND CONCLUSIONS: We compare our system with three baseline classifiers u
 	bdsk-url-1 = {https://doi.org/10.1093/bib/bbw001},
 	bdsk-url-2 = {https://doi.org/10.1093/bib/bbx048}}
 
-@article{Rudin2011rr,
+@article{Rudin2011,
 	author = {Rudin, Robert S and Salzberg, Claudia A and Szolovits, Peter and Volk, Lynn A and Simon, Steven R and Bates, David W},
 	date = {2011 Nov-Dec},
 	date-added = {2018-11-19 17:08:58 -0500},
@@ -1150,13 +1121,14 @@ RESULTS AND CONCLUSIONS: We compare our system with three baseline classifiers u
 	title = {Care transitions as opportunities for clinicians to use data exchange services: how often do they occur?},
 	volume = {18},
 	year = {2011},
+	url = {https://doi.org/10.1136/amiajnl-2010-000072},
 	abstract = {BACKGROUND: The electronic exchange of health information among healthcare providers has the potential to produce enormous clinical benefits and financial savings, although realizing that potential will be challenging. The American Recovery and Reinvestment Act of 2009 will reward providers for 'meaningful use' of electronic health records, including participation in clinical data exchange, but the best ways to do so remain uncertain.
 METHODS: We analyzed patient visits in one community in which a high proportion of providers were using an electronic health record and participating in data exchange. Using claims data from one large private payer for individuals under age 65 years, we computed the number of visits to a provider which involved transitions in care from other providers as a percentage of total visits. We calculated this 'transition percentage' for individual providers and medical groups.
 RESULTS: On average, excluding radiology and pathology, approximately 51\% of visits involved care transitions between individual providers in the community and 36\%-41\% involved transitions between medical groups. There was substantial variation in transition percentage across medical specialties, within specialties and across medical groups. Specialists tended to have higher transition percentages and smaller ranges within specialty than primary care physicians, who ranged from 32\% to 95\% (including transitions involving radiology and pathology). The transition percentages of pediatric practices were similar to those of adult primary care, except that many transitions occurred among pediatric physicians within a single medical group.
 CONCLUSIONS: Care transition patterns differed substantially by type of practice and should be considered in designing incentives to foster providers' meaningful use of health data exchange services.},
 	bdsk-url-1 = {http://dx.doi.org/10.1136/amiajnl-2010-000072}}
 
-@article{Klann2014zm,
+@article{Klann2014,
 	author = {Klann, Jeffrey G and Szolovits, Peter and Downs, Stephen M and Schadow, Gunther},
 	date-added = {2018-11-19 17:08:58 -0500},
 	date-modified = {2018-11-19 17:08:58 -0500},
@@ -1172,13 +1144,14 @@ CONCLUSIONS: Care transition patterns differed substantially by type of practice
 	title = {Decision support from local data: creating adaptive order menus from past clinician behavior},
 	volume = {48},
 	year = {2014},
+	url = {https://doi.org/10.1016/j.jbi.2013.12.005},
 	abstract = {OBJECTIVE: Reducing care variability through guidelines has significantly benefited patients. Nonetheless, guideline-based Clinical Decision Support (CDS) systems are not widely implemented or used, are frequently out-of-date, and cannot address complex care for which guidelines do not exist. Here, we develop and evaluate a complementary approach - using Bayesian Network (BN) learning to generate adaptive, context-specific treatment menus based on local order-entry data. These menus can be used as a draft for expert review, in order to minimize development time for local decision support content. This is in keeping with the vision outlined in the US Health Information Technology Strategic Plan, which describes a healthcare system that learns from itself.
 MATERIALS AND METHODS: We used the Greedy Equivalence Search algorithm to learn four 50-node domain-specific BNs from 11,344 encounters: abdominal pain in the emergency department, inpatient pregnancy, hypertension in the Urgent Visit Clinic, and altered mental state in the intensive care unit. We developed a system to produce situation-specific, rank-ordered treatment menus from these networks. We evaluated this system with a hospital-simulation methodology and computed Area Under the Receiver-Operator Curve (AUC) and average menu position at time of selection. We also compared this system with a similar association-rule-mining approach.
 RESULTS: A short order menu on average contained the next order (weighted average length 3.91-5.83 items). Overall predictive ability was good: average AUC above 0.9 for 25\% of order types and overall average AUC .714-.844 (depending on domain). However, AUC had high variance (.50-.99). Higher AUC correlated with tighter clusters and more connections in the graphs, indicating importance of appropriate contextual data. Comparison with an Association Rule Mining approach showed similar performance for only the most common orders with dramatic divergence as orders are less frequent.
 DISCUSSION AND CONCLUSION: This study demonstrates that local clinical knowledge can be extracted from treatment data for decision support. This approach is appealing because: it reflects local standards; it uses data already being captured; and it produces human-readable treatment-diagnosis networks that could be curated by a human expert to reduce workload in developing localized CDS content. The BN methodology captured transitive associations and co-varying relationships, which existing approaches do not. It also performs better as orders become less frequent and require more context. This system is a step forward in harnessing local, empirical data to enhance decision support.},
 	bdsk-url-1 = {http://dx.doi.org/10.1016/j.jbi.2013.12.005}}
 
-@article{Liao2015qr,
+@article{Liao2015a,
 	author = {Liao, Katherine P and Cai, Tianxi and Savova, Guergana K and Murphy, Shawn N and Karlson, Elizabeth W and Ananthakrishnan, Ashwin N and Gainer, Vivian S and Shaw, Stanley Y and Xia, Zongqi and Szolovits, Peter and Churchill, Susanne and Kohane, Isaac},
 	date-added = {2018-11-19 17:08:58 -0500},
 	date-modified = {2018-11-19 17:08:58 -0500},
@@ -1191,10 +1164,11 @@ DISCUSSION AND CONCLUSION: This study demonstrates that local clinical knowledge
 	pmid = {25911572},
 	pst = {epublish},
 	title = {Development of phenotype algorithms using electronic medical records and incorporating natural language processing},
+	url = {https://doi.org/10.1136/bmj.h1885},
 	volume = {350},
 	year = {2015}}
 
-@article{Luo2016ak,
+@article{Luo2016,
 	author = {Luo, Yuan and Szolovits, Peter},
 	date-added = {2018-11-19 17:08:58 -0500},
 	date-modified = {2018-11-19 17:08:58 -0500},
@@ -1208,10 +1182,11 @@ DISCUSSION AND CONCLUSION: This study demonstrates that local clinical knowledge
 	title = {Efficient Queries of Stand-off Annotations for Natural Language Processing on Electronic Medical Records},
 	volume = {8},
 	year = {2016},
+	url = {https://doi.org/10.4137/BII.S38916},
 	abstract = {In natural language processing, stand-off annotation uses the starting and ending positions of an annotation to anchor it to the text and stores the annotation content separately from the text. We address the fundamental problem of efficiently storing stand-off annotations when applying natural language processing on narrative clinical notes in electronic medical records (EMRs) and efficiently retrieving such annotations that satisfy position constraints. Efficient storage and retrieval of stand-off annotations can facilitate tasks such as mapping unstructured text to electronic medical record ontologies. We first formulate this problem into the interval query problem, for which optimal query/update time is in general logarithm. We next perform a tight time complexity analysis on the basic interval tree query algorithm and show its nonoptimality when being applied to a collection of 13 query types from Allen's interval algebra. We then study two closely related state-of-the-art interval query algorithms, proposed query reformulations, and augmentations to the second algorithm. Our proposed algorithm achieves logarithmic time stabbing-max query time complexity and solves the stabbing-interval query tasks on all of Allen's relations in logarithmic time, attaining the theoretic lower bound. Updating time is kept logarithmic and the space requirement is kept linear at the same time. We also discuss interval management in external memory models and higher dimensions.},
 	bdsk-url-1 = {http://dx.doi.org/10.4137/BII.S38916}}
 
-@article{Liao2010ul,
+@article{Liao2010,
 	author = {Liao, Katherine P and Cai, Tianxi and Gainer, Vivian and Goryachev, Sergey and Zeng-treitler, Qing and Raychaudhuri, Soumya and Szolovits, Peter and Churchill, Susanne and Murphy, Shawn and Kohane, Isaac and Karlson, Elizabeth W and Plenge, Robert M},
 	date-added = {2018-11-19 17:08:58 -0500},
 	date-modified = {2018-11-19 17:08:58 -0500},
@@ -1227,13 +1202,14 @@ DISCUSSION AND CONCLUSION: This study demonstrates that local clinical knowledge
 	title = {Electronic medical records for discovery research in rheumatoid arthritis},
 	volume = {62},
 	year = {2010},
+	url = {https://doi.org/10.1002/acr.20184},
 	abstract = {OBJECTIVE: Electronic medical records (EMRs) are a rich data source for discovery research but are underutilized due to the difficulty of extracting highly accurate clinical data. We assessed whether a classification algorithm incorporating narrative EMR data (typed physician notes) more accurately classifies subjects with rheumatoid arthritis (RA) compared with an algorithm using codified EMR data alone.
 METHODS: Subjects with > or =1 International Classification of Diseases, Ninth Revision RA code (714.xx) or who had anti-cyclic citrullinated peptide (anti-CCP) checked in the EMR of 2 large academic centers were included in an "RA Mart" (n = 29,432). For all 29,432 subjects, we extracted narrative (using natural language processing) and codified RA clinical information. In a training set of 96 RA and 404 non-RA cases from the RA Mart classified by medical record review, we used narrative and codified data to develop classification algorithms using logistic regression. These algorithms were applied to the entire RA Mart. We calculated and compared the positive predictive value (PPV) of these algorithms by reviewing the records of an additional 400 subjects classified as having RA by the algorithms.
 RESULTS: A complete algorithm (narrative and codified data) classified RA subjects with a significantly higher PPV of 94\% than an algorithm with codified data alone (PPV of 88\%). Characteristics of the RA cohort identified by the complete algorithm were comparable to existing RA cohorts (80\% women, 63\% anti-CCP positive, and 59\% positive for erosions).
 CONCLUSION: We demonstrate the ability to utilize complete EMR data to define an RA cohort with a PPV of 94\%, which was superior to an algorithm using codified data alone.},
 	bdsk-url-1 = {http://dx.doi.org/10.1002/acr.20184}}
 
-@article{Kurreeman2011pd,
+@article{Kurreeman2011,
 	author = {Kurreeman, Fina and Liao, Katherine and Chibnik, Lori and Hickey, Brendan and Stahl, Eli and Gainer, Vivian and Li, Gang and Bry, Lynn and Mahan, Scott and Ardlie, Kristin and Thomson, Brian and Szolovits, Peter and Churchill, Susanne and Murphy, Shawn N and Cai, Tianxi and Raychaudhuri, Soumya and Kohane, Isaac and Karlson, Elizabeth and Plenge, Robert M},
 	date-added = {2018-11-19 17:08:58 -0500},
 	date-modified = {2018-11-19 17:08:58 -0500},
@@ -1249,10 +1225,11 @@ CONCLUSION: We demonstrate the ability to utilize complete EMR data to define an
 	title = {Genetic basis of autoantibody positive and negative rheumatoid arthritis risk in a multi-ethnic cohort derived from electronic health records},
 	volume = {88},
 	year = {2011},
+	url = {https://doi.org/10.1016/j.ajhg.2010.12.007},
 	abstract = {Discovering and following up on genetic associations with complex phenotypes require large patient cohorts. This is particularly true for patient cohorts of diverse ancestry and clinically relevant subsets of disease. The ability to mine the electronic health records (EHRs) of patients followed as part of routine clinical care provides a potential opportunity to efficiently identify affected cases and unaffected controls for appropriate-sized genetic studies. Here, we demonstrate proof-of-concept that it is possible to use EHR data linked with biospecimens to establish a multi-ethnic case-control cohort for genetic research of a complex disease, rheumatoid arthritis (RA). In 1,515 EHR-derived RA cases and 1,480 controls matched for both genetic ancestry and disease-specific autoantibodies (anti-citrullinated protein antibodies [ACPA]), we demonstrate that the odds ratios and aggregate genetic risk score (GRS) of known RA risk alleles measured in individuals of European ancestry within our EHR cohort are nearly identical to those derived from a genome-wide association study (GWAS) of 5,539 autoantibody-positive RA cases and 20,169 controls. We extend this approach to other ethnic groups and identify a large overlap in the GRS among individuals of European, African, East Asian, and Hispanic ancestry. We also demonstrate that the distribution of a GRS based on 28 non-HLA risk alleles in ACPA+ cases partially overlaps with ACPA- subgroup of RA cases. Our study demonstrates that the genetic basis of rheumatoid arthritis risk is similar among cases of diverse ancestry divided into subsets based on ACPA status and emphasizes the utility of linking EHR clinical data with biospecimens for genetic studies.},
 	bdsk-url-1 = {http://dx.doi.org/10.1016/j.ajhg.2010.12.007}}
 
-@article{Manrai2016vh,
+@article{Manrai2016,
 	author = {Manrai, Arjun K and Funke, Birgit H and Rehm, Heidi L and Olesen, Morten S and Maron, Bradley A and Szolovits, Peter and Margulies, David M and Loscalzo, Joseph and Kohane, Isaac S},
 	date-added = {2018-11-19 17:08:58 -0500},
 	date-modified = {2018-11-19 17:08:58 -0500},
@@ -1267,29 +1244,14 @@ CONCLUSION: We demonstrate the ability to utilize complete EMR data to define an
 	title = {Genetic Misdiagnoses and the Potential for Health Disparities},
 	volume = {375},
 	year = {2016},
+	url = {https://doi.org/10.1056/NEJMsa1507092},
 	abstract = {BACKGROUND: For more than a decade, risk stratification for hypertrophic cardiomyopathy has been enhanced by targeted genetic testing. Using sequencing results, clinicians routinely assess the risk of hypertrophic cardiomyopathy in a patient's relatives and diagnose the condition in patients who have ambiguous clinical presentations. However, the benefits of genetic testing come with the risk that variants may be misclassified.
 METHODS: Using publicly accessible exome data, we identified variants that have previously been considered causal in hypertrophic cardiomyopathy and that are overrepresented in the general population. We studied these variants in diverse populations and reevaluated their initial ascertainments in the medical literature. We reviewed patient records at a leading genetic-testing laboratory for occurrences of these variants during the near-decade-long history of the laboratory.
 RESULTS: Multiple patients, all of whom were of African or unspecified ancestry, received positive reports, with variants misclassified as pathogenic on the basis of the understanding at the time of testing. Subsequently, all reported variants were recategorized as benign. The mutations that were most common in the general population were significantly more common among black Americans than among white Americans (P<0.001). Simulations showed that the inclusion of even small numbers of black Americans in control cohorts probably would have prevented these misclassifications. We identified methodologic shortcomings that contributed to these errors in the medical literature.
 CONCLUSIONS: The misclassification of benign variants as pathogenic that we found in our study shows the need for sequencing the genomes of diverse populations, both in asymptomatic controls and the tested patient population. These results expand on current guidelines, which recommend the use of ancestry-matched controls to interpret variants. As additional populations of different ancestry backgrounds are sequenced, we expect variant reclassifications to increase, particularly for ancestry groups that have historically been less well studied. (Funded by the National Institutes of Health.).},
 	bdsk-url-1 = {http://dx.doi.org/10.1056/NEJMsa1507092}}
 
-@article{Dhar2014qm,
-	author = {Dhar, Vasant},
-	date-added = {2018-11-19 17:08:58 -0500},
-	date-modified = {2018-11-19 17:08:58 -0500},
-	journal = {Big Data},
-	journal-full = {Big data},
-	month = {Dec},
-	number = {4},
-	pages = {182-4},
-	pmid = {27442754},
-	pst = {ppublish},
-	title = {Healthcare and Data: An Interview with Peter Szolovits},
-	volume = {2},
-	year = {2014},
-	bdsk-url-1 = {http://dx.doi.org/10.1089/big.2014.1529}}
-
-@article{Ananthakrishnan2014fq,
+@article{Ananthakrishnan2014,
 	author = {Ananthakrishnan, A N and Cagan, A and Gainer, V S and Cheng, S-C and Cai, T and Szolovits, P and Shaw, S Y and Churchill, S and Karlson, E W and Murphy, S N and Kohane, I and Liao, K P},
 	date-added = {2018-11-19 17:08:58 -0500},
 	date-modified = {2018-11-19 17:08:58 -0500},
@@ -1305,6 +1267,7 @@ CONCLUSIONS: The misclassification of benign variants as pathogenic that we foun
 	title = {Higher plasma vitamin D is associated with reduced risk of Clostridium difficile infection in patients with inflammatory bowel diseases},
 	volume = {39},
 	year = {2014},
+	url = {https://doi.org/10.1111/apt.12706},
 	abstract = {BACKGROUND: Patients with inflammatory bowel diseases (IBD) have an increased risk of clostridium difficile infection (CDI). Cathelicidins are anti-microbial peptides that attenuate colitis and inhibit the effect of clostridial toxins. Plasma calcifediol [25(OH)D] stimulates production of cathelicidins.
 AIM: To examine the association between plasma 25(OH)D and CDI in patients with IBD.
 METHODS: From a multi-institutional IBD cohort, we identified patients with at least one measured plasma 25(OH)D. Our primary outcome was development of CDI. Multivariate logistic regression models adjusting for potential confounders were used to identify independent effect of plasma 25(OH)D on risk of CDI.
@@ -1312,7 +1275,7 @@ RESULTS: We studied 3188 IBD patients of whom 35 patients developed CDI. Patient
 CONCLUSIONS: Higher plasma calcifediol [25(OH)D] is associated with reduced risk of C. difficile infection in patients with IBD. Further studies of therapeutic supplementation of vitamin D in patients with inflammatory bowel disease and C. difficile infection may be warranted.},
 	bdsk-url-1 = {http://dx.doi.org/10.1111/apt.12706}}
 
-@article{Hug2009mz,
+@article{Hug2009,
 	author = {Hug, Caleb W and Szolovits, Peter},
 	date-added = {2018-11-19 17:08:58 -0500},
 	date-modified = {2018-11-19 17:08:58 -0500},
@@ -1327,6 +1290,7 @@ CONCLUSIONS: Higher plasma calcifediol [25(OH)D] is associated with reduced risk
 	title = {ICU acuity: real-time models versus daily models},
 	volume = {2009},
 	year = {2009},
+	url = {https://pmc.ncbi.nlm.nih.gov/articles/PMC2815497/pdf/amia-f2009-260.pdf},
 	abstract = {OBJECTIVE: To explore the feasibility of real-time mortality risk assessment for ICU patients.
 DESIGN/METHODS: This study used retrospective analysis of mixed medical/surgical intensive care patients in a university hospital. Logistic regression was applied to 7048 development patients with several hundred candidate variables. Final models were selected by backward elimination on top cross-validated variables and validated on 3018 separate patients.
 RESULTS: The real-time model demonstrated strong discrimination ability (Day 3 AUC=0.878). All models had circumstances where calibration was poor (Hosmer-Lemeshow goodness of fit test p < 0.1). The final models included variables known to be associated with mortality, but also more computationally intensive variables absent in other severity scores.
@@ -1348,13 +1312,14 @@ CONCLUSION: Real-time mortality prediction offers similar discrimination ability
 	title = {Improving case definition of Crohn's disease and ulcerative colitis in electronic medical records using natural language processing: a novel informatics approach},
 	volume = {19},
 	year = {2013},
+	url = {https://doi.org/10.1097/MIB.0b013e31828133fd},
 	abstract = {BACKGROUND: Previous studies identifying patients with inflammatory bowel disease using administrative codes have yielded inconsistent results. Our objective was to develop a robust electronic medical record-based model for classification of inflammatory bowel disease leveraging the combination of codified data and information from clinical text notes using natural language processing.
 METHODS: Using the electronic medical records of 2 large academic centers, we created data marts for Crohn's disease (CD) and ulcerative colitis (UC) comprising patients with ≥1 International Classification of Diseases, 9th edition, code for each disease. We used codified (i.e., International Classification of Diseases, 9th edition codes, electronic prescriptions) and narrative data from clinical notes to develop our classification model. Model development and validation was performed in a training set of 600 randomly selected patients for each disease with medical record review as the gold standard. Logistic regression with the adaptive LASSO penalty was used to select informative variables.
 RESULTS: We confirmed 399 CD cases (67\%) in the CD training set and 378 UC cases (63\%) in the UC training set. For both, a combined model including narrative and codified data had better accuracy (area under the curve for CD 0.95; UC 0.94) than models using only disease International Classification of Diseases, 9th edition codes (area under the curve 0.89 for CD; 0.86 for UC). Addition of natural language processing narrative terms to our final model resulted in classification of 6\% to 12\% more subjects with the same accuracy.
 CONCLUSIONS: Inclusion of narrative concepts identified using natural language processing improves the accuracy of electronic medical records case definition for CD and UC while simultaneously identifying more subjects compared with models using codified data alone.},
 	bdsk-url-1 = {http://dx.doi.org/10.1097/MIB.0b013e31828133fd}}
 
-@article{Sinnott2014ez,
+@article{Sinnott2014,
 	author = {Sinnott, Jennifer A and Dai, Wei and Liao, Katherine P and Shaw, Stanley Y and Ananthakrishnan, Ashwin N and Gainer, Vivian S and Karlson, Elizabeth W and Churchill, Susanne and Szolovits, Peter and Murphy, Shawn and Kohane, Isaac and Plenge, Robert and Cai, Tianxi},
 	date-added = {2018-11-19 17:08:58 -0500},
 	date-modified = {2018-11-19 17:08:58 -0500},
@@ -1370,10 +1335,11 @@ CONCLUSIONS: Inclusion of narrative concepts identified using natural language p
 	title = {Improving the power of genetic association tests with imperfect phenotype derived from electronic medical records},
 	volume = {133},
 	year = {2014},
+	url = {https://doi.org/10.1007/s00439-014-1466-9}
 	abstract = {To reduce costs and improve clinical relevance of genetic studies, there has been increasing interest in performing such studies in hospital-based cohorts by linking phenotypes extracted from electronic medical records (EMRs) to genotypes assessed in routinely collected medical samples. A fundamental difficulty in implementing such studies is extracting accurate information about disease outcomes and important clinical covariates from large numbers of EMRs. Recently, numerous algorithms have been developed to infer phenotypes by combining information from multiple structured and unstructured variables extracted from EMRs. Although these algorithms are quite accurate, they typically do not provide perfect classification due to the difficulty in inferring meaning from the text. Some algorithms can produce for each patient a probability that the patient is a disease case. This probability can be thresholded to define case-control status, and this estimated case-control status has been used to replicate known genetic associations in EMR-based studies. However, using the estimated disease status in place of true disease status results in outcome misclassification, which can diminish test power and bias odds ratio estimates. We propose to instead directly model the algorithm-derived probability of being a case. We demonstrate how our approach improves test power and effect estimation in simulation studies, and we describe its performance in a study of rheumatoid arthritis. Our work provides an easily implemented solution to a major practical challenge that arises in the use of EMR data, which can facilitate the use of EMR infrastructure for more powerful, cost-effective, and diverse genetic studies.},
 	bdsk-url-1 = {http://dx.doi.org/10.1007/s00439-014-1466-9}}
 
-@article{Velasquez2014si,
+@article{Velasquez2014,
 	author = {Velasquez, A and Ghassemi, M and Szolovits, P and Park, S and Osorio, J and Dejam, A and Celi, L},
 	date-added = {2018-11-19 17:08:58 -0500},
 	date-modified = {2018-11-19 17:08:58 -0500},
@@ -1389,9 +1355,10 @@ CONCLUSIONS: Inclusion of narrative concepts identified using natural language p
 	title = {Long-term outcomes of minor troponin elevations in the intensive care unit},
 	volume = {42},
 	year = {2014},
+	url = {https://doi.org/10.1177/0310057X1404200313},
 	abstract = {The aim of our study is to determine the short-term and long-term outcomes of intensive care unit (ICU) patients with minor troponin elevations. The retrospective study compared ICU patients with peak troponin elevation less than 0.1 ng/ml to those with only negative tests during their hospital stay. Data were gathered from ICUs at Beth Israel Deaconess Medical Center between 2001 and 2008. A total of 4224 patients (2547 controls and 1677 positives) were analysed. The primary outcome was mortality at one year. Secondary outcomes were 30-day mortality and hospital and ICU lengths of stay. After adjusting for age, sex, Simplified Acute Physiology Score, Sequential Organ Failure Assessment and combined Elixhauser score, we found that minor troponin elevations (peak troponin elevation between 0.01 and 0.09 ng/ml) were associated with a higher one-year mortality (Hazard Ratio 1.22, P <0.001 for binary troponin presence; Hazard Ratio 1.03, P <0.001 for each 0.01 ng/ml troponin increment). This relationship held for the subgroup of seven-day post-discharge survivors (Hazard Ratio 1.26, P <0.001). Minor elevations of troponin also significantly increased the net reclassification index over traditional risk markers for mortality prediction (net reclassification score 0.12, P <0.001). Minor troponin elevation was also associated with 30-day mortality (odds ratio 1.33, P=0.003). Importantly, troponin testing did not increase the adjusted mortality odds (P=0.9). Minor elevations in troponin substantially increase one-year, all-cause mortality in a stepwise fashion; it was also independently associated with 30-day mortality. We propose that minor elevations in troponin should not be regarded as clinically unimportant, but rather be included as a prognostic element if measured. We recommend prospective ICU studies to assess prognostic value of routine troponin determination.}}
 
-@article{Kohane2011lq,
+@article{Kohane2011,
 	author = {Kohane, Isaac S and Szolovits, Peter},
 	date = {2011 Jul-Aug},
 	date-added = {2018-11-19 17:08:58 -0500},
@@ -1407,6 +1374,7 @@ CONCLUSIONS: Inclusion of narrative concepts identified using natural language p
 	title = {Marco Ramoni: an appreciation of academic achievement},
 	volume = {18},
 	year = {2011},
+	url = {https://doi.org/10.1136/amiajnl-2011-000218},
 	abstract = {We review the scholarly career of our colleague, Marco Ramoni, who died unexpectedly in the summer of 2010. His work mainly explored the development and application of Bayesian techniques to model clinical, public health, and bioinformatics questions. His contributions have led to improvements in our ability to model behavior that evolves in time, to explore systematic relationships among large sets of covariates, and to tease out the meaning of data on the role of genetic variation in the genesis of important diseases.},
 	bdsk-url-1 = {http://dx.doi.org/10.1136/amiajnl-2011-000218}}
 
@@ -1432,7 +1400,7 @@ METHODS: This study presents a medical coreference resolution system (MCORES) fo
 RESULTS AND CONCLUSION: MCORES was compared with an in-house baseline that uses only single-perspective 'token overlap' and 'number agreement' features. MCORES was shown to outperform the baseline; its enhanced features contribute significantly to performance. In addition to the baseline, MCORES was compared against two available third-party, open-domain systems, RECONCILE(ACL09) and the Beautiful Anaphora Resolution Toolkit (BART). MCORES was shown to outperform both of these systems on clinical records.},
 	bdsk-url-1 = {http://dx.doi.org/10.1136/amiajnl-2011-000591}}
 
-@article{Liao2015ys,
+@article{Liao2015,
 	author = {Liao, Katherine P and Ananthakrishnan, Ashwin N and Kumar, Vishesh and Xia, Zongqi and Cagan, Andrew and Gainer, Vivian S and Goryachev, Sergey and Chen, Pei and Savova, Guergana K and Agniel, Denis and Churchill, Susanne and Lee, Jaeyoung and Murphy, Shawn N and Plenge, Robert M and Szolovits, Peter and Kohane, Isaac and Shaw, Stanley Y and Karlson, Elizabeth W and Cai, Tianxi},
 	date-added = {2018-11-19 17:08:58 -0500},
 	date-modified = {2018-11-19 17:08:58 -0500},
@@ -1447,6 +1415,7 @@ RESULTS AND CONCLUSION: MCORES was compared with an in-house baseline that uses 
 	title = {Methods to Develop an Electronic Medical Record Phenotype Algorithm to Compare the Risk of Coronary Artery Disease across 3 Chronic Disease Cohorts},
 	volume = {10},
 	year = {2015},
+	url = {https://doi.org/10.1371/journal.pone.0136651},
 	abstract = {BACKGROUND: Typically, algorithms to classify phenotypes using electronic medical record (EMR) data were developed to perform well in a specific patient population. There is increasing interest in analyses which can allow study of a specific outcome across different diseases. Such a study in the EMR would require an algorithm that can be applied across different patient populations. Our objectives were: (1) to develop an algorithm that would enable the study of coronary artery disease (CAD) across diverse patient populations; (2) to study the impact of adding narrative data extracted using natural language processing (NLP) in the algorithm. Additionally, we demonstrate how to implement CAD algorithm to compare risk across 3 chronic diseases in a preliminary study.
 METHODS AND RESULTS: We studied 3 established EMR based patient cohorts: diabetes mellitus (DM, n = 65,099), inflammatory bowel disease (IBD, n = 10,974), and rheumatoid arthritis (RA, n = 4,453) from two large academic centers. We developed a CAD algorithm using NLP in addition to structured data (e.g. ICD9 codes) in the RA cohort and validated it in the DM and IBD cohorts. The CAD algorithm using NLP in addition to structured data achieved specificity >95\% with a positive predictive value (PPV) 90\% in the training (RA) and validation sets (IBD and DM). The addition of NLP data improved the sensitivity for all cohorts, classifying an additional 17\% of CAD subjects in IBD and 10\% in DM while maintaining PPV of 90\%. The algorithm classified 16,488 DM (26.1\%), 457 IBD (4.2\%), and 245 RA (5.0\%) with CAD. In a cross-sectional analysis, CAD risk was 63\% lower in RA and 68\% lower in IBD compared to DM (p<0.0001) after adjusting for traditional cardiovascular risk factors.
 CONCLUSIONS: We developed and validated a CAD algorithm that performed well across diverse patient populations. The addition of NLP into the CAD algorithm improved the sensitivity of the algorithm, particularly in cohorts where the prevalence of CAD was low. Preliminary data suggest that CAD risk was significantly lower in RA and IBD compared to DM.},
@@ -1624,7 +1593,7 @@ CONCLUSIONS: Depressive disorder or generalised anxiety is associated with a mod
 	title = {Serum inflammatory markers and risk of colorectal cancer in patients with inflammatory bowel diseases},
 	volume = {12},
 	year = {2014},
-	abstract = {BACKGROUND & AIMS: Patients with inflammatory bowel diseases (IBDs) (Crohn's disease, ulcerative colitis) are at increased risk of colorectal cancer (CRC). Persistent inflammation is hypothesized to increase risk of CRC in patients with IBD; however, the few studies in this area have been restricted to cross-sectional assessments of histologic severity. No prior studies have examined association between C-reactive protein (CRP) or erythrocyte sedimentation rate (ESR) elevation and risk of CRC in an IBD cohort.
+	abstract = {BACKGROUND \& AIMS: Patients with inflammatory bowel diseases (IBDs) (Crohn's disease, ulcerative colitis) are at increased risk of colorectal cancer (CRC). Persistent inflammation is hypothesized to increase risk of CRC in patients with IBD; however, the few studies in this area have been restricted to cross-sectional assessments of histologic severity. No prior studies have examined association between C-reactive protein (CRP) or erythrocyte sedimentation rate (ESR) elevation and risk of CRC in an IBD cohort.
 METHODS: From a multi-institutional validated IBD cohort, we identified all patients with at least one measured CRP or ESR value. Patients were stratified into quartiles of severity of inflammation on the basis of their median CRP or ESR value, and subsequent diagnosis of CRC was ascertained. Logistic regression adjusting for potential confounders was used to identify the independent association between CRP or ESR elevation and risk of CRC.
 RESULTS: Our study included 3145 patients with at least 1 CRP value (CRP cohort) and 4008 with at least 1 ESR value (ESR cohort). Thirty-three patients in the CRP cohort and 102 patients in the ESR cohort developed CRC during a median follow-up of 5 years at a median age of 55 years. On multivariate analysis, there was a significant increase in risk of CRC across quartiles of CRP elevation (P(trend) = .017; odds ratio for quartile 4 vs quartile 1, 2.72; 95\% confidence interval, 0.95-7.76). Similarly higher median ESR was also independently associated with risk of CRC across the quartiles (odds ratio, 2.06; 95\% confidence interval, 1.14-3.74) (P(trend) = .007).
 CONCLUSIONS: An elevated CRP or ESR is associated with increased risk of CRC in patients with IBD.},
@@ -1780,7 +1749,7 @@ CONCLUSION: SAFE advances high-throughput phenotyping methods by automatically s
 	title = {Thromboprophylaxis is associated with reduced post-hospitalization venous thromboembolic events in patients with inflammatory bowel diseases},
 	volume = {12},
 	year = {2014},
-	abstract = {BACKGROUND & AIMS: Patients with inflammatory bowel diseases (IBDs) have increased risk for venous thromboembolism (VTE); those who require hospitalization have particularly high risk. Few hospitalized patients with IBD receive thromboprophylaxis. We analyzed the frequency of VTE after IBD-related hospitalization, risk factors for post-hospitalization VTE, and the efficacy of prophylaxis in preventing post-hospitalization VTE.
+	abstract = {BACKGROUND \& AIMS: Patients with inflammatory bowel diseases (IBDs) have increased risk for venous thromboembolism (VTE); those who require hospitalization have particularly high risk. Few hospitalized patients with IBD receive thromboprophylaxis. We analyzed the frequency of VTE after IBD-related hospitalization, risk factors for post-hospitalization VTE, and the efficacy of prophylaxis in preventing post-hospitalization VTE.
 METHODS: In a retrospective study, we analyzed data from a multi-institutional cohort of patients with Crohn's disease or ulcerative colitis and at least 1 IBD-related hospitalization. Our primary outcome was a VTE event. All patients contributed person-time from the date of the index hospitalization to development of VTE, subsequent hospitalization, or end of follow-up. Our main predictor variable was pharmacologic thromboprophylaxis. Cox proportional hazard models adjusting for potential confounders were used to estimate hazard ratios (HRs) and 95\% confidence intervals (CIs).
 RESULTS: From a cohort of 2788 patients with at least 1 IBD-related hospitalization, 62 patients developed VTE after discharge (2\%). Incidences of VTE at 30, 60, 90, and 180 days after the index hospitalization were 3.7/1000, 4.1/1000, 5.4/1000, and 9.4/1000 person-days, respectively. Pharmacologic thromboprophylaxis during the index hospital stay was associated with a significantly lower risk of post-hospitalization VTE (HR, 0.46; 95\% CI, 0.22-0.97). Increased numbers of comorbidities (HR, 1.30; 95\% CI, 1.16-1.47) and need for corticosteroids before hospitalization (HR, 1.71; 95\% CI, 1.02-2.87) were also independently associated with risk of VTE. Length of hospitalization or surgery during index hospitalization was not associated with post-hospitalization VTE.
 CONCLUSIONS: Pharmacologic thromboprophylaxis during IBD-related hospitalization is associated with reduced risk of post-hospitalization VTE.},
