@@ -35,26 +35,39 @@
   year={2018},
   url={https://papers.nips.cc/paper/7965-unsupervised-cross-modal-alignment-of-speech-and-text-embedding-spaces.pdf}
 }
-
 @article{weng2017medical,
-  title={Medical subdomain classification of clinical notes using a machine learning-based natural language processing approach},
-  author={Weng, Wei-Hung and Wagholikar, Kavishwar B and McCray, Alexa T and Szolovits, Peter and Chueh, Henry C},
-  journal={BMC medical informatics and decision making},
-  volume={17},
-  number={1},
-  pages={1--13},
-  year={2017},
-  publisher={BioMed Central},
-  url={https://bmcmedinformdecismak.biomedcentral.com/articles/10.1186/s12911-017-0556-8}
-}
+	author = {Weng, Wei-Hung and Wagholikar, Kavishwar B and McCray, Alexa T and Szolovits, Peter and Chueh, Henry C},
+	date-added = {2019-10-12 10:00:28 -0400},
+	date-modified = {2019-10-14 14:26:25 -0400},
+	doi = {10.1186/s12911-017-0556-8},
+	journal = {BMC Med Inform Decis Mak},
+	journal-full = {BMC medical informatics and decision making},
+	keywords = {Deep Learning; Distributed Representation; Machine Learning; Medical Decision Making, Computer-assisted; Natural Language Processing; Unified Medical Language System},
+	mesh = {Clinical Decision-Making; Humans; Machine Learning; Medical Records; Natural Language Processing; Unified Medical Language System},
+	month = dec,
+	number = {1},
+	pages = {155},
+	pmc = {PMC5709846},
+	pmid = {29191207},
+	pst = {epublish},
+	title = {Medical subdomain classification of clinical notes using a machine learning-based natural language processing approach},
+	url = {https://doi.org/10.1186/s12911-017-0556-8},
+	volume = {17},
+	year = {2017},
+	abstract = {BACKGROUND: The medical subdomain of a clinical note, such as cardiology or neurology, is useful content-derived metadata for developing machine learning downstream applications. To classify the medical subdomain of a note accurately, we have constructed a machine learning-based natural language processing (NLP) pipeline and developed medical subdomain classifiers based on the content of the note.
+METHODS: We constructed the pipeline using the clinical NLP system, clinical Text Analysis and Knowledge Extraction System (cTAKES), the Unified Medical Language System (UMLS) Metathesaurus, Semantic Network, and learning algorithms to extract features from two datasets - clinical notes from Integrating Data for Analysis, Anonymization, and Sharing (iDASH) data repository (n = 431) and Massachusetts General Hospital (MGH) (n = 91,237), and built medical subdomain classifiers with different combinations of data representation methods and supervised learning algorithms. We evaluated the performance of classifiers and their portability across the two datasets.
+RESULTS: The convolutional recurrent neural network with neural word embeddings trained-medical subdomain classifier yielded the best performance measurement on iDASH and MGH datasets with area under receiver operating characteristic curve (AUC) of 0.975 and 0.991, and F1 scores of 0.845 and 0.870, respectively. Considering better clinical interpretability, linear support vector machine-trained medical subdomain classifier using hybrid bag-of-words and clinically relevant UMLS concepts as the feature representation, with term frequency-inverse document frequency (tf-idf)-weighting, outperformed other shallow learning classifiers on iDASH and MGH datasets with AUC of 0.957 and 0.964, and F1 scores of 0.932 and 0.934 respectively. We trained classifiers on one dataset, applied to the other dataset and yielded the threshold of F1 score of 0.7 in classifiers for half of the medical subdomains we studied.
+CONCLUSION: Our study shows that a supervised learning-based NLP approach is useful to develop medical subdomain classifiers. The deep learning algorithm with distributed word representation yields better performance yet shallow learning algorithms with the word and concept representation achieves comparable performance with better clinical interpretability. Portable classifiers may also be used across datasets from different institutions.},
+	bdsk-url-1 = {https://doi.org/10.1186/s12911-017-0556-8}}
 
 @inproceedings{hsu2018unsupervised,
-  title={Unsupervised Multimodal Representation Learning across Medical Images and Reports},
-  author={Hsu, Tzu-Ming Harry and Weng, Wei-Hung and Boag, Willie and McDermott, Matthew and Szolovits, Peter},
-  booktitle={NeurIPS Workshop on Machine Learning for Health (ML4H)},
-  year={2018},
-  url={https://arxiv.org/pdf/1811.08615}
-}
+	author = {Hsu, Tzu-Ming Harry and Weng, Wei-Hung and Boag, Willie and McDermott, Matthew and Szolovits, Peter},
+	booktitle = {Machine Learning for Health (ML4H) Workshop at NeurIPS 2018},
+	date-modified = {2025-04-07 15:25:26 -0400},
+	title = {Unsupervised multimodal representation learning across medical images and reports},
+	url = {https://doi.org/10.48550/arXiv.1811.08615},
+	year = {2018},
+	bdsk-url-1 = {https://doi.org/10.48550/arXiv.1811.08615}}
 
 @inproceedings{girkar2018predicting,
   title={Predicting Blood Pressure Response to Fluid Bolus Therapy Using Attention-Based Neural Networks for Clinical Interpretability},
@@ -136,12 +149,12 @@
 }
 
 @inproceedings{alsentzer2019publicly,
-  title={Publicly available clinical BERT embeddings},
-  author={Alsentzer, Emily and Murphy, John R and Boag, Willie and Weng, Wei-Hung and Jin, Di and Naumann, Tristan and McDermott, Matthew},
-  booktitle={Clinical Natural Language Processing Workshop},
+  title={Publicly Available Clinical BERT Embeddings},
+  author={Alsentzer, Emily and Murphy, John and Boag, William and Weng, Wei-Hung and Jindi, Di and Naumann, Tristan and McDermott, Matthew},
+  booktitle={Proceedings of the 2nd Clinical Natural Language Processing Workshop},
   pages={72--78},
   year={2019},
-  url={https://arxiv.org/pdf/1904.03323}
+  url = {https://arxiv.org/pdf/1904.03323}
 }
 
 @inproceedings{hu2020weakly,
