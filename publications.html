@@ -1,244 +1,596 @@
-<!DOCTYPE HTML>
-<!--
-	Spatial by TEMPLATED
-	templated.co @templatedco
-	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
--->
-<html>
-	<head>
-		<link href="https://fonts.googleapis.com/css?family=Crimson+Text:300italic,400italic|Roboto:300,400,300italic,400italic" rel="stylesheet">
-		<title>MEDG - Publications</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-	    <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
-	    <meta http-equiv="cache-control" content="no-cache" />
-		<script src="assets/js/jquery.min.js"></script>
-		<script src="assets/js/skel.min.js"></script>
-		<script src="assets/js/util.js"></script>
-		<script src="assets/js/main.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-		<script src="assets/js/bibtex_js.js" type="text/javascript" charset="utf-8"></script>
-		<bibtex src="bib/psz.bib"></bibtex>
-		<bibtex src="bib/emily.bib"></bibtex>
-		<bibtex src="bib/jindi.bib"></bibtex>
-		<bibtex src="bib/mmd.bib"></bibtex>
-		<bibtex src="bib/ckbjimmy.bib"></bibtex>
-		<bibtex src="bib/stmharry.bib"></bibtex>
-		<bibtex src="bib/symin95.bib"></bibtex>
-		<bibtex src="bib/gupta.bib"></bibtex>
-                <bibtex src="bib/wjl.bib"></bibtex>
-                <bibtex src="bib/medg.bib"></bibtex>
-		<!-- <bibtex src="bib/wboag.bib"></bibtex> -->
-		<!-- <bibtex src="bib/geeticka.bib"></bibtex> -->
-		<!-- <bibtex src="bib/elenaser.bib"></bibtex> -->
-		<script>
-			function urlsearch() {
-				var urlParams = new URLSearchParams(window.location.search);
-				var q = urlParams.get("search");
-	            $("#searchbar").val(q);
-				$("#searchbar").trigger('change');
-			}
-			window.onload = function() {
-				urlsearch();
-			};
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+  <meta http-equiv="Pragma" content="no-cache"/>
+  <meta http-equiv="Expires" content="0"/>
+  <title>MEDG Publications</title>
 
-			$(function() {
-			  $("#Fontselector").on("change",function() {
-			    var font = $("#Fontselector option:selected").text();
-			    console.log(font);
+  <!-- Match uploaded nav fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Crimson+Text:300italic,400italic|Roboto:300,400,300italic,400italic" rel="stylesheet">
+  <style>
+    :root { --fg:#0f172a; --muted:#475569; --bg:#f8fafc; --card:#ffffff; }
+    * { box-sizing: border-box; }
+    html,body { margin:0; padding:0; background:var(--bg); color:var(--fg);
+      font-family:'Source Sans Pro','Helvetica Neue',Helvetica,Arial,sans-serif; }
 
-			    $('.title.fonters').each(function() {
-			    	$(this).css("font-family",font);
-			    });
-			  });
-			});
-			function reset() {
-				$("select").each(function () {
-				  localStorage.setItem($(this).attr("id"),"");
-				  $(this).val("");
-				});
-				$("#searchbar").val("");
-				$("#searchbar").trigger('change');
-			}
-    	</script>
-	    <style>
-		    html, body, span, h1 {
-		    	/*font-family: "Times New Roman", Times, serif;*/
-		    	font-size: 17px;
-		    }
-		    .bibtexraw {
-		    	font-family: "Courier New";
-		    	font-size: 14px;
-		    }
-		    bibtex { display: none; }
-		    .searchbar { margin-left:0px;}
-		    #bibtex_errors { margin-top:10px; color: red;}
-		    h1.header {margin-left:8px;}
-		    h1.YEAR { font-size: 17px; font-weight: bold; display: inline; margin-left:8px;}
+    /* Navigation (identical to your working style) */
+    #header {
+      position: sticky; top: 0; z-index: 50;
+      display:flex; align-items:center; justify-content:space-between;
+      background: rgba(248,250,252,.92);
+      backdrop-filter: saturate(180%) blur(6px);
+      border-bottom: 1px solid #e2e8f0; padding: 12px 18px;
+    }
+    #header h1, #header h1 a {
+      margin:0; font-family:'Roboto','Helvetica Neue',Helvetica,Arial,sans-serif;
+      font-weight:300; text-transform:uppercase; letter-spacing:normal;
+      font-size:1.1em; color:navy; text-decoration:none;
+    }
+    #nav ul { list-style:none; display:flex; gap:22px; margin:0; padding:0; flex-wrap:wrap; }
+    #nav a {
+      display:inline-block; padding:6px 8px; border:none;
+      color:#8a8f98; text-decoration:none;
+      font-family:'Roboto','Helvetica Neue',Helvetica,Arial,sans-serif;
+      font-weight:300; text-transform:uppercase; letter-spacing:normal; font-size:1em;
+      background:transparent;
+    }
+    #nav a:hover { color:#2e2e2e; }
 
-		    #form-control {
-			  height: 50px;
-			  font-size: 16px;
-			}
+    main { max-width: 1000px; margin: 24px auto; padding: 0 18px 48px; }
+    .card { background:#fff; border:1px solid #e2e8f0; border-radius:16px;
+      box-shadow:0 2px 10px rgba(2,6,23,.06); padding:18px; }
 
-			#form-btn {
-			 line-height: 50px;
-			 font-size: 16px;
-			}
-	    </style>
-    	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-		<link rel="stylesheet" href="assets/css/main.css" />
-	    <style>
-		    div, span {
-		    	line-height: 1.2;
-		    }
-		    ul {
-		    	margin: 0.5em;
-		    }
-		</style>
-		</head>
+    .filters {
+      display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,1fr));
+      gap:8px; margin-bottom:8px; width:100%;
+    }
+    .filters .field { display:flex; flex-direction:column; gap:4px; position:relative; min-width:0; }
+    .filters label { font-size:.8rem; color:var(--muted); }
+    .filters input {
+      border:1px solid #cbd5e1; border-radius:10px; padding:8px 28px 8px 10px; font-size:.95rem; width:100%;
+    }
+    .clear-btn { position:absolute; right:8px; top:50%; transform:translateY(-50%);
+      cursor:pointer; font-weight:700; color:red; font-size:1rem; display:none; user-select:none; }
+    .field input:not(:placeholder-shown)+.clear-btn { display:block; }
 
-	<body>
-		<!-- Header -->
-			<header id="header">
-				<h1><strong><a href="index.html"><font color="navy">MIT CSAIL MEDG</font></a></strong></h1>
-				<nav id="nav">
-					<ul>
-						<li><a href="index.html">Home</a></li>
-						<li><a href="people.html">People</a></li>
-						<li><a href="https://www.csail.mit.edu/research/clinical-decision-making-group#projects" target="_blank">Projects</a></li>
-						<li><a href="publications.html">Publications</a></li>
-						<li><a href="blogs.html">Blogs</a></li>
-						<li><a href="seminars.html">Seminars</a></li>
-						<li><a href="faq.html">FAQs</a></li>
-						<li><a href="https://groups.csail.mit.edu/medg/index_archive.html" target="_blank">Archive</a></li>
-					</ul>
-				</nav>
-			</header>
+    #output { counter-reset:item; list-style:none; padding-left:0; }
+    #output li {
+      counter-increment:item; background:#fff; border:1px solid #e2e8f0; border-radius:10px;
+      padding:4px 6px; margin:2px 0;
+    }
+    #output li::before {
+  content: counter(item) ". ";
+  font-weight: 400;   /* or 'normal' */
+  margin-right: 6px;
+}
+    #output li.group {
+      counter-increment:none; background:transparent; border:none; padding:0; margin:10px 0 2px;
+      font-weight:700; font-size:1.05rem;
+    }
+    #output li.group::before { content:''; margin:0; }
 
-			<a href="#menu" class="navPanelToggle"><span class="fa fa-bars"></span></a>
+    .small{font-size:.9rem}
+    .error{background:#fef2f2;border:1px solid
+    #fecaca;color:#991b1b;padding:6px
+10px;border-radius:8px;margin-top:8px}
+/* [bib] toggle + inline bib block */
+.bib-btn{
+  margin-left:6px;
+  padding:0 6px;
+  font: inherit;
+  font-size:.85em;
+  color:#444;
+  background:transparent;
+  border:1px solid #cbd5e1;
+  border-radius:6px;
+  cursor:pointer;
+}
+.bib-btn:hover{ background:#f1f5f9; }
+.bib-block{
+  white-space:pre-wrap;
+  background:#f8fafc;
+  border:1px solid #e2e8f0;
+  border-radius:8px;
+  padding:8px;
+  margin-top:6px;
+  font-size:.85rem;
+}
+  </style>
+</head>
+<body>
+  <header id="header">
+    <h1><strong><a href="index.html">MIT CSAIL MEDG</a></strong></h1>
+    <nav id="nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="people.html">People</a></li>
+        <li><a href="https://www.csail.mit.edu/research/clinical-decision-making-group#projects" target="_blank">Projects</a></li>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="blogs.html">Blogs</a></li>
+        <li><a href="seminars.html">Seminars</a></li>
+        <li><a href="faq.html">FAQs</a></li>
+        <li><a href="https://groups.csail.mit.edu/medg/index_archive.html" target="_blank">Archive</a></li>
+      </ul>
+    </nav>
+  </header>
 
-		<!-- Main -->
-			<section id="main" class="wrapper">
-				<div class="container">
+  <main>
+    <div class="card">
+      <div id="filters" class="filters">
+        <div class="field">
+          <label for="f-name">Name</label>
+          <input id="f-name" type="text" placeholder="e.g., Patil"/>
+          <span class="clear-btn" data-target="f-name">☒</span>
+        </div>
+        <div class="field">
+          <label for="f-title">Title</label>
+          <input id="f-title" type="text" placeholder="e.g., learning"/>
+          <span class="clear-btn" data-target="f-title">☒</span>
+        </div>
+      </div>
+      <div id="status" class="small muted" style="margin-top:10px"></div>
+      <div id="err" class="error" style="display:none"></div>
+    </div>
 
-					<header class="major special">
-						<h2>Publications</h2>
-						<p>Papers published by group members.</p>
-						<p><a href="theses.html">For theses, please visit this page.</a></p>
-					</header>
+    <ol id="output"></ol>
+  </main>
 
-					<div class="container-fluid">
-						<div class="searchbar">
-							<div style="float:left;">
-								<button type="button" class="btn btn-secondary" onclick="reset()">Reset</button>
-							</div>
-							<div style="float:left;">
-								<select id="authorselectfirst" class="button alt btn bibtex_search bibtex_author" style="border: 1px solid lightgrey;" extra="first" search="author">
-								  <option value="">Search First Author</option>
-								</select>
-							</div>
-							<div style="float:left;">
-								<select id="authorselect" class="button alt btn bibtex_search bibtex_author" style="border: 1px solid lightgrey;" search="author">
-								  <option value="">Search Author</option>
-								</select>
-							</div>
-							<div style="float:left;">
-								<select id="topicselect" class="button alt btn bibtex_search" style="border: 1px solid lightgrey;" search="topic">
-								  <option value="">Search Topic</option>
-								  <option value="decision|support|making">Decision Support</option>
-								  <option value="learning|supervised|unsupervised|representation|embedding|classification|cluster">Machine Learning</option>
-								  <option value="NLP|language|translation">Natural Language Processing</option>
-								  <option value="vision|imag">Computer Vision</option>
-								  <option value="reinforcement|policy">Reinforcement Learning</option>
-								</select>
-							</div>
-							<div style="float:left;">
-								<input type="text" class="bibtex_search form-control" id="searchbar" placeholder="Search strings">
-								<span class="help-block">Example - 2018 embedding</span>
-							</div>
-						</div>
-					</div>
+  <script>
+    /* ---------- Elements & utilities ---------- */
+    const statusEl=document.getElementById('status'),
+          errorEl=document.getElementById('err'),
+          outputEl=document.getElementById('output'),
+          filtersEl=document.getElementById('filters');
+    const inName=()=>document.getElementById('f-name'),
+    inTitle=()=>document.getElementById('f-title');
+    let entryByKey = new Map();
 
-					<div class="bibtex_structure">
-					  <div style="padding-bottom:10px;"></div>
-					  <div class="group year" extra="DESC number">
-					  	  <a href="#top" style="display: inline"><em>(Top of the page)</em></a>
-					  	  <div style="padding-bottom:10px;"></div>
-					  	  <div class="sort journal" extra="DESC string">
-					      	<div class="templates"></div>
-					      </div>
-					  </div>
-					</div>
+    function status(h){ if(statusEl) statusEl.innerHTML = h; }
+    function showError(e){
+      if(!errorEl) return;
+      errorEl.style.display='block';
+      const m=(e&&e.message)?e.message:String(e);
+      errorEl.innerHTML = '⚠️ ' + escapeHtml(m) +
+        '<div class="small">Tip: If this page is opened via <code>file:///</code>, browsers block <code>fetch</code>. Serve locally (e.g., <code>python3 -m http.server</code>).</div>';
+      console.error(e);
+    }
 
-					<div id="bibtex_display">
-					  <div class="if bibtex_template" style="display: none;">
-					    <ul> <li>
-					      <!-- <span class="if journal !nolink"> -->
-					        <!-- <a class="bibtexVar" href="http://groups.csail.mit.edu/medg/ftp/papers/+BIBTEXKEY+.pdf" extra="BIBTEXKEY" target="_blank"> -->
-					            <!-- <span style="text-decoration: none;" class="title"></span>, -->
-					        <!-- </a> -->
-					      <!-- </span> -->
-<!-- 					      <span class="if title nolink">
-					            <span class="title"></span>,
-					      </span> -->
-					      <span class="if title">
-					      	<span class="if url"><b><a class="bibtexVar" href="+URL+" extra="url" target="_blank"><span class="title"></span></a></b></span>
-					      	<span class="if !url"><span class="if pmc"><b><a class="bibtexVar" href="https://www.ncbi.nlm.nih.gov/pmc/articles/+PMC+" extra="pmc" target="_blank"><span class="title"></span></a></b></span></span>
-					      	<span class="if !url"><span class="if !pmc"><span class="if pmid"><b><a class="bibtexVar" href="https://www.ncbi.nlm.nih.gov/pmc/articles/+PMID+" extra="pmid" target="_blank"><span class="title"></span></a></b></span></span></span>
-					      	<span class="if !url"><span class="if !pmc"><span class="if !pmid"><span class="if doi"><b><a class="bibtexVar" href="+DOI+" extra="doi" target="_blank"><span class="title"></span></a></b></span></span></span></span>
-					      	<span class="if !url"><span class="if !pmc"><span class="if !pmid"><span class="if !doi"><span class="if eprint"><b><a class="bibtexVar" href="https://arxiv.org/pdf/+EPRINT+.pdf" extra="eprint" target="_blank"><span class="title"></span></a></b></span></span></span></span></span>
-					      	<span class="if !url"><span class="if !pmc"><span class="if !pmid"><span class="if !doi"><span class="if !eprint"><b><span class="title"></span></b></span></span></span></span>
-					      </span>
-					      <div class="if author">
-					        <span class="author"><span class="first_initial"></span> <span class="last"></span></span>
-					      </div>
-					      <div>
-					        <span class="if journal"><em><span class="journal"></span></em>,</span>
-					        <!-- <span class="if !journal">Technical report <span class="number"></span>,</span> -->
-					        <span class="if booktitle">In <em><span class="booktitle"></span></em>,</span>
-					        <span class="if editor"><span class="editor"></span> (editors),</span>
-					        <span class="if publisher"><em><span class="publisher"></span></em>,</span>
-					        <span class="if institution"><span class="institution"></span>,</span>
-					        <span class="if address"><span class="address"></span>,</span>
-					        <span class="if volume"><span class="volume"></span>,</span>
-					        <span class="if journal number">(<span class="number"></span>),</span>
-					        <span class="if pages"> pages <span class="pages"></span>,</span>
-					        <span class="if month"><span class="month"></span>,</span>
-					        <span class="if year"><span class="year"></span>.</span>
-					        <span class="if note"><span class="note"></span>.</span>
-					        <span class="if pmid"><a class="bibtexVar" href="https://www.ncbi.nlm.nih.gov/pubmed/+PMID+" extra="pmid" target="_blank">PMID: <span class="pmid"></span></a>.</span>
-					        <span class="if pmc"><a class="bibtexVar" href="https://www.ncbi.nlm.nih.gov/pmc/articles/+PMC+" extra="pmc" target="_blank">PMCID: <span class="pmc"></span></a>.</span>
-					        <!-- <span class="if url"><a class="bibtexVar" href="+URL+" extra="url" target="_blank">[URL]</a></span> -->
-					        <a class="bibtexVar" role="button" data-toggle="collapse" href="#bib+BIBTEXKEY+" aria-expanded="false" aria-controls="bib+BIBTEXKEY+" extra="BIBTEXKEY">
-							  [bib]
-							</a>
-							<br />
-							<span class="if tags">[TAGS] <span class="tags"></span></span>
-					      </div>
-					      <div class="bibtexVar collapse" id="bib+BIBTEXKEY+" extra="BIBTEXKEY">
-							  <div class="well">
-							    <pre><span class="bibtexraw noread"></span></pre>
-							  </div>
-						  </div>
-					      <div style="display:none"><span class="bibtextype"></span></div>
-					      <div style="display:none"><span class="if topic"><span class="topic"></span></span></div>
-					    </li></ul>
-					  </div>
-					</div>
+    /* ---------- Which bib files to load (publications only) ---------- */
+    const bibFiles = [
+      "bib/psz.bib","bib/medg.bib","bib/emily.bib","bib/jindi.bib",
+      "bib/mmd.bib","bib/ckbjimmy.bib","bib/stmharry.bib","bib/symin95.bib",
+      "bib/gupta.bib","bib/wjl.bib"
+    ];
 
-				</div>
-			</section>
+    /* ---------- URL filters (optional) ---------- */
+    function getFilters(){
+      try{
+        const p=new URLSearchParams(window.location.search);
+        const g=v=>v&&v.trim()?v.trim():'';
+        return { name:g(p.get('name')), title:g(p.get('title')) };
+      }catch{
+        return { name:'', title:'' };
+      }
+    }
 
-		<!-- Footer -->
-			<footer id="footer">
-				<div class="container">
-					<ul class="copyright">
-						<li>&copy; MIT CSAIL Medical Decision Making Group</li>
-						<li><a href="https://accessibility.mit.edu/">Accessibility</a></li>
-					</ul>
-				</div>
-			</footer>
+    let currentEntries=[], allEntries=[], filtersInitialized=false, initialUrlFilters={name:'',title:''};
 
-	</body>
+    window.addEventListener('DOMContentLoaded', ()=>{
+      initialUrlFilters=getFilters();
+      setupLiveFilters();
+      loadAll().catch(showError);
+      // Clear buttons
+      document.querySelectorAll('.clear-btn').forEach(btn=>{
+        btn.addEventListener('click',()=>{
+          const id=btn.getAttribute('data-target');
+          const inp=document.getElementById(id);
+          if(inp){
+            inp.value='';
+            inp.dispatchEvent(new Event('input',{bubbles:true}));
+            inp.dispatchEvent(new Event('change',{bubbles:true}));
+          }
+        });
+      });
+    });
+
+    /* ---------- Load & parse ---------- */
+    async function loadAll(){
+      status('Fetching bib files…');
+      if(errorEl) errorEl.style.display='none';
+      let entries=[], failed=[];
+
+      for(const f of bibFiles){
+        try{
+          const res = await fetch(f,{cache:'no-store'});
+          if(!res.ok) throw new Error('HTTP ' + res.status);
+          const txt = await res.text();
+          const parsed = parseBibtex(txt);
+          parsed.forEach(e=>e._file=f);
+          entries = entries.concat(parsed);
+        }catch(e){
+          failed.push({file:f,error:e.message||String(e)});
+        }
+      }
+
+      // Deduplicate by key
+      const map=new Map();
+      for(const e of entries){
+        const k=String(e.key||'').toLowerCase();
+        if(!k) continue;
+        if(!map.has(k)) map.set(k,e);
+      }
+      entries = Array.from(map.values());
+
+      // Keep NON-theses on this page
+      entries = entries.filter(e => !/^(phdthesis|mastersthesis|thesis)$/i.test(e.type));
+// Build lookup for [bib] toggles
+entryByKey = new Map(entries.map(e => [String(e.key||'').toLowerCase(), e]));
+
+      allEntries = entries;
+      const live = {
+        name:  inName()?.value?.trim()  || initialUrlFilters.name  || '',
+        title: inTitle()?.value?.trim() || initialUrlFilters.title || ''
+      };
+      const filtered = applyFilters(entries, live);
+      currentEntries = filtered;
+
+      let msg = '<strong>' + filtered.length + '</strong> entries shown';
+      if (failed.length) {
+        const parts = failed.map(f => escapeHtml(f.file) + ' (' + escapeHtml(f.error) + ')').join('; ');
+        msg += '<div class="small" style="color:#991b1b">Failed: ' + parts + '</div>';
+      }
+      status(msg);
+
+      renderPublications(filtered);
+    }
+
+    /* ---------- Live filters ---------- */
+    function setupLiveFilters(){
+      if(!filtersEl) return;
+      const fName=inName();  if(fName)  fName.value  = initialUrlFilters.name  || '';
+      const fTitle=inTitle();if(fTitle) fTitle.value = initialUrlFilters.title || '';
+
+      if(!filtersInitialized){
+        const handler=()=>{
+          const live = {
+            name:  inName()?.value?.trim()  || '',
+            title: inTitle()?.value?.trim() || ''
+          };
+          const filtered = applyFilters(allEntries, live);
+          currentEntries = filtered;
+          let msg = '<strong>' + filtered.length + '</strong> entries shown';
+          if(live.name)  msg += ' — name: <code>'  + escapeHtml(live.name)  + '</code>';
+          if(live.title) msg += ' — title: <code>' + escapeHtml(live.title) + '</code>';
+          status(msg);
+          renderPublications(filtered);
+        };
+        ['input','keyup','change'].forEach(evt=>filtersEl.addEventListener(evt, handler));
+        requestAnimationFrame(handler);
+        filtersInitialized=true;
+      }
+    }
+
+    function applyFilters(entries,{name='',title=''}={}){
+      if(!(name||title)) return entries.slice();
+      const n=name.toLowerCase(), t=title.toLowerCase();
+      return entries.filter(e=>{
+        const nameStr=(renderNamesForFilter(e)||'').toLowerCase();
+        const titleStr=((e.fields&&e.fields.title)?e.fields.title:'').replace(/[{}]/g,'').toLowerCase();
+        return (name?nameStr.includes(n):true) && (title?titleStr.includes(t):true);
+      });
+    }
+
+    /* ---------- Render (group by year desc) ---------- */
+    function renderPublications(entries){
+      const dated=new Map(), unknown=[];
+      for(const e of entries){
+        const y=parseInt(e.fields && e.fields.year ? e.fields.year : '0',10) || 0;
+        if(y>0){
+          const k=String(y);
+          if(!dated.has(k)) dated.set(k,[]);
+          dated.get(k).push(e);
+        }else{
+          unknown.push(e);
+        }
+      }
+      const years = Array.from(dated.keys())
+        .map(x=>parseInt(x,10))
+        .filter(n=>!Number.isNaN(n)&&n>0)
+        .sort((a,b)=>b-a);
+
+      const tb=(a,b)=>{
+        const d = dateScore(b) - dateScore(a);
+        if(d!==0) return d;
+        const ak = firstAuthorKey(a).localeCompare(firstAuthorKey(b));
+        if(ak!==0) return ak;
+        const t = (a.fields.title||'').localeCompare(b.fields.title||'');
+        if(t!==0) return t;
+        return (a.key||'').localeCompare(b.key||'');
+      };
+
+      outputEl.innerHTML = '';
+      const addHeader = label => {
+        const h=document.createElement('li');
+        h.className='group';
+        h.textContent=label;
+        outputEl.appendChild(h);
+      };
+      const addItem = e => {
+        const li=document.createElement('li');
+        li.innerHTML = formatVancouver(e);
+        outputEl.appendChild(li);
+      };
+
+      for (const y of years) {
+        addHeader(String(y));
+        dated.get(String(y)).sort(tb).forEach(addItem);
+      }
+      if (unknown.length) {
+        addHeader('Unknown year');
+        unknown.sort(tb).forEach(addItem);
+      }
+      if (!years.length && !unknown.length) {
+        status('0 entries matched. Possible reasons: (1) the .bib files failed to load, (2) all entries are theses (this page excludes theses), or (3) your filters hid them.');
+      }
+    }
+
+    /* ---------- Vancouver + helpers ---------- */
+    function formatVancouver(entry){
+      const f = entry.fields || {};
+      const isThesis = /^(phdthesis|mastersthesis|thesis)$/i.test(entry.type);
+      const strip = s => (s||'').replace(/[{}]/g,'');
+
+      // People (initials for non-thesis)
+      let people='';
+      if(f.author && f.author.trim()){
+        people = isThesis ? formatAuthors(strip(f.author), {abbr:false, full:true})
+                          : formatAuthors(strip(f.author), {abbr:true});
+      }else if(f.editor && f.editor.trim()){
+        const raw = strip(f.editor);
+        let ed  = (isThesis ? formatAuthors(raw,{abbr:false,full:true})
+                            : formatAuthors(raw,{abbr:true})).replace(/[.]\s*$/,'');
+        const cnt = (raw||'').split(/\s+and\s+/i).map(s=>s.trim()).filter(Boolean).length;
+        people = ed + (cnt>1 ? ' (editors).' : ' (editor).');
+      }
+
+      // Title (link to URL or DOI)
+      const rawTitle = (f.title||'').trim();
+      const cleanTitle = unlatex(rawTitle.replace(/[{}]/g,''));
+      const title = ensurePeriod(cleanTitle).trim();
+      const doiClean = cleanDoi(f.doi||''); if(doiClean) f.doi = doiClean;
+      const link = (f.url && f.url.trim()) ? f.url.trim() : (doiClean ? ('https://doi.org/'+doiClean) : '');
+
+      // Container / base (journal | proceedings | publisher) OR special cases
+      const baseRaw = (entry.type==='techreport' ? (f.institution||'') : (f.journal||f.booktitle||f.publisher||''));
+      const base = unlatex((baseRaw||'').replace(/[{}]/g,'').trim());
+
+      // Date & details
+      const year  = (f.year||'').trim();
+      const volume= (f.volume||'').trim();
+      const number= (f.number||f.issue||'').trim();
+      const pages = (f.pages||'').replace(/--/g,'-').trim();
+
+      let line=''; if(people) line += people + ' ';
+      if(title){
+        line += link
+          ? '<a href="' + escapeAttr(link) + '" target="_blank" rel="noopener noreferrer"><strong>' + escapeHtml(title) + '</strong></a> '
+          : '<strong>' + escapeHtml(title) + '</strong> ';
+      }
+
+      // Inbook adds bookauthor/editor; techreport adds type/number and uses institution
+      (function(){
+        let prefix='', mid='', container=base;
+        if(entry.type==='inbook'){
+          const ba = strip(f.bookauthor);
+          if(ba && ba.trim()){
+            prefix = formatAuthors(ba,{abbr:true});
+            prefix = prefix.replace(/\.$/,'') + ', ';
+          } else if(f.editor && f.editor.trim()){
+            const raw = strip(f.editor);
+            let ed = formatAuthors(raw,{abbr:true});
+            ed = ed.replace(/\.$/,'');
+            const cnt=(raw||'').split(/\s+and\s+/i).map(s=>s.trim()).filter(Boolean).length;
+            prefix = ed + (cnt>1?' (editors),':' (editor),') + ' ';
+          }
+        }
+        if(entry.type==='techreport'){
+          const repType = unlatex((f.type||'Technical Report').replace(/[{}]/g,'').trim());
+          const repNum  = ((f.number||f.reportnumber||'')+'').trim();
+          if(repType||repNum) mid = escapeHtml(repType) + (repNum?(' ' + escapeHtml(repNum)):'') + '. ';
+          const inst = (f.institution||'').replace(/[{}]/g,'').trim();
+          if(inst) container = inst;
+        }
+        const cont = container ? '<em>' + escapeHtml(container) + '</em> ' : '';
+        if(prefix || mid || cont) line += (prefix + mid + cont);
+      })();
+
+      // Tail: year; volume(issue):pages.
+      const tail=[]; if(year) tail.push(year);
+      if(volume){ let v=volume; if(number) v += '(' + number + ')'; tail.push(v); }
+      if(pages) tail.push(pages.replace(/^p\.?\s*/i,''));
+      if(tail.length){
+        const y=tail.shift(); const rest=tail.join(':');
+        line += (rest ? (y + ';' + rest + '. ') : (y + '. '));
+      }
+
+  // Add [bib] toggle button (uses lowercase key for lookup)
+  if (entry.key) {
+    line += ' <button class="bib-btn" data-key="' + String(entry.key).toLowerCase() + '">[bib]</button>';
+  }
+return line.trim();
+
+      return line.trim();
+    }
+
+    function renderNamesForFilter(entry){
+      const f=entry.fields||{}; const strip=s=>(s||'').replace(/[{}]/g,'');
+      if(f.author&&f.author.trim()) return formatAuthors(strip(f.author),{abbr:true}).replace(/[.]\s*$/,'');
+      if(f.editor&&f.editor.trim()) return formatAuthors(strip(f.editor),{abbr:true}).replace(/[.]\s*$/,'');
+      return '';
+    }
+    function ensurePeriod(s){ s=s.trim(); if(!s) return s; return /[.!?]\s*$/.test(s) ? s : (s + '.'); }
+
+    // Authors: initials (non-thesis); theses handled elsewhere
+    function formatAuthors(field,{abbr=true,full=false}={}){
+      if(!field) return '';
+      const parts = field.split(/\s+and\s+/i).map(s=>s.trim()).filter(Boolean);
+      const names = parts.map(fmtOne);
+      const list  = names.join(', ');
+      return list ? list + '.' : '';
+      function fmtOne(name){
+        const clean=(name||'').replace(/[{}]/g,'').trim();
+        if(clean.includes(',')){ // "Last, Given"
+          const pair=clean.split(',');
+          const last=(pair[0]||'').trim(), givenRaw=(pair[1]||'').trim();
+          if(full) return (unlatex(givenRaw) + ' ' + unlatex(last)).replace(/\s+/g,' ').trim();
+          const init=givenToInitials(givenRaw,abbr);
+          return init ? (unlatex(last) + ' ' + init) : unlatex(last);
+        }else{ // "Given Last"
+          const bits=clean.split(/\s+/).filter(Boolean);
+          if(bits.length===1) return unlatex(bits[0]);
+          const last=bits.pop(), given=bits.join(' ');
+          if(full) return (unlatex(given) + ' ' + unlatex(last)).replace(/\s+/g,' ').trim();
+          const init=givenToInitials(given,abbr);
+          return init ? (unlatex(last) + ' ' + init) : unlatex(last);
+        }
+      }
+    }
+    function givenToInitials(given,abbr){
+      if(!given) return '';
+      const letters = given
+        .replace(/\([^)]*\)/g,'')
+        .replace(/\{[^}]*\}/g,'')
+        .split(/[-\s]+/).filter(Boolean)
+        .map(w=> w[0] ? w[0].toUpperCase() : '')
+        .join(abbr?'':' ');
+      return letters;
+    }
+
+    function unlatex(s){ return String(s||'').replace(/\\&/g,'&'); } // \& → & (will render as &amp; in HTML)
+    function escapeHtml(s){ return String(s).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;'); }
+    function escapeAttr(s){ return String(s).replaceAll('"','&quot;'); }
+    function cleanDoi(s){
+      if(!s) return '';
+      let x = String(s).trim();
+      x = x.replace(/^doi:\s*/i,'');                         // "doi:" + optional spaces
+      x = x.replace(/^https?:\/\/(dx\.)?doi\.org\//i,'');    // strip full DOI URL
+      x = x.replace(/\s+/g,'');                              // remove whitespace
+      x = x.replace(/[<>]/g,'');                             // strip angle brackets
+      x = x.replace(/\.$/,'');                               // trailing period
+      return x;
+    }
+
+function buildBibtex(entry){
+  const type = (entry.type || 'misc');
+  const key  = (entry.key  || 'key');
+  const f    = entry.fields || {};
+
+  // Exclude unwanted fields (case-insensitive)
+    // Exclude unwanted fields (case-insensitive)
+  const skip = /^(file|date-added|date-modified|bdsk-url)/i;
+
+  // Sort fields alphabetically for stable output
+  const fields = Object.keys(f)
+    .filter(k => k && !skip.test(k))
+    .sort((a,b)=> a.localeCompare(b));
+
+  // Re-wrap values in braces; use original field text (we never unlatex in storage)
+  const lines = fields.map(k => {
+    // keep original spacing minimal; preserve internal LaTeX and braces as parsed
+    const v = String(f[k] == null ? '' : f[k]).trim();
+    return `  ${k} = {${v}}`;
+  });
+
+  // Commas after each field; trailing comma optional but accepted by BibTeX
+  return `@${type}{${key},\n${lines.join(',\n')}\n}`;
+}
+
+    function firstAuthorKey(entry){
+      const base=(entry.fields && entry.fields.author && entry.fields.author.trim()) ? entry.fields.author : (entry.fields.editor||'');
+      const a=(base||'').split(/\s+and\s+/i)[0]||'';
+      return a.replace(/[{}]/g,'').replace(/[^a-zA-Z,\s-]/g,'').toLowerCase();
+    }
+    function dateScore(e){
+      const y=parseInt(e.fields && e.fields.year ? e.fields.year : '0',10) || 0;
+      let m=e.fields && e.fields.month ? e.fields.month : '0';
+      const mm={jan:1,feb:2,mar:3,apr:4,may:5,jun:6,jul:7,aug:8,sep:9,oct:10,nov:11,dec:12};
+      m = (mm[String(m).slice(0,3).toLowerCase()] || parseInt(m,10) || 0);
+      const d=parseInt(e.fields && e.fields.day ? e.fields.day : '0',10) || 0;
+      return y*10000 + m*100 + d;
+    }
+
+    /* ---------- BibTeX parsing ---------- */
+    function parseBibtex(text){
+      text = text.replace(/^\s*%.*$/gm,''); // strip comment lines
+      const out=[]; const rx=/@([a-zA-Z]+)\s*\{\s*([^,]+)\s*,([\s\S]*?)\}\s*(?=@|$)/g; let m;
+      while((m=rx.exec(text))){
+        const type=(m[1]||'').toLowerCase();
+        const key=(m[2]||'').trim();
+        const body=(m[3]||'');
+        out.push({type,key,fields:parseFields(body)});
+      }
+      return out;
+    }
+    function parseFields(body){
+      const out={}; let i=0, t='', depth=0, inQ=false; const parts=[];
+      while(i<body.length){
+        const c=body[i];
+        if(c=='"' && body[i-1] !== "\\"){ inQ=!inQ; t+=c; i++; continue; }
+        if(c=='{' && !inQ){ depth++; t+=c; i++; continue; }
+        if(c=='}' && !inQ && depth>0){ depth--; t+=c; i++; continue; }
+        if(c==',' && !inQ && depth===0){ parts.push(t); t=''; i++; continue; }
+        t+=c; i++;
+      }
+      if(t.trim()) parts.push(t);
+      for(const p of parts){
+        const kv=p.split(/\s*=\s*/);
+        if(kv.length<2) continue;
+        const k=kv.shift().trim().toLowerCase();
+        const v=kv.join('=').trim();
+        out[k]=unbrace(unquote(v)).replace(/\s+/g,' ').trim();
+      }
+      return out;
+}
+
+    function unquote(s){ if((s.startsWith('"')&&s.endsWith('"'))||(s.startsWith("'")&&s.endsWith("'"))) return s.slice(1,-1); return s; }
+    function unbrace(s){
+      let changed=true;
+      while(changed){
+        changed=false;
+        if(s.startsWith('{')&&s.endsWith('}')){
+          let d=0,ok=true;
+          for(let i=0;i<s.length;i++){ const c=s[i]; if(c=='{') d++; if(c=='}') d--; if(d===0&&i<s.length-1){ ok=false; break; } }
+          if(ok){ s=s.slice(1,-1); changed=true; }
+        }
+      }
+      return s;
+    }
+
+// Toggle inline BibTeX on [bib] button click (event delegation)
+document.addEventListener('click', function(ev){
+  const btn = ev.target.closest('.bib-btn');
+  if(!btn) return;
+  const li = btn.closest('li');
+  if(!li) return;
+
+  // If already open, close it
+  const open = li.querySelector('.bib-block');
+  if(open){ open.remove(); return; }
+
+  // Otherwise build and show
+  const key = (btn.getAttribute('data-key') || '').toLowerCase();
+  const entry = entryByKey.get(key);
+  if(!entry) return;
+
+  const pre = document.createElement('pre');
+  pre.className = 'bib-block';
+  pre.textContent = buildBibtex(entry);  // textContent to avoid HTML escaping
+  li.appendChild(pre);
+});
+
+  </script>
+</body>
 </html>
