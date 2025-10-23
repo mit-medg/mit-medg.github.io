@@ -8,7 +8,6 @@
   <meta http-equiv="Expires" content="0"/>
   <title>MEDG Publications</title>
 
-  <!-- Match uploaded nav fonts -->
   <link href="https://fonts.googleapis.com/css?family=Crimson+Text:300italic,400italic|Roboto:300,400,300italic,400italic" rel="stylesheet">
   <style>
     :root { --fg:#0f172a; --muted:#475569; --bg:#f8fafc; --card:#ffffff; }
@@ -16,88 +15,39 @@
     html,body { margin:0; padding:0; background:var(--bg); color:var(--fg);
       font-family:'Source Sans Pro','Helvetica Neue',Helvetica,Arial,sans-serif; }
 
-    /* Navigation (identical to your working style) */
-    #header {
-      position: sticky; top: 0; z-index: 50;
-      display:flex; align-items:center; justify-content:space-between;
-      background: rgba(248,250,252,.92);
-      backdrop-filter: saturate(180%) blur(6px);
-      border-bottom: 1px solid #e2e8f0; padding: 12px 18px;
-    }
-    #header h1, #header h1 a {
-      margin:0; font-family:'Roboto','Helvetica Neue',Helvetica,Arial,sans-serif;
-      font-weight:300; text-transform:uppercase; letter-spacing:normal;
-      font-size:1.1em; color:navy; text-decoration:none;
-    }
+    /* Navigation */
+    #header { position: sticky; top: 0; z-index: 50; display:flex; align-items:center; justify-content:space-between;
+      background: rgba(248,250,252,.92); backdrop-filter: saturate(180%) blur(6px);
+      border-bottom: 1px solid #e2e8f0; padding: 12px 18px; }
+    #header h1, #header h1 a { margin:0; font-family:'Roboto','Helvetica Neue',Helvetica,Arial,sans-serif;
+      font-weight:300; text-transform:uppercase; letter-spacing:normal; font-size:1.1em; color:navy; text-decoration:none; }
     #nav ul { list-style:none; display:flex; gap:22px; margin:0; padding:0; flex-wrap:wrap; }
-    #nav a {
-      display:inline-block; padding:6px 8px; border:none;
-      color:#8a8f98; text-decoration:none;
-      font-family:'Roboto','Helvetica Neue',Helvetica,Arial,sans-serif;
-      font-weight:300; text-transform:uppercase; letter-spacing:normal; font-size:1em;
-      background:transparent;
-    }
+    #nav a { display:inline-block; padding:6px 8px; border:none; color:#8a8f98; text-decoration:none;
+      font-family:'Roboto','Helvetica Neue',Helvetica,Arial,sans-serif; font-weight:300; text-transform:uppercase; letter-spacing:normal; font-size:1em; background:transparent; }
     #nav a:hover { color:#2e2e2e; }
 
     main { max-width: 1000px; margin: 24px auto; padding: 0 18px 48px; }
-    .card { background:#fff; border:1px solid #e2e8f0; border-radius:16px;
-      box-shadow:0 2px 10px rgba(2,6,23,.06); padding:18px; }
+    .card { background:#fff; border:1px solid #e2e8f0; border-radius:16px; box-shadow:0 2px 10px rgba(2,6,23,.06); padding:18px; }
 
-    .filters {
-      display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,1fr));
-      gap:8px; margin-bottom:8px; width:100%;
-    }
-    .filters .field { display:flex; flex-direction:column; gap:4px; position:relative; min-width:0; }
-    .filters label { font-size:.8rem; color:var(--muted); }
-    .filters input {
-      border:1px solid #cbd5e1; border-radius:10px; padding:8px 28px 8px 10px; font-size:.95rem; width:100%;
-    }
-    .clear-btn { position:absolute; right:8px; top:50%; transform:translateY(-50%);
-      cursor:pointer; font-weight:700; color:red; font-size:1rem; display:none; user-select:none; }
+    .filters { display:flex; flex-wrap:nowrap; gap:8px; align-items:flex-end; overflow-x:auto; padding-bottom:2px; }
+    .filters .field { flex:0 0 auto; min-width:0; position:relative; }
+    .filters label { display:block; font-size:.8rem; color:var(--muted); margin-bottom:2px; white-space:nowrap; }
+    .filters input { border:1px solid #cbd5e1; border-radius:10px; padding:8px 28px 8px 10px; font-size:.95rem; width:160px; }
+    #f-title{ width:220px; }
+    .clear-btn { position:absolute; right:8px; top:50%; transform:translateY(-50%); cursor:pointer; font-weight:700; color:red; font-size:1rem; display:none; user-select:none; }
     .field input:not(:placeholder-shown)+.clear-btn { display:block; }
 
     #output { counter-reset:item; list-style:none; padding-left:0; }
-    #output li {
-      counter-increment:item; background:#fff; border:1px solid #e2e8f0; border-radius:10px;
-      padding:4px 6px; margin:2px 0;
-    }
-    #output li::before {
-  content: counter(item) ". ";
-  font-weight: 400;   /* or 'normal' */
-  margin-right: 6px;
-}
-    #output li.group {
-      counter-increment:none; background:transparent; border:none; padding:0; margin:10px 0 2px;
-      font-weight:700; font-size:1.05rem;
-    }
+    #output li { counter-increment:item; background:#fff; border:1px solid #e2e8f0; border-radius:10px; padding:4px 6px; margin:2px 0; }
+    #output li::before { content: counter(item) ". "; font-weight:400; margin-right:6px; }
+    #output li.group { counter-increment:none; background:transparent; border:none; padding:0; margin:10px 0 2px; font-weight:700; font-size:1.05rem; }
     #output li.group::before { content:''; margin:0; }
 
     .small{font-size:.9rem}
-    .error{background:#fef2f2;border:1px solid
-    #fecaca;color:#991b1b;padding:6px
-10px;border-radius:8px;margin-top:8px}
-/* [bib] toggle + inline bib block */
-.bib-btn{
-  margin-left:6px;
-  padding:0 6px;
-  font: inherit;
-  font-size:.85em;
-  color:#444;
-  background:transparent;
-  border:1px solid #cbd5e1;
-  border-radius:6px;
-  cursor:pointer;
-}
-.bib-btn:hover{ background:#f1f5f9; }
-.bib-block{
-  white-space:pre-wrap;
-  background:#f8fafc;
-  border:1px solid #e2e8f0;
-  border-radius:8px;
-  padding:8px;
-  margin-top:6px;
-  font-size:.85rem;
-}
+    .error{background:#fef2f2;border:1px solid #fecaca;color:#991b1b;padding:6px 10px;border-radius:8px;margin-top:8px}
+    .bib-btn { margin-left:6px; padding:0 6px; font:inherit; font-size:.85em; color:#444; background:transparent; border:1px solid #cbd5e1; border-radius:6px; cursor:pointer; }
+    .bib-btn:hover { background:#f1f5f9; }
+    .bib-block { white-space:pre-wrap; background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:8px; margin-top:6px; font-size:.85rem; }
   </style>
 </head>
 <body>
@@ -109,6 +59,7 @@
         <li><a href="people.html">People</a></li>
         <li><a href="https://www.csail.mit.edu/research/clinical-decision-making-group#projects" target="_blank">Projects</a></li>
         <li><a href="publications.html">Publications</a></li>
+        <li><a href="theses.html">Theses</a></li>
         <li><a href="blogs.html">Blogs</a></li>
         <li><a href="seminars.html">Seminars</a></li>
         <li><a href="faq.html">FAQs</a></li>
@@ -120,21 +71,12 @@
   <main>
     <div class="card">
       <div id="filters" class="filters">
-        <div class="field">
-          <label for="f-name">Name</label>
-          <input id="f-name" type="text" placeholder="e.g., Patil"/>
-          <span class="clear-btn" data-target="f-name">☒</span>
-        </div>
-        <div class="field">
-          <label for="f-title">Title</label>
-          <input id="f-title" type="text" placeholder="e.g., learning"/>
-          <span class="clear-btn" data-target="f-title">☒</span>
-        </div>
+        <div class="field"><label for="f-name">Name</label><input id="f-name" type="text" placeholder="e.g., Patil"/><span class="clear-btn" data-target="f-name">☒</span></div>
+        <div class="field"><label for="f-title">Title</label><input id="f-title" type="text" placeholder="e.g., learning"/><span class="clear-btn" data-target="f-title">☒</span></div>
       </div>
       <div id="status" class="small muted" style="margin-top:10px"></div>
       <div id="err" class="error" style="display:none"></div>
     </div>
-
     <ol id="output"></ol>
   </main>
 
