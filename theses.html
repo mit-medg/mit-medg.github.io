@@ -464,17 +464,16 @@
     function formatVancouverThesis(entry){
       var f=entry.fields||{}; var strip=function(s){return (s||'').replace(/[{}]/g,'');};
 
-      // Names (full, first-name first for theses)
-      var people='';
-      if(f.author && f.author.trim()){
-        people = formatAuthors(strip(f.author), {abbr:false, full:true});
-      }else if(f.editor && f.editor.trim()){
-        var raw=strip(f.editor);
-        var ed = formatAuthors(raw, {abbr:false, full:true}).replace(/[.]\s*$/,'');
-        var cnt=(raw||'').split(/\s+and\s+/i).map(function(s){return s.trim();}).filter(Boolean).length;
-        people = ed + (cnt>1 ? ' (editors).' : ' (editor).');
-      }
-
+ // Names (now: normalized and Last, Given for theses)
+var people='';
+if(f.author && f.author.trim()){
+  people = formatAuthorsThesisLastFirst(strip(f.author));     // ← changed
+}else if(f.editor && f.editor.trim()){
+  var raw=strip(f.editor);
+  var ed  = formatAuthorsThesisLastFirst(raw).replace(/[.]\s*$/,'');  // ← changed
+  var cnt=(raw||'').split(/\s+and\s+/i).map(function(s){return s.trim();}).filter(Boolean).length;
+  people = ed + (cnt>1 ? ' (editors).' : ' (editor).');
+}
       var rawTitle=(f.title||'').trim();
       var cleanTitle=unlatex(rawTitle.replace(/[{}]/g,''));
       var title=ensurePeriod(cleanTitle).trim();
@@ -504,10 +503,9 @@
       var t=(f.type&&f.type.trim())?f.type:(entry.type.toLowerCase()==='phdthesis'?'PhD Thesis':entry.type.toLowerCase()==='mastersthesis'?"Master's Thesis":'Thesis');
       line += ' ' + escapeHtml(unlatex(t)) + '.';
 
-      // Supervisors / Readers (first-name first)
-      var sup=f.supervisor?formatPersonListGivenFirst(strip(f.supervisor)):'';
-      var rdr=f.reader?formatPersonListGivenFirst(strip(f.reader)):'';
-      if(sup){
+// Supervisors / Readers (Last, Given)
+var sup = f.supervisor ? formatPersonListLastFirst(strip(f.supervisor)) : '';
+var rdr = f.reader     ? formatPersonListLastFirst(strip(f.reader))     : '';if(sup){
         var sn=(f.supervisor||'').split(/\s+and\s+/i).filter(Boolean).length;
         line += sn>1 ? ' Supervisors: ' + escapeHtml(unlatex(sup)) + '.' : ' Supervisor: ' + escapeHtml(unlatex(sup)) + '.';
       }
@@ -524,12 +522,17 @@
       return line.trim();
     }
 
-    function renderNamesForFilter(entry,fullNames){
-      var f=entry.fields||{}; var strip=function(s){return (s||'').replace(/[{}]/g,'');};
-      if(f.author&&f.author.trim()) return formatAuthors(strip(f.author),{abbr:!fullNames, full:!!fullNames}).replace(/[.]\s*$/,'');
-      if(f.editor&&f.editor.trim()) return formatAuthors(strip(f.editor),{abbr:!fullNames, full:!!fullNames}).replace(/[.]\s*$/,'');
-      return '';
-    }
+function renderNamesForFilter(entry){
+  var f=entry.fields||{}; var strip=function(s){return (s||'').replace(/[{}]/g,'');};
+  var src = '';
+  if (f.author && f.author.trim()) src = strip(f.author);
+  else if (f.editor && f.editor.trim()) src = strip(f.editor);
+  if (!src) return '';
+  var parts = splitBibNames(src);
+  var names = parts.map(function(p){ return formatNameLastFirst(normalizeBibName(p)); });
+  return names.join('; ');
+}
+
     function renderSupervisorsForFilter(entry){
       var f=entry.fields||{}; var strip=function(s){return (s||'').replace(/[{}]/g,'');};
       if(!f.supervisor) return '';
@@ -582,6 +585,67 @@
       }
       return unlatex(clean.replace(/\s+/g,' ').trim());
     }
+
+// --- BibTeX name parsing & formatting (normalize + Last, Given) ---
+
+function splitBibNames(field){
+  return (field||'').split(/\s+and\s+/i).map(function(s){return s.trim();}).filter(Boolean);
+}
+
+// Very lightweight BibTeX-normalizer:
+// Handles the common cases:
+//  1) "Last, First" or "Last, Jr, First"
+//  2) "First Middle Last"
+// Braces are stripped; multiple spaces collapsed.
+function normalizeBibName(name){
+  var clean = (name||'').replace(/[{}]/g,'').trim();
+  // Case A: Comma form
+  if (clean.indexOf(',') !== -1){
+    var parts = clean.split(',').map(function(s){return s.trim();});
+    // "Last, First"
+    if (parts.length === 2){
+      return { last: unlatex(parts[0]), given: unlatex(parts[1]) };
+    }
+    // "Last, Jr, First"
+    if (parts.length >= 3){
+      var last = parts[0] + (parts[1] ? ' ' + parts[1] : '');
+      return { last: unlatex(last.trim()), given: unlatex(parts.slice(2).join(' ').trim()) };
+    }
+  }
+  // Case B: Space form → assume last token is last name
+  var toks = clean.split(/\s+/).filter(Boolean);
+  if (toks.length === 1) return { last: unlatex(toks[0]), given: '' };
+  var last = toks.pop();
+  var given = toks.join(' ');
+  return { last: unlatex(last), given: unlatex(given) };
+}
+
+function formatNameLastFirst(obj){
+  var last = (obj.last||'').trim();
+  var given = (obj.given||'').trim();
+  if (!last) return given;            // fallback
+  if (!given) return last;
+  return last + ', ' + given;
+}
+
+function formatListLastFirst(arr){
+  // Join names with "; " and end with a period (Vancouver-like, readable)
+  return arr.join('; ') + '.';
+}
+
+// Authors for theses (Last, Given; …)
+function formatAuthorsThesisLastFirst(field){
+  var parts = splitBibNames(field);
+  var names = parts.map(function(p){ return formatNameLastFirst(normalizeBibName(p)); });
+  return names.length ? formatListLastFirst(names) : '';
+}
+
+// Supervisors/readers (Last, Given; …)
+function formatPersonListLastFirst(field){
+  var parts = splitBibNames(field);
+  var names = parts.map(function(p){ return formatNameLastFirst(normalizeBibName(p)); });
+  return names.join('; ');
+}
 
     function givenToInitials(given,abbr){
       if(!given) return '';
