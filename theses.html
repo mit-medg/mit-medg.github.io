@@ -782,6 +782,73 @@ function formatPersonListLastFirst(field){
       }
       return s;
     }
+
+// ---- tolerant query-string reader ----
+function getSearchParams() {
+  const href = String(window.location.href);
+  // Accept '?…' (correct) or, if missing, treat the first '&…' as a query start (lenient)
+  const qIdx = href.indexOf('?');
+  const ampIdx = href.indexOf('&');
+  const start = (qIdx >= 0) ? qIdx : (ampIdx >= 0 ? ampIdx : -1);
+  if (start >= 0) {
+    return new URLSearchParams(href.slice(start + 1));
+  }
+  return new URLSearchParams('');
+}
+function getParam(name) { return (getSearchParams().get(name) || '').trim(); }
+// ---- robust, order-/punctuation-agnostic matching with initials support ----
+function stripBraces(s){ return String(s||'').replace(/[{}]/g,''); }
+function unlatex(s){ return String(s||'').replace(/\\&/g,'&'); }
+
+function splitBibNames(field){
+  return (field||'').split(/\s+and\s+/i).map(s=>s.trim()).filter(Boolean);
+}
+function normalizeBibName(name){
+  const clean = stripBraces(name).trim();
+  if (clean.includes(',')){
+    const parts = clean.split(',').map(s=>s.trim());
+    if (parts.length === 2) return { last: unlatex(parts[0]), given: unlatex(parts[1]) };
+    if (parts.length >= 3){
+      const last = (parts[0] + (parts[1]? ' '+parts[1]: '')).trim();
+      return { last: unlatex(last), given: unlatex(parts.slice(2).join(' ').trim()) };
+    }
+  }
+  const toks = clean.split(/\s+/).filter(Boolean);
+  if (toks.length === 1) return { last: unlatex(toks[0]), given: '' };
+  const last = toks.pop(), given = toks.join(' ');
+  return { last: unlatex(last), given: unlatex(given) };
+}
+function normStr(s){
+  return String(s||'').toLowerCase()
+    .replace(/[{}]/g,'')
+    .replace(/[\.,;:()\[\]'"’“”\-]/g,' ')
+    .replace(/\s+/g,' ')
+    .trim();
+}
+function tokens(s){ return normStr(s).split(/\s+/).filter(Boolean); }
+function normalizedPeople(field){ return splitBibNames(field).map(normalizeBibName); }
+function variantsForPerson(p){
+  const last  = normStr(p.last||'');
+  const given = normStr(p.given||'');
+  const v1 = (given && last) ? (given + ' ' + last) : (given || last);
+  const v2 = (last  && given)? (last  + ' ' + given): (last  || given);
+  return [v1, v2];
+}
+function personMatchesTokens(p, qToks){
+  const vars = variantsForPerson(p).map(normStr);
+  return vars.some(v => {
+    const vToks = tokens(v);
+    return qToks.every(qt => vToks.some(vt => vt === qt || vt.startsWith(qt)));
+  });
+}
+
+// Generic list check for a BibTeX name field
+function listContainsPerson(field, needle){
+  if(!needle) return false;
+  const qToks = tokens(needle);
+  if(qToks.length===0) return false;
+  return normalizedPeople(field).some(p => personMatchesTokens(p, qToks));
+}
   </script>
 </body>
 </html>
