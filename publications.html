@@ -1,58 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
-  <meta http-equiv="Pragma" content="no-cache"/>
-  <meta http-equiv="Expires" content="0"/>
-  <title>MEDG Publications</title>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+<meta http-equiv="Pragma" content="no-cache"/>
+<meta http-equiv="Expires" content="0"/>
+<title>MEDG Publications</title>
 
-  <link href="https://fonts.googleapis.com/css?family=Crimson+Text:300italic,400italic|Roboto:300,400,300italic,400italic" rel="stylesheet">
-  <style>
-    :root { --fg:#0f172a; --muted:#475569; --bg:#f8fafc; --card:#ffffff; }
-    * { box-sizing: border-box; }
-    html,body { margin:0; padding:0; background:var(--bg); color:var(--fg);
-      font-family:'Source Sans Pro','Helvetica Neue',Helvetica,Arial,sans-serif; }
+<link href="https://fonts.googleapis.com/css?family=Crimson+Text:300italic,400italic|Roboto:300,400,300italic,400italic" rel="stylesheet">
 
-    /* Navigation */
-    #header { position: sticky; top: 0; z-index: 50; display:flex; align-items:center; justify-content:space-between;
-      background: rgba(248,250,252,.92); backdrop-filter: saturate(180%) blur(6px);
-      border-bottom: 1px solid #e2e8f0; padding: 12px 18px; }
-    #header h1, #header h1 a { margin:0; font-family:'Roboto','Helvetica Neue',Helvetica,Arial,sans-serif;
-      font-weight:300; text-transform:uppercase; letter-spacing:normal; font-size:1.1em; color:navy; text-decoration:none; }
-    #nav ul { list-style:none; display:flex; gap:22px; margin:0; padding:0; flex-wrap:wrap; }
-    #nav a { display:inline-block; padding:6px 8px; border:none; color:#8a8f98; text-decoration:none;
-      font-family:'Roboto','Helvetica Neue',Helvetica,Arial,sans-serif; font-weight:300; text-transform:uppercase; letter-spacing:normal; font-size:1em; background:transparent; }
-    #nav a:hover { color:#2e2e2e; }
+<style>
+:root { --fg:#0f172a; --muted:#475569; --bg:#f8fafc; --card:#ffffff; }
+* { box-sizing: border-box; }
+html,body { margin:0; padding:0; background:var(--bg); color:var(--fg);
+  font-family:'Source Sans Pro','Helvetica Neue',Helvetica,Arial,sans-serif; }
 
-    main { max-width: 1000px; margin: 24px auto; padding: 0 18px 48px; }
-    .card { background:#fff; border:1px solid #e2e8f0; border-radius:16px; box-shadow:0 2px 10px rgba(2,6,23,.06); padding:18px; }
+/* Header + Nav (default) */
+#header {
+  position: sticky; top:0; z-index:50; display:flex; align-items:center; justify-content:space-between;
+  background: rgba(248,250,252,.92); backdrop-filter: saturate(180%) blur(6px);
+  border-bottom: 1px solid #e2e8f0; padding: 12px 18px;
+}
+#brand, #brand a {
+  margin:0; font-family:'Roboto','Helvetica Neue',Helvetica,Arial,sans-serif;
+  font-weight:300; text-transform:uppercase; letter-spacing:normal; font-size:1.1em;
+  color:navy; text-decoration:none;
+}
+#nav ul { list-style:none; display:flex; gap:22px; margin:0; padding:0; flex-wrap:wrap; }
+#nav a {
+  display:inline-block; padding:6px 8px; border:none; color:#8a8f98; text-decoration:none;
+  font-family:'Roboto','Helvetica Neue',Helvetica,Arial,sans-serif; font-weight:300;
+  text-transform:uppercase; letter-spacing:normal; font-size:1em; background:transparent;
+}
+#nav a:hover { color:#2e2e2e; }
 
-    .filters { display:flex; flex-wrap:nowrap; gap:8px; align-items:flex-end; overflow-x:auto; padding-bottom:2px; }
-    .filters .field { flex:0 0 auto; min-width:0; position:relative; }
-    .filters label { display:block; font-size:.8rem; color:var(--muted); margin-bottom:2px; white-space:nowrap; }
-    .filters input { border:1px solid #cbd5e1; border-radius:10px; padding:8px 28px 8px 10px; font-size:.95rem; width:160px; }
-    #f-title{ width:220px; }
-    .clear-btn { position:absolute; right:8px; top:50%; transform:translateY(-50%); cursor:pointer; font-weight:700; color:red; font-size:1rem; display:none; user-select:none; }
-    .field input:not(:placeholder-shown)+.clear-btn { display:block; }
+/* Layout */
+main { max-width: 1000px; margin: 24px auto; padding: 0 18px 48px; }
+.card { background:#fff; border:1px solid #e2e8f0; border-radius:16px; box-shadow:0 2px 10px rgba(2,6,23,.06); padding:18px; }
 
-    #output { counter-reset:item; list-style:none; padding-left:0; }
-    #output li { counter-increment:item; background:#fff; border:1px solid #e2e8f0; border-radius:10px; padding:4px 6px; margin:2px 0; }
-    #output li::before { content: counter(item) ". "; font-weight:400; margin-right:6px; }
-    #output li.group { counter-increment:none; background:transparent; border:none; padding:0; margin:10px 0 2px; font-weight:700; font-size:1.05rem; }
-    #output li.group::before { content:''; margin:0; }
+/* Filters */
+.filters { display:flex; flex-wrap:wrap; gap:10px 12px; align-items:flex-end; }
+.field { flex:0 0 auto; min-width:0; position:relative; }
+label { display:block; font-size:.82rem; color:var(--muted); margin-bottom:2px; white-space:nowrap; }
+input[type="text"]{ border:1px solid #cbd5e1; border-radius:10px; padding:8px 28px 8px 10px; font-size:.95rem; width:220px; background:#fff; }
+.clear-btn { position:absolute; right:8px; top:50%; transform:translateY(-50%); cursor:pointer; font-weight:700; color:red; font-size:1rem; user-select:none; display:none; }
+.field input:not(:placeholder-shown)+.clear-btn,
+.field input:focus + .clear-btn { display:block; }
+button.reset { border:1px solid #cbd5e1; border-radius:10px; background:#fff; padding:8px 12px; cursor:pointer; }
+button.reset:hover { background:#f1f5f9; }
 
-    .small{font-size:.9rem}
-    .error{background:#fef2f2;border:1px solid #fecaca;color:#991b1b;padding:6px 10px;border-radius:8px;margin-top:8px}
-    .bib-btn { margin-left:6px; padding:0 6px; font:inherit; font-size:.85em; color:#444; background:transparent; border:1px solid #cbd5e1; border-radius:6px; cursor:pointer; }
-    .bib-btn:hover { background:#f1f5f9; }
-    .bib-block { white-space:pre-wrap; background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:8px; margin-top:6px; font-size:.85rem; }
-  </style>
+/* Status & Errors */
+#status { margin-top:8px; font-size:.9rem; color:#334155; }
+#error { margin-top:8px; display:none; background:#fef2f2;border:1px solid #fecaca;color:#991b1b;padding:6px 10px;border-radius:8px; }
+
+/* Output */
+#output { list-style:none; padding-left:0; counter-reset:item; margin-top:12px; }
+#output li { counter-increment:item; background:#fff; border:1px solid #e2e8f0; border-radius:10px; padding:4px 6px; margin:2px 0; }
+#output li::before { content: counter(item) ". "; font-weight:400; margin-right:6px; }
+#output li.group { counter-increment:none; background:transparent; border:none; padding:0; margin:10px 0 2px; font-weight:700; font-size:1.05rem; }
+#output li.group::before { content:''; margin:0; }
+
+.bib-btn { margin-left:6px; padding:0 6px; font:inherit; font-size:.85em; color:#444; background:transparent; border:1px solid #cbd5e1; border-radius:6px; cursor:pointer; }
+.bib-btn:hover { background:#f1f5f9; }
+.bib-block { white-space:pre-wrap; background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:8px; margin-top:6px; font-size:.85rem; }
+
+/* Slots for injected HTML */
+#navslot, #headslot, #footslot { margin: 0; padding: 0; }
+footer { max-width: 1000px; margin: 24px auto; padding: 0 18px 48px; color:#334155; }
+footer address { font-style: normal; color:#334155; }
+</style>
 </head>
 <body>
+
+  <!-- Default header/nav (replaced if ?nav=<url>) -->
   <header id="header">
-    <h1><strong><a href="index.html">MIT CSAIL MEDG</a></strong></h1>
+    <h1 id="brand"><a href="index.html">MIT CSAIL MEDG</a></h1>
     <nav id="nav">
       <ul>
         <li><a href="index.html">Home</a></li>
@@ -68,471 +91,501 @@
     </nav>
   </header>
 
+  <!-- Optional nav slot if ?nav=<url> -->
+  <div id="navslot"></div>
+
+  <!-- Optional head slot if ?head=<url> -->
+  <div id="headslot"></div>
+
   <main>
     <div class="card">
       <div id="filters" class="filters">
-        <div class="field"><label for="f-name">Name</label><input id="f-name" type="text" placeholder="e.g., Patil"/><span class="clear-btn" data-target="f-name">☒</span></div>
-        <div class="field"><label for="f-title">Title</label><input id="f-title" type="text" placeholder="e.g., learning"/><span class="clear-btn" data-target="f-title">☒</span></div>
+        <div class="field">
+          <label for="f-name">Name</label>
+          <input id="f-name" type="text" placeholder="e.g., Szolovits, P or Peter Szolovits"
+                 autocomplete="off" autocapitalize="off" spellcheck="false" />
+          <span class="clear-btn" data-target="f-name">☒</span>
+        </div>
+        <div class="field">
+          <label for="f-title">Title</label>
+          <input id="f-title" type="text" placeholder="e.g., learning"
+                 autocomplete="off" autocapitalize="off" spellcheck="false" />
+          <span class="clear-btn" data-target="f-title">☒</span>
+        </div>
+        <div class="field">
+          <button class="reset" id="btn-reset" type="button">Reset filters</button>
+        </div>
       </div>
-      <div id="status" class="small muted" style="margin-top:10px"></div>
-      <div id="err" class="error" style="display:none"></div>
+      <div id="status"></div>
+      <div id="error"></div>
     </div>
+
     <ol id="output"></ol>
   </main>
 
-  <script>
-    /* ---------- Elements & utilities ---------- */
-    const statusEl=document.getElementById('status'),
-          errorEl=document.getElementById('err'),
-          outputEl=document.getElementById('output'),
-          filtersEl=document.getElementById('filters');
-    const inName=()=>document.getElementById('f-name'),
-    inTitle=()=>document.getElementById('f-title');
-    let entryByKey = new Map();
+  <!-- Optional foot slot if ?foot=<url> (appears above the standard footer) -->
+  <div id="footslot"></div>
 
-    function status(h){ if(statusEl) statusEl.innerHTML = h; }
-    function showError(e){
-      if(!errorEl) return;
-      errorEl.style.display='block';
-      const m=(e&&e.message)?e.message:String(e);
-      errorEl.innerHTML = '⚠️ ' + escapeHtml(m) +
-        '<div class="small">Tip: If this page is opened via <code>file:///</code>, browsers block <code>fetch</code>. Serve locally (e.g., <code>python3 -m http.server</code>).</div>';
-      console.error(e);
-    }
+  <footer>
+    <hr/>
+    <address id="updated">Updated: (loading…)</address>
+    <p>
+      <a href="http://web.mit.edu/accessibility"><i><b>Accessibility</b></i></a>
+    </p>
+  </footer>
 
-    /* ---------- Which bib files to load (publications only) ---------- */
-    const bibFiles = [
-      "bib/psz.bib","bib/medg.bib","bib/emily.bib","bib/jindi.bib",
-      "bib/mmd.bib","bib/ckbjimmy.bib","bib/stmharry.bib","bib/symin95.bib",
-      "bib/gupta.bib","bib/wjl.bib"
-    ];
-
-    /* ---------- URL filters (optional) ---------- */
-    function getFilters(){
-      try{
-        const p=new URLSearchParams(window.location.search);
-        const g=v=>v&&v.trim()?v.trim():'';
-        return { name:g(p.get('name')), title:g(p.get('title')) };
-      }catch{
-        return { name:'', title:'' };
-      }
-    }
-
-    let currentEntries=[], allEntries=[], filtersInitialized=false, initialUrlFilters={name:'',title:''};
-
-    window.addEventListener('DOMContentLoaded', ()=>{
-      initialUrlFilters=getFilters();
-      setupLiveFilters();
-      loadAll().catch(showError);
-      // Clear buttons
-      document.querySelectorAll('.clear-btn').forEach(btn=>{
-        btn.addEventListener('click',()=>{
-          const id=btn.getAttribute('data-target');
-          const inp=document.getElementById(id);
-          if(inp){
-            inp.value='';
-            inp.dispatchEvent(new Event('input',{bubbles:true}));
-            inp.dispatchEvent(new Event('change',{bubbles:true}));
-          }
-        });
-      });
-    });
-
-    /* ---------- Load & parse ---------- */
-    async function loadAll(){
-      status('Fetching bib files…');
-      if(errorEl) errorEl.style.display='none';
-      let entries=[], failed=[];
-
-      for(const f of bibFiles){
-        try{
-          const res = await fetch(f,{cache:'no-store'});
-          if(!res.ok) throw new Error('HTTP ' + res.status);
-          const txt = await res.text();
-          const parsed = parseBibtex(txt);
-          parsed.forEach(e=>e._file=f);
-          entries = entries.concat(parsed);
-        }catch(e){
-          failed.push({file:f,error:e.message||String(e)});
-        }
-      }
-
-      // Deduplicate by key
-      const map=new Map();
-      for(const e of entries){
-        const k=String(e.key||'').toLowerCase();
-        if(!k) continue;
-        if(!map.has(k)) map.set(k,e);
-      }
-      entries = Array.from(map.values());
-
-      // Keep NON-theses on this page
-      entries = entries.filter(e => !/^(phdthesis|mastersthesis|thesis)$/i.test(e.type));
-// Build lookup for [bib] toggles
-entryByKey = new Map(entries.map(e => [String(e.key||'').toLowerCase(), e]));
-
-      allEntries = entries;
-      const live = {
-        name:  inName()?.value?.trim()  || initialUrlFilters.name  || '',
-        title: inTitle()?.value?.trim() || initialUrlFilters.title || ''
-      };
-      const filtered = applyFilters(entries, live);
-      currentEntries = filtered;
-
-      let msg = '<strong>' + filtered.length + '</strong> entries shown';
-      if (failed.length) {
-        const parts = failed.map(f => escapeHtml(f.file) + ' (' + escapeHtml(f.error) + ')').join('; ');
-        msg += '<div class="small" style="color:#991b1b">Failed: ' + parts + '</div>';
-      }
-      status(msg);
-
-      renderPublications(filtered);
-    }
-
-    /* ---------- Live filters ---------- */
-    function setupLiveFilters(){
-      if(!filtersEl) return;
-      const fName=inName();  if(fName)  fName.value  = initialUrlFilters.name  || '';
-      const fTitle=inTitle();if(fTitle) fTitle.value = initialUrlFilters.title || '';
-
-      if(!filtersInitialized){
-        const handler=()=>{
-          const live = {
-            name:  inName()?.value?.trim()  || '',
-            title: inTitle()?.value?.trim() || ''
-          };
-          const filtered = applyFilters(allEntries, live);
-          currentEntries = filtered;
-          let msg = '<strong>' + filtered.length + '</strong> entries shown';
-          if(live.name)  msg += ' — name: <code>'  + escapeHtml(live.name)  + '</code>';
-          if(live.title) msg += ' — title: <code>' + escapeHtml(live.title) + '</code>';
-          status(msg);
-          renderPublications(filtered);
-        };
-        ['input','keyup','change'].forEach(evt=>filtersEl.addEventListener(evt, handler));
-        requestAnimationFrame(handler);
-        filtersInitialized=true;
-      }
-    }
-
-    function applyFilters(entries,{name='',title=''}={}){
-      if(!(name||title)) return entries.slice();
-      const n=name.toLowerCase(), t=title.toLowerCase();
-      return entries.filter(e=>{
-        const nameStr=(renderNamesForFilter(e)||'').toLowerCase();
-        const titleStr=((e.fields&&e.fields.title)?e.fields.title:'').replace(/[{}]/g,'').toLowerCase();
-        return (name?nameStr.includes(n):true) && (title?titleStr.includes(t):true);
-      });
-    }
-
-    /* ---------- Render (group by year desc) ---------- */
-    function renderPublications(entries){
-      const dated=new Map(), unknown=[];
-      for(const e of entries){
-        const y=parseInt(e.fields && e.fields.year ? e.fields.year : '0',10) || 0;
-        if(y>0){
-          const k=String(y);
-          if(!dated.has(k)) dated.set(k,[]);
-          dated.get(k).push(e);
-        }else{
-          unknown.push(e);
-        }
-      }
-      const years = Array.from(dated.keys())
-        .map(x=>parseInt(x,10))
-        .filter(n=>!Number.isNaN(n)&&n>0)
-        .sort((a,b)=>b-a);
-
-      const tb=(a,b)=>{
-        const d = dateScore(b) - dateScore(a);
-        if(d!==0) return d;
-        const ak = firstAuthorKey(a).localeCompare(firstAuthorKey(b));
-        if(ak!==0) return ak;
-        const t = (a.fields.title||'').localeCompare(b.fields.title||'');
-        if(t!==0) return t;
-        return (a.key||'').localeCompare(b.key||'');
-      };
-
-      outputEl.innerHTML = '';
-      const addHeader = label => {
-        const h=document.createElement('li');
-        h.className='group';
-        h.textContent=label;
-        outputEl.appendChild(h);
-      };
-      const addItem = e => {
-        const li=document.createElement('li');
-        li.innerHTML = formatVancouver(e);
-        outputEl.appendChild(li);
-      };
-
-      for (const y of years) {
-        addHeader(String(y));
-        dated.get(String(y)).sort(tb).forEach(addItem);
-      }
-      if (unknown.length) {
-        addHeader('Unknown year');
-        unknown.sort(tb).forEach(addItem);
-      }
-      if (!years.length && !unknown.length) {
-        status('0 entries matched. Possible reasons: (1) the .bib files failed to load, (2) all entries are theses (this page excludes theses), or (3) your filters hid them.');
-      }
-    }
-
-    /* ---------- Vancouver + helpers ---------- */
-    function formatVancouver(entry){
-      const f = entry.fields || {};
-      const isThesis = /^(phdthesis|mastersthesis|thesis)$/i.test(entry.type);
-      const strip = s => (s||'').replace(/[{}]/g,'');
-
-      // People (initials for non-thesis)
-      let people='';
-      if(f.author && f.author.trim()){
-        people = isThesis ? formatAuthors(strip(f.author), {abbr:false, full:true})
-                          : formatAuthors(strip(f.author), {abbr:true});
-      }else if(f.editor && f.editor.trim()){
-        const raw = strip(f.editor);
-        let ed  = (isThesis ? formatAuthors(raw,{abbr:false,full:true})
-                            : formatAuthors(raw,{abbr:true})).replace(/[.]\s*$/,'');
-        const cnt = (raw||'').split(/\s+and\s+/i).map(s=>s.trim()).filter(Boolean).length;
-        people = ed + (cnt>1 ? ' (editors).' : ' (editor).');
-      }
-
-      // Title (link to URL or DOI)
-      const rawTitle = (f.title||'').trim();
-      const cleanTitle = unlatex(rawTitle.replace(/[{}]/g,''));
-      const title = ensurePeriod(cleanTitle).trim();
-      const doiClean = cleanDoi(f.doi||''); if(doiClean) f.doi = doiClean;
-      const link = (f.url && f.url.trim()) ? f.url.trim() : (doiClean ? ('https://doi.org/'+doiClean) : '');
-
-      // Container / base (journal | proceedings | publisher) OR special cases
-      const baseRaw = (entry.type==='techreport' ? (f.institution||'') : (f.journal||f.booktitle||f.publisher||''));
-      const base = unlatex((baseRaw||'').replace(/[{}]/g,'').trim());
-
-      // Date & details
-      const year  = (f.year||'').trim();
-      const volume= (f.volume||'').trim();
-      const number= (f.number||f.issue||'').trim();
-      const pages = (f.pages||'').replace(/--/g,'-').trim();
-
-      let line=''; if(people) line += people + ' ';
-      if(title){
-        line += link
-          ? '<a href="' + escapeAttr(link) + '" target="_blank" rel="noopener noreferrer"><strong>' + escapeHtml(title) + '</strong></a> '
-          : '<strong>' + escapeHtml(title) + '</strong> ';
-      }
-
-      // Inbook adds bookauthor/editor; techreport adds type/number and uses institution
-      (function(){
-        let prefix='', mid='', container=base;
-        if(entry.type==='inbook'){
-          const ba = strip(f.bookauthor);
-          if(ba && ba.trim()){
-            prefix = formatAuthors(ba,{abbr:true});
-            prefix = prefix.replace(/\.$/,'') + ', ';
-          } else if(f.editor && f.editor.trim()){
-            const raw = strip(f.editor);
-            let ed = formatAuthors(raw,{abbr:true});
-            ed = ed.replace(/\.$/,'');
-            const cnt=(raw||'').split(/\s+and\s+/i).map(s=>s.trim()).filter(Boolean).length;
-            prefix = ed + (cnt>1?' (editors),':' (editor),') + ' ';
-          }
-        }
-        if(entry.type==='techreport'){
-          const repType = unlatex((f.type||'Technical Report').replace(/[{}]/g,'').trim());
-          const repNum  = ((f.number||f.reportnumber||'')+'').trim();
-          if(repType||repNum) mid = escapeHtml(repType) + (repNum?(' ' + escapeHtml(repNum)):'') + '. ';
-          const inst = (f.institution||'').replace(/[{}]/g,'').trim();
-          if(inst) container = inst;
-        }
-        const cont = container ? '<em>' + escapeHtml(container) + '</em> ' : '';
-        if(prefix || mid || cont) line += (prefix + mid + cont);
-      })();
-
-      // Tail: year; volume(issue):pages.
-      const tail=[]; if(year) tail.push(year);
-      if(volume){ let v=volume; if(number) v += '(' + number + ')'; tail.push(v); }
-      if(pages) tail.push(pages.replace(/^p\.?\s*/i,''));
-      if(tail.length){
-        const y=tail.shift(); const rest=tail.join(':');
-        line += (rest ? (y + ';' + rest + '. ') : (y + '. '));
-      }
-
-  // Add [bib] toggle button (uses lowercase key for lookup)
-  if (entry.key) {
-    line += ' <button class="bib-btn" data-key="' + String(entry.key).toLowerCase() + '">[bib]</button>';
+<script>
+/* ================== Ignore extension noise (e.g., Zotero in Safari) ================== */
+window.addEventListener('error', function (ev) {
+  const src = String(ev.filename || '');
+  const msg = String(ev.message || (ev.error && ev.error.message) || '');
+  if (/(Zotero\.Connector|inject_safari\.js|safari-extension)/i.test(src + ' ' + msg)) {
+    console.warn('Ignored extension error:', src, msg);
+    return;
   }
-return line.trim();
-
-      return line.trim();
-    }
-
-    function renderNamesForFilter(entry){
-      const f=entry.fields||{}; const strip=s=>(s||'').replace(/[{}]/g,'');
-      if(f.author&&f.author.trim()) return formatAuthors(strip(f.author),{abbr:true}).replace(/[.]\s*$/,'');
-      if(f.editor&&f.editor.trim()) return formatAuthors(strip(f.editor),{abbr:true}).replace(/[.]\s*$/,'');
-      return '';
-    }
-    function ensurePeriod(s){ s=s.trim(); if(!s) return s; return /[.!?]\s*$/.test(s) ? s : (s + '.'); }
-
-    // Authors: initials (non-thesis); theses handled elsewhere
-    function formatAuthors(field,{abbr=true,full=false}={}){
-      if(!field) return '';
-      const parts = field.split(/\s+and\s+/i).map(s=>s.trim()).filter(Boolean);
-      const names = parts.map(fmtOne);
-      const list  = names.join(', ');
-      return list ? list + '.' : '';
-      function fmtOne(name){
-        const clean=(name||'').replace(/[{}]/g,'').trim();
-        if(clean.includes(',')){ // "Last, Given"
-          const pair=clean.split(',');
-          const last=(pair[0]||'').trim(), givenRaw=(pair[1]||'').trim();
-          if(full) return (unlatex(givenRaw) + ' ' + unlatex(last)).replace(/\s+/g,' ').trim();
-          const init=givenToInitials(givenRaw,abbr);
-          return init ? (unlatex(last) + ' ' + init) : unlatex(last);
-        }else{ // "Given Last"
-          const bits=clean.split(/\s+/).filter(Boolean);
-          if(bits.length===1) return unlatex(bits[0]);
-          const last=bits.pop(), given=bits.join(' ');
-          if(full) return (unlatex(given) + ' ' + unlatex(last)).replace(/\s+/g,' ').trim();
-          const init=givenToInitials(given,abbr);
-          return init ? (unlatex(last) + ' ' + init) : unlatex(last);
-        }
-      }
-    }
-    function givenToInitials(given,abbr){
-      if(!given) return '';
-      const letters = given
-        .replace(/\([^)]*\)/g,'')
-        .replace(/\{[^}]*\}/g,'')
-        .split(/[-\s]+/).filter(Boolean)
-        .map(w=> w[0] ? w[0].toUpperCase() : '')
-        .join(abbr?'':' ');
-      return letters;
-    }
-
-    function unlatex(s){ return String(s||'').replace(/\\&/g,'&'); } // \& → & (will render as &amp; in HTML)
-    function escapeHtml(s){ return String(s).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;'); }
-    function escapeAttr(s){ return String(s).replaceAll('"','&quot;'); }
-    function cleanDoi(s){
-      if(!s) return '';
-      let x = String(s).trim();
-      x = x.replace(/^doi:\s*/i,'');                         // "doi:" + optional spaces
-      x = x.replace(/^https?:\/\/(dx\.)?doi\.org\//i,'');    // strip full DOI URL
-      x = x.replace(/\s+/g,'');                              // remove whitespace
-      x = x.replace(/[<>]/g,'');                             // strip angle brackets
-      x = x.replace(/\.$/,'');                               // trailing period
-      return x;
-    }
-
-function buildBibtex(entry){
-  const type = (entry.type || 'misc');
-  const key  = (entry.key  || 'key');
-  const f    = entry.fields || {};
-
-  // Exclude unwanted fields (case-insensitive)
-    // Exclude unwanted fields (case-insensitive)
-  const skip = /^(file|date-added|date-modified|bdsk-url)/i;
-
-  // Sort fields alphabetically for stable output
-  const fields = Object.keys(f)
-    .filter(k => k && !skip.test(k))
-    .sort((a,b)=> a.localeCompare(b));
-
-  // Re-wrap values in braces; use original field text (we never unlatex in storage)
-  const lines = fields.map(k => {
-    // keep original spacing minimal; preserve internal LaTeX and braces as parsed
-    const v = String(f[k] == null ? '' : f[k]).trim();
-    return `  ${k} = {${v}}`;
-  });
-
-  // Commas after each field; trailing comma optional but accepted by BibTeX
-  return `@${type}{${key},\n${lines.join(',\n')}\n}`;
-}
-
-    function firstAuthorKey(entry){
-      const base=(entry.fields && entry.fields.author && entry.fields.author.trim()) ? entry.fields.author : (entry.fields.editor||'');
-      const a=(base||'').split(/\s+and\s+/i)[0]||'';
-      return a.replace(/[{}]/g,'').replace(/[^a-zA-Z,\s-]/g,'').toLowerCase();
-    }
-    function dateScore(e){
-      const y=parseInt(e.fields && e.fields.year ? e.fields.year : '0',10) || 0;
-      let m=e.fields && e.fields.month ? e.fields.month : '0';
-      const mm={jan:1,feb:2,mar:3,apr:4,may:5,jun:6,jul:7,aug:8,sep:9,oct:10,nov:11,dec:12};
-      m = (mm[String(m).slice(0,3).toLowerCase()] || parseInt(m,10) || 0);
-      const d=parseInt(e.fields && e.fields.day ? e.fields.day : '0',10) || 0;
-      return y*10000 + m*100 + d;
-    }
-
-    /* ---------- BibTeX parsing ---------- */
-    function parseBibtex(text){
-      text = text.replace(/^\s*%.*$/gm,''); // strip comment lines
-      const out=[]; const rx=/@([a-zA-Z]+)\s*\{\s*([^,]+)\s*,([\s\S]*?)\}\s*(?=@|$)/g; let m;
-      while((m=rx.exec(text))){
-        const type=(m[1]||'').toLowerCase();
-        const key=(m[2]||'').trim();
-        const body=(m[3]||'');
-        out.push({type,key,fields:parseFields(body)});
-      }
-      return out;
-    }
-    function parseFields(body){
-      const out={}; let i=0, t='', depth=0, inQ=false; const parts=[];
-      while(i<body.length){
-        const c=body[i];
-        if(c=='"' && body[i-1] !== "\\"){ inQ=!inQ; t+=c; i++; continue; }
-        if(c=='{' && !inQ){ depth++; t+=c; i++; continue; }
-        if(c=='}' && !inQ && depth>0){ depth--; t+=c; i++; continue; }
-        if(c==',' && !inQ && depth===0){ parts.push(t); t=''; i++; continue; }
-        t+=c; i++;
-      }
-      if(t.trim()) parts.push(t);
-      for(const p of parts){
-        const kv=p.split(/\s*=\s*/);
-        if(kv.length<2) continue;
-        const k=kv.shift().trim().toLowerCase();
-        const v=kv.join('=').trim();
-        out[k]=unbrace(unquote(v)).replace(/\s+/g,' ').trim();
-      }
-      return out;
-}
-
-    function unquote(s){ if((s.startsWith('"')&&s.endsWith('"'))||(s.startsWith("'")&&s.endsWith("'"))) return s.slice(1,-1); return s; }
-    function unbrace(s){
-      let changed=true;
-      while(changed){
-        changed=false;
-        if(s.startsWith('{')&&s.endsWith('}')){
-          let d=0,ok=true;
-          for(let i=0;i<s.length;i++){ const c=s[i]; if(c=='{') d++; if(c=='}') d--; if(d===0&&i<s.length-1){ ok=false; break; } }
-          if(ok){ s=s.slice(1,-1); changed=true; }
-        }
-      }
-      return s;
-    }
-
-// Toggle inline BibTeX on [bib] button click (event delegation)
-document.addEventListener('click', function(ev){
-  const btn = ev.target.closest('.bib-btn');
-  if(!btn) return;
-  const li = btn.closest('li');
-  if(!li) return;
-
-  // If already open, close it
-  const open = li.querySelector('.bib-block');
-  if(open){ open.remove(); return; }
-
-  // Otherwise build and show
-  const key = (btn.getAttribute('data-key') || '').toLowerCase();
-  const entry = entryByKey.get(key);
-  if(!entry) return;
-
-  const pre = document.createElement('pre');
-  pre.className = 'bib-block';
-  pre.textContent = buildBibtex(entry);  // textContent to avoid HTML escaping
-  li.appendChild(pre);
+  const el = document.getElementById('error') || document.getElementById('status');
+  if (el) { el.style.display = 'block'; el.textContent = '⚠️ ' + (msg || 'Unknown script error'); }
+});
+window.addEventListener('unhandledrejection', function (ev) {
+  const el = document.getElementById('error') || document.getElementById('status');
+  if (el) { const reason = ev.reason && (ev.reason.message || ev.reason) || 'Unhandled promise rejection';
+    el.style.display = 'block'; el.textContent = '⚠️ ' + reason; }
 });
 
-  </script>
+/* ================== DOM & URL helpers ================== */
+const $=id=>document.getElementById(id);
+const setStatus=html=>{ const e=$('status'); if(e) e.innerHTML = html||''; };
+const showError=msg=>{ const e=$('error'); if(e){ e.style.display='block'; e.textContent='⚠️ '+msg; } };
+const escHtml=s=>String(s).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;');
+const escAttr=s=>String(s).replaceAll('"','&quot;');
+const stripBraces=s=>String(s||'').replace(/[{}]/g,'');
+const unlatex=s=>String(s||'').replace(/\\&/g,'&');
+const qs=()=>{ try{return new URLSearchParams(window.location.search);}catch(_){return new URLSearchParams('');} };
+const getParam=k=>(qs().get(k)||'').trim();
+
+/* Inject external fragment into a target element */
+async function injectHtmlFrom(url, targetId){
+  try{
+    const res = await fetch(url, {cache:'no-store'});
+    if(!res.ok) throw new Error('HTTP '+res.status);
+    const html = await res.text();
+    const el = document.getElementById(targetId);
+    if(el){ el.innerHTML = html; }
+  }catch(e){ showError('Failed to load '+url+': '+(e.message||e)); }
+}
+
+/* ================== Data sources ================== */
+const bibFiles = [
+  "bib/psz.bib","bib/medg.bib","bib/emily.bib","bib/jindi.bib",
+  "bib/mmd.bib","bib/ckbjimmy.bib","bib/stmharry.bib","bib/symin95.bib",
+  "bib/gupta.bib","bib/wjl.bib"
+];
+
+/* Track last-modified dates to show the latest in footer */
+const lastModified = [];
+
+/* ================== Fetch & parse BibTeX ================== */
+async function fetchAllBibFiles(files){
+  const out = [];
+  for(const f of files){
+    try{
+      const res = await fetch(f, { cache:'no-store' });
+      if(!res.ok) throw new Error('HTTP '+res.status);
+      const lm = res.headers.get('Last-Modified'); if(lm) lastModified.push(new Date(lm));
+      const txt = await res.text();
+      out.push({file:f, text:txt});
+    }catch(e){ showError('Failed to load '+f+': '+(e.message||e)); }
+  }
+  return out;
+}
+function parseBibtex(text){
+  text = text.replace(/^\s*%.*$/gm,''); // strip % comments
+  const out=[]; const rx=/@([a-zA-Z]+)\s*\{\s*([^,]+)\s*,([\s\S]*?)\}\s*(?=@|$)/g; let m;
+  while((m=rx.exec(text))){
+    const type=(m[1]||'').toLowerCase();
+    const key=(m[2]||'').trim();
+    const body=(m[3]||'');
+    out.push({type,key,fields:parseFields(body)});
+  }
+  return out;
+}
+function parseFields(body){
+  const out={}; let i=0, t='', depth=0, inQ=false; const parts=[];
+  while(i<body.length){
+    const c=body[i];
+    if(c=='"' && body[i-1] !== "\\"){ inQ=!inQ; t+=c; i++; continue; }
+    if(c=='{' && !inQ){ depth++; t+=c; i++; continue; }
+    if(c=='}' && !inQ && depth>0){ depth--; t+=c; i++; continue; }
+    if(c==',' && !inQ && depth===0){ parts.push(t); t=''; i++; continue; }
+    t+=c; i++;
+  }
+  if(t.trim()) parts.push(t);
+  for(const p of parts){
+    const kv=p.split(/\s*=\s*/);
+    if(kv.length<2) continue;
+    const k=kv.shift().trim().toLowerCase();
+    const v=kv.join('=').trim();
+    out[k]=unbrace(unquote(v)).replace(/\s+/g,' ').trim();
+  }
+  return out;
+}
+const unquote=s=>((s.startsWith('"')&&s.endsWith('"'))||(s.startsWith("'")&&s.endsWith("'")))? s.slice(1,-1):s;
+function unbrace(s){
+  let changed=true;
+  while(changed){
+    changed=false;
+    if(s.startsWith('{')&&s.endsWith('}')){
+      let d=0, ok=true;
+      for(let i=0;i<s.length;i++){
+        const c=s[i]; if(c=='{') d++; if(c=='}') d--;
+        if(d===0 && i<s.length-1){ ok=false; break; }
+      }
+      if(ok){ s=s.slice(1,-1); changed=true; }
+    }
+  }
+  return s;
+}
+
+/* ================== Date & link helpers ================== */
+function cleanDoi(s){
+  if(!s) return '';
+  let x = String(s).trim();
+  x = x.replace(/^doi:\s*/i,'');
+  x = x.replace(/^https?:\/\/(dx\.)?doi\.org\//i,'');
+  x = x.replace(/\s+/g,'');
+  x = x.replace(/[<>]/g,'');
+  x = x.replace(/\.$/,'');
+  return x;
+}
+function bestLink(fields){
+  const doi = cleanDoi(fields.doi||'');
+  if(fields.url && fields.url.trim()) return fields.url.trim();
+  if(doi) return 'https://doi.org/' + doi;
+  return '';
+}
+const yearOf=e=>parseInt((e.fields||{}).year||'0',10)||0;
+function descendingDateScore(e){
+  const f=e.fields||{};
+  const year=parseInt(f.year||'0',10)||0;
+  const mm={jan:1,feb:2,mar:3,apr:4,may:5,jun:6,jul:7,aug:8,sep:9,oct:10,nov:11,dec:12};
+  const m=(mm[String(f.month||'').slice(0,3).toLowerCase()] || parseInt(f.month||'0',10) || 0);
+  const d=parseInt(f.day||'0',10)||0;
+  return year*10000 + m*100 + d;
+}
+
+/* ================== Name normalization & matching ================== */
+const splitBibNames=field=>(field||'').split(/\s+and\s+/i).map(s=>s.trim()).filter(Boolean);
+function normalizeBibName(name){
+  const clean = stripBraces(name).trim();
+  if (clean.includes(',')){
+    const parts = clean.split(',').map(s=>s.trim());
+    if (parts.length === 2) return { last: unlatex(parts[0]), given: unlatex(parts[1]) };
+    if (parts.length >= 3){
+      const last = (parts[0] + (parts[1] ? ' ' + parts[1] : '')).trim();
+      return { last: unlatex(last), given: unlatex(parts.slice(2).join(' ').trim()) };
+    }
+  }
+  const toks = clean.split(/\s+/).filter(Boolean);
+  if (toks.length === 1) return { last: unlatex(toks[0]), given: '' };
+  const last = toks.pop(), given = toks.join(' ');
+  return { last: unlatex(last), given: unlatex(given) };
+}
+function givenToInitials(given){
+  if(!given) return '';
+  return given.split(/\s+/).filter(Boolean).map(w=>{
+    return w.split('-').map(p=>p[0]? (p[0].toUpperCase()+'.') : '').join('-');
+  }).join(' ');
+}
+function formatNameVancouver(p){
+  const last = (p.last||'').trim();
+  const given = (p.given||'').trim();
+  const inits = givenToInitials(given);
+  if(!last) return inits || '';
+  if(!inits) return last;
+  return last + ' ' + inits;
+}
+/* robust, order-agnostic matching (supports initials) */
+function normStr(s){
+  return String(s||'')
+    .toLowerCase()
+    .replace(/[{}]/g,'')
+    .replace(/[\.,;:()\[\]'"’“”\-]/g,' ')
+    .replace(/\s+/g,' ')
+    .trim();
+}
+const tokens=s=>normStr(s).split(/\s+/).filter(Boolean);
+const normalizedPeople=field=>splitBibNames(field).map(p => normalizeBibName(p));
+function variantsForPerson(p){
+  const last  = normStr(p.last||'');
+  const given = normStr(p.given||'');
+  const v1 = (given && last) ? (given + ' ' + last) : (given || last);
+  const v2 = (last  && given)? (last  + ' ' + given): (last  || given);
+  return [v1, v2];
+}
+function personMatchesTokens(p, qToks){
+  const variants = variantsForPerson(p).map(normStr);
+  return variants.some(v => {
+    const vToks = tokens(v);
+    return qToks.every(qt => vToks.some(vt => (vt === qt) || vt.startsWith(qt)));
+  });
+}
+function peopleListMatchesEntry(entry, needle){
+  if(!needle) return true;
+  const f = entry.fields || {};
+  const src = (f.author && f.author.trim()) ? f.author : (f.editor || '');
+  if(!src) return false;
+  const qToks = tokens(needle);
+  if(qToks.length === 0) return true;
+  const people = normalizedPeople(src);
+  return people.some(p => personMatchesTokens(p, qToks));
+}
+
+/* ================== Deduplication by key ================== */
+function dedupeByKey(entries){
+  const byKey = new Map();
+  const srcSet = new Map();
+  for(const e of entries){
+    const k = String(e.key||'').toLowerCase();
+    if(!k) continue;
+    if(!byKey.has(k)){
+      const clone = { ...e, fields: { ...(e.fields||{}) }, _srcFiles: [e._src] };
+      byKey.set(k, clone);
+      srcSet.set(k, new Set([e._src]));
+    }else{
+      const base = byKey.get(k);
+      const f = e.fields || {};
+      for(const name of Object.keys(f)){
+        if(base.fields[name] == null || base.fields[name] === ''){
+          base.fields[name] = f[name];
+        }
+      }
+      const set = srcSet.get(k);
+      set.add(e._src);
+      base._srcFiles = Array.from(set);
+    }
+  }
+  return Array.from(byKey.values());
+}
+
+/* ================== Rendering (Vancouver) ================== */
+const fieldClean=s=>unlatex(stripBraces(s||'')).trim();
+
+function formatAuthorsNonThesis(f){
+  const src = (f.author && f.author.trim()) ? f.author : (f.editor || '');
+  if(!src) return '';
+  const people = normalizedPeople(src);
+  const names = people.map(formatNameVancouver);
+  if(f.author && !f.editor) return names.join(', ') + '.';
+  if(f.editor && !f.author){
+    const cnt = people.length;
+    return names.join(', ') + (cnt>1? ' (editors).' : ' (editor).');
+  }
+  return names.join(', ') + '.';
+}
+function vancouverGeneric(entry){
+  const f = entry.fields || {};
+  const authors = formatAuthorsNonThesis(f);
+  const title = fieldClean(f.title);
+  const link = bestLink(f);
+  const titleHtml = title ? (link ? ('<a href="'+escAttr(link)+'" target="_blank" rel="noopener noreferrer">'+escHtml(title)+'</a>')
+                                  : escHtml(title)) : '';
+
+  const j = fieldClean(f.journal || f.booktitle || f.series || '');
+  const vol = fieldClean(f.volume);
+  const no = fieldClean(f.number);
+  const pages = fieldClean(f.pages);
+  const year = fieldClean(f.year);
+
+  let out = '';
+  if(authors) out += escHtml(authors)+' ';
+  if(titleHtml) out += titleHtml + '. ';
+  if(j) out += '<em>'+escHtml(j)+'</em>';
+  if(vol) out += ' '+escHtml(vol);
+  if(no) out += '('+escHtml(no)+')';
+  if(pages) out += ':'+escHtml(pages);
+  if(year) out += ' ('+escHtml(year)+')';
+  out += '.';
+  return out;
+}
+function vancouverInBook(entry){
+  const f = entry.fields||{};
+  const authors = formatAuthorsNonThesis(f);
+  const title = fieldClean(f.title);
+  const link = bestLink(f);
+  const titleHtml = title ? (link ? ('<a href="'+escAttr(link)+'" target="_blank" rel="noopener noreferrer">'+escHtml(title)+'</a>')
+                                  : escHtml(title)) : '';
+
+  const bookAuthor = fieldClean(f.bookauthor);
+  const editor = fieldClean(f.editor);
+  const booktitle = fieldClean(f.booktitle);
+  const whereNames = bookAuthor ? bookAuthor : (editor ? (editor + (splitBibNames(f.editor).length>1?' (eds.)':' (ed.)')) : '');
+  const j = [whereNames, booktitle].filter(Boolean).join(', ');
+
+  const vol = fieldClean(f.volume);
+  const no = fieldClean(f.number);
+  const pages = fieldClean(f.pages);
+  const year = fieldClean(f.year);
+
+  let out = '';
+  if(authors) out += escHtml(authors)+' ';
+  if(titleHtml) out += titleHtml + '. ';
+  if(j) out += '<em>'+escHtml(j)+'</em>';
+  if(vol) out += ' '+escHtml(vol);
+  if(no) out += '('+escHtml(no)+')';
+  if(pages) out += ':'+escHtml(pages);
+  if(year) out += ' ('+escHtml(year)+')';
+  out += '.';
+  return out;
+}
+function renderItem(li, entry){
+  const type = (entry.type||'').toLowerCase();
+  const html = (type==='inbook' || type==='incollection') ? vancouverInBook(entry) : vancouverGeneric(entry);
+  li.innerHTML = html + ' <button class="bib-btn" type="button">[bib]</button>';
+  const btn = li.querySelector('.bib-btn');
+  btn.addEventListener('click', function(){
+    const open = li.querySelector('.bib-block');
+    if(open){ open.remove(); return; } // toggle
+    const pre = document.createElement('div');
+    pre.className = 'bib-block';
+    pre.textContent = filteredBibText(entry);
+    li.appendChild(pre);
+  });
+}
+function filteredBibText(e){
+  const omit = /^(date-added|date-modified|bdsk-url.*|file)$/i;
+  const lines = [];
+  lines.push('@'+(e.type||'')+'{'+(e.key||'')+',');
+  const f = e.fields||{};
+  const keys = Object.keys(f);
+  for(const k of keys){
+    if(omit.test(k)) continue;
+    lines.push('  '+k+' = {'+(f[k]||'')+'},');
+  }
+  if(lines[lines.length-1].endsWith(',')){
+    lines[lines.length-1] = lines[lines.length-1].slice(0,-1);
+  }
+  lines.push('}');
+  return lines.join('\n');
+}
+
+/* ================== Group & render ================== */
+function groupByYear(entries){
+  const map = new Map();
+  for(const e of entries){
+    const y = yearOf(e) || 0;
+    if(!map.has(y)) map.set(y, []);
+    map.get(y).push(e);
+  }
+  const years = Array.from(map.keys()).sort((a,b)=>{
+    if(a===0) return 1;
+    if(b===0) return -1;
+    return b - a;
+  });
+  return {map, years};
+}
+function renderList(entries){
+  const out = $('output');
+  out.innerHTML='';
+  const {map, years} = groupByYear(entries);
+  for(const y of years){
+    const groupLi = document.createElement('li');
+    groupLi.className = 'group';
+    groupLi.textContent = (y===0? 'No year' : String(y));
+    out.appendChild(groupLi);
+
+    const arr = map.get(y).slice().sort((a,b)=> descendingDateScore(b) - descendingDateScore(a));
+    for(const e of arr){
+      const li = document.createElement('li');
+      renderItem(li, e);
+      out.appendChild(li);
+    }
+  }
+}
+
+/* ================== Filter pipe ================== */
+function applyFilters(all){
+  const nameVal = $('f-name').value.trim();
+  const titleVal = $('f-title').value.trim().toLowerCase();
+
+  let entries = all.slice();
+  if(nameVal){ entries = entries.filter(e => peopleListMatchesEntry(e, nameVal)); }
+  if(titleVal){
+    entries = entries.filter(e => {
+      const t = (e.fields||{}).title || '';
+      return stripBraces(unlatex(t)).toLowerCase().includes(titleVal);
+    });
+  }
+  renderList(entries);
+
+  const total = all.length;
+  const shown = entries.length;
+  const filt = [];
+  if(nameVal)  filt.push('name="'+escHtml(nameVal)+'"');
+  if(titleVal) filt.push('title="'+escHtml(titleVal)+'"');
+  setStatus(`Loaded ${total} entries — showing ${shown}` + (filt.length? ` (filters: ${filt.join(', ')})` : ' (no filters)'));
+}
+
+/* ================== Main ================== */
+(async function(){
+  // Optional fragment injection
+  const navUrl  = getParam('nav');
+  const headUrl = getParam('head');
+  const footUrl = getParam('foot');
+  if(navUrl)  await injectHtmlFrom(navUrl,  'navslot');
+  if(headUrl) await injectHtmlFrom(headUrl, 'headslot');
+
+  setStatus('Loading .bib files …');
+  const texts = await fetchAllBibFiles(bibFiles);
+
+  const all = [];
+  for(const {file, text} of texts){
+    const parsed = parseBibtex(text).map(e => { e._src=file; return e; });
+    all.push(...parsed);
+  }
+  const dataset = dedupeByKey(all);
+
+  // Wire filters
+  const fName  = $('f-name');
+  const fTitle = $('f-title');
+  fName.addEventListener('input', ()=>applyFilters(dataset));
+  fTitle.addEventListener('input', ()=>applyFilters(dataset));
+  document.querySelectorAll('.clear-btn').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      const id = btn.getAttribute('data-target');
+      const el = $(id);
+      if(el){ el.value=''; el.dispatchEvent(new Event('input', {bubbles:true})); el.focus(); }
+    });
+  });
+  $('btn-reset').addEventListener('click', ()=>{
+    fName.value=''; fTitle.value=''; applyFilters(dataset);
+  });
+
+  // Start with URL params if provided, else empty
+  const initName  = getParam('name');
+  const initTitle = getParam('title');
+  if (initName)  fName.value  = initName;
+  if (initTitle) fTitle.value = initTitle;
+  applyFilters(dataset);
+
+  // Optional foot injection (after content)
+  if(footUrl) await injectHtmlFrom(footUrl, 'footslot');
+
+  // Footer "Updated:" date from latest Last-Modified among fetched bibs (fallback to today)
+  const updatedEl = $('updated');
+  try{
+    let latest = null;
+    if(lastModified.length){
+      latest = new Date(Math.max(...lastModified.map(d => d.getTime())));
+    }
+    if(!latest || isNaN(latest.getTime())) latest = new Date();
+    const yyyy = latest.getFullYear();
+    const mm = String(latest.getMonth()+1).padStart(2,'0');
+    const dd = String(latest.getDate()).padStart(2,'0');
+    if(updatedEl) updatedEl.textContent = `Updated: ${yyyy}-${mm}-${dd}`;
+  }catch(_){
+    if(updatedEl){ const d=new Date(); updatedEl.textContent = `Updated: ${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`; }
+  }
+})();
+</script>
 </body>
 </html>
