@@ -313,6 +313,78 @@ function normStr(s){
     .replace(/\s+/g,' ')
     .trim();
 }
+
+/* ---------- Vancouver author formatter (initials, no truncation) ---------- */
+/* Usage: formatAuthors(f.author || '', true) */
+
+function formatAuthors(nameField, useInitials = true){
+  const raw = String(nameField || '').trim();
+  if (!raw) return '';
+
+  // Local fallbacks in case these helpers aren't defined in this file
+  const _stripBraces = s => String(s||'').replace(/[{}]/g,'');
+  const _unlatex     = s => String(s||'').replace(/\\&/g,'&');
+  const _clean       = s => _unlatex(_stripBraces(s||'')).trim();
+
+  const splitBibNames = field =>
+    String(field||'')
+      .split(/\s+and\s+/i)
+      .map(s => s.trim())
+      .filter(Boolean);
+
+  // Parse BibTeX names:
+  //  - "Last, First Middle" (optionally with particles/jr)
+  //  - or "First Middle Last"
+  function normalizeBibName(name){
+    const n = _clean(name);
+    if (!n) return { last:'', given:'' };
+
+    if (n.includes(',')){
+      // "Last, First Middle [Jr]"  (collapse anything after the first comma into given)
+      const parts = n.split(',').map(s => s.trim());
+      const last  = parts[0] || '';
+      const given = parts.slice(1).join(' ').trim();
+      return { last, given };
+    } else {
+      // "First Middle Last"
+      const toks = n.split(/\s+/).filter(Boolean);
+      if (toks.length === 1) return { last: toks[0], given: '' };
+      const last  = toks.pop();
+      const given = toks.join(' ');
+      return { last, given };
+    }
+  }
+
+  function givenToInitials(given){
+    if (!given) return '';
+    return given
+      .split(/\s+/)
+      .filter(Boolean)
+      .map(w =>
+        w.split('-')
+         .map(p => p ? (p[0].toUpperCase() + '.') : '')
+         .join('-')
+      )
+      .join(' ');
+  }
+
+  const people = splitBibNames(raw).map(normalizeBibName);
+  const rendered = people.map(p => {
+    const last  = _clean(p.last);
+    const given = _clean(p.given);
+    if (!last && !given) return '';
+    if (useInitials) {
+      const init = givenToInitials(given);
+      return last ? (init ? `${last} ${init}` : last) : init; // Vancouver: Last F. M.
+    } else {
+      return last ? (given ? `${last}, ${given}` : last) : given; // not used for pubs, kept for completeness
+    }
+  }).filter(Boolean);
+
+  // Vancouver: authors separated by ", " (no ampersand)
+  return rendered.join(', ');
+}
+
 const tokens=s=>normStr(s).split(/\s+/).filter(Boolean);
 const normalizedPeople=field=>splitBibNames(field).map(p => normalizeBibName(p));
 function variantsForPerson(p){
@@ -457,7 +529,9 @@ function renderItem(li, entry){
 
 function renderTechReport(entry){
   const f = entry.fields || {};
-  const authors = formatAuthors(f.author || '', /*useInitials=*/true); // initials for non-theses
+  const authors = formatAuthors(f.author || '', /*useInitials=*/true);
+  // initials for non-theses
+  if (!authors && f.editor) authors = formatAuthors(f.editor, true) + ' (eds.)';)
   const title   = fieldClean(f.title);
   const link    = bestLink(f);
   const year    = fieldClean(f.year || '');
