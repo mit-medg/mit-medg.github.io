@@ -439,6 +439,9 @@ function vancouverInBook(entry){
 }
 function renderItem(li, entry){
   const type = (entry.type||'').toLowerCase();
+  if (entry.type === 'techreport') {
+    return renderTechReport(entry);
+  }
   const html = (type==='inbook' || type==='incollection') ? vancouverInBook(entry) : vancouverGeneric(entry);
   li.innerHTML = html + ' <button class="bib-btn" type="button">[bib]</button>';
   const btn = li.querySelector('.bib-btn');
@@ -451,6 +454,37 @@ function renderItem(li, entry){
     li.appendChild(pre);
   });
 }
+
+function renderTechReport(entry){
+  const f = entry.fields || {};
+  const authors = formatAuthors(f.author || '', /*useInitials=*/true); // initials for non-theses
+  const title   = fieldClean(f.title);
+  const link    = bestLink(f);
+  const year    = fieldClean(f.year || '');
+  const inst    = fieldClean(f.institution || f.organization || '');
+  const trType  = fieldClean(f.type || 'Technical Report'); // use BibTeX 'type' when present
+  const num     = fieldClean(f.number || '');
+
+  let s = '';
+  if (authors) s += escHtml(authors) + '. ';
+  if (title){
+    const t = escHtml(title);
+    s += link ? `<a href="${escAttr(link)}" target="_blank" rel="noopener noreferrer">${t}</a>. `
+              : `${t}. `;
+  }
+
+  // Build the "type, No. X, Institution" block
+  const parts = [];
+  if (trType) parts.push(escHtml(trType));
+  if (num)    parts.push('No. ' + escHtml(num));
+  if (inst)   parts.push(escHtml(inst));
+  if (parts.length) s += parts.join(', ') + '. ';
+
+  if (year) s += escHtml(year) + '.';
+
+  return s.trim();
+}
+
 function filteredBibText(e){
   const omit = /^(date-added|date-modified|bdsk-url.*|file)$/i;
   const lines = [];
