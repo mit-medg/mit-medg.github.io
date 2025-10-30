@@ -696,4 +696,549 @@ function applyFilters(all){
 })();
 </script>
 </body>
-</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>MEDG — Publications</title>
+<style>
+:root { --brand-color:#001f5b; }
+html, body { margin:0; padding:0; font-family:'Roboto','Helvetica Neue',Helvetica,Arial,sans-serif; color:#0f172a; background:#f8fafc; }
+
+/* Header / Nav (match site style you adopted) */
+#header { background:#fff; border-bottom:1px solid #e2e8f0; }
+#header .wrap {
+  max-width: 1100px; margin:0 auto; padding:14px 16px;
+  display:flex; align-items:center; justify-content:space-between; gap:16px;
+}
+#brand a, #brand {
+  font-weight:300; text-transform:uppercase; letter-spacing:.02em; font-size:1.1rem;
+  color:var(--brand-color); text-decoration:none;
+}
+#nav { display:flex; gap:18px; }
+#nav a { text-transform:uppercase; letter-spacing:.02em; font-size:.95rem; color:#0b62a6; text-decoration:none; }
+#nav a:hover { text-decoration:underline; }
+#nav a.active { color:#000; }
+
+/* Layout */
+main { max-width:1100px; margin:20px auto 48px; padding:0 16px; }
+h1 { font-weight:600; margin:18px 0 8px; }
+p.lead { margin:8px 0 16px; color:#334155; }
+
+/* Filters */
+.filters { display:flex; flex-wrap:wrap; gap:10px 12px; align-items:flex-end; margin: 10px 0 10px; }
+.field { position:relative; }
+label { display:block; font-size:.85rem; color:#475569; margin-bottom:2px; white-space:nowrap; }
+input[type="text"]{
+  border:1px solid #cbd5e1; border-radius:10px; padding:8px 28px 8px 10px; font-size:.95rem; background:#fff; width:220px;
+}
+.clear-btn { position:absolute; right:8px; top:50%; transform:translateY(-50%); cursor:pointer; font-weight:700; color:red; font-size:1rem; user-select:none; display:none; }
+.field input:not(:placeholder-shown)+.clear-btn,
+.field input:focus + .clear-btn { display:block; }
+
+#status { font-size:.9rem; color:#334155; margin-bottom:6px; }
+#error { display:none; background:#fef2f2; border:1px solid #fecaca; color:#991b1b; padding:6px 10px; border-radius:8px; margin-bottom:8px; }
+
+/* Year groups + items */
+ol#output { list-style:none; padding-left:0; counter-reset:item; }
+ol#output > li.group {
+  background:transparent; border:none; padding:0; margin:14px 0 4px;
+  font-weight:700; font-size:1.05rem;
+}
+ol#output > li.item {
+  counter-increment:item;
+  background:#fff; border:1px solid #e2e8f0; border-radius:10px; padding:6px 8px; margin:3px 0;
+}
+ol#output > li.item::before { content: counter(item) ". "; font-weight:400; margin-right:6px; }
+.bib-block { white-space:pre-wrap; background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:8px; margin-top:6px; font-size:.85rem; }
+.bib-btn { margin-left:6px; padding:0 6px; font:inherit; font-size:.85em; color:#444; background:transparent; border:1px solid #cbd5e1; border-radius:6px; cursor:pointer; }
+.bib-btn:hover { background:#f1f5f9; }
+
+/* Footer */
+footer { max-width:1100px; margin:0 auto 36px; padding:0 16px; color:#334155; }
+footer address { font-style:normal; }
+</style>
+</head>
+<body>
+
+<header id="header">
+  <div class="wrap">
+    <div id="brand"><a href="index.html">MIT CSAIL MEDG</a></div>
+    <nav id="nav" aria-label="Primary">
+      <a href="publications.html" class="active">Publications</a>
+      <a href="theses.html">Theses</a>
+      <a href="students.html">Students</a>
+      <a href="index.html">Home</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <h1>Publications</h1>
+  <p class="lead">Publications from MEDG’s BibTeX collections, grouped by year (newest first). Titles link to the work (URL or DOI) when available.</p>
+
+  <div id="error"></div>
+
+  <div class="filters">
+    <div class="field">
+      <label for="f-name">Name</label>
+      <input id="f-name" type="text" placeholder="e.g., Peter Szolovits" autocomplete="off" spellcheck="false"/>
+      <span class="clear-btn" data-target="f-name">☒</span>
+    </div>
+    <div class="field">
+      <label for="f-title">Title</label>
+      <input id="f-title" type="text" placeholder="e.g., clinical" autocomplete="off" spellcheck="false"/>
+      <span class="clear-btn" data-target="f-title">☒</span>
+    </div>
+  </div>
+
+  <div id="status"></div>
+  <ol id="output"></ol>
+</main>
+
+<footer>
+  <hr/>
+  <address id="updated">Updated: (loading…)</address>
+  <p><a href="http://web.mit.edu/accessibility"><i><b>Accessibility</b></i></a></p>
+</footer>
+
+<script>
+/* ===== Zotero shield (capture + classic onerror) ===== */
+(function zoteroShield(){
+  function isZoteroNoise(msg, src){
+    const blob = String(msg||'') + ' ' + String(src||'');
+    return /(Zotero\.Connector|reportActiveURL|inject_safari\.js|safari-extension)/i.test(blob);
+  }
+  window.addEventListener('error', function(ev){
+    if (isZoteroNoise(ev.message, ev.filename)) {
+      ev.preventDefault?.(); ev.stopImmediatePropagation?.();
+      console.warn('Ignored Zotero extension error (capture):', ev.message);
+      return false;
+    }
+  }, true);
+  window.addEventListener('unhandledrejection', function(ev){
+    const reason = ev?.reason && (ev.reason.message || String(ev.reason)) || '';
+    if (isZoteroNoise(reason, '')) { ev.preventDefault?.(); console.warn('Ignored Zotero extension rejection:', reason); }
+  }, true);
+  window.onerror = function(message, source){
+    if (isZoteroNoise(message, source)) { console.warn('Ignored Zotero extension error (onerror):', message); return true; }
+    return false;
+  };
+})();
+
+/* ===== Helpers ===== */
+const $=id=>document.getElementById(id);
+const setStatus=html=>{ const e=$('status'); if(e) e.innerHTML=html||''; };
+const showError=msg=>{ const e=$('error'); if(e){ e.style.display='block'; e.textContent='⚠️ '+msg; } };
+
+const stripBraces=s=>String(s||'').replace(/[{}]/g,'');
+const unlatex=s=>String(s||'').replace(/\\&/g,'&'); // render "\&" as "&"
+function escHtml(s){ return String(s).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;'); }
+function escAttr(s){ return String(s).replaceAll('"','&quot;'); }
+function fieldClean(s){ return unlatex(stripBraces(s||'')).trim(); }
+
+function normStr(s){ return String(s||'').toLowerCase().replace(/[{}]/g,'').replace(/[\.,;:()\[\]'"’“”\-]/g,' ').replace(/\s+/g,' ').trim(); }
+const tokens=s=>normStr(s).split(/\s+/).filter(Boolean);
+
+/* URL params (lenient) */
+function getSearchParams() {
+  const href = String(window.location.href);
+  const qIdx = href.indexOf('?');
+  const ampIdx = href.indexOf('&');
+  const start = (qIdx >= 0) ? qIdx : (ampIdx >= 0 ? ampIdx : -1);
+  if (start >= 0) return new URLSearchParams(href.slice(start + 1));
+  return new URLSearchParams('');
+}
+const getParam=k=>(getSearchParams().get(k)||'').trim();
+
+/* ===== Fetch/parse BibTeX ===== */
+const bibFiles = [
+  "bib/psz.bib","bib/medg.bib","bib/emily.bib","bib/jindi.bib",
+  "bib/mmd.bib","bib/ckbjimmy.bib","bib/stmharry.bib","bib/symin95.bib",
+  "bib/gupta.bib","bib/wjl.bib"
+];
+let latestModified = null;
+
+async function fetchOne(path){
+  const res = await fetch(path, {cache:'no-store'});
+  if(!res.ok) throw new Error(path + ' → HTTP ' + res.status);
+  const lm = res.headers.get('Last-Modified');
+  if(lm){
+    const d = new Date(lm);
+    if(!isNaN(d.getTime())){
+      if(!latestModified || d > latestModified) latestModified = d;
+    }
+  }
+  return await res.text();
+}
+
+async function fetchAll(paths){
+  const out = [];
+  for(const p of paths){
+    try{
+      const txt = await fetchOne(p);
+      out.push({file:p, text:txt});
+    }catch(e){
+      console.warn('Failed to load', p, e);
+    }
+  }
+  return out;
+}
+
+function parseBibtex(text){
+  text = text.replace(/^\s*%.*$/gm,''); // strip % comments
+  const out=[]; const rx=/@([a-zA-Z]+)\s*\{\s*([^,]+)\s*,([\s\S]*?)\}\s*(?=@|$)/g; let m;
+  while((m=rx.exec(text))){
+    const type=(m[1]||'').toLowerCase();
+    const key=(m[2]||'').trim();
+    const body=(m[3]||'');
+    out.push({type,key,fields:parseFields(body)});
+  }
+  return out;
+}
+
+function parseFields(body){
+  const out={}; let i=0, t='', depth=0, inQ=false; const parts=[];
+  while(i<body.length){
+    const c=body[i];
+    if(c=='"' && body[i-1] !== "\\"){ inQ=!inQ; t+=c; i++; continue; }
+    if(c=='{' && !inQ){ depth++; t+=c; i++; continue; }
+    if(c=='}' && !inQ && depth>0){ depth--; t+=c; i++; continue; }
+    if(c==',' && !inQ && depth===0){ parts.push(t); t=''; i++; continue; }
+    t+=c; i++;
+  }
+  if(t.trim()) parts.push(t);
+  for(const p of parts){
+    const kv=p.split(/\s*=\s*/);
+    if(kv.length<2) continue;
+    const k=kv.shift().trim().toLowerCase();
+    const v=kv.join('=').trim();
+    out[k]=unbrace(unquote(v)).replace(/\s+/g,' ').trim();
+  }
+  return out;
+}
+const unquote=s=>((s.startsWith('"')&&s.endsWith('"'))||(s.startsWith("'")&&s.endsWith("'")))? s.slice(1,-1):s;
+function unbrace(s){
+  let changed=true;
+  while(changed){
+    changed=false;
+    if(s.startsWith('{')&&s.endsWith('}')){
+      let d=0, ok=true;
+      for(let i=0;i<s.length;i++){
+        const c=s[i]; if(c=='{') d++; if(c=='}') d--;
+        if(d===0 && i<s.length-1){ ok=false; break; }
+      }
+      if(ok){ s=s.slice(1,-1); changed=true; }
+    }
+  }
+  return s;
+}
+
+/* ===== Names (Vancouver initials for non-theses) ===== */
+function splitBibNames(field){
+  return String(field||'')
+    .split(/\s+and\s+/i)
+    .map(s=>s.trim())
+    .filter(Boolean);
+}
+function normalizeBibName(name){
+  const clean = stripBraces(name).trim();
+  if (clean.includes(',')){
+    const parts = clean.split(',').map(s=>s.trim());
+    if (parts.length === 2) return { last: unlatex(parts[0]), given: unlatex(parts[1]) };
+    if (parts.length >= 3){
+      const last = (parts[0] + (parts[1] ? ' ' + parts[1] : '')).trim();
+      return { last: unlatex(last), given: unlatex(parts.slice(2).join(' ').trim()) };
+    }
+  }
+  const toks = clean.split(/\s+/).filter(Boolean);
+  if (toks.length === 1) return { last: unlatex(toks[0]), given: '' };
+  const last = toks.pop(), given = toks.join(' ');
+  return { last: unlatex(last), given: unlatex(given) };
+}
+function givenToInitials(given){
+  if(!given) return '';
+  return given.split(/\s+/).filter(Boolean).map(w=>{
+    return w.split('-').map(p=>p[0]? (p[0].toUpperCase()+'.') : '').join('-');
+  }).join(' ');
+}
+function formatAuthors(nameField, useInitials = true){
+  const raw = String(nameField || '').trim();
+  if (!raw) return '';
+  const people = splitBibNames(raw).map(normalizeBibName);
+  const rendered = people.map(p=>{
+    const last = fieldClean(p.last), given = fieldClean(p.given);
+    if (useInitials){
+      const init = givenToInitials(given);
+      return last ? (init ? `${last} ${init}` : last) : init;  // Vancouver: Last F. M.
+    } else {
+      return last ? (given ? `${last}, ${given}` : last) : given; // not used here, but retained
+    }
+  }).filter(Boolean);
+  return rendered.join(', ');
+}
+
+/* ===== Matching for filters ===== */
+function variantsForPerson(p){ const last=normStr(p.last||''), given=normStr(p.given||''); const v1=(given&&last)?(given+' '+last):(given||last); const v2=(last&&given)?(last+' '+given):(last||given); return [v1,v2]; }
+function personMatchesTokens(p, qToks){ const vars=variantsForPerson(p).map(normStr); return vars.some(v=>{ const vToks=tokens(v); return qToks.every(qt=>vToks.some(vt=>vt===qt||vt.startsWith(qt))); }); }
+function listContainsPerson(field, needle){
+  if(!needle) return false;
+  const qToks=tokens(needle); if(qToks.length===0) return false;
+  const people=splitBibNames(field).map(normalizeBibName);
+  return people.some(p=>personMatchesTokens(p, qToks));
+}
+function matchesName(entry, needle){
+  if(!needle) return true;
+  const f = entry.fields || {};
+  const src = (f.author && f.author.trim()) ? f.author : (f.editor || '');
+  return listContainsPerson(src, needle);
+}
+function matchesTitle(entry, needle){
+  if(!needle) return true;
+  const t = fieldClean((entry.fields||{}).title || '');
+  return t.toLowerCase().includes(needle.toLowerCase());
+}
+
+/* ===== Year / sort ===== */
+function yearOf(e){ return parseInt((e.fields||{}).year||'0',10)||0; }
+function descendingDateScore(e){
+  const f=e.fields||{};
+  const year=parseInt(f.year||'0',10)||0;
+  const mm={jan:1,feb:2,mar:3,apr:4,may:5,jun:6,jul:7,aug:8,sep:9,oct:10,nov:11,dec:12};
+  const m=(mm[String(f.month||'').slice(0,3).toLowerCase()] || parseInt(f.month||'0',10) || 0);
+  const d=parseInt(f.day||'0',10)||0;
+  return (year||0)*10000 + (m||0)*100 + (d||0);
+}
+
+/* ===== Links / DOI ===== */
+function cleanDoi(s){
+  if(!s) return '';
+  let x = String(s).trim();
+  x = x.replace(/^doi:\s*/i,'');
+  x = x.replace(/^https?:\/\/(dx\.)?doi\.org\//i,'');
+  x = x.replace(/\s+/g,'');
+  x = x.replace(/[<>]/g,'');
+  x = x.replace(/\.$/,'');
+  return x;
+}
+function bestLink(f){
+  const doi = cleanDoi(f.doi||'');
+  if (f.url && String(f.url).trim()) return String(f.url).trim();
+  if (doi) return 'https://doi.org/' + doi;
+  return '';
+}
+
+/* ===== Renderers (Vancouver-ish, initials, link on title) ===== */
+function renderGeneric(entry){
+  const f = entry.fields||{};
+  let authors = formatAuthors(f.author || '', true);
+  if(!authors && f.editor) authors = formatAuthors(f.editor, true) + ' (eds.)';
+
+  const title = fieldClean(f.title);
+  const link  = bestLink(f);
+  const year  = fieldClean(f.year || '');
+
+  // journal / booktitle / publisher pieces
+  const journal   = fieldClean(f.journal || '');
+  const booktitle = fieldClean(f.booktitle || '');
+  const publisher = fieldClean(f.publisher || '');
+  const volume    = fieldClean(f.volume || '');
+  const number    = fieldClean(f.number || '');
+  const pages     = fieldClean(f.pages || '');
+
+  let s = '';
+  if(authors) s += escHtml(authors) + '. ';
+  if(title){
+    const t = escHtml(title);
+    s += link ? `<a href="${escAttr(link)}" target="_blank" rel="noopener noreferrer">${t}</a>. `
+              : `${t}. `;
+  }
+
+  const parts=[];
+  if(journal)   parts.push(`<em>${escHtml(journal)}</em>`);
+  if(booktitle) parts.push(`<em>${escHtml(booktitle)}</em>`);
+  if(publisher) parts.push(escHtml(publisher));
+  if(volume || number){
+    const volIssue = volume ? (number ? `${escHtml(volume)}(${escHtml(number)})` : escHtml(volume))
+                            : `(${escHtml(number)})`;
+    parts.push(volIssue);
+  }
+  if(pages) parts.push(escHtml(pages));
+  if(parts.length) s += parts.join(', ') + '. ';
+  if(year) s += escHtml(year) + '.';
+
+  return s.trim();
+}
+
+function renderTechReport(entry){
+  const f = entry.fields||{};
+  let authors = formatAuthors(f.author || '', true);
+  if(!authors && f.editor) authors = formatAuthors(f.editor, true) + ' (eds.)';
+
+  const title   = fieldClean(f.title);
+  const link    = bestLink(f);
+  const year    = fieldClean(f.year || '');
+  const inst    = fieldClean(f.institution || f.organization || '');
+  const trType  = fieldClean(f.type || 'Technical Report');
+  const num     = fieldClean(f.number || '');
+
+  let s = '';
+  if(authors) s += escHtml(authors) + '. ';
+  if(title){
+    const t = escHtml(title);
+    s += link ? `<a href="${escAttr(link)}" target="_blank" rel="noopener noreferrer">${t}</a>. `
+              : `${t}. `;
+  }
+
+  const parts=[];
+  if(trType) parts.push(escHtml(trType));
+  if(num)    parts.push('No. ' + escHtml(num));
+  if(inst)   parts.push(escHtml(inst));
+  if(parts.length) s += parts.join(', ') + '. ';
+  if(year) s += escHtml(year) + '.';
+  return s.trim();
+}
+
+function renderEntry(entry){
+  switch(entry.type){
+    case 'techreport':     return renderTechReport(entry);
+    default:               return renderGeneric(entry);
+  }
+}
+
+/* Build BibTeX for [bib] toggle (omit noisy fields) */
+function buildBibtex(e){
+  const omit=/^(date-added|date-modified|bdsk-url.*|file)$/i;
+  const lines=['@'+(e.type||'')+'{'+(e.key||'')+','];
+  const f=e.fields||{};
+  for(const k of Object.keys(f)){
+    if(omit.test(k)) continue;
+    lines.push('  '+k+' = {'+(f[k]||'')+'},');
+  }
+  if(lines[lines.length-1].endsWith(',')) lines[lines.length-1]=lines[lines.length-1].slice(0,-1);
+  lines.push('}');
+  return lines.join('\n');
+}
+
+/* ===== Rendering list (group by year, newest first) ===== */
+function renderList(entries){
+  const out = $('output');
+  out.innerHTML = '';
+  const map = new Map();
+  for(const e of entries){
+    const y = yearOf(e) || 0;
+    if(!map.has(y)) map.set(y, []);
+    map.get(y).push(e);
+  }
+  const years = Array.from(map.keys()).sort((a,b)=>{
+    if(a===0) return 1; if(b===0) return -1; return b - a; // newest first, undated last
+  });
+  for(const y of years){
+    const liG = document.createElement('li');
+    liG.className = 'group';
+    liG.textContent = (y===0 ? 'No year' : String(y));
+    out.appendChild(liG);
+
+    const arr = map.get(y).slice().sort((a,b)=> descendingDateScore(b) - descendingDateScore(a));
+    for(const e of arr){
+      const li = document.createElement('li');
+      li.className = 'item';
+      li.innerHTML = renderEntry(e) + ' <button class="bib-btn" type="button">[bib]</button>';
+      const btn = li.querySelector('.bib-btn');
+      btn.addEventListener('click', ()=>{
+        const open = li.querySelector('.bib-block');
+        if(open){ open.remove(); return; }
+        const pre = document.createElement('div');
+        pre.className = 'bib-block';
+        pre.textContent = buildBibtex(e);
+        li.appendChild(pre);
+      });
+      out.appendChild(li);
+    }
+  }
+}
+
+/* ===== Main ===== */
+(async function(){
+  // Prefill filters from URL (optional)
+  const pname  = getParam('name');
+  const ptitle = getParam('title');
+  if(pname)  $('f-name').value = pname;
+  if(ptitle) $('f-title').value = ptitle;
+
+  try{
+    setStatus('Loading BibTeX files …');
+    const batches = await fetchAll(bibFiles);
+
+    // Parse and tag with source file
+    const parsed = [];
+    for(const b of batches){
+      const arr = parseBibtex(b.text);
+      for(const e of arr){ e.srcFile = b.file; parsed.push(e); }
+    }
+
+    // Keep non-thesis only (exclude theses page content)
+    let entries = parsed.filter(e => e.type !== 'phdthesis' && e.type !== 'mastersthesis');
+
+    // Deduplicate by BibTeX key (keep first occurrence)
+    const seen = new Set();
+    entries = entries.filter(e=>{
+      const k = (e.key||'').toLowerCase();
+      if(!k) return true;
+      if(seen.has(k)) return false;
+      seen.add(k);
+      return true;
+    });
+
+    function apply(){
+      const nameV  = $('f-name').value.trim();
+      const titleV = $('f-title').value.trim();
+
+      let rows = entries.slice();
+      if(nameV)  rows = rows.filter(e => matchesName(e, nameV));
+      if(titleV) rows = rows.filter(e => matchesTitle(e, titleV));
+
+      renderList(rows);
+      setStatus(`Loaded ${entries.length} publications — showing ${rows.length}` + ((nameV||titleV)? ' (filters active)' : ''));
+    }
+
+    // Wire filters + clear buttons
+    ['f-name','f-title'].forEach(id=>{
+      const el = $(id);
+      if(!el) return;
+      el.addEventListener('input', apply);
+    });
+    document.querySelectorAll('.clear-btn').forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        const id = btn.getAttribute('data-target');
+        const el = $(id);
+        if(el){ el.value=''; el.dispatchEvent(new Event('input', {bubbles:true})); el.focus(); }
+      });
+    });
+
+    apply();
+
+    // Footer "Updated:" from the newest Last-Modified among files (fallback = today)
+    const updatedEl = $('updated');
+    try{
+      let d = latestModified;
+      if(!d || isNaN(d.getTime())) d = new Date();
+      const yyyy = d.getFullYear();
+      const mm = String(d.getMonth()+1).padStart(2,'0');
+      const dd = String(d.getDate()).padStart(2,'0');
+      if(updatedEl) updatedEl.textContent = `Updated: ${yyyy}-${mm}-${dd}`;
+    }catch(_){}
+  }catch(e){
+    showError(e.message||String(e));
+    setStatus('');
+    const updatedEl = $('updated');
+    if(updatedEl){
+      const d=new Date();
+      updatedEl.textContent = `Updated: ${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+    }
+  }
+})();
+</script>
+</body>
+</html></html>
