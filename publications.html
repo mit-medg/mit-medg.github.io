@@ -560,7 +560,7 @@ function renderTechReport(entry){
 }
 
 function filteredBibText(e){
-  const omit = /^(date-added|date-modified|bdsk-url.*|file)$/i;
+  const omit = /^(date-added|date-modified|bdsk[-_].*|file(s)?)$/i;
   const lines = [];
   lines.push('@'+(e.type||'')+'{'+(e.key||'')+',');
   const f = e.fields||{};
