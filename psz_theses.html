@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Students of Peter Szolovits — Theses</title>
+<style>
+:root{--brand-color:#001f5b}
+html,body{margin:0;padding:0;font-family:'Roboto','Helvetica Neue',Helvetica,Arial,sans-serif;background:#f8fafc;color:#0f172a}
+#header{background:#fff;border-bottom:1px solid #e2e8f0}
+#header .wrap{max-width:1100px;margin:0 auto;padding:14px 16px;display:flex;align-items:center;justify-content:space-between}
+#brand a{font-weight:300;text-transform:uppercase;letter-spacing:.02em;font-size:1.1rem;color:var(--brand-color);text-decoration:none}
+#nav{display:flex;gap:18px}
+#nav a{text-transform:uppercase;letter-spacing:.02em;font-size:.95rem;color:#0b62a6;text-decoration:none}
+#nav a.active{color:#000}
+main{max-width:1100px;margin:20px auto;padding:0 16px}
+h1{margin:18px 0 8px;font-weight:600}
+p.lead{margin:8px 0 16px;color:#334155}
+.filters{display:flex;flex-wrap:wrap;gap:10px 12px;align-items:flex-end;margin:10px 0}
+.field{position:relative}
+label{display:block;font-size:.85rem;color:#475569;margin-bottom:2px}
+input[type="text"]{border:1px solid #cbd5e1;border-radius:10px;padding:8px 28px 8px 10px;font-size:.95rem;background:#fff;width:260px}
+.clear-btn{position:absolute;right:8px;top:50%;transform:translateY(-50%);cursor:pointer;font-weight:700;color:red;display:none}
+.field input:not(:placeholder-shown)+.clear-btn,.field input:focus + .clear-btn{display:block}
+.section-nav{margin:8px 0 14px}
+/* Each theses list is numbered starting from 1 */
+ol.theses {
+  list-style: none;
+  padding: 0;
+  counter-reset: item;   /* ← resets numbering for each category */
+}
+
+ol.theses > li.item {
+  counter-increment: item;
+  position: relative;
+}
+
+ol.theses > li.item::before {
+  content: counter(item) ". ";
+  font-weight: 400;
+  margin-right: 6px;
+}
+li.item{background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:6px 8px;margin:3px 0}
+.bib-block{white-space:pre-wrap;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:8px;margin-top:6px;font-size:.85rem}
+.bib-btn{margin-left:6px;padding:0 6px;font:inherit;font-size:.85em;color:#444;background:transparent;border:1px solid #cbd5e1;border-radius:6px;cursor:pointer}
+footer{max-width:1100px;margin:0 auto 36px;padding:0 16px;color:#334155}
+</style>
+</head>
+<body>
+<header id="header">
+  <div class="wrap">
+    <div id="brand"><a href="index.html">MIT CSAIL MEDG</a></div>
+    <nav id="nav" aria-label="Primary">
+      <a href="publications.html">Publications</a>
+      <a href="theses.html">Theses</a>
+      <a href="students.html">Students</a>
+      <a href="index.html">Home</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <h1>Students of Peter Szolovits — Theses Supervised or Read</h1>
+  <p class="lead">I have had the privilege since 1974 of working with some of the world’s best students at MIT and elsewhere in computer science and biomedical informatics. Below, in chronological order and categorized by thesis level and my role, are those students. Titles link to their theses if they are available on-line.</p>
+
+  <div id="error"></div>
+
+  <div class="filters">
+    <div class="field">
+      <label for="f-supervisor">(Co-)Supervisor</label>
+      <input id="f-supervisor" type="text" placeholder="e.g., Kohane" autocomplete="off" spellcheck="false"/>
+      <span class="clear-btn" data-target="f-supervisor">☒</span>
+    </div>
+    <div class="field">
+      <label for="f-reader">Reader</label>
+      <input id="f-reader" type="text" placeholder="e.g., Winston" autocomplete="off" spellcheck="false"/>
+      <span class="clear-btn" data-target="f-reader">☒</span>
+    </div>
+  </div>
+
+  <div class="section-nav">
+    <a href="#doc-sup">Doctoral — Supervisor</a>
+    <a href="#doc-read">Doctoral — Reader</a>
+    <a href="#masters">Master’s</a>
+    <a href="#bachelors">Bachelor’s & UAP</a>
+  </div>
+
+  <div id="status"></div>
+
+  <section id="doc-sup">
+    <h2>Doctoral Theses — Supervisor</h2>
+    <ol class="theses" id="list-doc-sup"></ol>
+  </section>
+
+  <section id="doc-read">
+    <h2>Doctoral Theses — Reader</h2>
+    <ol class="theses" id="list-doc-read"></ol>
+  </section>
+
+  <section id="masters">
+    <h2>Master’s Theses</h2>
+    <ol class="theses" id="list-masters"></ol>
+  </section>
+
+  <section id="bachelors">
+    <h2>Bachelor’s Theses & Undergraduate Advanced Projects (UAP)</h2>
+    <p><em>MIT ended Bachelor's Theses around 2005, but continued to ask students to do (smaller) Undergraduate Advanced Projects. Although many students still write substantial project reports, since about 2015, these are not considered theses.</em></p>
+    <ol class="theses" id="list-bachelors"></ol>
+  </section>
+</main>
+
+<footer>
+  <hr/>
+  <address id="updated">Updated: (loading...)</address>
+  <p><a href="http://web.mit.edu/accessibility"><i><b>Accessibility</b></i></a></p>
+</footer>
+
+<script>
+/* Zotero shield */
+(function(){ function isZ(a,b){ return /(Zotero\.Connector|reportActiveURL|inject_safari\.js|safari-extension)/i.test(String(a||'')+' '+String(b||'')); } window.addEventListener('error',e=>{ if(isZ(e.message,e.filename)){ e.preventDefault?.(); e.stopImmediatePropagation?.(); console.warn('Ignored Zotero',e.message); return false;} }, true); window.addEventListener('unhandledrejection',e=>{ const r=e?.reason?.message||String(e?.reason||''); if(isZ(r,'')){ e.preventDefault?.(); console.warn('Ignored Zotero rejection',r);} }, true); window.onerror=(m,s)=>{ if(isZ(m,s)){ console.warn('Ignored Zotero',m); return true;} return false; }; })();
+
+/* helpers (reuse from psz full file earlier) */
+const $=id=>document.getElementById(id);
+const setStatus=s=>{ const e=$('status'); if(e) e.textContent=s||''; };
+const showError=m=>{ const e=$('error'); if(e){ e.style.display='block'; e.textContent='⚠️ '+m; } };
+const stripBraces=s=>String(s||'').replace(/[{}]/g,'');
+const unlatex=s=>String(s||'').replace(/\\&/g,'&');
+function escHtml(s){ return String(s||'').replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;'); }
+function escAttr(s){ return String(s||'').replaceAll('"','&quot;'); }
+function fieldClean(s){ return unlatex(stripBraces(s||'')).trim(); }
+function normStr(s){ return String(s||'').toLowerCase().replace(/[{}]/g,'').replace(/[\.,;:()\[\]'"’“”\-]/g,' ').replace(/\s+/g,' ').trim(); }
+const tokens = s => normStr(s).split(/\s+/).filter(Boolean); 
+function pluralize(base, n) {
+  return n === 1 ? base : base + 's';
+}
+
+/* fetch and parse from github (MEDG_theses.bib) */
+const BIB_URL = 'https://mit-medg.github.io/bib/MEDG_theses.bib';
+let lastModifiedDate = null;
+async function fetchBib(url){ const res = await fetch(url, {cache:'no-store'}); if(!res.ok) throw new Error('HTTP '+res.status); const lm = res.headers.get('Last-Modified'); if(lm){ const d=new Date(lm); if(!isNaN(d)) lastModifiedDate=d; } return await res.text(); }
+function parseBibtex(text){ text = text.replace(/^\s*%.*$/gm,''); const out=[]; const rx=/@([a-zA-Z]+)\s*\{\s*([^,]+)\s*,([\s\S]*?)\}\s*(?=@|$)/g; let m; while((m=rx.exec(text))){ const type=(m[1]||'').toLowerCase(); const key=(m[2]||'').trim(); const body=(m[3]||''); out.push({type,key,fields:parseFields(body)}); } return out; }
+function parseFields(body){ const out={}; let i=0,t='',depth=0,inQ=false; const parts=[]; while(i<body.length){ const c=body[i]; if(c=='"' && body[i-1] !== "\\"){ inQ=!inQ; t+=c; i++; continue; } if(c=='{' && !inQ){ depth++; t+=c; i++; continue; } if(c=='}' && !inQ && depth>0){ depth--; t+=c; i++; continue; } if(c==',' && !inQ && depth===0){ parts.push(t); t=''; i++; continue; } t+=c; i++; } if(t.trim()) parts.push(t); for(const p of parts){ const kv=p.split(/\s*=\s*/); if(kv.length<2) continue; const k=kv.shift().trim().toLowerCase(); const v=kv.join('=').trim(); out[k]=unbrace(unquote(v)).replace(/\s+/g,' ').trim(); } return out; }
+const unquote = s => ((s.startsWith('"')&&s.endsWith('"'))||(s.startsWith("'")&&s.endsWith("'"))) ? s.slice(1,-1) : s;
+function unbrace(s){ let changed=true; while(changed){ changed=false; if(s.startsWith('{')&&s.endsWith('}')){ let d=0,ok=true; for(let i=0;i<s.length;i++){ const c=s[i]; if(c=='{') d++; if(c=='}') d--; if(d===0 && i<s.length-1){ ok=false; break; } } if(ok){ s=s.slice(1,-1); changed=true; } } } return s; }
+
+/* name utilities */
+function splitBibNames(field){ return String(field||'').split(/\s+and\s+/i).map(s=>s.trim()).filter(Boolean); }
+function normalizeBibName(name){ const clean = stripBraces(name||'').trim(); if(!clean) return {last:'',given:''}; if(clean.includes(',')){ const parts=clean.split(',').map(s=>s.trim()); if(parts.length===2) return {last:parts[0],given:parts[1]}; if(parts.length>2){ const last=(parts[0]+' '+parts[1]).trim(); return {last:last,given:parts.slice(2).join(' ').trim()}; } } const toks=clean.split(/\s+/).filter(Boolean); if(toks.length===1) return {last:toks[0],given:''}; const last=toks.pop(); return {last:last,given:toks.join(' ')} }
+function formatFullName(p){ const last=(p.last||'').trim(), given=(p.given||'').trim(); if(!last) return given; if(!given) return last; return last+', '+given; }
+function personMatchesTokens(p,qToks){ const last=normStr(p.last||''), given=normStr(p.given||''); const v1=(given&&last)?(given+' '+last):(given||last); const v2=(last&&given)?(last+' '+given):(last||given); const variants=[v1,v2]; return variants.some(v=>{ const vt=tokens(v); return qToks.every(qt=>vt.some(x=>x===qt||x.startsWith(qt))); }); }
+function listContainsPerson(field,needle){ if(!needle) return false; const qToks=tokens(needle); if(qToks.length===0) return false; const people=splitBibNames(field).map(normalizeBibName); return people.some(p=>personMatchesTokens(p,qToks)); }
+
+/* Peter-specific tokens for filtering */
+const PETER_TOKS = tokens('Szolovits Peter');
+
+function hasPeterSupervisor(f){ return splitBibNames(f.supervisor||f.supervisors||'').map(normalizeBibName).some(p=>personMatchesTokens(p,PETER_TOKS)); }
+function hasPeterReader(f){ return splitBibNames(f.reader||f.readers||'').map(normalizeBibName).some(p=>personMatchesTokens(p,PETER_TOKS)); }
+
+/* date helpers */
+function yearOf(e){ return parseInt((e.fields||{}).year||'0',10)||0; }
+function ascendingDateScore(e){ const f=e.fields||{}; const year=parseInt(f.year||'0',10)||0; const mmMap={jan:1,feb:2,mar:3,apr:4,may:5,jun:6,jul:7,aug:8,sep:9,oct:10,nov:11,dec:12}; const mKey=String(f.month||'').slice(0,3).toLowerCase(); const m=(mmMap[mKey]||parseInt(f.month||'0',10)||0); const d=parseInt(f.day||'0',10)||0; const score = (year? year: 9999)*10000 + (m? m: 12)*100 + (d? d: 31); return score; }
+function descendingDateScore(e){ const f=e.fields||{}; const y=parseInt(f.year||'0',10)||0; const mm={jan:1,feb:2,mar:3,apr:4,may:5,jun:6,jul:7,aug:8,sep:9,oct:10,nov:11,dec:12}; const m=(mm[String(f.month||'').slice(0,3).toLowerCase()]||parseInt(f.month||'0',10)||0); const d=parseInt(f.day||'0',10)||0; return (y||0)*10000 + (m||0)*100 + (d||0); }
+function capMonth(m){ const s=fieldClean(m); if(!s) return ''; return s.charAt(0).toUpperCase()+s.slice(1).toLowerCase(); }
+
+/* classification & labels (use type field; UAP => bachelors; BS+MEng => masters) */
+function thesisKind(fields,btxType){
+  const T = String(fields.type||'').toLowerCase();
+  if(/\b(bachelor of science\s*(and|&)\s*master of engineering|b\.?s\.?\s*(and|&)\s*m\.?eng\.?)\b/i.test(T)) return 'masters';
+  const isDoctoralLike = /\b(phd|scd|sc\.?d|m\.?d)\b/i.test(T);
+  const isMastersLike = /\b(sm|ms|meng|m\.?eng|master|m s\b|s m\b)/i.test(T);
+  const isBachelorsLike = /\b(bachelor|sb|s\.?b\.?|ba|b\.?a\.?|bsc|b\.?sc\.?|uap|undergraduate advanced project|advanced undergraduate project)\b/i.test(T);
+  if(isDoctoralLike) return 'doctoral';
+  if(isBachelorsLike) return 'bachelors';
+  if(isMastersLike) return 'masters';
+  const bt = String(btxType||'').toLowerCase();
+  if(bt==='phdthesis') return 'doctoral';
+  if(bt==='mastersthesis') return 'masters';
+  return 'other';
+}
+function thesisTypeLabel(fields){
+  const raw=(fields.type||'').trim(); if(!raw) return 'Thesis'; const t=unlatex(stripBraces(raw)); if(/\b(undergraduate advanced project|uap)\b/i.test(t)) return t; if(/\bthesis\b/i.test(t)) return t; return t+' Thesis';
+}
+
+/* link helpers */
+function cleanDoi(s){ if(!s) return ''; let x=String(s||'').trim(); x=x.replace(/^doi:\s*/i,''); x=x.replace(/^https?:\/\/(dx\.)?doi\.org\//i,''); x=x.replace(/\s+/g,''); x=x.replace(/[<>]/g,''); x=x.replace(/\.$/,''); return x; }
+function bestLink(fields){ const doi=cleanDoi(fields.doi||''); if(fields.url && fields.url.trim()) return fields.url.trim(); if(doi) return 'https://doi.org/'+doi; return ''; }
+
+/* render single thesis: respects omission of the queried person from supervisor/reader lists (and labels co-supervisor / other reader) */
+function renderThesisEntry(e, omitPersonToks){
+  const f=e.fields||{};
+  const student = splitBibNames(f.author||'').map(normalizeBibName).map(formatFullName).join('; ');
+  const title = fieldClean(f.title);
+  const link = bestLink(f);
+  const school = fieldClean(f.school||''); const dept = fieldClean(f.department||f.dept||''); const city = fieldClean(f.address||'');
+  const month = capMonth(f.month||''); const year = fieldClean(f.year||''); const ttype = thesisTypeLabel(f);
+  const supList = splitBibNames(f.supervisor||f.supervisors||'').map(normalizeBibName);
+  const rdrList = splitBibNames(f.reader||f.readers||'').map(normalizeBibName);
+
+  const omitIsSup = omitPersonToks ? supList.some(p=>personMatchesTokens(p,omitPersonToks)) : false;
+  const omitIsRdr = omitPersonToks ? rdrList.some(p=>personMatchesTokens(p,omitPersonToks)) : false;
+
+  const supOthers = supList.filter(p=>!(omitPersonToks && personMatchesTokens(p,omitPersonToks)));
+  const rdrOthers = rdrList.filter(p=>!(omitPersonToks && personMatchesTokens(p,omitPersonToks)));
+
+  let s='';
+  if(student) s += escHtml(student) + '. ';
+  if(title){ const t = escHtml(title); s += link? `<a href="${escAttr(link)}" target="_blank" rel="noopener noreferrer">${t}</a>. ` : `${t}. `; }
+  if(ttype) s += escHtml(ttype) + ', ';
+  if(school) s += escHtml(school);
+  if(dept) s += (school? ', ': '') + escHtml(dept);
+  if(city) s += (school||dept? ', ' : '') + escHtml(city);
+  if(month || year){ const when = [month, year].filter(Boolean).join(' '); s += (when? '. '+escHtml(when):''); }
+  s += '.';
+
+  const parts = [];
+  if(omitIsSup){
+    if(supOthers.length) parts.push(pluralize('Co-supervisor', supOthers.length)+': '+escHtml(supOthers.map(formatFullName).join('; ')));
+  } else {
+    if(supList.length) parts.push(pluralize('Supervisor', supList.length)+': '+escHtml(supList.map(formatFullName).join('; ')));
+  }
+  if(omitIsRdr){
+    if(rdrOthers.length) parts.push(pluralize('Other reader', rdrOthers.length)+': '+escHtml(rdrOthers.map(formatFullName).join('; ')));
+  } else {
+    if(rdrList.length) parts.push(pluralize('Reader', rdrList.length)+': '+escHtml(rdrList.map(formatFullName).join('; ')));
+  }
+  if(parts.length) s += ' ' + parts.join('. ') + '.';
+
+  if(f.note && String(f.note).trim()) s += '<br/>' + escHtml(fieldClean(f.note));
+  return s;
+}
+
+function buildBibtex(e){
+  const omit = /^(date-added|date-modified|bdsk[-_].*|file(s)?)$/i;
+  const lines=['@'+(e.type||'')+'{'+(e.key||'')+','];
+  const f=e.fields||{};
+  for(const k of Object.keys(f)){ if(omit.test(k)) continue; lines.push('  '+k+' = {'+(f[k]||'')+'},'); }
+  if(lines[lines.length-1].endsWith(',')) lines[lines.length-1]=lines[lines.length-1].slice(0,-1);
+  lines.push('}');
+  return lines.join('\n');
+}
+
+/* Render sections: Doctoral supervised, Doctoral reader, Masters, Bachelors.
+   Within each section: ASCENDING order by date (oldest first). Undated last for psz_theses per your earlier request.
+*/
+function renderSections(rows, omitPersonToks){
+  const docSup = [], docRead = [], masters = [], bachelors = [];
+  for(const e of rows){
+    const kind = thesisKind(e.fields||{}, e.type);
+    const sup = hasPeterSupervisor(e.fields||{});
+    const rdr = hasPeterReader(e.fields||{});
+    if(kind==='doctoral'){ if(sup) docSup.push(e); else if(rdr) docRead.push(e); }
+    else if(kind==='masters') masters.push(e);
+    else if(kind==='bachelors') bachelors.push(e);
+  }
+  // sort ascending date; undated last
+  function sortAsc(arr){ arr.sort((a,b)=> ascendingDateScore(a) - ascendingDateScore(b)); }
+  sortAsc(docSup); sortAsc(docRead); sortAsc(masters); sortAsc(bachelors);
+
+  function renderListInto(id, arr){
+    const ol = $(id); ol.innerHTML = '';
+    for(const e of arr){
+      const li = document.createElement('li'); li.className='item';
+      li.innerHTML = renderThesisEntry(e, omitPersonToks) + ' <button class="bib-btn" type="button">[bib]</button>';
+      li.querySelector('.bib-btn').addEventListener('click', ()=>{ const open = li.querySelector('.bib-block'); if(open){ open.remove(); return; } const pre=document.createElement('div'); pre.className='bib-block'; pre.textContent = buildBibtex(e); li.appendChild(pre); });
+      ol.appendChild(li);
+    }
+  }
+  renderListInto('list-doc-sup', docSup);
+  renderListInto('list-doc-read', docRead);
+  renderListInto('list-masters', masters);
+  renderListInto('list-bachelors', bachelors);
+  setStatus(`Loaded ${rows.length} theses involving Peter Szolovits — showing ${docSup.length+docRead.length+masters.length+bachelors.length}`);
+}
+
+/* Main loading and filter wiring */
+(async function(){
+  // Prefill supervisor/reader filters from URL if given
+  const initSup = (new URLSearchParams(window.location.search)).get('supervisor') || '';
+  const initRdr = (new URLSearchParams(window.location.search)).get('reader') || '';
+  if(initSup) $('f-supervisor').value = initSup;
+  if(initRdr) $('f-reader').value = initRdr;
+
+  try{
+    setStatus('Loading theses …');
+    const txt = await fetchBib(BIB_URL);
+    const all = parseBibtex(txt).map(e => { e.fields = e.fields||{}; return e; });
+    // Keep only theses (phdthesis or mastersthesis) where Peter is supervisor or reader
+    let rows = all.filter(e => (e.type==='phdthesis' || e.type==='mastersthesis') && (hasPeterSupervisor(e.fields||{}) || hasPeterReader(e.fields||{})));
+    function apply(){
+      const supV = $('f-supervisor').value.trim(), rdrV = $('f-reader').value.trim();
+      let r = rows.slice();
+      if(supV) r = r.filter(e => listContainsPerson(e.fields.supervisor||e.fields.supervisors||'', supV));
+      if(rdrV) r = r.filter(e => listContainsPerson(e.fields.reader||e.fields.readers||'', rdrV));
+      // omitPersonToks: if the user provided a name query (via name= or headless), we may want to omit that person from listing of supervisors/readers — here not used, just use PETER_TOKS for Peter-specific omission behavior
+      const omitToks = PETER_TOKS;
+      renderSections(r, omitToks);
+    }
+    $('f-supervisor').addEventListener('input', apply);
+    $('f-reader').addEventListener('input', apply);
+    document.querySelectorAll('.clear-btn').forEach(btn=>{ btn.addEventListener('click', ()=>{ const id=btn.getAttribute('data-target'); const el=$(id); if(el){ el.value=''; el.dispatchEvent(new Event('input',{bubbles:true})); el.focus(); } }); });
+    apply();
+    // footer Updated
+    const updatedEl = $('updated'); try{ let d=lastModifiedDate; if(!d || isNaN(d.getTime())) d=new Date(); const yyyy=d.getFullYear(); const mm=String(d.getMonth()+1).padStart(2,'0'); const dd=String(d.getDate()).padStart(2,'0'); if(updatedEl) updatedEl.textContent = `Updated: ${yyyy}-${mm}-${dd}`; }catch(_){}
+  }catch(e){ showError(e.message||String(e)); setStatus(''); const updatedEl=$('updated'); if(updatedEl){ const d=new Date(); updatedEl.textContent = `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`; } }
+})();
+</script>
+</body>
+</html>
