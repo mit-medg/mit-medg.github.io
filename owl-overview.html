@@ -1,0 +1,448 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <meta http-equiv="Content-Language" content="en-us">
+    <meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+    <meta name="ProgId" content="FrontPage.Editor.Document">
+    <meta http-equiv="Content-Type" content="text/html;
+      charset=windows-1252">
+    <title>William A. Martin's OWL System</title>
+  </head>
+  <body>
+    <h1>OWL: the original</h1>
+    <p>In the early 1970's, Prof. <b>William A. (Bill) Martin</b> of
+      MIT's Project MAC (later the Lab for Computer Science) began
+      development of a powerful knowledge representation language called
+      OWL.&nbsp; Although the acronym was never officially defined, many
+      of us who participated in the project believed it to stand for "<b>O</b>ne
+      <b>W</b>orld <b>
+        L</b>anguage." Throughout several incarnations, OWL was used to
+      support research on</p>
+    <ul>
+      <li>automatic programming (including declarative specification of
+        computational procedures)</li>
+      <li>natural language understanding</li>
+      <li>business modeling and problem solving</li>
+      <li>medical diagnosis and therapy management</li>
+      <li>generation of natural language explanations from knowledge and
+        program behavior</li>
+    </ul>
+    <p>The heart of the system is a formal language for knowledge
+      representation that took a Wittgenstein-like approach to
+      knowledge.&nbsp; Approximately, this says that the meaning of any
+      <i>concept</i> in the language is the totality of all the other
+      concepts linked to it. Concepts were formed by <i>specialization</i>,
+      OWL included a <i>derivative subclassifier</i> that made certain
+      taxonomic inferences, and a very general notion of <i>characterization</i>
+      allowed great flexibility in expressing assertional
+      knowledge.&nbsp; Critically, all characterizations could be <i>reified</i>
+      as concepts, allowing the system to use meta-level descriptions of
+      its own features.&nbsp; Inference methods could be specified
+      within the language itself, or could be implemented as Lisp
+      procedures for efficiency.</p>
+    <p>Bill unfortunately became gravely ill in 1980, and died in
+      1981.&nbsp; As a result, the OWL group dispersed to other
+      institutions and research efforts, and development on OWL itself
+      ceased.&nbsp; Details of OWL were not fully published, but
+      [Szol87] gives a comprehensive overview of the system and [Hawk85]
+      describes the classifer.&nbsp; [Mart81] is an incomplete draft of
+      a book Bill was writing describing his insights into the subtle
+      but profound relationships between knowledge representation and
+      structure and metaphors in natural language.&nbsp; The other
+      references below show uses of OWL in various research projects and
+      thus shed additional light on its capabilities.</p>
+    <h1>OWL for the Semantic Web</h1>
+    <p>In 2002, I was asked if the name OWL could be re-used for a new
+      formal knowledge representation language in support of the
+      Semantic Web, based on a modern implementation of a description
+      logic such as DAML+OIL.&nbsp; I believe this is a highly fitting
+      tribute to Bill's pioneering work in knowledge representation.</p>
+    <h1>OWL-related Bibliography</h1>
+    <p>... to be completed...</p>
+    <p>Brown, G. P. (1975). Instances in OWL, MIT<b>: </b>33.</p>
+    <blockquote>
+      <p>This memo reflects a time slice in OWL development. Some of the
+        constructs and concept classes assumed to exist show sign of
+        obsolescence, and some new classes and constructs will probably
+        be introduced. References to &lt;Martin 1975&gt; are to a August
+        4, 1975 draft (along with WWORLD &gt; of August 15) and do not
+        necessarlly reflect hls current thinking or thc for~ of the
+        final vcrsion. Simllarly, references to the OWL i~ple~entation
+        reflect ny understanding of its state prlor to August 1, 1975. I
+        a~ puttlng thls me~o out now because the sorts of OWL changes
+        that look imminent would change the detall, but not thc spSrit,
+        of the papcr. A revised version -- based on feedback from this
+        version and OWL changes that occur o~er the next few months --
+        will be forthconing.</p>
+    </blockquote>
+    <p>Haimowitz, I. J., R. S. Patil, et al. (1988). Representing
+      medical knowledge in a terminological language is difficult. <u>Proc.
+        Twelfth Annual Symposium on Computer Applications in Medical
+        Care</u><b>: </b>101-105.</p>
+    <p>Hawkinson, L. B. (1975). <u>The Representation of Concepts in
+        OWL</u>. Proceedings of the Fourth International Joint
+      Conference on Artificial Intelligence.</p>
+    <p>Hawkinson, L. B. (1980). Xlms: A Linguistic Memory System. 545
+      Technology Square, Cambridge, MA, 02139.</p>
+    <p>Long, W. J. (1977). <i>A Program Writer</i>, Laboratory for
+      Computer Science, Massachusetts Institute of Technology.</p>
+    <font face="Arial">
+      <p></p>
+    </font>
+    <p>Martin, W. A. Automatic Programming and Mathematical Software.</p>
+    <p>Martin, W. A. III. Syntactic Structures.</p>
+    <p>Martin, W. A. Interactive Systems -- Theories of Implementation.</p>
+    <p>Martin, W. A. Introduction to OWL II.</p>
+    <blockquote>
+      <p>OWL II is a language for knowledge representation under
+        development at the MlT Laboratory for Computer Science
+        [Szolovits, et al., 1977]. OWL II is based on the Linguistic
+        Memory System (LMS) developed by Hawkinson (1975). A guiding
+        principle of the language is that it should mimic the knowledge
+        representation conventions of English speakers to the extent
+        that theories of these conventions can be developed. In [Martin,
+        1978], I established basic conventions for the construction of
+        representation heirarchies in OWL II. In this paper, I go on to
+        establish conventions for the construction of descriptions which
+        correspond to English words, phrases, and sentences.</p>
+      <p>In OWL II, we take the view [Vygotsky (1962), Whorf (1956)]
+        that language provides a framework for the organization of
+        knowledge. This paper discusses properties which are frequently
+        attributed to such frameworks. A set of primitives and
+        operations by which such frameworks can be generated is
+        suggested.</p>
+      <p>Further embellished, such frameworks underly the proposed
+        representation of English words, phrases, and sentences.</p>
+    </blockquote>
+    <p>Martin, W. A. Problems and Possibilities for Near Term Natural
+      Language Data Base Query Systems.</p>
+    <p>Martin, W. A. Semantic Structures.</p>
+    <blockquote>
+      <p>OWL II is a language for knowledge representation under
+        development at the MIT Laboratory for Computer Science
+        [Szolovits, et al., 1977]. OWL II is based on the Linguistic
+        Memory System (LMS) developed by Hawkinson (1975). A guiding
+        principle of the language is that it should mimic the knowledge
+        representation conventions of English speakers to the extent
+        that theories of these conventions can be developed. In [Martin,
+        1978] I established basic conventions for the construction of
+        representation heirarchies in OWL II. In this paper, I go on to
+        establish conventions for the construction of descriptions which
+        correspond to English words, phrases, and sentences.</p>
+    </blockquote>
+    <p>Martin, W. A. (1971). "Determining the Equivalence of Algebraic
+      Expressions by Hash Coding." <u>Journal of the Association for
+        Computing Machinery</u> <b>18</b>(4): 549-558.</p>
+    <blockquote>
+      <p>Let S be the set of rational exponential expressions with
+        complex rational coefficients, single level exponentiation, and
+        no division or element i in the exponents. Let p be a prime
+        integer of the form 4q+1, where q is also prime. The expressions
+        in S can be matched for algebraic equivalence by substituting
+        random integer values for the variables, evaluating the
+        exponents mod (p—1), and evaluating the rational expressions mod
+        p. When this is done equivalent expressions will evaluate to the
+        same result; while, in typical situations, two expressions
+        selected at random will evaluate to the same result with
+        probability about 1/q. Thus, if p is taken close to the word
+        size of a 36-bit machine, the probability of matching equivalent
+        expressions is 1 and the probability of random match is about
+        10^-9. The problems of extending this scheme to allow division
+        in the exponents and preserve the relation e^i-{pi}=—1 are
+        studied. No solutions to these problems were found, but a scheme
+        which handles some cases by special case checks is presented.
+        This scheme was implemented in a program for algebraic
+        simplification.</p>
+    </blockquote>
+    <p>Martin, W. A. (1971). "Sorting." <u>Computing Surveys</u> <b>3</b>(4):
+      147-174.</p>
+    <blockquote>
+      <p>The bibliography appearing at the end of this article lists 37
+        sorting algorithms and 100 books and papers on sorting published
+        in the last 20 years. The basic ideas presented here have been
+        abstracted from this body of work, and the best algorithms known
+        are given as examples. As the algorithms are explained,
+        references to related algorithms and mathematical or
+        experimental analyses are given. Suggestions are then made for
+        choosing the algorithm best suited to a given situation.</p>
+    </blockquote>
+    <p>Martin, W. A. and R. Krumland (1972). <a
+        href="ftp/wam/wamartinim6.pdf">MAPL: A Language for Describing
+        Models of the World</a>. Cambridge, MA, MIT.</p>
+    <font face="Arial">
+      <p></p>
+    </font>
+    <p>Martin, W. A. (1972). A Data Set Language and Its Translation
+      into IBM 370 PL/I (F), Automatic Programming Group.</p>
+    <p>Martin, W. A., R. Krumland, et al. (1973). <a
+        href="ftp/wam/wamartinim8.pdf">
+        More MAPL: Specifications and Basic Structures</a>. Cambridge,
+      MA, MIT.</p>
+    <font face="Arial">
+      <p></p>
+    </font>
+    <p>Martin, W. A. (1973). <a href="ftp/wam/wamartinim11.pdf">Translation
+        of English into MAPL Using Winograd's Syntax, State Transition
+        Networks, and a Semantic Case Grammar</a>. Cambridge, MA, MIT.</p>
+    <font face="Arial">
+      <p></p>
+    </font>
+    <p>Martin, W. A. (1973). <a href="ftp/wam/wamartinim12.pdf">MAPL 2</a>.
+      Cambridge, MA, MIT.</p>
+    <font face="Arial">
+      <p></p>
+    </font>
+    <p>Martin, W. A. (1974). OWL Notes Chapter 1: The OWL data structure
+      and the OWL data base, Massachusetts Institute of Technology.</p>
+    <p>Martin, W. A. (1974). <a href="ftp/wam/wamartin74oldowl.pdf">OWL
+        Notes, Introduction: A System for Building Expert Problem
+        Solving Systems Involving Verbal Reasoning</a>, Massachusetts
+      Institute of Technology.</p>
+    <p>Martin, W. A. (1975). Conceptual Grammar.</p>
+    <p>Martin, W. A. (1976). <a href="ftp/wam/Martin77-A Computational
+        Approach to Modern Linguistics.pdf">A Computational Approach to
+        Modern Linguistics: Theory and Implementation</a>.</p>
+    <p>Martin, W. A. (1976). Notes on Sentence Structure.</p>
+    <blockquote>
+      <p>In these notes we are concerned with how an English sentence
+        should be parsed as a first step in computer comprehension of
+        English. We explore some of the structure of English sentences,
+        produce a model of them, and structure the computer's semantic
+        memory to exploit it.</p>
+    </blockquote>
+    <p>Martin, W. A. (1976). <a href="ftp/wam/Martin76-A Theory of
+        English Grammar.pdf">A Theory of English Grammar</a>.</p>
+    <blockquote>
+      <p>The constructs specialization, modification, nexus, naming,
+        productivity, and slot shift are defined and a theory of English
+        grammar advanced in terms of these and related ideas. The theory
+        provides a basis for the computer representation and
+        manipulation of knowledge which can be conveyed explicitly by
+        English sentences.</p>
+    </blockquote>
+    <p>Martin, W. A. (1977). Interactive Systems---Theories of
+      Implementation.</p>
+    <p>Martin, W. A. (1978). Descriptions and the Specialization of
+      Concepts, Massachusetts Institute of Technology.</p>
+    <blockquote>
+      <p>The OWL II system computes with expressions which describe an
+        object from a particular viewpoint. These partial descriptions
+        form a tree structure under the specialization operation, which
+        preserves intensional properties. The descriptions are also
+        related in terms of their extensions by characterization and
+        exemplar links. Descriptions of individuals must always specify
+        a context of the description. Eight ways in which one
+        description can be a specialization of another are
+        distinguished.</p>
+    </blockquote>
+    <p>Martin, W. A. (1978). <a href="ftp/wam/Martin78-Metaphysical and
+        Epistemological Foundations for a Linguistically Oriented
+        Semantic Network.pdf">Metaphysical and Epistemological
+        Foundations for a Linguistically Oriented Semantic Network</a>.</p>
+    <blockquote>
+      <p>Finally going one step higher, we might consider networks whose
+        primitive elements are language-specific. The only formalism
+        that I know of at the current time that embodies this view is
+        OWL, whose elements are expressions based on English. In such a
+        formalism, one would presumably "...take seriously the Worfian
+        hypothesis that a person's language plays a key role in
+        determining his model of the world and thus in structuring his
+        thought" [Martin 1977, p. 985]. In OWL, there is a basic
+        concept-structuring scheme (see [Hawkinson 1975]) which is used
+        to build expressions, and strictly speaking, the principles of
+        "specialization", "attachment", and "reference" are the
+        primitives of the language. However, these primitives are
+        neutral enough to be considered implementational, and thus the
+        knowledge itself can be considered to form the structure of the
+        data base. This seems operationally reasonable when OWL is
+        looked at in detail -- the two expressions, (HYDRANT FIRE) and
+        (MAN FIRE), while both specialized by FIRE, can have the
+        specializations "mean" different things based on the rest of the
+        network structure. This linguistic level represents perhaps the
+        most radical view of semantic nets, in that the "primitives" are
+        language-dependent, and are expected to change in meaning as the
+        network grows. Links in linguistic level networks stand for
+        arbitrary relationships that exist in the world being
+        represented.</p>
+    </blockquote>
+    <p>Martin, W. A. (1978). "Some Comments on EQS, a Near Term Natural
+      Language Data Base Query System." <u>ACM</u>: 156-164.</p>
+    <blockquote>
+      <p>Problems and possibilities for near term natural language query
+        systems are discussed, with emphasis on the author's own system,
+        EQS. First, the general objectives for near term systems in the
+        areas of syntax, world knowledge, discourse, and problem solving
+        are considered. Next, a comparison is made between the ATN
+        parsing strategies In LADDER, ROBOT, PLANES, and EQS. Evidence
+        for the importance of giving answers to queries not directly
+        available In the data base is given together with some
+        speculation on how the knowledge necessary for this might be
+        acquired. After some general discussion of semantic data models,
+        the semantic data model used in EQS is described, and the method
+        used for building a semantic data model of an existing CODASYL
+        data base is sketched. Lastly, the use of multiple levels of
+        representation as a way to control complexity of such query
+        systems is discussed.</p>
+    </blockquote>
+    <p>Martin, W. A. (1979). Descriptions and the Specialization of
+      Concepts. <u>
+        Artificial Intelligence: An MIT Perspective</u>. P. H. Winston
+      and R. H. Brown. Cambridge, MA, MIT Press<b>: </b>379-419.</p>
+    <blockquote>
+      <p>This section by William A. Martin describes OWL II, a system
+        that computes with expressions that describe an object from a
+        particular viewpoint. These partial descriptions form a tree
+        structure under the specialization operation, which preserves
+        intensional properties. The descriptions are also related in
+        terms of their extensions by characterization and exemplar
+        links. Descriptions of individuals must always specify a context
+        of the individual. Nine ways in which one description can be a
+        specialization of another are distinguished.</p>
+    </blockquote>
+    <p>Martin, W. A. (1979). How to Use the Syntactic Analyser.</p>
+    <p>Martin, W. A. (1979). Philosophical Foundations for a
+      Linguistically Oriented Semantic Network.</p>
+    <p>Martin, W. A. (1980). A Logical Form Based on the Structural
+      Description of Events.</p>
+    <p>Martin, W. A. (1980). <a href="ftp/wam/wamartin80.pdf">Natural
+        Language and Representation of Knowledge</a>.</p>
+    <p>Martin, W. A. (1981). Proposal to the Defense Advanced Research
+      Projects Agency; For Research in Natural Language Processing and
+      Computer Representation of Knowledge.</p>
+    <p>Martin, W. A. (1981). "Roles, Co-Descriptors, and the Formal
+      Representation of Quantified English Expressions." <u>American
+        Journal of Computational Linguistics</u> <b>7</b>(3): 137--148.</p>
+    <blockquote>
+      <p>A scheme is proposed for representing the logical form of
+        English sentences, wherein the meaning of a network node depends
+        on how it is related through "role-in" links to nodes
+        representing more aggregate entities. It is argued that roles
+        are a natural device for capturing many linguistic and
+        philosophic distinctions, and that they are convenient for
+        computational processing. In particular, it is shown how role-in
+        links may be advantageously used in lieu of quantifier scope to
+        represent quantificational dependencies.</p>
+    </blockquote>
+    <p>Martin, W. A. and M. Bosyj (1976). <u>Requirements Derivation in
+        Automatic Programming</u>. Symposium on Computer Software
+      Engineering, Polytechnic Institute of New York.</p>
+    <blockquote>
+      <p>Once a consultant has decided on an approach to the solution of
+        a problem, he performs a feasibility analysis to verify that he
+        has indeed found a solution. A good analysis usually requires
+        the complete investigation of the client's firm. In practice,
+        however, this investigation is seldom complete: only a few
+        experts have a detailed knowledge of the factors that must be
+        considered for an acceptable analysis.</p>
+      <p>We have implemented a program to assist the Operations
+        Management consultant in performing such feasibility analyses
+        for procurement problems that do not involve distribution or
+        production activities. The approach to the solution of a
+        procurement problem is assumed to be the hierarchical framework
+        for planning and control systems advocated by Hax and Meal. The
+        program is based on a questionnaire (written by Arnoldo C. Hax)
+        which is essentially a summary of the kinds of questions that
+        should be asked when deciding whether the hierarchical framework
+        is applicable.</p>
+      <p>The program is implemented as an "unstructured" questionnaire
+        that guides the user in investigating various aspects of a
+        problem while giving him complete freedom in deciding how and
+        when to supply answers to questions. It allows him to change and
+        skip answers whenever he desires. The program makes use of the
+        OWL data base, a linguistically based conceptual hierarchy, to
+        represent procedures for the questionnaire and to store data
+        accumulated during the interaction. This data representation
+        makes possible the presentation in English of a problem
+        description, various evaluations and the reasons for the
+        evaluations.</p>
+      <p>The system should prove useful to a consultant as a data
+        gathering device, As an educational tool, it serves to
+        illustrate the kind of information required for the successful
+        analysis of a procurement problem.</p>
+    </blockquote>
+    <p>Martin, W. A. and G. P. Brown (1977). A Preliminary Design for
+      Data Base Modeling in OWL.</p>
+    <blockquote>
+      <p>This report discusses the OWL Data Base Modeling Project being
+        carried out in the LCS Knowledge Based Systems Group. This is a
+        first pass at a description of the project to clarify its scope,
+        goals, and the resources that it will need. Special attention is
+        given to the interface with the user, in particular to the range
+        of natural language forms that must be handled.</p>
+    </blockquote>
+    <p>Martin, W. A., K. W. Church, et al. (1981). Preliminary Analysis
+      of a Breadth-First Parsing Algorithm: Theoretical and Experimental
+      Results, Massachusetts Institute of Technology.</p>
+    <blockquote>
+      <p>We will trace a brief history of context-free parsing
+        algorithms and then describe some representation issues. The
+        purpose of this paper is to share our philosophy and experience
+        in adapting a well-known context free parsing algorithm
+        (Earley's algorithm [8, 9l and variations thereof [28, 13, 26,
+        27]) to the parsing of a difficult and wide ranging corpus of
+        sentences. The sentences were gathered by Malhotra [22] in an
+        experiment which fooled businessmen users into thinking they
+        were interacting with a computer, when they were actually
+        interacting with Malhotra in another room. The sentences are
+        given in Appendix I. The Malhotra corpus is considerably more
+        difficult than a second collection given in Appendix II
+        (originally published in [15]). Section 4 compares empirical
+        results obtained from these collections against theoretical
+        predictions.</p>
+    </blockquote>
+    <p>Martin, W. A., K. W. Church, et al. (1981). Preliminary Analysis
+      of a Breadth-First Parsing Algorithm: Theoretical and Experimental
+      Results. 545 Technology Square, Cambridge, MA, 02139.</p>
+    <p>Martin, W. A. and J. Moses. Why Programmers Make Bad Models of
+      the Real World.</p>
+    <p>Martin, W. A. and P. Szolovits (1981). Semantic Networks in LISP:
+      Fundamental Concepts and A Specific Implementation.</p>
+    <p>Patil, R. S. (1979). Design of a Program for Expert Diagnosis of
+      Acid Base and Electrolyte Disturbances, MIT.</p>
+    <p>Patil, R. S. (1981). Causal Representation of Patient Illness for
+      Electrolyte and Acid-Base Diagnosis. Cambridge, MA, MIT Laboratory
+      for Computer Science.</p>
+    <p>Patil, R. S., P. Szolovits, et al. (1981). Causal Understanding
+      of Patient Illness in Medical Diagnosis. <u>Proc. Seventh
+        International Joint Conference on Artificial Intelligence</u><b>:
+      </b>893-899.</p>
+    <p>Patil, R. S., P. Szolovits, et al. (1982). Information
+      Acquisition in Diagnosis. <u>Proc. National Conference on
+        Artificial Intelligence</u>. Pittsburgh, Pennsylvania, American
+      Association for Artificial Intelligence<b>:
+      </b>345-348.</p>
+    <p>Patil, R. S., P. Szolovits, et al. (1982). Modeling Knowledge of
+      the Patient in Acid-Base and Electrolyte Disorders. <u>Artificial
+        Intelligence in Medicine</u>. P. Szolovits. Boulder, Colorado,
+      Westview Press. <b>51: </b>187-222.</p>
+    <p>Swartout, W. R. (1977). A Digitalis Therapy Advisor with
+      Explanations.</p>
+    <p>Swartout, W. R. (1981). <u>Explaining and Justifying Expert
+        Consulting Programs</u>. Proceedings of the Seventh
+      International Joint Conference on Artificial Intelligence.</p>
+    <p>Swartout, W. R. (1981). Producing Explanations and Justifications
+      of Expert Consulting Programs.</p>
+    <p>Swartout, W. R. (1983). "XPLAIN: A System for Creating and
+      Explaining Expert Consulting Programs." <u>Artificial
+        Intelligence</u> <b>21</b>: 285-325.</p>
+    <p>Szolovits, P., L. Hawkinson, W. A. Martin. (1977). <a
+href="http://groups.csail.mit.edu/medg/people/psz/ftp/OWL_overview1.html">An
+        Overview of the OWL Language for Knowledge Representation</a>.
+      Proceedings of the Workshop on Natural Language Interaction with
+      Databases, Schloss Laxenburg, Austria.</p>
+    <p>Szolovits, P. and W. A. Martin (1981). Brand X: Lisp Support for
+      Semantic Networks. <u>Proceedings of the Seventh International
+        Joint Conference on Artificial Intelligence</u><b>: </b>940-946.</p>
+    <hr>
+    <address> Created by <a
+        href="http://www.medg.lcs.mit.edu/people/psz">Peter Szolovits</a>
+      (<a href="mailto:psz@mit.edu">psz@mit.edu</a>), July 7, 2003.<br>
+      <a href="http://web.mit.edu/accessibility" style="font-family:
+        -webkit-standard; font-style: normal; font-variant-caps: normal;
+        font-weight: normal; letter-spacing: normal; orphans: auto;
+        text-align: start; text-indent: 0px; text-transform: none;
+        white-space: normal; widows: auto; word-spacing: 0px;
+        -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px;"><i><b>Accessibility</b></i></a></address>
+    <p>&nbsp;</p>
+  </body>
+</html>
