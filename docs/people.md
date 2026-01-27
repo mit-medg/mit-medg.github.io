@@ -15,23 +15,32 @@ Fern Keniston | Administrative Support | fernd@mit.edu, (617) 253-5869
 
 Name | Position | Description
 -----|----------|------------
-[Emily Alsentzer](https://www.csail.mit.edu/person/emily-alsentzer) | PhD student | Emily is a final year PhD student in MIT HST program. 
-[Geeticka Chauhan](http://people.csail.mit.edu/geeticka/) | PhD student | Geeticka is a 5th year PhD student in MIT EECS program. 
-[Harry Tzu-Ming Hsu](https://stmharry.github.io/) | PhD student | Harry is a final year PhD student in MIT EECS program. 
-[Eric Lehman](https://www.linkedin.com/in/eric-lehman-51b1419b/) | PhD student | Eric is a 2nd year PhD student in MIT EECS program. 
-[Elena Sergeeva](https://www.csail.mit.edu/person/elena-sergeeva) | PhD student | Elena is a 6th year PhD student in MIT EECS program. 
-Ying Zhang | PhD student | Ying is a PhD student in MIT EECS program. (on leave)
+[Irene Tension](https://www.linkedin.com/in/irenetenison/) | PhD student | Irene is a PhD student in MIT EECS program. 
 
 
 ### MEng and UROPs
 
-Name | Position | Description
------|----------|------------
-Julie Vaughn | MEng student | 
-Shelley Choi | UROP | 
-Mercy Oladipo | UROP | 
-Evan Kim | UROP | 
-Brendan Yap | UROP | 
+| Name                | Position | 
+| ------------------- | -------- | 
+| Hailey Boriel       | MEng     | 
+| Astrid Luo          | MEng     | 
+| Ellington Hemphill  | MEng     | 
+| Zhurui Sheng        | MEng     | 
+| Sabrina Queipo      | MEng     | 
+| Kanika Rajput       | MEng     | 
+| Seton Liu           | UROP     | 
+| Valerie Xin         | UROP     | 
+| Radia Wong          | UROP     | 
+| Sanskriti Singh     | UROP     | 
+| Jessica Kim         | UROP     | 
+| Elisa Zhang         | UROP     | 
+| Zachary Starr       | UROP     | 
+| Saina Deshpande     | UROP     | 
+| Shreya Kalyan       | UROP     | 
+| Ricardo Carrillo    | UROP     | 
+| Kara Chou           | UROP     | 
+| Unyi Usua           | UROP     | 
+
 
 
 ### Post-doctoral Fellows / Visiting Scientists
@@ -63,4 +72,4 @@ Aga Liao | Visiting Engineer | Wistron
   * Özlem Uzuner, PhD, George Mason University
 
 
-Last Modified 05/28/22
+Last Modified 01/28/2026
