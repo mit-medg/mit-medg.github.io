@@ -1,6 +1,12 @@
 ## Alumni (reverse chronological order)
 
 ### PhD
+
+  * [Elena Sergeeva](https://www.csail.mit.edu/person/elena-sergeeva), PhD 2025
+  * [Eric Lehman](https://www.linkedin.com/in/eric-lehman-51b1419b/), PhD 2024
+  * [Geeticka Chauhan](http://people.csail.mit.edu/geeticka/), PhD 2024
+  * [Emily Alsentzer](https://emilyalsentzer.com/), PhD 2022
+  * [Harry Tzu-Ming Hsu](https://stmharry.github.io/), PhD 2022
   * [Willie Boag](http://willieboag.com), PhD 2022
   * [Matthew McDermott](https://scholar.google.com/citations?user=_V96PXoAAAAJ&hl=en) (Harvard Medical School), PhD 2022
   * [Wei-Hung Weng](http://ckbjimmy.github.io/) (Google Research), PhD 2022
@@ -45,6 +51,11 @@
 
 
 ### Master (MEng / SM)
+  * Connie Cao, MEng 2025
+  * Sharaf Rashid, MEng 2025
+  * Sasha Jovanovic-Hacon, MEng 2025
+  * Aiden Etheridge, MEng 2025
+  * Julie Vaughn, MEng 2021
   * [Tiffany So Yeon Min](https://www.linkedin.com/in/so-yeon-tiffany-min-70332aa5/) (Carnegie Mellon University), MEng 2020
   * Phuong Pham, MEng 2020
   * Justin K Yu, MEng 2020
