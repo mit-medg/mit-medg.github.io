@@ -20,7 +20,7 @@ Name | Position | Description
 
 ---
 
-## Synthetic malware log generation (Group 1)
+## Synthetic Malware Log Generation (Group 1)
 
 We are a research group focused on behavior-based cybersecurity. We design, implement, and test new AI models to support malware research. Currently, we are working on generating synthetic malware logs to support detection research.
 
@@ -33,7 +33,7 @@ We are a research group focused on behavior-based cybersecurity. We design, impl
 
 ---
 
-## Computer vision for business name spoof detection (Group 2)
+## Computer Vision for Business Name Spoof Detection (Group 2)
 
 We develop deployable AI methods for spoof detection with an emphasis on balancing detection performance with real-world constraints such as latency, compute, and reliability.
 
@@ -59,7 +59,7 @@ We develop an NLP system for semantic analysis of voice-phishing transcripts, in
 
 ---
 
-## Deep-fake Detection (Group 4)
+## Deep-Fake Detection (Group 4)
 
 We develop a systematic deepfake detection approach by combining representations from multiple modalities to improve robustness on new generative methods.
 
