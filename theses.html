@@ -125,7 +125,7 @@ function getSearchParams(){ const href=String(window.location.href); const q=hre
 const getParam=k=>(getSearchParams().get(k)||'').trim();
 
 /* fetch + parse */
-const BIB_URL = 'https://mit-medg.github.io/bib/MEDG_theses.bib';
+const BIB_URL = 'bib/MEDG_theses.bib';
 let lastModifiedDate = null;
 async function fetchBib(url){ const res = await fetch(url, {cache:'no-store'}); if(!res.ok) throw new Error('HTTP '+res.status); const lm = res.headers.get('Last-Modified'); if(lm){ const d=new Date(lm); if(!isNaN(d)) lastModifiedDate = d; } return await res.text(); }
 function parseBibtex(text){ text = text.replace(/^\s*%.*$/gm,''); const out=[]; const rx=/@([a-zA-Z]+)\s*\{\s*([^,]+)\s*,([\s\S]*?)\}\s*(?=@|$)/g; let m; while((m=rx.exec(text))){ const type=(m[1]||'').toLowerCase(); const key=(m[2]||'').trim(); const body=(m[3]||''); out.push({type,key,fields:parseFields(body)}); } return out; }
