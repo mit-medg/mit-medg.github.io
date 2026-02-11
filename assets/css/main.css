@@ -2910,10 +2910,92 @@
 				color: #ffffff !important;
 			}
 
+		/* Landing (index) header: same behavior as publications — nav always visible, title can wrap, horizontal scroll */
+		body.landing #header {
+			height: auto;
+			min-height: 3.5em;
+			line-height: 1.4;
+			font-size: 1rem;
+			overflow-x: auto;
+			overflow-y: hidden;
+		}
+
+		body.landing #header .wrap {
+			display: flex;
+			flex-wrap: wrap;
+			align-items: center;
+			justify-content: space-between;
+			gap: 0.75em 1em;
+			max-width: 1100px;
+			margin: 0 auto;
+			padding: 14px 16px;
+			width: 100%;
+			position: relative;
+			left: auto;
+			right: auto;
+		}
+
+		body.landing #header #brand {
+			font-weight: 300;
+			text-transform: uppercase;
+			letter-spacing: 0.02em;
+			font-size: 1.1rem;
+			line-height: 1.3;
+		}
+
+		body.landing #header #brand a {
+			color: #001f5b;
+			text-decoration: none;
+		}
+
+		body.landing #header #nav {
+			position: relative;
+			top: auto;
+			right: auto;
+			height: auto;
+			line-height: inherit;
+			flex-shrink: 0;
+		}
+
+		body.landing #header #nav ul {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 0 18px;
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}
+
+		body.landing #header #nav ul li {
+			display: inline-block;
+			margin-left: 0;
+		}
+
+		body.landing #header #nav ul li a {
+			text-transform: uppercase;
+			letter-spacing: 0.02em;
+			font-size: 0.95rem;
+			color: #0b62a6;
+			text-decoration: none;
+		}
+
+		body.landing #header #nav ul li a:hover,
+		body.landing #header #nav ul li a.active {
+			color: #000;
+		}
+
+		body.landing .navPanelToggle {
+			display: none !important;
+		}
+
 		@media screen and (max-width: 980px) {
 
 			#header {
 				display: none;
+			}
+
+			body.landing #header {
+				display: block;
 			}
 
 		}
