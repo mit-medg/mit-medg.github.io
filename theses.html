@@ -357,11 +357,23 @@ function renderList(entries){
       if(sel==='Other') return !(k==='doctoral'||k==='masters'||k==='bachelors');
       return true;
     }
+    
+/* Author-name matching: reuse the same person/token logic as supervisor/reader */
+	function matchesName(entry, q){
+  	if(!q) return true;
+  	return listContainsPerson(entry.fields.author || entry.fields.authors || '', q);
+	}
+
+/* Title matching: every typed token must appear in the (normalized) title */
+	function matchesTitle(entry, q){
+  	if(!q) return true;
+  	const title = normStr(fieldClean(entry.fields.title || ''));
+  	return tokens(q).every(t => title.includes(t));
+	}
 
     function apply(){
       const nameV=$('f-name').value.trim(), titleV=$('f-title').value.trim(), supV=$('f-supervisor').value.trim(), rdrV=$('f-reader').value.trim(), typeV=$('f-type').value;
       let r = rows.slice();
-      if(!matchesType){} // noop
       r = r.filter(e => matchesType(e, typeV));
       if(nameV) r = r.filter(e => matchesName(e,nameV));
       if(titleV) r = r.filter(e => matchesTitle(e,titleV));
