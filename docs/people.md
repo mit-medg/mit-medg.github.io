@@ -6,7 +6,7 @@
 Name | Position | Description
 -----|----------|------------
 [Peter Szolovits](http://people.csail.mit.edu/psz/web/) | Group Leader | psz@mit.edu, (617) 253-3476
-Amar Gupta | Research Staff | (617) 253-0418
+Amar Gupta | Research Staff | agupta@mit.edu, (617) 253-0418
 William J Long | Research Staff | wjl@mit.edu (retired)
 Fern Keniston | Administrative Support | fernd@mit.edu, (617) 253-5869
 
